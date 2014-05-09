@@ -245,6 +245,7 @@ var myform=new formtowizard({
         </table>
 
         <div class="actions">
+          <li><a href="/assets/Lonkar.pdf">Download</a> </li>
         <%= submit_tag 'Save' %>
         </div>
 
@@ -273,11 +274,11 @@ var myform=new formtowizard({
 
 
     <script type="text/javascript">
-    jQuery(function(){
+    $(function(){
       SyntaxHighlighter.all();
     });
-    jQuery(window).load(function(){
-      jQuery('.flexslider').flexslider({
+    $(window).load(function(){
+      $('.flexslider').flexslider({
         animation: "slide",
         start: function(slider){
           jQuery('body').removeClass('loading');

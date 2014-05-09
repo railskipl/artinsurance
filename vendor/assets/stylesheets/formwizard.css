@@ -11,7 +11,7 @@ width:auto!important
 }
 
 div.stepsguide{ /*div that contains all the "steps" text located at top of form */ 
-width: 1170px; /*width of "steps" container*/
+width: auto; /*width of "steps" container*/
 overflow:hidden;
 margin-bottom:15px;
 cursor:pointer;
