@@ -1,12 +1,12 @@
 source 'https://rubygems.org'
-ruby '2.1.0'
+ruby '1.9.3'
 
 gem 'rails', '3.2.16'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-#gem 'sqlite3'
+gem 'mysql2'
 gem 'execjs'
 gem 'therubyracer'
 gem 'country_select'
