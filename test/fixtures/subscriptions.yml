@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  email: MyString
+  stripe_card_token: MyString
+  token: MyString
+  price: 1.5
+  name: MyString
+  stripe_customer_token: MyString
+  card_number: MyString
+  card_code: MyString
+  cardExpiryMonth: MyString
+  cardExpiryYear: MyString
+
+two:
+  email: MyString
+  stripe_card_token: MyString
+  token: MyString
+  price: 1.5
+  name: MyString
+  stripe_customer_token: MyString
+  card_number: MyString
+  card_code: MyString
+  cardExpiryMonth: MyString
+  cardExpiryYear: MyString

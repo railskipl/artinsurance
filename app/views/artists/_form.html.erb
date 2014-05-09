@@ -1,0 +1,289 @@
+
+<script type="text/javascript">
+
+var myform=new formtowizard({
+  formid: 'feedbackform',
+  persistsection: true,
+  revealfx: ['slide', 500]
+})
+
+</script>
+
+
+    <div class="container form_bg">
+       
+    
+ 
+   <%= form_tag url_for(:controller => 'artists', :action => 'create'), :method => 'post',:id => 'feedbackform' do |f| %>
+
+
+
+
+  <% if @artist.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@artist.errors.count, "error") %> prohibited this artist from being saved:</h2>
+
+      <ul>
+      <% @artist.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<fieldset class="sectionwrap">
+<%=label_tag 'Name of Applicant' %>
+    
+        <%=text_field_tag 'Name_of_Applicant'%></tr>
+
+        <%=label_tag 'Mailing Address' %>
+        <%=text_field_tag 'Mailing_Address'%></br>
+
+        <%=label_tag 'Studio Address'%>
+        <%=text_field_tag 'Studio_Address'%></br>
+
+        <%=label_tag 'City' %>
+        <%=text_field_tag 'City'%>
+
+        
+
+
+   <%=label_tag 'Choose your state' %>
+    <select id ="us_states" name="us_states">
+               <% us_states.each do |us_states|%>
+                 <option value="<%=us_states%>"><%= us_states%></option>
+               <%end%>
+    </select>
+
+
+    <script>
+
+    var dropdown = document.getElementById("us_states");
+    dropdown.onchange = function(event){
+    if(dropdown.value=="Alabama" || dropdown.value=="Connecticut" || dropdown.value=="Delaware" || dropdown.value=="Florida" || dropdown.value=="Georgia" || dropdown.value=="Louisiana" || dropdown.value=="Maine"  || dropdown.value=="Mississippi"  || dropdown.value=="New Jersey" || dropdown.value=="New York" || dropdown.value=="North Carolina"  || dropdown.value=="California"  || dropdown.value=="Pennsylvania" || dropdown.value=="South Carolina"  || dropdown.value=="Texas"  ||dropdown.value=="Virginia" ){
+        confirm("Exclude flood and windstorms in your area.would you like to continue?")
+    }
+}
+</script>
+
+    
+    <%=label_tag 'Zip Code' %>
+    <%=text_field_tag 'Zip_Code'%></br>
+
+    <%=label_tag 'Phone Number' %>
+    <%=text_field_tag 'Phone_Number'%></br>
+
+    <%=label_tag 'Fax' %>
+    <%=text_field_tag 'Fax'%></br>
+
+    <%=label_tag 'E-mail address' %>
+    <%=text_field_tag 'Email_address'%></br>
+
+    <%=label_tag 'Retype E-Mail' %>
+    <%=text_field_tag 'Retype_EMail'%></br>
+</fieldset>
+
+<fieldset class="sectionwrap">
+<legend>Limits of Insurance</legend>
+<%=label_tag 'Limit of Studio Insurance' %>    
+
+    <select id="higher_limits" name="higher_limits">
+               <% higher_limits.each do |higher_limits|%>
+                 <option value="<%=higher_limits%>"><%= higher_limits%></option>
+               <%end%>
+    </select></br>
+
+    <%=label_tag 'Limit of Insurance at Other Location' %>
+    <select id="limit_of_Insurance_at_Other_Location" name="limit_of_Insurance_at_Other_Location">
+               <% limit_of_Insurance_at_Other_Location.each do |limit_of_Insurance_at_Other_Location|%>
+                 <option value="<%=limit_of_Insurance_at_Other_Location%>"><%= limit_of_Insurance_at_Other_Location%></option>
+               <%end%>
+    </select></br>
+
+    <%=label_tag 'Limit of Insurance While in Transit' %>
+    <select id="limit_of_Insurance_While_in_Transit" name="limit_of_Insurance_While_in_Transit">
+               <% limit_of_Insurance_While_in_Transit.each do |limit_of_Insurance_While_in_Transit|%>
+                 <option value="<%=limit_of_Insurance_While_in_Transit%>"><%= limit_of_Insurance_While_in_Transit%></option>
+               <%end%>
+    </select></br>
+
+    <%=label_tag 'Policy Deductable' %>
+    <%=text_field_tag 'Policy_Deductable'%></br>
+
+    <h1>Fire Protection</h1>
+
+    <%=label_tag 'Is there an automatic sprinkler system on premises?' %>
+    </br><input type="radio" name="Is there an automatic sprinkler system on premises?" value="Is there an automatic sprinkler system on premises?">Yes<br>
+    <input type="radio" name="Is there an automatic sprinkler system on premises?" value="Is there an automatic sprinkler system on premises?">No<br>
+
+</fieldset>
+
+<fieldset class="sectionwrap">
+  <legend>Security
+    Check all that apply</legend>
+ 
+
+    </br>
+    <label for="checkbox_id">Deadbolts
+    <input type="checkbox" name="checkbox" id="checkbox_id" value="Deadbolts"></label>
+
+    
+    <label for="checkbox_id">Alarm system – rings to central base
+    <input type="checkbox" name="checkbox" id="checkbox_id" value="value"></label>
+
+    </br>
+    <label for="checkbox_id">Only local alarm system
+    <input type="checkbox" name="checkbox" id="checkbox_id" value="value"></label>
+
+
+    </br>
+    <label for="checkbox_id">Cameras
+    <input type="checkbox" name="checkbox" id="checkbox_id" value="value"></label>
+
+
+    </br>
+    <label for="checkbox_id">Gates
+    <input type="checkbox" name="checkbox" id="checkbox_id" value="value"></label>
+
+
+    </br>
+    <label for="checkbox_id">Watchmen/guards/ doorman
+    <input type="checkbox" name="checkbox" id="checkbox_id" value="value"></label>
+
+    
+
+
+    <h1> Exposure</h1>
+    
+
+    <%=label_tag 'What is the average value of finished art work?' %>
+   <select id="finished_art_work" name="finished_art_work">
+               <% finished_art_work.each do |work|%>
+                 <option value="<%=work%>"><%= work%></option>
+               <%end%>
+    </select></br>
+
+    <%=label_tag 'What is the maximum value of single item?' %>
+    <select id="single_item" name="single_item">
+               <% single_item.each do |single_item|%>
+                 <option value="<%=single_item%>"><%= single_item%></option>
+               <%end%>
+    </select></br>
+
+
+
+    <%=label_tag 'Do you keep a detailed and itemized? ' %>
+    </br><input type="radio" name="Do you keep a detailed and itemized?" value="Do you keep a detailed and itemized?">Yes<br>
+    <input type="radio" name="Do you keep a detailed and itemized?" value="Do you keep a detailed and itemized?">No<br>
+
+
+    <%=label_tag 'Do you keep a record of sales? ' %>
+    </br><input type="radio" name="Do you keep a record of sales?" value="Do you keep a record of sales?">Yes<br>
+    <input type="radio" name="Do you keep a record of sales?" value="Do you keep a record of sales?">No<br>
+
+    <%=label_tag 'When was the last date of inventory?' %>
+    <%=text_field_tag 'When_was_the_last_date_of_inventory?'%></br>
+
+    <%=label_tag 'Do you maintain a duplicate inventory off-site? ' %>
+    </br><input type="radio" name="Do you maintain a duplicate inventory off-site?" value="Do you maintain a duplicate inventory off-site?">Yes<br>
+    <input type="radio" name="Do you maintain a duplicate inventory off-site?" value="Do you maintain a duplicate inventory off-site?">No<br>
+
+    <%=label_tag 'Number of exhibits a year?' %>
+    <select id="exhibits_year" name="exhibits_year">
+               <% exhibits_year.each do |exhibits_year|%>
+                 <option value="<%=exhibits_year%>"><%= exhibits_year%></option>
+               <%end%>
+    </select>
+</fieldset>
+
+
+<fieldset class="sectionwrap">
+<legend>Annual sales</legend>
+
+
+    <%=label_tag 'Current year' %>
+    <select id="current_year" name="current_year">
+               <% current_year.each do |current_year|%>
+                 <option value="<%=current_year%>"><%= current_year%></option>
+               <%end%>
+    </select></br>
+
+    <%=label_tag 'Prior year' %>
+    <select id="prior_year" name="prior_year">
+               <% prior_year.each do |prior_year|%>
+                 <option value="<%=prior_year%>"><%= prior_year%></option>
+               <%end%>
+    </select></br>
+    <%=label_tag 'Name of current insurance carrier' %>
+    <%=text_field_tag 'Name of current insurance carrier'%></br></br>
+
+      <legend>Lost history (For last 5 years)</legend>
+
+          
+
+        <table border='1'>
+          <tr>
+            <th>Description Of Loss</th>
+            <th>Amount Of Loss</th>
+            <th>Date</th>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+        </table>
+
+        <div class="actions">
+        <%= submit_tag 'Save' %>
+        </div>
+
+</fieldset>
+
+
+
+<% end %>
+
+</div>
+
+<div class="container">
+    <div class="row">
+      <div class="span3">
+        
+      </div>
+      
+      <div class="span9">
+        
+      
+      </div>
+    </div>
+  </div>
+
+
+
+
+    <script type="text/javascript">
+    jQuery(function(){
+      SyntaxHighlighter.all();
+    });
+    jQuery(window).load(function(){
+      jQuery('.flexslider').flexslider({
+        animation: "slide",
+        start: function(slider){
+          jQuery('body').removeClass('loading');
+        }
+      });
+    });
+  </script>
+
+
