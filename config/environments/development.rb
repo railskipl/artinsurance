@@ -40,7 +40,7 @@ Artinsurence::Application.configure do
       :user_name => "rubyrails9@gmail.com",
       :password => "kipl123!@#"
   }
-   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+   config.action_mailer.default_url_options = { :host => 'http://artinsurance.herokuapp.com' }
   
   # Expands the lines which load the assets
   config.assets.debug = true
