@@ -1,0 +1,344 @@
+
+
+
+    <div class="container form_bg">
+       
+    
+    <div class="row">
+    
+    <div class="span12">
+    
+    <div style="" id="navigation">
+                    <ul>
+                        <li class="selected">
+                            <a href="#">Step 1</a><span class="checked"></span>                        </li>
+                        <li class="">
+                            <a href="#">Step 2</a><span class="checked"></span>                        </li>
+
+                        <li class="">
+                            <a href="#">Step 3</a><span class="checked"></span>                        </li>    
+                        <li>
+                            <a href="#">Step 4</a>                        </li>
+                       
+            
+                    </ul>
+                </div>
+        
+
+
+
+<%= form_tag(@artist, :method => "get",:id => 'demoForm') do |f| %>
+  <% if @artist.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@artist.errors.count, "error") %> prohibited this artist from being saved:</h2>
+
+      <ul>
+      <% @artist.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<div id="wrapper">
+
+<div id="steps" style="width: 3510px; margin-left: 0px;">
+                   
+        <fieldset class="step">                           
+        <div class="span12">
+        <div class="formdiv">
+        
+        <%=label_tag 'Name of Applicant' %>
+    
+        <%=text_field_tag 'Name of Applicant'%></tr>
+
+        <%=label_tag 'Mailing Address' %>
+        <%=text_field_tag 'Mailing Address'%></br>
+
+        <%=label_tag 'Studio Address  ' %>
+        <%=text_field_tag 'Studio Address  '%></br>
+
+        <%=label_tag 'City' %>
+        <%=text_field_tag 'City'%>
+
+        
+
+
+   <%=label_tag 'Choose your state' %>
+    <select id ="Zdd_1">
+               <% us_states.each do |states|%>
+                 <option value="<%=states%>"><%= states%></option>
+               <%end%>
+    </select>
+
+
+    <script>
+
+    var dropdown = document.getElementById("Zdd_1");
+    dropdown.onchange = function(event){
+    if(dropdown.value=="Alabama" || dropdown.value=="Connecticut" || dropdown.value=="Delaware" || dropdown.value=="Florida" || dropdown.value=="Georgia" || dropdown.value=="Louisiana" || dropdown.value=="Maine"  || dropdown.value=="Mississippi"  || dropdown.value=="New Jersey" || dropdown.value=="New York" || dropdown.value=="North Carolina"  || dropdown.value=="California"  || dropdown.value=="Pennsylvania" || dropdown.value=="South Carolina"  || dropdown.value=="Texas"  ||dropdown.value=="Virginia" ){
+        confirm("Exclude flood and windstorms in your area.would you like to continue?")
+    }
+}
+</script>
+
+    
+    <%=label_tag 'Zip Code' %>
+    <%=text_field_tag 'Zip Code'%></br>
+
+    <%=label_tag 'Phone Number' %>
+    <%=text_field_tag 'Phone Number'%></br>
+
+    <%=label_tag 'Fax' %>
+    <%=text_field_tag 'Fax'%></br>
+
+    <%=label_tag 'E-mail address' %>
+    <%=text_field_tag 'E-mail address'%></br>
+
+    <%=label_tag 'Retype E-Mail' %>
+    <%=text_field_tag 'Retype E-Mail'%></br>
+
+   </div>
+   </div>
+   </fieldset>
+<a class="btn btn-info btn-large" href="#"> Next <i class="icon-chevron-right"></i></a>
+
+
+   <fieldset class="step">
+    <div class="span12">
+    <div class="formdiv">
+
+
+    <h1>Limits of Insurance</h1>
+
+    <%=label_tag 'Limit of Studio Insurance' %>    
+
+    <select id="higher_limits" name="higher_limits">
+               <% higher_limits.each do |higher|%>
+                 <option value="<%=higher%>"><%= higher%></option>
+               <%end%>
+    </select></br>
+
+    <%=label_tag 'Limit of Insurance at Other Location' %>
+    <select id="higher_limits" name="higher_limits">
+               <% higher_limits.each do |higher|%>
+                 <option value="<%=higher%>"><%= higher%></option>
+               <%end%>
+    </select></br>
+
+    <%=label_tag 'Limit of Insurance While in Transit' %>
+    <select id="higher_limits" name="higher_limits">
+               <% higher_limits.each do |higher|%>
+                 <option value="<%=higher%>"><%= higher%></option>
+               <%end%>
+    </select></br>
+
+    <%=label_tag 'Policy Deductable' %>
+    <%=text_field_tag 'Policy Deductable'%></br>
+
+    <h1>Fire Protection</h1>
+
+    <%=label_tag 'Is there an automatic sprinkler system on premises?' %>
+    </br><input type="radio" name="Is there an automatic sprinkler system on premises?" value="Is there an automatic sprinkler system on premises?">Yes<br>
+    <input type="radio" name="Is there an automatic sprinkler system on premises?" value="Is there an automatic sprinkler system on premises?">No<br>
+
+     </div>
+        
+      </div>
+    </fieldset>
+
+
+
+
+
+   <fieldset class="step">
+                           
+        <div class="span12">
+        <div class="formdiv">
+    <h1>Security</h1>
+    Check all that apply
+
+    </br>
+    <label for="checkbox_id">Deadbolts
+    <input type="checkbox" name="checkbox" id="checkbox_id" value="Deadbolts"></label>
+
+    
+    <label for="checkbox_id">Alarm system – rings to central base
+    <input type="checkbox" name="checkbox" id="checkbox_id" value="value"></label>
+
+    </br>
+    <label for="checkbox_id">Only local alarm system
+    <input type="checkbox" name="checkbox" id="checkbox_id" value="value"></label>
+
+
+    </br>
+    <label for="checkbox_id">Cameras
+    <input type="checkbox" name="checkbox" id="checkbox_id" value="value"></label>
+
+
+    </br>
+    <label for="checkbox_id">Gates
+    <input type="checkbox" name="checkbox" id="checkbox_id" value="value"></label>
+
+
+    </br>
+    <label for="checkbox_id">Watchmen/guards/ doorman
+    <input type="checkbox" name="checkbox" id="checkbox_id" value="value"></label>
+
+    
+
+
+    <h1> Exposure</h1>
+    
+
+    <%=label_tag 'What is the average value of finished art work?' %>
+   <select id="finished_art_work" name="finished_art_work">
+               <% finished_art_work.each do |work|%>
+                 <option value="<%=work%>"><%= work%></option>
+               <%end%>
+    </select></br>
+
+    <%=label_tag 'What is the maximum value of single item?' %>
+    <select id="single_item" name="single_item">
+               <% single_item.each do |single_item|%>
+                 <option value="<%=single_item%>"><%= single_item%></option>
+               <%end%>
+    </select></br>
+
+
+
+    <%=label_tag 'Do you keep a detailed and itemized? ' %>
+    </br><input type="radio" name="Do you keep a detailed and itemized?" value="Do you keep a detailed and itemized?">Yes<br>
+    <input type="radio" name="Do you keep a detailed and itemized?" value="Do you keep a detailed and itemized?">No<br>
+
+
+    <%=label_tag 'Do you keep a record of sales? ' %>
+    </br><input type="radio" name="Do you keep a record of sales?" value="Do you keep a record of sales?">Yes<br>
+    <input type="radio" name="Do you keep a record of sales?" value="Do you keep a record of sales?">No<br>
+
+    <%=label_tag 'When was the last date of inventory?          ' %>
+    <%=text_field_tag 'When was the last date of inventory?          '%></br>
+
+    <%=label_tag 'Do you maintain a duplicate inventory off-site? ' %>
+    </br><input type="radio" name="Do you maintain a duplicate inventory off-site?" value="Do you maintain a duplicate inventory off-site?">Yes<br>
+    <input type="radio" name="Do you maintain a duplicate inventory off-site?" value="Do you maintain a duplicate inventory off-site?">No<br>
+
+    <%=label_tag 'Number of exhibits a year?' %>
+    <select id="exhibits_year" name="exhibits_year">
+               <% exhibits_year.each do |exhibits_year|%>
+                 <option value="<%=exhibits_year%>"><%= exhibits_year%></option>
+               <%end%>
+    </select></br>
+     </div>
+     </div>
+     </fieldset>
+
+    
+
+    <fieldset class="step">
+                           
+        <div class="span12">
+        <div class="formdiv">
+
+     <h1> Annual sales</h1>
+
+    <%=label_tag 'Current year' %>
+    <select id="current_year" name="current_year">
+               <% current_year.each do |current_year|%>
+                 <option value="<%=current_year%>"><%= current_year%></option>
+               <%end%>
+    </select></br>
+
+    <%=label_tag 'Prior year' %>
+    <select id="prior_year" name="prior_year">
+               <% prior_year.each do |prior_year|%>
+                 <option value="<%=prior_year%>"><%= prior_year%></option>
+               <%end%>
+    </select></br>
+    <%=label_tag 'Name of current insurance carrier' %>
+    <%=text_field_tag 'Name of current insurance carrier'%></br>
+
+    <h1> Lost history (For last 5 years)</h1>
+   
+            <!DOCTYPE html>
+        <html>
+        <head>
+        <style>
+        table,th,td
+        {
+        border:1px solid black;
+        }
+        </style>
+        </head>
+        <body>
+
+        <table>
+          <tr>
+            <th>Description Of Loss</th>
+            <th>Amount Of Loss</th>
+            <th>Date</th>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+        </table>
+
+        </body>
+        </html>
+
+
+  </div>
+  </div>
+  </fieldset>
+
+
+
+
+ <fieldset class="step">
+    <legend>212</legend>
+                          
+  </fieldset>
+  <fieldset class="step">
+    <legend>333</legend> 
+  </fieldset>
+<div class="actions">
+    <%= submit_tag 'Save' %>
+  </div>
+<% end %>
+
+
+ </div>
+ </div>
+</div>
+</div>
+</div>
+
+<div class="container">
+    <div class="row">
+      <div class="span3">
+        
+      </div>
+      
+      <div class="span9">
+        
+      
+      </div>
+    </div>
+  </div>
+
+
+
+
+  

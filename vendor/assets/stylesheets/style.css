@@ -1,0 +1,42 @@
+/* CSS Document */
+
+.logo{ font-size:35px; font-weight:bold; font-family:Arial, Helvetica, sans-serif; margin:20px 0; line-height:normal}
+
+.logo span{ font-size:20px; font-style:italic}
+
+.phone{ float:left; margin:15px 5px 0 0}
+.phone_div{ margin:10px 0 0 0}
+.number{ font-size:25px; font-weight:bold; font-style:italic}
+
+.number span{ font-size:12px; font-weight:bold; font-style:italic; color:#555555}
+
+.slider_bg{background: #ebebeb; /* Old browsers */
+background: -moz-linear-gradient(top, #ebebeb 0%, #ffffff 7%, #ffffff 50%, #ffffff 93%, #ebebeb 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ebebeb), color-stop(7%,#ffffff), color-stop(50%,#ffffff), color-stop(93%,#ffffff), color-stop(100%,#ebebeb)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top, #ebebeb 0%,#ffffff 7%,#ffffff 50%,#ffffff 93%,#ebebeb 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top, #ebebeb 0%,#ffffff 7%,#ffffff 50%,#ffffff 93%,#ebebeb 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top, #ebebeb 0%,#ffffff 7%,#ffffff 50%,#ffffff 93%,#ebebeb 100%); /* IE10+ */
+background: linear-gradient(to bottom, #ebebeb 0%,#ffffff 7%,#ffffff 50%,#ffffff 93%,#ebebeb 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ebebeb', endColorstr='#ebebeb',GradientType=0 ); /* IE6-9 */
+padding:10px 0; border: 1px solid #DCDCDC; }
+
+.form_heading{ font-size:20px; font-weight:bold; font-style:italic; margin:15px 0 5px 10px}
+
+
+.form_bg{background: #e8e8e8; /* Old browsers */
+background: -moz-linear-gradient(top, #e8e8e8 0%, #f9f9f9 7%, #f9f9f9 50%, #f9f9f9 93%, #e8e8e8 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#e8e8e8), color-stop(7%,#f9f9f9), color-stop(50%,#f9f9f9), color-stop(93%,#f9f9f9), color-stop(100%,#e8e8e8)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top, #e8e8e8 0%,#f9f9f9 7%,#f9f9f9 50%,#f9f9f9 93%,#e8e8e8 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top, #e8e8e8 0%,#f9f9f9 7%,#f9f9f9 50%,#f9f9f9 93%,#e8e8e8 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top, #e8e8e8 0%,#f9f9f9 7%,#f9f9f9 50%,#f9f9f9 93%,#e8e8e8 100%); /* IE10+ */
+background: linear-gradient(to bottom, #e8e8e8 0%,#f9f9f9 7%,#f9f9f9 50%,#f9f9f9 93%,#e8e8e8 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e8e8e8', endColorstr='#e8e8e8',GradientType=0 ); /* IE6-9 */
+border:1px solid #dcdcdc;}
+
+
+.formdiv{ margin:10px 10px}
+
+select, textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input{ margin-bottom:0!important}
+
+.footer{ text-align:center; padding:20px 0}
+
