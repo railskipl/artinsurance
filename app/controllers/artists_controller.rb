@@ -74,6 +74,7 @@ class ArtistsController < ApplicationController
         format.html { redirect_to new_subscription_path, notice: 'Artist was successfully created.' }
         format.json { render json: @artist, status: :created, location: @artist }
         ArtMail.art_mail(@grades).deliver
+
       else
         format.html { render action: "new" }
         format.json { render json: @artist.errors, status: :unprocessable_entity }

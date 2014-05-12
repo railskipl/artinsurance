@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+source 'http://rubygems.org'
 
 gem 'rails', '3.2.16'
 
@@ -12,6 +12,7 @@ gem 'country_select'
 gem 'sanitize_email'
 gem 'stripe'
 
+gem 'pg'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
