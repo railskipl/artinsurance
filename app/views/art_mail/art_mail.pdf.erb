@@ -1,45 +1,265 @@
-<html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Bernard Fleischer & Sons, Inc. est. 1949</title>
+
+<%= stylesheet_link_tag "application","bootstrap.css","bootstrap-responsive.css","style.css"%>
+
+		
+</head>
+
 <body>
-<p>Mailing Address => <%=raw @grades["Mailing Address"]%></p></br>
-Name of Applicant => <%=raw @grades["Name of Applicant"]%>
-Studio Address => <%=raw @grades["Studio Address"]%>
-City =>  <%=raw @grades["City"]%>
-Choose your state => <%=raw @grades["us_states"]%>
-Zip Code => <%=raw @grades["Zip Code"]%>
-Phone Number =>  <%=raw @grades["Phone Number"]%>
-Fax =>  <%=raw @grades["Fax"]%>
-E-mail address =>  <%=raw @grades["E-mail address"]%>
-Retype E-Mail =>  <%=raw @grades["Retype E-Mail"]%>
-Limit of Studio Insurance => <%=raw @grades["higher_limits"]%>
-Limit of Insurance at Other Location => <%=raw @grades["limit_of_Insurance_at_Other_Location"]%>
-Limit of Insurance While in Transit  => <%=raw @grades["limit_of_Insurance_While_in_Transit "]%>
-Policy Deductable => <%=raw @grades["Policy Deductable"]%>
-Finished_art_work =>  <%=raw @grades["Finished_art_work "]%>
-Single_item =>  <%=raw @grades["single_item"]%>
-When was the last date of inventory =>  <%=raw @grades["When was the last date of inventory"]%>
-exhibits_year =>  <%=raw @grades["exhibits_year"]%>
-current_year =>  <%=raw @grades["current_year"]%>
-prior_year =>  <%=raw @grades["prior_year"]%>
-Name of current insurance carrier =>  <%=raw @grades["Name of current insurance carrier"]%>
 
- <% if @grades["us_states"] == "Arizona" || @grades["us_states"] == "Alaska" || @grades["us_states"] == "Arkansas" || @grades["us_states"] == "California" || @grades["us_states"] == "Colorado" || @grades["us_states"] == "Hawaii" || @grades["us_states"] == "Idaho" || @grades["us_states"] == "Illinois" || @grades["us_states"] == "Indiana" || @grades["us_states"] == "Iowa" || @grades["us_states"] == "Kansas" || @grades["us_states"] == "Kentucky" || @grades["us_states"] == "Michigan" || @grades["us_states"] == "Minnesota" || @grades["us_states"] == "Nebraska" || @grades["us_states"] == "Nevada" || @grades["us_states"] == "New Hampshire" || @grades["us_states"] == "New Mexico" || @grades["us_states"] == "North Dakota" ||@grades["us_states"] == "Ohio" || @grades["us_states"] == "Oregon" || @grades["us_states"] == "South Dakota" || @grades["us_states"] == "Tennessee" || @grades["us_states"] == "Utah" || @grades["us_states"] == "Vermont" || @grades["us_states"] == "Virginia" || @grades["us_states"] == "Washington" || @grades["us_states"] == "West Virginia" || @grades["us_states"] == "Wisconsin" || @grades["us_states"] == "Wyoming" %>
-    <li><a href="http://localhost:3000/assets/Earthquake%20Exclusion%20MIM1305.pdf
-           ">Download Earthquake PDF</a> </li>
-    <li><a href="http://localhost:3000/assets/Mold Exclusion MIM11510.pdf
-             ">Download Mold PDF</a> </li>
+<header>
+	<div class="container">
+		<div class="row">
+	
+			<div class="span9">
+			<div class="logo">Bernard Fleischer &amp; Sons, Inc. <span>est. 1949</span></div>
+			</div>
+		
+		
+				<div class="span3 phone_div">
+					<div class="phone"><img src="/assets/images/phone_icon.png" alt=""></div>
+					
+					<div class="number">
+					<span>CALL US NOW</span> <br>
+			  		(800) 921 1008	
+					</div>
+				
+						
+			   </div>
+		</div>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<div class="container">
+		
+		
+		
+		<div class="row">
+		
+		
+		
+			<div class="span12">
+			
+			
+			
+			
+			<div><img src="/assets/images/markel.jpg" alt=""></div>
+				
+				<table class="table">
+  <tr>
+    <td>BINDER</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>Policy no:</td>
+    <td>TBA draw from pre determine  list</td>
+  </tr>
+  <tr>
+    <td>Binding Effective:</td>
+    <td><%= Date.today %>&ndash; <%= Date.today + 1.year - 1%> (  pre-fill from date credit card goes through)</td>
+  </tr>
+  <tr>
+    <td>Company:</td>
+    <td>Markel American Insurance  Company Best Rated A (Excellent);  Financial Size Category: XIII</td>
+  </tr>
+  <tr>
+    <td>Producer:</td>
+    <td>Bernard Fleischer &amp; Sons (see page 3 on  excel sheet to determine)</td>
+  </tr>
+  
+  <tr>
+    <td>Mailing Address</td>
+    <td> <%=raw @grades["Mailing Address"]%></td>
+  </tr>
+  <tr>
+    <td>Name of Applicant</td>
+    <td> <%=raw @grades["Name of Applicant"]%></td>
+  </tr>
+  <tr>
+    <td>Studio Address </td>
+    <td> <%=raw @grades["Studio Address"]%></td>
+  </tr>
+  <tr>
+    <td>City </td>
+    <td><%=raw @grades["City"]%></td>
+  </tr>
+  <tr>
+    <td>State</td>
+    <td><%=raw @grades["us_states"]%></td>
+  </tr>
+  
+  <tr>
+    <td>Zip Code</td>
+    <td><%=raw @grades["Zip Code"]%></td>
+  </tr>
+  <tr>
+    <td>Phone Number </td>
+    <td><%=raw @grades["Phone Number"]%></td>
+  </tr>
+  <tr>
+    <td>Fax 
+</td>
+    <td><%=raw @grades["Fax"]%></td>
+  </tr>
+  <tr>
+    <td>E-mail address</td>
+    <td><%=raw @grades["E-mail address"]%></td>
+  </tr>
+  <tr>
+    <td>Limit of Studio Insurance </td>
+    <td><%=raw @grades["higher_limits"]%></td>
+  </tr>
+  <tr>
+    <td>Limit of Insurance at Other Location </td>
+    <td> <%=raw @grades["limit_of_Insurance_at_Other_Location"]%></td>
+  </tr>
+  <tr>
+    <td>Limit of Insurance While in Transit</td>
+    <td><%=raw @grades["limit_of_Insurance_While_in_Transit "]%></td>
+  </tr>
+  <tr>
+    <td>Policy Deductable</td>
+    <td><%=raw @grades["Policy Deductable"]%></td>
+  </tr>
+  <tr>
+    <td>Finished_art_work </td>
+    <td> <%=raw @grades["Finished_art_work "]%></td>
+  </tr>
+  <tr>
+    <td>Single_item </td>
+    <td><%=raw @grades["single_item"]%>
+</td>
+  </tr>
+  <tr>
+    <td>When was the last date of inventory</td>
+    <td> <%=raw @grades["When was the last date of inventory"]%>
+</td>
+  </tr>
+  <tr>
+    <td>exhibits_year 
+ </td>
+    <td><%=raw @grades["exhibits_year"]%>
+</td>
+  </tr>
+   <tr>
+    <td>current_year
+ </td>
+    <td><%=raw @grades["current_year"]%>
+</td>
+  </tr>
+  <tr>
+    <td>prior_year
+ </td>
+    <td><%=raw @grades["prior_year"]%>
+</td>
+  </tr>
+   <tr>
+    <td>Name of current insurance carrier 
+ </td>
+    <td> <%=raw @grades["Name of current insurance carrier"]%>
 
-<% elsif @grades["us_states"] == "Connecticut" || @grades["us_states"] == "Delaware" || @grades["us_states"] =="District of Columbia" || @grades["us_states"] =="Florida" || @grades["us_states"] =="Georgia" || @grades["us_states"] =="Louisiana" || @grades["us_states"] =="Maine" || @grades["us_states"] =="Maryland" || @grades["us_states"] =="Massachusetts" || @grades["us_states"] =="Mississippi" || @grades["us_states"] =="New Jersey" || @grades["us_states"] =="New York" || @grades["us_states"] == "North Carolina" || @grades["us_states"] =="Pennsylvania" || @grades["us_states"] =="Rhode Island" || @grades["us_states"] == "South Carolina" || @grades["us_states"] == "Texas"%>
-	<li><a href="http://localhost:3000/assets/Earthquake%20Exclusion%20MIM1305.pdf
-	">Download Earthquake PDF</a> </li>
-	<li><a href="http://localhost:3000/assets/Mold Exclusion MIM11510.pdf
-	">Download Mold PDF</a> </li>
-	<li><a href="http://localhost:3000/assets/Water Exclusion MIM12310.pdf
-	">Download Mold PDF</a> </li>
-	<li><a href="http://localhost:3000/assets/Wind Exclusion MIM1307.pdf
-	">Download Mold PDF</a> </li>
+</td>
+  </tr>
+</table>
 
-	<% else %>
-	<li>Program Not Available.</li>
-<% end %>
+			
+			</div>
+			
+			
+			
+			
+			
+			
+
+		
+		
+		
+		
+			
+			
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		</div>
+		
+		
+		
+		
+		<div class="container form_bg" style="margin:10px 0">
+		
+		
+		
+		
+
+		
+		</div>
+		
+		
+	  <div class="container form_bg" style="margin-top:10px">
+			<div class="row">
+			
+			
+				<div class="span12 footer">
+				 © 2004 Bernard Fleischer & Sons, Inc.
+				</div>
+			
+			</div>
+	  </div>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	</div>
+
+</header>
+
+	<div class="container">
+		<div class="row">
+			<div class="span3">
+				
+			</div>
+			
+			<div class="span9">
+				
+			
+			</div>
+		</div>
+	</div>
+	
+	
+
+ 	 
+		
+
+	
+		
 </body>
 </html>

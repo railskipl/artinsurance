@@ -24,7 +24,6 @@ def art_mail(grades)
 end
 
 
-
 # def request_by_mail(car, your_name, your_message)
 #     @car = car
 #     @name = your_name
