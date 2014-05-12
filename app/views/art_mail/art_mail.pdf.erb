@@ -1,0 +1,45 @@
+<html>
+<body>
+<p>Mailing Address => <%=raw @grades["Mailing Address"]%></p></br>
+Name of Applicant => <%=raw @grades["Name of Applicant"]%>
+Studio Address => <%=raw @grades["Studio Address"]%>
+City =>  <%=raw @grades["City"]%>
+Choose your state => <%=raw @grades["us_states"]%>
+Zip Code => <%=raw @grades["Zip Code"]%>
+Phone Number =>  <%=raw @grades["Phone Number"]%>
+Fax =>  <%=raw @grades["Fax"]%>
+E-mail address =>  <%=raw @grades["E-mail address"]%>
+Retype E-Mail =>  <%=raw @grades["Retype E-Mail"]%>
+Limit of Studio Insurance => <%=raw @grades["higher_limits"]%>
+Limit of Insurance at Other Location => <%=raw @grades["limit_of_Insurance_at_Other_Location"]%>
+Limit of Insurance While in Transit  => <%=raw @grades["limit_of_Insurance_While_in_Transit "]%>
+Policy Deductable => <%=raw @grades["Policy Deductable"]%>
+Finished_art_work =>  <%=raw @grades["Finished_art_work "]%>
+Single_item =>  <%=raw @grades["single_item"]%>
+When was the last date of inventory =>  <%=raw @grades["When was the last date of inventory"]%>
+exhibits_year =>  <%=raw @grades["exhibits_year"]%>
+current_year =>  <%=raw @grades["current_year"]%>
+prior_year =>  <%=raw @grades["prior_year"]%>
+Name of current insurance carrier =>  <%=raw @grades["Name of current insurance carrier"]%>
+
+ <% if @grades["us_states"] == "Arizona" || @grades["us_states"] == "Alaska" || @grades["us_states"] == "Arkansas" || @grades["us_states"] == "California" || @grades["us_states"] == "Colorado" || @grades["us_states"] == "Hawaii" || @grades["us_states"] == "Idaho" || @grades["us_states"] == "Illinois" || @grades["us_states"] == "Indiana" || @grades["us_states"] == "Iowa" || @grades["us_states"] == "Kansas" || @grades["us_states"] == "Kentucky" || @grades["us_states"] == "Michigan" || @grades["us_states"] == "Minnesota" || @grades["us_states"] == "Nebraska" || @grades["us_states"] == "Nevada" || @grades["us_states"] == "New Hampshire" || @grades["us_states"] == "New Mexico" || @grades["us_states"] == "North Dakota" ||@grades["us_states"] == "Ohio" || @grades["us_states"] == "Oregon" || @grades["us_states"] == "South Dakota" || @grades["us_states"] == "Tennessee" || @grades["us_states"] == "Utah" || @grades["us_states"] == "Vermont" || @grades["us_states"] == "Virginia" || @grades["us_states"] == "Washington" || @grades["us_states"] == "West Virginia" || @grades["us_states"] == "Wisconsin" || @grades["us_states"] == "Wyoming" %>
+    <li><a href="http://localhost:3000/assets/Earthquake%20Exclusion%20MIM1305.pdf
+           ">Download Earthquake PDF</a> </li>
+    <li><a href="http://localhost:3000/assets/Mold Exclusion MIM11510.pdf
+             ">Download Mold PDF</a> </li>
+
+<% elsif @grades["us_states"] == "Connecticut" || @grades["us_states"] == "Delaware" || @grades["us_states"] =="District of Columbia" || @grades["us_states"] =="Florida" || @grades["us_states"] =="Georgia" || @grades["us_states"] =="Louisiana" || @grades["us_states"] =="Maine" || @grades["us_states"] =="Maryland" || @grades["us_states"] =="Massachusetts" || @grades["us_states"] =="Mississippi" || @grades["us_states"] =="New Jersey" || @grades["us_states"] =="New York" || @grades["us_states"] == "North Carolina" || @grades["us_states"] =="Pennsylvania" || @grades["us_states"] =="Rhode Island" || @grades["us_states"] == "South Carolina" || @grades["us_states"] == "Texas"%>
+	<li><a href="http://localhost:3000/assets/Earthquake%20Exclusion%20MIM1305.pdf
+	">Download Earthquake PDF</a> </li>
+	<li><a href="http://localhost:3000/assets/Mold Exclusion MIM11510.pdf
+	">Download Mold PDF</a> </li>
+	<li><a href="http://localhost:3000/assets/Water Exclusion MIM12310.pdf
+	">Download Mold PDF</a> </li>
+	<li><a href="http://localhost:3000/assets/Wind Exclusion MIM1307.pdf
+	">Download Mold PDF</a> </li>
+
+	<% else %>
+	<li>Program Not Available.</li>
+<% end %>
+</body>
+</html>

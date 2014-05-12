@@ -18,7 +18,7 @@ background: -o-linear-gradient(top, #ebebeb 0%,#ffffff 7%,#ffffff 50%,#ffffff 93
 background: -ms-linear-gradient(top, #ebebeb 0%,#ffffff 7%,#ffffff 50%,#ffffff 93%,#ebebeb 100%); /* IE10+ */
 background: linear-gradient(to bottom, #ebebeb 0%,#ffffff 7%,#ffffff 50%,#ffffff 93%,#ebebeb 100%); /* W3C */
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ebebeb', endColorstr='#ebebeb',GradientType=0 ); /* IE6-9 */
-padding:10px 0; border: 1px solid #DCDCDC; }
+padding:10px 0;}
 
 .form_heading{ font-size:20px; font-weight:bold; font-style:italic; margin:15px 0 5px 10px}
 
@@ -31,7 +31,7 @@ background: -o-linear-gradient(top, #e8e8e8 0%,#f9f9f9 7%,#f9f9f9 50%,#f9f9f9 93
 background: -ms-linear-gradient(top, #e8e8e8 0%,#f9f9f9 7%,#f9f9f9 50%,#f9f9f9 93%,#e8e8e8 100%); /* IE10+ */
 background: linear-gradient(to bottom, #e8e8e8 0%,#f9f9f9 7%,#f9f9f9 50%,#f9f9f9 93%,#e8e8e8 100%); /* W3C */
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e8e8e8', endColorstr='#e8e8e8',GradientType=0 ); /* IE6-9 */
-border:1px solid #dcdcdc;}
+}
 
 
 .formdiv{ margin:10px 10px}
@@ -40,3 +40,27 @@ select, textarea, input[type="text"], input[type="password"], input[type="dateti
 
 .footer{ text-align:center; padding:20px 0}
 
+.right_img{ border:1px solid #dddddd; margin:20px 0}
+.left_img2{ border:1px solid #dddddd;}
+
+
+.list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+.list li {
+    background-image: url("../img/tick.jpg");
+    background-position: left 10px;
+    background-repeat: no-repeat;
+    color: #333;
+    display: block;
+    font-size: 12px;
+    padding: 7px 0 7px 20px;
+    width: auto;
+	border-bottom:1px dotted #8c8c8c
+}
+
+
+.ldiv{ margin:10px}
+.rdiv{ margin:10px}
