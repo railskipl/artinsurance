@@ -17,9 +17,14 @@ class ArtistsController < ApplicationController
 
     respond_to do |format|
       format.html # show.html.erb
-      format.json { render json: @artist }
+      format.pdf do
+        render :pdf => "@artist"
+      end
     end
   end
+
+
+  
 
   # GET /artists/new
   # GET /artists/new.json
@@ -41,6 +46,9 @@ class ArtistsController < ApplicationController
   # POST /artists.json
   def test
 
+  end
+
+  def home
   end
 
   def create
@@ -72,14 +80,16 @@ class ArtistsController < ApplicationController
     respond_to do |format|
       if @artist.save
         format.html { redirect_to new_subscription_path, notice: 'Artist was successfully created.' }
-        format.json { render json: @artist, status: :created, location: @artist }
+        format.pdf do
+        format.json { render pdf: @artist, status: :created, location: @artist }
         ArtMail.art_mail(@grades).deliver
-
+        end 
       else
         format.html { render action: "new" }
         format.json { render json: @artist.errors, status: :unprocessable_entity }
       end
-    end
+     end
+    
   end
 
   # PUT /artists/1

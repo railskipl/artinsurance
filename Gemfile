@@ -11,6 +11,8 @@ gem 'therubyracer'
 gem 'country_select'
 gem 'sanitize_email'
 gem 'stripe'
+gem 'wkhtmltopdf-binary'
+gem 'wicked_pdf'
 
 gem 'pg'
 # Gems used only for assets and not required
