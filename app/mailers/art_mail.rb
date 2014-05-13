@@ -7,13 +7,13 @@ class ArtMail < ActionMailer::Base
 def art_mail(grades)
 	
 	@grades = grades
-	email1 = "dnyanarthlonkar@gmail.com"
-    email2 = "dnyanarth@kunalinfotech.net"
+	email1 = "priya11051988@gmail.com"
+    email2 = "priyanka.naphade@kunalinfotech.net"
     
     recipients = email1, email2
     subject = "Insurence"
    
-        mail(:subject => 'Your Subject', :to => recipients.join(','))  do |format|
+        mail(:subject => 'Insurance', :to => recipients.join(','))  do |format|
         format.html
         format.pdf do
         attachments["attachement_name.pdf"] = WickedPdf.new.pdf_from_string(
