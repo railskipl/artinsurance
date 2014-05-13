@@ -1,59 +1,504 @@
-
 <script type="text/javascript">
-
-var myform=new formtowizard({
-  formid: 'feedbackform',
-  persistsection: true,
-  revealfx: ['slide', 500]
-})
-
-</script>
-
-
-    <div class="container form_bg">
-       
-    
- 
-   <%= form_tag url_for(:controller => 'artists', :action => 'create'), :method => 'post',:id => 'feedbackform' do |f| %>
+$(document).ready(function() {
+                $('#slider').rhinoslider({
+                    controlsPlayPause: false,
+                    showControls: 'always',
+                    showBullets: 'always',
+                    controlsMousewheel: false,
+                    prevText: 'Back',
+                    nextText:'Proceed',
+        slidePrevDirection: 'toRight',
+    slideNextDirection: 'toLeft'
+                });
 
 
+                $(".rhino-prev").hide();
+                $('.rhino-next').after('<a class="form-submit" href="javascript:void(0);" >Proceed</a>');
+                $(".rhino-next").hide();
 
 
-  <% if @artist.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@artist.errors.count, "error") %> prohibited this artist from being saved:</h2>
 
-      <ul>
-      <% @artist.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
 
-<fieldset class="sectionwrap">
-<%=label_tag 'Name of Applicant' %>
-    
-        <%=text_field_tag 'Name_of_Applicant'%></tr>
+                var info = ["PERSONAL DETAILS","ACCOUNT DETAILS","CONTACT DETAILS","test","test"];
+                var images = ["personal-details-icon.png","account-details.png","contact-details.png","contact-details.png","contact-details.png"];
+                $('.rhino-bullet').each(function(index){
+                    $(this).html('<p style="margin: 0pt; font-size: 13px; font-weight: bold;"><img src="/assets/'+
+                        images[index]+'"></p><p class="bullet-desc">'+info[index]+'</p></a>');
+                });
 
-        <%=label_tag 'Mailing Address' %>
-        <%=text_field_tag 'Mailing_Address'%></br>
 
-        <%=label_tag 'Studio Address'%>
-        <%=text_field_tag 'Studio_Address'%></br>
 
-        <%=label_tag 'City' %>
-        <%=text_field_tag 'City'%>
 
+
+            });
+
+            $('.form-submit').live("click",function(){
+
+                $('.form-error').html("");
+
+                var current_tab = $('#slider').find('.rhino-active').attr("id");
+
+                switch(current_tab){
+                    case 'rhino-item0':
+                        step1_validation();
+                        break;
+                    case 'rhino-item1':
+                        step2_validation();
+                        break;
+                    case 'rhino-item2':
+                        step3_validation();
+                        break;
+                }
+            });
+
+            var step1_validation = function(){
+
+                var err = 0;
+
+                if($('#Name_of_Applicant').val() == ''){
+                    $('#Name_of_Applicant').parent().parent().find('.form-error').html(" Name is Required");
+                    err++;
+                }
+                if($('#Mailing_Address').val() == ''){
+                    $('#Mailing_Address').parent().parent().find('.form-error').html("Mailing Address is Required");
+                    err++;
+                }
+                 if($('#Studio_Address').val() == ''){
+                    $('#Studio_Address').parent().parent().find('.form-error').html("Studio Address is Required");
+                    err++;
+                }
+               
+                if($('#us_states').val() == '0'){
+                    $('#us_states').parent().parent().find('.form-error').html("Please Select  states");
+                    err++;
+                } 
+                if($('#Zip_Code').val() == ''){
+                    $('#Zip_Code').parent().parent().find('.form-error').html("Please Select  Zip Code");
+                    err++;
+                }
+                  if($('#Phone Number').val() == ''){
+                    $('#Phone Number').parent().parent().find('.form-error').html("Please Select  Phone Number");
+                    err++;
+                }
+                  if($('#Email_address').val() == ''){
+                    $('#Email_address').parent().parent().find('.form-error').html("Please Select  Email address");
+                    err++;
+                }
+                  if($('#Retype_EMail').val() == ''){
+                    $('#Retype_EMail').parent().parent().find('.form-error').html("Please Select  Retype EMail");
+                    err++;
+                }
+
+                if(err == 0){
+                    $(".rhino-active-bullet").removeClass("step-error").addClass("step-success");
+                    $(".rhino-next").show();
+                    $('.form-submit').hide();
+                    $('.rhino-next').trigger('click');
+                }else{
+                    $(".rhino-active-bullet").removeClass("step-success").addClass("step-error");
+                }
+
+
+            };
+
+            var step2_validation = function(){
+                var err = 0;
+
+                if($('#username').val() == ''){
+                    $('#username').parent().parent().find('.form-error').html("Username is Required");
+                    err++;
+                }
+                if($('#pass').val() == ''){
+                    $('#pass').parent().parent().find('.form-error').html("Password is Required");
+                    err++;
+                }
+                if($('#cpass').val() == ''){
+                    $('#cpass').parent().parent().find('.form-error').html("confirm Password is Required");
+                    err++;
+                }
+                
+                if(err == 0){
+                    $(".rhino-active-bullet").removeClass("step-error").addClass("step-success");
+                    $(".rhino-next").show();
+                    $('.form-submit').hide();
+                    $('.rhino-next').trigger('click');
+                }else{
+                    $(".rhino-active-bullet").removeClass("step-success").addClass("step-error");
+                }
+
+            };
+
+            var step3_validation = function(){
+                var err = 0;
+
+                if($('#email').val() == ''){
+                    $('#email').parent().parent().find('.form-error').html("Email is Required");
+                    err++;
+                }
+                if(err == 0){
+                    $(".rhino-active-bullet").removeClass("step-error").addClass("step-success");
+                    $(".rhino-next").show();
+                    $('.form-submit').hide();
+                    $('.rhino-next').trigger('click');
+                }else{
+                    $(".rhino-active-bullet").removeClass("step-success").addClass("step-error");
+                }
+
+            };
+        </script>
         
 
 
-   <%=label_tag 'Choose your state' %>
-    <select id ="us_states" name="us_states">
-               <% us_states.each do |us_states|%>
-                 <option value="<%=us_states%>"><%= us_states%></option>
-               <%end%>
-    </select>
+
+<div class="row">
+<div id="page">
+            <div id="wrapper">
+                <h3>Account Registration</h3>
+                <%= form_tag url_for(:controller => 'artists', :action => 'create'), :method => 'post',:id => 'feedbackform' do |f| %>
+
+
+                    <div id="slider">
+                        <div class="form-step" >
+
+                            <div class="row">
+                                <div class="form-left">Name_of_Applicant *</div>
+                                <div class="form-right"><%=text_field_tag 'Name_of_Applicant'%></div>
+                                <div class="form-error"></div>
+                            </div>
+                            <div class="row">
+                                <div class="form-left">Mailing Address *</div>
+                                <div class="form-right"> <%=text_field_tag 'Mailing_Address'%></div>
+                                <div class="form-error"></div>
+                            </div> 
+                             <div class="row">
+                                <div class="form-left">Studio Address *</div>
+                                <div class="form-right">  <%=text_field_tag 'Studio_Address'%></div>
+                                <div class="form-error"></div>
+                            </div>
+
+                            <div class="row">
+                                <div class="form-left">State *</div>
+                                <div class="form-right">
+                                    <select id ="us_states" name="us_states">
+                                      <% us_states.each do |us_states|%>
+                                       <option value="<%=us_states%>"><%= us_states%></option>
+                                     <%end%>
+                                    </select>
+                                </div>
+                                <div class="form-error"></div>
+                            </div>
+                            <div class="row">
+                                <div class="form-left">Zip Code</div>
+                                <div class="form-right"> <%=text_field_tag 'Zip_Code'%></div>
+                                <div class="form-error"></div>
+                            </div>
+                            <div class="row">
+                                <div class="form-left">Phone Number</div>
+                                <div class="form-right">  <%=text_field_tag 'Phone_Number' %></div>
+                                <div class="form-error"></div>
+                            </div>
+                            <div class="row">
+                                <div class="form-left">Fax</div>
+                                <div class="form-right"> <%=text_field_tag 'Fax'%></div>
+                                <div class="form-error"></div>
+                            </div>
+                             <div class="row">
+                                <div class="form-left">Email Address</div>
+                                <div class="form-right"> <%=text_field_tag 'Email_address'%></div>
+                                <div class="form-error"></div>
+                            </div>
+                             <div class="row">
+                                <div class="form-left">Re-type Email</div>
+                                <div class="form-right"> <%=text_field_tag 'Retype_EMail'%></div>
+                                <div class="form-error"></div>
+                            </div>
+
+                        </div>
+                        <div class="form-step" >
+                            <div class="row">
+                                <div class="form-left">Limit of Studio Insurance *</div>
+                                <div class="form-right">
+                                    <select id="higher_limits" name="higher_limits">
+                                    <% higher_limits.each do |higher_limits|%>
+                                     <option value="<%=higher_limits%>"><%= higher_limits%></option>
+                                     <%end%>
+
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-left">Limit of Insurance at Other Location *</div>
+                                <div class="form-right">
+                                  <select id="limit_of_Insurance_at_Other_Location" name="limit_of_Insurance_at_Other_Location">
+                                  <% limit_of_Insurance_at_Other_Location.each do |limit_of_Insurance_at_Other_Location|%>
+                                     <option value="<%=limit_of_Insurance_at_Other_Location%>"><%= limit_of_Insurance_at_Other_Location%></option>
+                                   <%end%>
+
+
+
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-left">Limit of Insurance While in Transit *</div>
+                                <div class="form-right">
+
+                                    <select id="limit_of_Insurance_While_in_Transit" name="limit_of_Insurance_While_in_Transit">
+                                   <% limit_of_Insurance_While_in_Transit.each do |limit_of_Insurance_While_in_Transit|%>
+                                     <option value="<%=limit_of_Insurance_While_in_Transit%>"><%= limit_of_Insurance_While_in_Transit%></option>
+                                   <%end%>
+                                    </select>
+
+
+                                </div>
+                            </div> 
+                            <div class="row">
+                                <div class="form-left">Policy Deductable</div>
+                                <div class="form-right"><%=text_field_tag 'Policy_Deductable'%></div>
+                                <div class="form-error"></div>
+                            </div>
+                             <h1>Fire Protection</h1>
+                            <div class="row">
+                                <div class="form-left">Is there an automatic sprinkler system on premises?</div>
+                                <div class="form-right">
+
+
+                                    <input type="radio" name="Is there an automatic sprinkler system on premises?" value="Is there an automatic sprinkler system on premises?">Yes<br>
+                                    <input type="radio" name="Is there an automatic sprinkler system on premises?" value="Is there an automatic sprinkler system on premises?">No<br>
+
+
+
+                                </div>
+                                <div class="form-error"></div>
+                            </div>
+
+                        </div>
+                        <div class="form-step">
+                            <div class="row">
+                                <div class="form-left">Deadbolts *</div>
+                                <div class="form-right"><input type="checkbox" name="checkbox" id="checkbox_id" value="Deadbolts"></div>
+                                <div class="form-error"></div>
+                            </div>
+                            <div class="row">
+                                <div class="form-left">Alarm system – rings to central base</div>
+                                <div class="form-right"><input type="checkbox" name="checkbox" id="checkbox_id" value="value"></div>
+                                <div class="form-error"></div>
+                               
+                            </div>
+                        
+                          
+                            <div class="row">
+                                <div class="form-left">Only local alarm system *</div>
+                                <div class="form-right"><input type="checkbox" name="checkbox" id="checkbox_id" value="value"></div>
+                                <div class="form-error"></div>
+                            </div>
+                            <div class="row">
+                                <div class="form-left">Cameras</div>
+                                <div class="form-right"><input type="checkbox" name="checkbox" id="checkbox_id" value="value"></div>
+                                <div class="form-error"></div>
+                               
+                            </div>
+                             <div class="row">
+                                <div class="form-left">Gates</div>
+                                <div class="form-right"><input type="checkbox" name="checkbox" id="checkbox_id" value="value"></div>
+                                <div class="form-error"></div>
+                               
+                            </div>
+                             <div class="row">
+                                <div class="form-left">Watchmen/guards/ doorman</div>
+                                <div class="form-right"><input type="checkbox" name="checkbox" id="checkbox_id" value="value"></div>
+                                <div class="form-error"></div>
+                               
+                            </div>
+                                <h1> Exposure</h1>
+                             <div class="row">
+                                <div class="form-left">'What is the average value of finished art work?'</div>
+                                <div class="form-right">
+                                      <select id="finished_art_work" name="finished_art_work">
+                                     <% finished_art_work.each do |work|%>
+                                       <option value="<%=work%>"><%= work%></option>
+                                     <%end%>
+                                      </select>
+
+
+
+                                </div>
+                               
+                            </div>
+                            <div class="row">
+                                <div class="form-left">What is the maximum value of single item?</div>
+                                <div class="form-right">
+                                      <select id="single_item" name="single_item">
+                                        <% single_item.each do |single_item|%>
+                                        <option value="<%=single_item%>"><%= single_item%></option>
+                                        <%end%>
+                                       </select>
+
+
+
+                                </div>
+                               
+                            </div>
+                            <div class="row">
+                                <div class="form-left">Do you keep a detailed and itemized?</div>
+                                <div class="form-right">
+                                     <input type="radio" name="Do you keep a detailed and itemized?" value="Do you keep a detailed and itemized?">Yes<br>
+                                    <input type="radio" name="Do you keep a detailed and itemized?" value="Do you keep a detailed and itemized?">No
+
+
+
+                                </div>
+                               
+                            </div>
+
+                              <div class="row">
+                                <div class="form-left">Do you keep a record of sales? </div>
+                                <div class="form-right">
+                                     <input type="radio" name="Do you keep a record of sales?" value="Do you keep a record of sales?">Yes<br>
+                                     <input type="radio" name="Do you keep a record of sales?" value="Do you keep a record of sales?">No<br>
+
+
+
+                                </div>
+                               
+                            </div>
+
+                             <div class="row">
+                                <div class="form-left">When was the last date of inventory?</div>
+                                <div class="form-right">
+                                    <%=text_field_tag 'When_was_the_last_date_of_inventory?'%>
+
+
+
+                                </div>
+                               
+                            </div>
+                           <div class="row">
+                                <div class="form-left">Do you maintain a duplicate inventory off-site?</div>
+                                <div class="form-right">
+                                    <input type="radio" name="Do you maintain a duplicate inventory off-site?" value="Do you maintain a duplicate inventory off-site?">Yes<br>
+                                    <input type="radio" name="Do you maintain a duplicate inventory off-site?" value="Do you maintain a duplicate inventory off-site?">No<br>
+
+
+
+                                </div>
+                               
+                            </div>
+                                 <div class="row">
+                                <div class="form-left">Number of exhibits a year?</div>
+                                <select id="exhibits_year" name="exhibits_year">
+                                 <% exhibits_year.each do |exhibits_year|%>
+                                   <option value="<%=exhibits_year%>"><%= exhibits_year%></option>
+                                 <%end%>
+                                </select>
+
+
+
+                                </div>
+                               
+                            </div>
+
+
+
+                          <div class="form-step">
+                            <div class="row">
+                                <div class="form-left">Current year *</div>
+                                <div class="form-right">
+                                   <select id="current_year" name="current_year">
+                                     <% current_year.each do |current_year|%>
+                                       <option value="<%=current_year%>"><%= current_year%></option>
+                                     <%end%>
+                                    </select>
+
+
+
+                                </div>
+                                <div class="form-error"></div>
+                            </div>
+                            <div class="row">
+                                <div class="form-left">Prior year</div>
+                                <div class="form-right">
+
+                                   <select id="prior_year" name="prior_year">
+                                   <% prior_year.each do |prior_year|%>
+                                     <option value="<%=prior_year%>"><%= prior_year%></option>
+                                   <%end%>
+                                     </select>
+
+
+                                </div>
+                                <div class="form-error"></div>
+                              
+                            </div>
+                            <div class="row">
+                                <div class="form-left">Name of current insurance carrier</div>
+                                <div class="form-right">
+
+                                   <%=text_field_tag 'Name of current insurance carrier'%>
+                                     </select>
+
+
+                                </div>
+                                <div class="form-error"></div>
+                                
+                            </div>
+                            
+
+
+
+                        </div>
+                        <div class="form-step">
+                            <div class="row">
+                                <div class="form-left">Current year *</div>
+                                <div class="form-right">
+                                   <select id="current_year" name="current_year">
+                                     <% current_year.each do |current_year|%>
+                                       <option value="<%=current_year%>"><%= current_year%></option>
+                                     <%end%>
+                                    </select>
+
+
+
+                                </div>
+                                <div class="form-error"></div>
+                            </div>
+                            <div class="row">
+                                <table border='1'>
+                                        <tr>
+                                          <th>Description Of Loss</th>
+                                          <th>Amount Of Loss</th>
+                                          <th>Date</th>
+                                        </tr>
+                                        <tr>
+                                          <td></td>
+                                          <td></td>
+                                          <td></td>
+                                        </tr>
+                                        <tr>
+                                          <td></td>
+                                          <td></td>
+                                          <td></td>
+                                        </tr>
+                                        <tr>
+                                          <td></td>
+                                          <td></td>
+                                          <td></td>
+                                        </tr>
+                                </table>  
+
+
+                            </div>
+
+
+                           <%= submit_tag 'Save' %>
+                        </div>
+                    </div>
+                <% end %>
+            </div>
+        </div>
+       </div>
+    </div>
+
+
+
 
 
     <script>
@@ -64,226 +509,4 @@ var myform=new formtowizard({
         confirm("Exclude flood and windstorms in your area.would you like to continue?")
     }
 }
-</script>
-
-    
-    <%=label_tag 'Zip Code' %>
-    <%=text_field_tag 'Zip_Code'%></br>
-
-    <%=label_tag 'Phone Number' %>
-    <%=text_field_tag 'Phone_Number'%></br>
-
-    <%=label_tag 'Fax' %>
-    <%=text_field_tag 'Fax'%></br>
-
-    <%=label_tag 'E-mail address' %>
-    <%=text_field_tag 'Email_address'%></br>
-
-    <%=label_tag 'Retype E-Mail' %>
-    <%=text_field_tag 'Retype_EMail'%></br>
-</fieldset>
-
-<fieldset class="sectionwrap">
-<legend>Limits of Insurance</legend>
-<%=label_tag 'Limit of Studio Insurance' %>    
-
-    <select id="higher_limits" name="higher_limits">
-               <% higher_limits.each do |higher_limits|%>
-                 <option value="<%=higher_limits%>"><%= higher_limits%></option>
-               <%end%>
-    </select></br>
-
-    <%=label_tag 'Limit of Insurance at Other Location' %>
-    <select id="limit_of_Insurance_at_Other_Location" name="limit_of_Insurance_at_Other_Location">
-               <% limit_of_Insurance_at_Other_Location.each do |limit_of_Insurance_at_Other_Location|%>
-                 <option value="<%=limit_of_Insurance_at_Other_Location%>"><%= limit_of_Insurance_at_Other_Location%></option>
-               <%end%>
-    </select></br>
-
-    <%=label_tag 'Limit of Insurance While in Transit' %>
-    <select id="limit_of_Insurance_While_in_Transit" name="limit_of_Insurance_While_in_Transit">
-               <% limit_of_Insurance_While_in_Transit.each do |limit_of_Insurance_While_in_Transit|%>
-                 <option value="<%=limit_of_Insurance_While_in_Transit%>"><%= limit_of_Insurance_While_in_Transit%></option>
-               <%end%>
-    </select></br>
-
-    <%=label_tag 'Policy Deductable' %>
-    <%=text_field_tag 'Policy_Deductable'%></br>
-
-    <h1>Fire Protection</h1>
-
-    <%=label_tag 'Is there an automatic sprinkler system on premises?' %>
-    </br><input type="radio" name="Is there an automatic sprinkler system on premises?" value="Is there an automatic sprinkler system on premises?">Yes<br>
-    <input type="radio" name="Is there an automatic sprinkler system on premises?" value="Is there an automatic sprinkler system on premises?">No<br>
-
-</fieldset>
-
-<fieldset class="sectionwrap">
-  <legend>Security
-    Check all that apply</legend>
- 
-
-    </br>
-    <label for="checkbox_id">Deadbolts
-    <input type="checkbox" name="checkbox" id="checkbox_id" value="Deadbolts"></label>
-
-    
-    <label for="checkbox_id">Alarm system – rings to central base
-    <input type="checkbox" name="checkbox" id="checkbox_id" value="value"></label>
-
-    </br>
-    <label for="checkbox_id">Only local alarm system
-    <input type="checkbox" name="checkbox" id="checkbox_id" value="value"></label>
-
-
-    </br>
-    <label for="checkbox_id">Cameras
-    <input type="checkbox" name="checkbox" id="checkbox_id" value="value"></label>
-
-
-    </br>
-    <label for="checkbox_id">Gates
-    <input type="checkbox" name="checkbox" id="checkbox_id" value="value"></label>
-
-
-    </br>
-    <label for="checkbox_id">Watchmen/guards/ doorman
-    <input type="checkbox" name="checkbox" id="checkbox_id" value="value"></label>
-
-    
-
-
-    <h1> Exposure</h1>
-    
-
-    <%=label_tag 'What is the average value of finished art work?' %>
-   <select id="finished_art_work" name="finished_art_work">
-               <% finished_art_work.each do |work|%>
-                 <option value="<%=work%>"><%= work%></option>
-               <%end%>
-    </select></br>
-
-    <%=label_tag 'What is the maximum value of single item?' %>
-    <select id="single_item" name="single_item">
-               <% single_item.each do |single_item|%>
-                 <option value="<%=single_item%>"><%= single_item%></option>
-               <%end%>
-    </select></br>
-
-
-
-    <%=label_tag 'Do you keep a detailed and itemized? ' %>
-    </br><input type="radio" name="Do you keep a detailed and itemized?" value="Do you keep a detailed and itemized?">Yes<br>
-    <input type="radio" name="Do you keep a detailed and itemized?" value="Do you keep a detailed and itemized?">No<br>
-
-
-    <%=label_tag 'Do you keep a record of sales? ' %>
-    </br><input type="radio" name="Do you keep a record of sales?" value="Do you keep a record of sales?">Yes<br>
-    <input type="radio" name="Do you keep a record of sales?" value="Do you keep a record of sales?">No<br>
-
-    <%=label_tag 'When was the last date of inventory?' %>
-    <%=text_field_tag 'When_was_the_last_date_of_inventory?'%></br>
-
-    <%=label_tag 'Do you maintain a duplicate inventory off-site? ' %>
-    </br><input type="radio" name="Do you maintain a duplicate inventory off-site?" value="Do you maintain a duplicate inventory off-site?">Yes<br>
-    <input type="radio" name="Do you maintain a duplicate inventory off-site?" value="Do you maintain a duplicate inventory off-site?">No<br>
-
-    <%=label_tag 'Number of exhibits a year?' %>
-    <select id="exhibits_year" name="exhibits_year">
-               <% exhibits_year.each do |exhibits_year|%>
-                 <option value="<%=exhibits_year%>"><%= exhibits_year%></option>
-               <%end%>
-    </select>
-</fieldset>
-
-
-<fieldset class="sectionwrap">
-<legend>Annual sales</legend>
-
-
-    <%=label_tag 'Current year' %>
-    <select id="current_year" name="current_year">
-               <% current_year.each do |current_year|%>
-                 <option value="<%=current_year%>"><%= current_year%></option>
-               <%end%>
-    </select></br>
-
-    <%=label_tag 'Prior year' %>
-    <select id="prior_year" name="prior_year">
-               <% prior_year.each do |prior_year|%>
-                 <option value="<%=prior_year%>"><%= prior_year%></option>
-               <%end%>
-    </select></br>
-    <%=label_tag 'Name of current insurance carrier' %>
-    <%=text_field_tag 'Name of current insurance carrier'%></br></br>
-
-      <legend>Lost history (For last 5 years)</legend>
-
-          
-
-        <table border='1'>
-          <tr>
-            <th>Description Of Loss</th>
-            <th>Amount Of Loss</th>
-            <th>Date</th>
-          </tr>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-        </table>
-
-        <div class="actions">
-        <%= submit_tag 'Save' %>
-        </div>
-
-</fieldset>
-
-
-
-<% end %>
-
-</div>
-
-<div class="container">
-    <div class="row">
-      <div class="span3">
-        
-      </div>
-      
-      <div class="span9">
-        
-      
-      </div>
-    </div>
-  </div>
-
-
-
-
-    <script type="text/javascript">
-    $(function(){
-      SyntaxHighlighter.all();
-    });
-    $(window).load(function(){
-      $('.flexslider').flexslider({
-        animation: "slide",
-        start: function(slider){
-          jQuery('body').removeClass('loading');
-        }
-      });
-    });
-  </script>
-
-
+</script>        
