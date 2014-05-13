@@ -19,8 +19,8 @@ $(document).ready(function() {
 
 
 
-                var info = ["PERSONAL DETAILS","ACCOUNT DETAILS","CONTACT DETAILS","test","test"];
-                var images = ["personal-details-icon.png","account-details.png","contact-details.png","contact-details.png","contact-details.png"];
+                var info = ["PERSONAL DETAILS","ACCOUNT DETAILS","CONTACT DETAILS","test","test","test"];
+                var images = ["personal-details-icon.png","account-details.png","contact-details.png","contact-details.png","contact-details.png","contact-details.png"];
                 $('.rhino-bullet').each(function(index){
                     $(this).html('<p style="margin: 0pt; font-size: 13px; font-weight: bold;"><img src="/assets/'+
                         images[index]+'"></p><p class="bullet-desc">'+info[index]+'</p></a>');
@@ -48,6 +48,12 @@ $(document).ready(function() {
                     case 'rhino-item2':
                         step3_validation();
                         break;
+                    case 'rhino-item3':
+                        step3_validation();
+                        break; 
+                     case 'rhino-item4':
+                        step3_validation();
+                        break;        
                 }
             });
 
@@ -84,10 +90,7 @@ $(document).ready(function() {
                     $('#Email_address').parent().parent().find('.form-error').html("Please Select  Email address");
                     err++;
                 }
-                  if($('#Retype_EMail').val() == ''){
-                    $('#Retype_EMail').parent().parent().find('.form-error').html("Please Select  Retype EMail");
-                    err++;
-                }
+                 
 
                 if(err == 0){
                     $(".rhino-active-bullet").removeClass("step-error").addClass("step-success");
@@ -104,19 +107,11 @@ $(document).ready(function() {
             var step2_validation = function(){
                 var err = 0;
 
-                if($('#username').val() == ''){
-                    $('#username').parent().parent().find('.form-error').html("Username is Required");
+                if($('#Policy_Deductable').val() == ''){
+                    $('#Policy_Deductable').parent().parent().find('.form-error').html("Policy_Deductable is Required");
                     err++;
                 }
-                if($('#pass').val() == ''){
-                    $('#pass').parent().parent().find('.form-error').html("Password is Required");
-                    err++;
-                }
-                if($('#cpass').val() == ''){
-                    $('#cpass').parent().parent().find('.form-error').html("confirm Password is Required");
-                    err++;
-                }
-                
+                                
                 if(err == 0){
                     $(".rhino-active-bullet").removeClass("step-error").addClass("step-success");
                     $(".rhino-next").show();
@@ -131,10 +126,15 @@ $(document).ready(function() {
             var step3_validation = function(){
                 var err = 0;
 
-                if($('#email').val() == ''){
-                    $('#email').parent().parent().find('.form-error').html("Email is Required");
+                if($('#Deadbolts').val() == ''){
+                    $('#Deadbolts').parent().parent().find('.form-error').html("Deadbolts is Required");
                     err++;
                 }
+                if($('#When_was_the_last_date_of_inventory').val() == ''){
+                    $('#When_was_the_last_date_of_inventory').parent().parent().find('.form-error').html("When_was_the_last_date_of_inventory is Required");
+                    err++;
+                }
+                
                 if(err == 0){
                     $(".rhino-active-bullet").removeClass("step-error").addClass("step-success");
                     $(".rhino-next").show();
@@ -222,16 +222,17 @@ $(document).ready(function() {
                                     <% higher_limits.each do |higher_limits|%>
                                      <option value="<%=higher_limits%>"><%= higher_limits%></option>
                                      <%end%>
-
+                                    </select>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="form-left">Limit of Insurance at Other Location *</div>
                                 <div class="form-right">
-                                  <select id="limit_of_Insurance_at_Other_Location" name="limit_of_Insurance_at_Other_Location">
+                                   <select id="limit_of_Insurance_at_Other_Location" name="limit_of_Insurance_at_Other_Location">
                                   <% limit_of_Insurance_at_Other_Location.each do |limit_of_Insurance_at_Other_Location|%>
-                                     <option value="<%=limit_of_Insurance_at_Other_Location%>"><%= limit_of_Insurance_at_Other_Location%></option>
-                                   <%end%>
+                                   <option value="<%=limit_of_Insurance_at_Other_Location%>"><%= limit_of_Insurance_at_Other_Location%></option>
+                                    <%end%>
+                                    </select></br>
 
 
 
@@ -308,6 +309,8 @@ $(document).ready(function() {
                                 <div class="form-error"></div>
                                
                             </div>
+                          </div>
+                          <div class="form-step">  
                                 <h1> Exposure</h1>
                              <div class="row">
                                 <div class="form-left">'What is the average value of finished art work?'</div>

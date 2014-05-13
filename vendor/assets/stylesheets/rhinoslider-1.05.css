@@ -96,11 +96,14 @@
 .rhino-bullets:before, .rhino-bullets:after {
     position:absolute;
     display:block;
-    left:-16px;
-    content:' ';
-    width:16px;
-    height:26px;
+    margin: 0
+    
 
+}
+
+ul, ol {
+    margin:0;
+    padding: 0;
 }
 
 .rhino-bullets:after {
@@ -110,8 +113,8 @@
 }
 /*changed*/
 .rhino-bullets li {
-    float:left;
-    display:inline;
+    
+    display:inline-block;
     margin:0;
     width: 200px;
 }
@@ -157,8 +160,9 @@
                 box-shadow: 2px 2px 2px #E1E1E1;
                 background: #fff;
                 width:auto;
-                height:480px;
+                height:auto;
                 background:#f4f4f4;
+                overflow: hidden;
 
 
             }
@@ -196,11 +200,12 @@
                 background:#f4f4f4;
                 font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
                 font-size:12px;
+                position: static!important
             }
 
             .form-step{
 
-                padding:20px !important;
+                padding:0 !important; top: 75px!important;
 
 
             }
