@@ -38,9 +38,9 @@
 
 
 
-	<%= javascript_include_tag "jquery.min-1.4.2.js", "jquery.min-1.11.1.js", "jquery.flexslider.js" %>
+	<%= javascript_include_tag  "jquery.min-1.11.1.js", "jquery.flexslider.js" %>
 
- 	 <script type="text/javascript">
+		<script type="text/javascript">
     $(function(){
       SyntaxHighlighter.all();
     });
@@ -54,4 +54,212 @@
     });
   </script>
 		
+
+
+	<%= stylesheet_link_tag "rhinoslider-1.05.css" %>
+
+ 
+  <%= javascript_include_tag  "rhinoslider-1.05.min.js","mousewheel.js","easing.js" %> 
+
+<script type="text/javascript">
+$(document).ready(function() {
+                $('#slider').rhinoslider({
+                    controlsPlayPause: false,
+                    showControls: 'always',
+                    showBullets: 'always',
+                    controlsMousewheel: false,
+                    prevText: 'Back',
+                    nextText:'Proceed',
+        slidePrevDirection: 'toRight',
+    slideNextDirection: 'toLeft'
+                });
+
+
+                $(".rhino-prev").hide();
+                $('.rhino-next').after('<a class="form-submit" href="javascript:void(0);" >Proceed</a>');
+                $(".rhino-next").hide();
+
+
+
+
+                var info = ["PERSONAL DETAILS","ACCOUNT DETAILS","CONTACT DETAILS","test","test"];
+                var images = ["personal-details-icon.png","account-details.png","contact-details.png","contact-details.png","contact-details.png"];
+                $('.rhino-bullet').each(function(index){
+                    $(this).html('<p style="margin: 0pt; font-size: 13px; font-weight: bold;"><img src="/assets/'+
+                        images[index]+'"></p><p class="bullet-desc">'+info[index]+'</p></a>');
+                });
+
+
+
+
+
+            });
+
+            $('.form-submit').live("click",function(){
+            	
+                $('.form-error').html("");
+
+                var current_tab = $('#slider').find('.rhino-active').attr("id");
+
+                switch(current_tab){
+                    case 'rhino-item0':
+                        step1_validation();
+                        break;
+                    case 'rhino-item1':
+                        step2_validation();
+                        break;
+                    case 'rhino-item2':
+                        step3_validation();
+                        break;
+                    case 'rhino-item3':
+                        step4_validation();
+                        break; 
+                    case 'rhino-item4':
+                        step5_validation();
+                        break;    
+                           
+                }
+            });
+
+            var step1_validation = function(){
+
+                var err = 0;
+
+                if($('#Name_of_Applicant').val() == ''){
+                    $('#Name_of_Applicant').parent().parent().find('.form-error').html(" Name is Required");
+                    err++;
+                }
+                if($('#Mailing_Address').val() == ''){
+                    $('#Mailing_Address').parent().parent().find('.form-error').html("Mailing Address is Required");
+                    err++;
+                }
+                 if($('#Studio_Address').val() == ''){
+                    $('#Studio_Address').parent().parent().find('.form-error').html("Studio Address is Required");
+                    err++;
+                }
+               
+                if($('#us_states').val() == '0'){
+                    $('#us_states').parent().parent().find('.form-error').html("Please Select  states");
+                    err++;
+                } 
+                if($('#Zip_Code').val() == ''){
+                    $('#Zip_Code').parent().parent().find('.form-error').html("Please enter  Zip Code");
+                    err++;
+                }
+                  if($('#Phone Number').val() == ''){
+                    $('#Phone Number').parent().parent().find('.form-error').html("Please enter  Phone Number");
+                    err++;
+                }
+                  if($('#Email_address').val() == ''){
+                    $('#Email_address').parent().parent().find('.form-error').html("Please enter  Email address");
+                    err++;
+                }
+                 
+
+                if(err == 0){
+                    $(".rhino-active-bullet").removeClass("step-error").addClass("step-success");
+                    $(".rhino-next").show();
+                    $('.form-submit').hide();
+                    $('.rhino-next').trigger('click');
+                }else{
+                    $(".rhino-active-bullet").removeClass("step-success").addClass("step-error");
+                }
+
+
+            };
+
+            var step2_validation = function(){
+                var err = 0;
+
+                if($('#Policy_Deductable').val() == ''){
+                    $('#Policy_Deductable').parent().parent().find('.form-error').html("Policy_Deductable is Required");
+                    err++;
+                }
+                                
+                if(err == 0){
+                    $(".rhino-active-bullet").removeClass("step-error").addClass("step-success");
+                    $(".rhino-next").show();
+                    $('.form-submit').hide();
+                    $('.rhino-next').trigger('click');
+                }else{
+                    $(".rhino-active-bullet").removeClass("step-success").addClass("step-error");
+                }
+
+            };
+
+            var step3_validation = function(){
+                var err = 0;
+
+                if($('#Deadbolts').val() == ''){
+                    $('#Deadbolts').parent().parent().find('.form-error').html("Deadbolts is Required");
+                    err++;
+                }
+                if($('#When_was_the_last_date_of_inventory').val() == ''){
+                    $('#When_was_the_last_date_of_inventory').parent().parent().find('.form-error').html("When_was_the_last_date_of_inventory is Required");
+                    err++;
+                }
+                
+                if(err == 0){
+                    $(".rhino-active-bullet").removeClass("step-error").addClass("step-success");
+                    $(".rhino-next").show();
+                    $('.form-submit').hide();
+                    $('.rhino-next').trigger('click');
+                }else{
+                    $(".rhino-active-bullet").removeClass("step-success").addClass("step-error");
+                }
+
+            };
+
+            var step4_validation = function(){
+                var err = 0;
+
+                if($('#Deadbolts').val() == ''){
+                    $('#Deadbolts').parent().parent().find('.form-error').html("Deadbolts is Required");
+                    err++;
+                }
+                if($('#When_was_the_last_date_of_inventory').val() == ''){
+                    $('#When_was_the_last_date_of_inventory').parent().parent().find('.form-error').html("When_was_the_last_date_of_inventory is Required");
+                    err++;
+                }
+                
+                if(err == 0){
+                    $(".rhino-active-bullet").removeClass("step-error").addClass("step-success");
+                    $(".rhino-next").show();
+                    $('.form-submit').hide();
+                    $('.rhino-next').trigger('click');
+                }else{
+                    $(".rhino-active-bullet").removeClass("step-success").addClass("step-error");
+                }
+
+            };
+            var step5_validation = function(){
+                var err = 0;
+
+                if($('#Deadbolts').val() == ''){
+                    $('#Deadbolts').parent().parent().find('.form-error').html("Deadbolts is Required");
+                    err++;
+                }
+                if($('#When_was_the_last_date_of_inventory').val() == ''){
+                    $('#When_was_the_last_date_of_inventory').parent().parent().find('.form-error').html("When_was_the_last_date_of_inventory is Required");
+                    err++;
+                }
+                
+                if(err == 0){
+                    $(".rhino-active-bullet").removeClass("step-error").addClass("step-success");
+                    $(".rhino-next").show();
+                    $('.form-submit').hide();
+                    $('.rhino-next').trigger('click');
+                }else{
+                    $(".rhino-active-bullet").removeClass("step-success").addClass("step-error");
+                }
+
+            };
+
+        </script>
+
+ 	 
+
+        
+
+
 
