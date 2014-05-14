@@ -179,23 +179,23 @@
 
 
                             <div class="row1">
-                                <div class="form-left">Name of Applicant *</div>
+                                <div class="form-left">Name of Applicant <span style="color:red;">*</span></div>
                                 <div class="form-right"><%=text_field_tag 'Name_of_Applicant'%></div>
                                 <div class="form-error"></div>
                             </div>
                             <div class="row1">
-                                <div class="form-left">Mailing Address *</div>
+                                <div class="form-left">Mailing Address <span style="color:red;">*</span></div>
                                 <div class="form-right"> <%=text_field_tag 'Mailing_Address'%></div>
                                 <div class="form-error"></div>
                             </div> 
                              <div class="row1">
-                                <div class="form-left">Studio Address *</div>
+                                <div class="form-left">Studio Address <span style="color:red;">*</span></div>
                                 <div class="form-right">  <%=text_field_tag 'Studio_Address'%></div>
                                 <div class="form-error"></div>
                             </div>
 
                             <div class="row1">
-                                <div class="form-left">State *</div>
+                                <div class="form-left">State <span style="color:red;">*</span></div>
                                 <div class="form-right">
                                     <select id ="us_states" name="us_states">
                                       <% us_states.each do |us_states|%>
@@ -221,7 +221,7 @@
                                 <div class="form-error"></div>
                             </div>
                              <div class="row1">
-                                <div class="form-left">Email Address</div>
+                                <div class="form-left">Email Address<span style="color:red;">*</span></div>
                                 <div class="form-right"> <%=text_field_tag 'Email_address'%></div>
                                 <div class="form-error"></div>
                             </div>
@@ -269,7 +269,7 @@
                                 </div>
                             </div> 
                             <div class="row1">
-                                <div class="form-left">Policy Deductable</div>
+                                <div class="form-left">Policy Deductable<span style="color:red;">*</span></div>
                                 <div class="form-right"><%=text_field_tag 'Policy_Deductable'%></div>
                                 <div class="form-error"></div>
                             </div>
@@ -291,7 +291,7 @@
                         </div>
                         <div class="form-step">
                             <div class="row1">
-                                <div class="form-left">Deadbolts *</div>
+                                <div class="form-left">Deadbolts <span style="color:red;">*</span></div>
                                 <div class="form-right"><input type="checkbox" name="checkbox" id="checkbox_id" value="Deadbolts"></div>
                                 <div class="form-error"></div>
                             </div>
@@ -304,7 +304,7 @@
                         
                           
                             <div class="row1">
-                                <div class="form-left">Only local alarm system *</div>
+                                <div class="form-left">Only local alarm system <span style="color:red;">*</span></div>
                                 <div class="form-right"><input type="checkbox" name="checkbox" id="checkbox_id" value="value"></div>
                                 <div class="form-error"></div>
                             </div>
