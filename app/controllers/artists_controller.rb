@@ -54,6 +54,10 @@ class ArtistsController < ApplicationController
   def create
     @artist = Artist.new()
 
+         @limits_of_studio_insurance = params[:higher_limits]
+         @exhibits_year = params[:exhibits_year]
+         @anualpremium = ((@limits_of_studio_insurance).to_i + (@exhibits_year).to_i).to_i
+
      @grades = { "Name of Applicant" => params[:Name_of_Applicant],
            "Mailing Address" => params[:Mailing_Address],
            "Studio Address" => params[:current_year],
@@ -75,16 +79,19 @@ class ArtistsController < ApplicationController
            "current_year" => params[:current_year],
            "prior_year" => params[:prior_year],
            "Name of current insurance carrier" => params[:Name_of_current_insurance_carrier],
+           "annual_premium" => @anualpremium
            
          }
+        
+        
 
     respond_to do |format|
       if @artist.save
         format.html { redirect_to new_subscription_path, notice: 'Artist was successfully created.' }
         
         format.json { render json: @artist, status: :created, location: @artist }
-          @s = params[:exhibits_year] + params[:higher_limits]
-          # raise @s.inspect
+           
+
         ArtMail.art_mail(@grades).deliver
         
       else

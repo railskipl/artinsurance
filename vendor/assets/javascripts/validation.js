@@ -11,7 +11,7 @@ required: true
 },
 
 "subscription[card_number]":{
-required: true,
+required: true
 },	
 "subscription[card_code]":{
 required:true
@@ -37,7 +37,7 @@ required: "Please enter subscription_price"
 required: "Please enter the card number"
 },
 "subscription[card_code]":{
-required: "Please enter card_code",
+required: "Please enter card_code"
 },
 "subscription[card_month]":{
 required: "Please enter card_month"

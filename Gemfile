@@ -9,8 +9,8 @@ gem 'rails', '3.2.16'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 
-gem 'mysql2'
-#gem 'sqlite3'
+#gem 'mysql2'
+gem 'sqlite3'
 
 gem 'execjs'
 gem 'therubyracer'
@@ -33,7 +33,7 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
-gem 'jquery-rails'
+gem 'jquery-rails', '1.0.14'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

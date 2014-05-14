@@ -236,7 +236,7 @@
                             <div class="row1">
                                 <div class="form-left">Limit of Studio Insurance *</div>
                                 <div class="form-right">
-                                   <%= select_tag(:option, options_for_select([['Higher Limits'], ['$125000', 2], ['$150000', 3], ['$175000', 4], ['Top API', 5]], selected: :option )) %>
+                                   <%= select_tag(:higher_limits, options_for_select([['Higher Limits'], ['$100000', 1000], ['$125000', 1062], ['$150000', 1203], ['$175000', 1344], ['$200000', 1484], ['$225000', 1025], ['$250000', 1765],['$275000', 1907],['$300000', 2047]],selected: :higher_limits )) %>
                                 </div>
                             </div>
 
@@ -416,11 +416,7 @@
                             </div>
                                  <div class="row1">
                                 <div class="form-left">Number of exhibits a year?</div>
-                                <select id="exhibits_year" name="exhibits_year">
-                                 <% exhibits_year.each do |exhibits_year|%>
-                                   <option value="<%=exhibits_year%>"><%= exhibits_year%></option>
-                                 <%end%>
-                                </select>
+                                <%= select_tag(:exhibits_year, options_for_select([['5 or less'], ['6 - $25', 25], ['7 - $50', 50], ['8 - $75', 75], ['9 - $100', 100], ['10 - $125', 125], ['11 - $150', 150], ['12 - $175', 175],['13 - $200', 200],['14 - $225', 225],['15 - $250', 250]],selected: :exhibits_year )) %>
 
 
 

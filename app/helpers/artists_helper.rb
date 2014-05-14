@@ -74,27 +74,12 @@ def higher_limits
     ]
 end
 
-def higher_limits_values
+def limit_of_Insurance_at_Other_Location
       [
       'Higher Limits',
       '$125000',
       '$150000',
       '$175000',
-      '$200000',
-      '$225000',
-      '$250000',
-      '$275000',
-      '&300000',
-      
-    ]
-end
-
-def limit_of_Insurance_at_Other_Location
-      [
-      'Higher Limits',
-      '$1000',
-      '$1062',
-      '$1203',
       '$200000',
       '$225000',
       '$250000',
