@@ -96,7 +96,7 @@ $(document).ready(function() {
             });
 
             $('.form-submit').live("click",function(){
-            	
+
                 $('.form-error').html("");
 
                 var current_tab = $('#slider').find('.rhino-active').attr("id");
@@ -143,15 +143,15 @@ $(document).ready(function() {
                     err++;
                 } 
                 if($('#Zip_Code').val() == ''){
-                    $('#Zip_Code').parent().parent().find('.form-error').html("Please enter  Zip Code");
+                    $('#Zip_Code').parent().parent().find('.form-error').html("Please Select  Zip Code");
                     err++;
                 }
                   if($('#Phone Number').val() == ''){
-                    $('#Phone Number').parent().parent().find('.form-error').html("Please enter  Phone Number");
+                    $('#Phone Number').parent().parent().find('.form-error').html("Please Select  Phone Number");
                     err++;
                 }
                   if($('#Email_address').val() == ''){
-                    $('#Email_address').parent().parent().find('.form-error').html("Please enter  Email address");
+                    $('#Email_address').parent().parent().find('.form-error').html("Please Select  Email address");
                     err++;
                 }
                  
