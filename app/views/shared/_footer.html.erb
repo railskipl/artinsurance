@@ -37,13 +37,11 @@
 	
 
 
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+	<%= javascript_include_tag "jquery.flexslider.js" %>
 
-	<%= javascript_include_tag  "jquery.min-1.11.1.js", "jquery.flexslider.js" %>
-
-		<script type="text/javascript">
-    $(function(){
-      SyntaxHighlighter.all();
-    });
+	<script type="text/javascript">
+   
     $(window).load(function(){
       $('.flexslider').flexslider({
         animation: "slide",
@@ -56,10 +54,10 @@
 		
 
 
-	<%= stylesheet_link_tag "rhinoslider-1.05.css" %>
+	
 
  
-  <%= javascript_include_tag  "rhinoslider-1.05.min.js","mousewheel.js","easing.js" %> 
+  <%= javascript_include_tag "rhinoslider-1.05.min.js","mousewheel.js","easing.js" %> 
 
 <script type="text/javascript">
 $(document).ready(function() {
@@ -82,11 +80,10 @@ $(document).ready(function() {
 
 
 
-                var info = ["PERSONAL DETAILS","ACCOUNT DETAILS","CONTACT DETAILS","test","test"];
-                var images = ["personal-details-icon.png","account-details.png","contact-details.png","contact-details.png","contact-details.png"];
+                var info = ["Step 1 ","Step 2","Step 3","Step 4"];
+                
                 $('.rhino-bullet').each(function(index){
-                    $(this).html('<p style="margin: 0pt; font-size: 13px; font-weight: bold;"><img src="/assets/'+
-                        images[index]+'"></p><p class="bullet-desc">'+info[index]+'</p></a>');
+                    $(this).html('<p class="bullet-desc">'+info[index]+'</p></a>');
                 });
 
 
@@ -95,8 +92,9 @@ $(document).ready(function() {
 
             });
 
-            $('.form-submit').live("click",function(){
-
+            
+            $(document).on('click', '.form-submit', function(){
+               
                 $('.form-error').html("");
 
                 var current_tab = $('#slider').find('.rhino-active').attr("id");
@@ -114,9 +112,7 @@ $(document).ready(function() {
                     case 'rhino-item3':
                         step4_validation();
                         break; 
-                    case 'rhino-item4':
-                        step5_validation();
-                        break;    
+                      
                            
                 }
             });
@@ -232,28 +228,7 @@ $(document).ready(function() {
                 }
 
             };
-            var step5_validation = function(){
-                var err = 0;
-
-                if($('#Deadbolts').val() == ''){
-                    $('#Deadbolts').parent().parent().find('.form-error').html("Deadbolts is Required");
-                    err++;
-                }
-                if($('#When_was_the_last_date_of_inventory').val() == ''){
-                    $('#When_was_the_last_date_of_inventory').parent().parent().find('.form-error').html("When_was_the_last_date_of_inventory is Required");
-                    err++;
-                }
-                
-                if(err == 0){
-                    $(".rhino-active-bullet").removeClass("step-error").addClass("step-success");
-                    $(".rhino-next").show();
-                    $('.form-submit').hide();
-                    $('.rhino-next').trigger('click');
-                }else{
-                    $(".rhino-active-bullet").removeClass("step-success").addClass("step-error");
-                }
-
-            };
+           
 
         </script>
 

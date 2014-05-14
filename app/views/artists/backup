@@ -342,3 +342,12 @@
 
 
   
+
+   <%=label_tag 'Description Of Loss' %>    
+                            <%=text_field_tag 'Description Of Loss'%></tr>
+
+                            <%=label_tag 'Amount Of Loss' %>    
+                            <%=text_field_tag 'Amount Of Loss'%></tr>
+
+                            <%=label_tag 'Date' %>    
+                            <%=text_field_tag 'Date'%></tr>

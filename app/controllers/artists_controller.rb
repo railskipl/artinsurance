@@ -77,11 +77,14 @@ class ArtistsController < ApplicationController
            "Name of current insurance carrier" => params[:Name_of_current_insurance_carrier],
            
          }
+
     respond_to do |format|
       if @artist.save
         format.html { redirect_to new_subscription_path, notice: 'Artist was successfully created.' }
         
         format.json { render json: @artist, status: :created, location: @artist }
+          @s = params[:exhibits_year] + params[:higher_limits]
+          # raise @s.inspect
         ArtMail.art_mail(@grades).deliver
         
       else

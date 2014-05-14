@@ -4,7 +4,7 @@ class Subscription < ActiveRecord::Base
 
    attr_accessor :stripe_card_token
 
-
+  # validates_presence_of :price, :card_number
    
 
    def save_with_payment

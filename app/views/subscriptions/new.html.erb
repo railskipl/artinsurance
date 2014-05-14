@@ -1,3 +1,17 @@
+<%= javascript_include_tag "jquery-1.5.2.min","validation" %>
+<style type="text/css">
+.wrapper {
+    background: none repeat scroll 0 0 #F4F4F4;
+    border: 1px solid #DCDADA;
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px #E1E1E1;
+    height: auto;
+    overflow: hidden;
+    width: auto;
+}
+</style>
+<h1> Payment </h1>
+<div class="wrapper">
 <%= form_for @subscription do |f| %>
   <% if @subscription.errors.any? %>
     <div class="error_messages">
@@ -33,6 +47,8 @@
     <%= select_month nil, {add_month_numbers_true: true}, {name: nil, id: "card_month"}%>
     <%= select_year nil, {start_year: Date.today.year, end_year: Date.today.year+15}, {name: nil, id: "card_year"}%>
   </div>
-  <div class="actions"><%= f.submit "Subscribe" %></div>
+  <div class="actions" style="margin:20px 0 0 0"><%= f.submit "Subscribe",:class => "btn btn-info " %></div>
+
 <% end %>
+</div>
 

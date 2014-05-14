@@ -53,7 +53,7 @@
 
             .form-step{
 
-                padding:0 !important; top: 75px!important;
+                padding:0 !important; top: 20px!important;
                 min-height: 650px;
 
             }
@@ -176,6 +176,8 @@
                     <div id="slider">
                         <div class="form-step" >
 
+
+
                             <div class="row1">
                                 <div class="form-left">Name_of_Applicant *</div>
                                 <div class="form-right"><%=text_field_tag 'Name_of_Applicant'%></div>
@@ -234,13 +236,12 @@
                             <div class="row1">
                                 <div class="form-left">Limit of Studio Insurance *</div>
                                 <div class="form-right">
-                                    <select id="higher_limits" name="higher_limits">
-                                    <% higher_limits.each do |higher_limits|%>
-                                     <option value="<%=higher_limits%>"><%= higher_limits%></option>
-                                     <%end%>
-                                    </select>
+                                   <%= select_tag(:option, options_for_select([['Higher Limits'], ['$125000', 2], ['$150000', 3], ['$175000', 4], ['Top API', 5]], selected: :option )) %>
                                 </div>
                             </div>
+
+
+
                             <div class="row1">
                                 <div class="form-left">Limit of Insurance at Other Location *</div>
                                 <div class="form-right">
@@ -479,37 +480,33 @@
                                 </div>
                                 <div class="form-error"></div>
                             </div>
+
                             <div class="row1">
-                                <table border='1'>
-                                        <tr>
-                                          <th>Description Of Loss</th>
-                                          <th>Amount Of Loss</th>
-                                          <th>Date</th>
-                                        </tr>
-                                        <tr>
-                                          <td></td>
-                                          <td></td>
-                                          <td></td>
-                                        </tr>
-                                        <tr>
-                                          <td></td>
-                                          <td></td>
-                                          <td></td>
-                                        </tr>
-                                        <tr>
-                                          <td></td>
-                                          <td></td>
-                                          <td></td>
-                                        </tr>
-                                </table>  
-
-
+                                <div class="form-left">Description Of Loss</div>
+                                <div class="form-right"><%=text_field_tag 'Description Of Loss'%></div>
+                                <div class="form-error"></div>
                             </div>
+                            <div class="row1">
+                                <div class="form-left">Amount Of Loss</div>
+                                <div class="form-right"> <%=text_field_tag 'Amount Of Loss'%></div>
+                                <div class="form-error"></div>
+                            </div> 
+                             <div class="row1">
+                                <div class="form-left">Date</div>
+                                <div class="form-right">  <%=text_field_tag 'Date'%></div>
+                                <div class="form-error"></div>
+                            </div>
+                            
 
 
-                           <%= submit_tag 'Save' %>
+                          <div class="actions" style="float:right">
+                            
+
+                            <%= submit_tag 'Submit',:class => "sbt-btn", :style=>"width: 110px; position: relative; margin: 0px; bottom: -10px;" %>
+                          </div>
+
                         </div>
-                           </div>
+                       </div>
                           
                 <% end %>
             </div>
