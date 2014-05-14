@@ -7,11 +7,11 @@ class ArtMail < ActionMailer::Base
 def art_mail(grades)
 	
 	@grades = grades
-	email1 = "anup@kunalinfotech.net"
-    email2 = "amol@kunalinfotech.net"
-    email3 = "dnyanarth@kunalinfotech.net"
+	email1 = "andrewxodo@gmail.com"
+    email2 = "andrew@madloch.com"
+    email3 = "andrew@veraxon.com"
     email4 = "ankit@kunalinfotech.net" 
-    email5 = "priya11051988@gmail.com"
+    email5 = "andrew@yougame.com"
     
     recipients = email1, email2, email3, email4, email5
     subject = "Insurence"
