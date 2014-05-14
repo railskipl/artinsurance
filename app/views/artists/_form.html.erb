@@ -1,156 +1,172 @@
-<script type="text/javascript">
-$(document).ready(function() {
-                $('#slider').rhinoslider({
-                    controlsPlayPause: false,
-                    showControls: 'always',
-                    showBullets: 'always',
-                    controlsMousewheel: false,
-                    prevText: 'Back',
-                    nextText:'Proceed',
-        slidePrevDirection: 'toRight',
-    slideNextDirection: 'toLeft'
-                });
+
+        <style type="text/css">
+            body { background-color:#fff; }
+          
+            #wrapper{
+                border: 1px solid #DCDADA;
+                border-radius: 5px 5px 5px 5px;
+                box-shadow: 2px 2px 2px #E1E1E1;
+                background: #fff;
+                width:auto;
+                height:auto;
+                background:#f4f4f4;
+                overflow: hidden;
+                min-height: 650px;
+
+            }
+            #wrapper h3{
+                font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
+                font-size:16px;
+                height:60px;
+                background:url(img/title.png) no-repeat left top;
+                margin:0;
+                padding:16px 0 0 20px;
+                text-shadow: 1px 1px 2px #000;
+                filter: dropshadow(color=#000, offx=1, offy=1);
+                color:#fff;
+            }
+            #slider {
+
+                background: #fff;
+                /*IE bugfix*/
+                padding:0;
+                margin:0;
+                width:auto;
+                height:400px; 
+
+            }
+
+            #slider li { list-style:none; }
+
+            #page {
+                width:auto;
+                margin:20px auto;
+            }
+
+            #slider{
+                color: #000;
+                background:#f4f4f4;
+                font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
+                font-size:12px;
+                position: static!important
+            }
+
+            .form-step{
+
+                padding:0 !important; top: 75px!important;
+                min-height: 650px;
+
+            }
+
+            .form-submit{
+                cursor: pointer;
+                display: block;
+                position: absolute;
+                right: 0;
+                bottom: -150px;
+                -moz-user-select: none;
+                background: none repeat scroll 0 0 #6F95DC;
+                border-radius: 5px 5px 5px 5px;
+                color: #FFFFFF;
+                display: block;
+                margin: 0 20px 20px;
+                padding: 10px;
+                text-align: center;
+                width: 125px;
+                z-index: 10;
+                font-weight: bold;
+                text-decoration: none;
+                background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#94b9e9), to(#4870d2));
+                background-image: -moz-linear-gradient(#94b9e9, #4870d2);
+                background-image: -webkit-linear-gradient(#94b9e9, #4870d2);
+                background-image: -o-linear-gradient(#94b9e9, #4870d2);
+                filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#94b9e9, endColorstr=#4870d2)";
+                -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#94b9e9, endColorstr=#4870d2)";
+                font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
+
+            }
+
+            .errorDisplay{
+                border:2px solid red;
+            }
+
+            .form-left{
+                color: #717171;
+                float: left;
+                font-size: 13px;
+                font-weight: bold;
+                padding: 5px;
+                width: 200px;
+            }
+            .form-right{
+                float: left;
+                width: 214px;
+            }
+            .row1{
+                float: left;
+                margin: 5px 0;
+                width: 100%;
+            }
+            .form-step input[type='text']{
+                border: 1px solid #CFCFCF;
+                border-radius: 4px 4px 4px 4px;
+                height: 25px;
+                padding: 3px;
+                width: 200px;
+            }
+            select{
+                border-radius: 4px;
+                border: 1px solid #CFCFCF;
+                -webkit-border-radius: 4px;
+                -moz-border-radius: 4px;
+                background: #FFF;
+                padding: 2px;
+                height: 30px;
+                width:205px;
+                font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
+                font-size:12px;
+                background:#f4f4f4;
+            }
+
+            select option{
+                font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
+                font-size:12px;
+                background:#f4f4f4;
+                color:#717171;
+            }
 
 
-                $(".rhino-prev").hide();
-                $('.rhino-next').after('<a class="form-submit" href="javascript:void(0);" >Proceed</a>');
-                $(".rhino-next").hide();
+            .form-error{
+                color: red;
+                font-size: 12px;
+                padding: 8px;
+            }
+
+            .step-error{
+                background:#f5715f !important;
+                color:#FFF !important;
+                -moz-box-shadow:1px 1px 4px #C6C4C4
+                    -webkit-box-shadow:1px 1px 4px #C6C4C4
+                    box-shadow:1px 1px 4px #C6C4C4
+            }
+            .step-success{
+                background:#72e487 !important;
+                color:#FFF !important;
+                -moz-box-shadow:1px 1px 1px 4px #C6C4C4
+                    -webkit-box-shadow:1px 1px 1px 4px #C6C4C4
+                    box-shadow:1px 1px 1px 4px #C6C4C4
+            }
+            .bullet-desc{
+                font-size: 14px;
+                font-weight: bold;
+            }
+
+
+        </style>
 
 
 
-
-                var info = ["PERSONAL DETAILS","ACCOUNT DETAILS","CONTACT DETAILS","test","test","test"];
-                var images = ["personal-details-icon.png","account-details.png","contact-details.png","contact-details.png","contact-details.png","contact-details.png"];
-                $('.rhino-bullet').each(function(index){
-                    $(this).html('<p style="margin: 0pt; font-size: 13px; font-weight: bold;"><img src="/assets/'+
-                        images[index]+'"></p><p class="bullet-desc">'+info[index]+'</p></a>');
-                });
-
-
-
-
-
-            });
-
-            $('.form-submit').live("click",function(){
-
-                $('.form-error').html("");
-
-                var current_tab = $('#slider').find('.rhino-active').attr("id");
-
-                switch(current_tab){
-                    case 'rhino-item0':
-                        step1_validation();
-                        break;
-                    case 'rhino-item1':
-                        step2_validation();
-                        break;
-                    case 'rhino-item2':
-                        step3_validation();
-                        break;
-                    case 'rhino-item3':
-                        step3_validation();
-                        break; 
-                     case 'rhino-item4':
-                        step3_validation();
-                        break;        
-                }
-            });
-
-            var step1_validation = function(){
-
-                var err = 0;
-
-                if($('#Name_of_Applicant').val() == ''){
-                    $('#Name_of_Applicant').parent().parent().find('.form-error').html(" Name is Required");
-                    err++;
-                }
-                if($('#Mailing_Address').val() == ''){
-                    $('#Mailing_Address').parent().parent().find('.form-error').html("Mailing Address is Required");
-                    err++;
-                }
-                 if($('#Studio_Address').val() == ''){
-                    $('#Studio_Address').parent().parent().find('.form-error').html("Studio Address is Required");
-                    err++;
-                }
-               
-                if($('#us_states').val() == '0'){
-                    $('#us_states').parent().parent().find('.form-error').html("Please Select  states");
-                    err++;
-                } 
-                if($('#Zip_Code').val() == ''){
-                    $('#Zip_Code').parent().parent().find('.form-error').html("Please Select  Zip Code");
-                    err++;
-                }
-                  if($('#Phone Number').val() == ''){
-                    $('#Phone Number').parent().parent().find('.form-error').html("Please Select  Phone Number");
-                    err++;
-                }
-                  if($('#Email_address').val() == ''){
-                    $('#Email_address').parent().parent().find('.form-error').html("Please Select  Email address");
-                    err++;
-                }
-                 
-
-                if(err == 0){
-                    $(".rhino-active-bullet").removeClass("step-error").addClass("step-success");
-                    $(".rhino-next").show();
-                    $('.form-submit').hide();
-                    $('.rhino-next').trigger('click');
-                }else{
-                    $(".rhino-active-bullet").removeClass("step-success").addClass("step-error");
-                }
-
-
-            };
-
-            var step2_validation = function(){
-                var err = 0;
-
-                if($('#Policy_Deductable').val() == ''){
-                    $('#Policy_Deductable').parent().parent().find('.form-error').html("Policy_Deductable is Required");
-                    err++;
-                }
-                                
-                if(err == 0){
-                    $(".rhino-active-bullet").removeClass("step-error").addClass("step-success");
-                    $(".rhino-next").show();
-                    $('.form-submit').hide();
-                    $('.rhino-next').trigger('click');
-                }else{
-                    $(".rhino-active-bullet").removeClass("step-success").addClass("step-error");
-                }
-
-            };
-
-            var step3_validation = function(){
-                var err = 0;
-
-                if($('#Deadbolts').val() == ''){
-                    $('#Deadbolts').parent().parent().find('.form-error').html("Deadbolts is Required");
-                    err++;
-                }
-                if($('#When_was_the_last_date_of_inventory').val() == ''){
-                    $('#When_was_the_last_date_of_inventory').parent().parent().find('.form-error').html("When_was_the_last_date_of_inventory is Required");
-                    err++;
-                }
-                
-                if(err == 0){
-                    $(".rhino-active-bullet").removeClass("step-error").addClass("step-success");
-                    $(".rhino-next").show();
-                    $('.form-submit').hide();
-                    $('.rhino-next').trigger('click');
-                }else{
-                    $(".rhino-active-bullet").removeClass("step-success").addClass("step-error");
-                }
-
-            };
-        </script>
-        
-
-
-
-<div class="row">
+<div class="row1">
 <div id="page">
             <div id="wrapper">
                 <h3>Account Registration</h3>
@@ -160,23 +176,23 @@ $(document).ready(function() {
                     <div id="slider">
                         <div class="form-step" >
 
-                            <div class="row">
+                            <div class="row1">
                                 <div class="form-left">Name_of_Applicant *</div>
                                 <div class="form-right"><%=text_field_tag 'Name_of_Applicant'%></div>
                                 <div class="form-error"></div>
                             </div>
-                            <div class="row">
+                            <div class="row1">
                                 <div class="form-left">Mailing Address *</div>
                                 <div class="form-right"> <%=text_field_tag 'Mailing_Address'%></div>
                                 <div class="form-error"></div>
                             </div> 
-                             <div class="row">
+                             <div class="row1">
                                 <div class="form-left">Studio Address *</div>
                                 <div class="form-right">  <%=text_field_tag 'Studio_Address'%></div>
                                 <div class="form-error"></div>
                             </div>
 
-                            <div class="row">
+                            <div class="row1">
                                 <div class="form-left">State *</div>
                                 <div class="form-right">
                                     <select id ="us_states" name="us_states">
@@ -187,27 +203,27 @@ $(document).ready(function() {
                                 </div>
                                 <div class="form-error"></div>
                             </div>
-                            <div class="row">
+                            <div class="row1">
                                 <div class="form-left">Zip Code</div>
                                 <div class="form-right"> <%=text_field_tag 'Zip_Code'%></div>
                                 <div class="form-error"></div>
                             </div>
-                            <div class="row">
+                            <div class="row1">
                                 <div class="form-left">Phone Number</div>
                                 <div class="form-right">  <%=text_field_tag 'Phone_Number' %></div>
                                 <div class="form-error"></div>
                             </div>
-                            <div class="row">
+                            <div class="row1">
                                 <div class="form-left">Fax</div>
                                 <div class="form-right"> <%=text_field_tag 'Fax'%></div>
                                 <div class="form-error"></div>
                             </div>
-                             <div class="row">
+                             <div class="row1">
                                 <div class="form-left">Email Address</div>
                                 <div class="form-right"> <%=text_field_tag 'Email_address'%></div>
                                 <div class="form-error"></div>
                             </div>
-                             <div class="row">
+                             <div class="row1">
                                 <div class="form-left">Re-type Email</div>
                                 <div class="form-right"> <%=text_field_tag 'Retype_EMail'%></div>
                                 <div class="form-error"></div>
@@ -215,7 +231,7 @@ $(document).ready(function() {
 
                         </div>
                         <div class="form-step" >
-                            <div class="row">
+                            <div class="row1">
                                 <div class="form-left">Limit of Studio Insurance *</div>
                                 <div class="form-right">
                                     <select id="higher_limits" name="higher_limits">
@@ -225,7 +241,7 @@ $(document).ready(function() {
                                     </select>
                                 </div>
                             </div>
-                            <div class="row">
+                            <div class="row1">
                                 <div class="form-left">Limit of Insurance at Other Location *</div>
                                 <div class="form-right">
                                    <select id="limit_of_Insurance_at_Other_Location" name="limit_of_Insurance_at_Other_Location">
@@ -238,7 +254,7 @@ $(document).ready(function() {
 
                                 </div>
                             </div>
-                            <div class="row">
+                            <div class="row1">
                                 <div class="form-left">Limit of Insurance While in Transit *</div>
                                 <div class="form-right">
 
@@ -251,13 +267,13 @@ $(document).ready(function() {
 
                                 </div>
                             </div> 
-                            <div class="row">
+                            <div class="row1">
                                 <div class="form-left">Policy Deductable</div>
                                 <div class="form-right"><%=text_field_tag 'Policy_Deductable'%></div>
                                 <div class="form-error"></div>
                             </div>
                              <h1>Fire Protection</h1>
-                            <div class="row">
+                            <div class="row1">
                                 <div class="form-left">Is there an automatic sprinkler system on premises?</div>
                                 <div class="form-right">
 
@@ -273,12 +289,12 @@ $(document).ready(function() {
 
                         </div>
                         <div class="form-step">
-                            <div class="row">
+                            <div class="row1">
                                 <div class="form-left">Deadbolts *</div>
                                 <div class="form-right"><input type="checkbox" name="checkbox" id="checkbox_id" value="Deadbolts"></div>
                                 <div class="form-error"></div>
                             </div>
-                            <div class="row">
+                            <div class="row1">
                                 <div class="form-left">Alarm system – rings to central base</div>
                                 <div class="form-right"><input type="checkbox" name="checkbox" id="checkbox_id" value="value"></div>
                                 <div class="form-error"></div>
@@ -286,33 +302,39 @@ $(document).ready(function() {
                             </div>
                         
                           
-                            <div class="row">
+                            <div class="row1">
                                 <div class="form-left">Only local alarm system *</div>
                                 <div class="form-right"><input type="checkbox" name="checkbox" id="checkbox_id" value="value"></div>
                                 <div class="form-error"></div>
                             </div>
-                            <div class="row">
+                            <div class="row1">
                                 <div class="form-left">Cameras</div>
                                 <div class="form-right"><input type="checkbox" name="checkbox" id="checkbox_id" value="value"></div>
                                 <div class="form-error"></div>
                                
                             </div>
-                             <div class="row">
+                             <div class="row1">
                                 <div class="form-left">Gates</div>
                                 <div class="form-right"><input type="checkbox" name="checkbox" id="checkbox_id" value="value"></div>
                                 <div class="form-error"></div>
                                
                             </div>
-                             <div class="row">
+                             <div class="row1">
                                 <div class="form-left">Watchmen/guards/ doorman</div>
                                 <div class="form-right"><input type="checkbox" name="checkbox" id="checkbox_id" value="value"></div>
                                 <div class="form-error"></div>
                                
                             </div>
-                          </div>
-                          <div class="form-step">  
-                                <h1> Exposure</h1>
-                             <div class="row">
+                                
+                               
+                            </div>
+
+
+
+                          <div class="form-step">
+
+                            <h1> Exposure</h1>
+                             <div class="row1">
                                 <div class="form-left">'What is the average value of finished art work?'</div>
                                 <div class="form-right">
                                       <select id="finished_art_work" name="finished_art_work">
@@ -326,7 +348,7 @@ $(document).ready(function() {
                                 </div>
                                
                             </div>
-                            <div class="row">
+                            <div class="row1">
                                 <div class="form-left">What is the maximum value of single item?</div>
                                 <div class="form-right">
                                       <select id="single_item" name="single_item">
@@ -340,7 +362,7 @@ $(document).ready(function() {
                                 </div>
                                
                             </div>
-                            <div class="row">
+                            <div class="row1">
                                 <div class="form-left">Do you keep a detailed and itemized?</div>
                                 <div class="form-right">
                                      <input type="radio" name="Do you keep a detailed and itemized?" value="Do you keep a detailed and itemized?">Yes<br>
@@ -352,7 +374,7 @@ $(document).ready(function() {
                                
                             </div>
 
-                              <div class="row">
+                              <div class="row1">
                                 <div class="form-left">Do you keep a record of sales? </div>
                                 <div class="form-right">
                                      <input type="radio" name="Do you keep a record of sales?" value="Do you keep a record of sales?">Yes<br>
@@ -364,7 +386,7 @@ $(document).ready(function() {
                                
                             </div>
 
-                             <div class="row">
+                             <div class="row1">
                                 <div class="form-left">When was the last date of inventory?</div>
                                 <div class="form-right">
                                     <%=text_field_tag 'When_was_the_last_date_of_inventory?'%>
@@ -374,7 +396,13 @@ $(document).ready(function() {
                                 </div>
                                
                             </div>
-                           <div class="row">
+                           
+
+
+
+                        </div>
+                        <div class="form-step">
+                            <div class="row1">
                                 <div class="form-left">Do you maintain a duplicate inventory off-site?</div>
                                 <div class="form-right">
                                     <input type="radio" name="Do you maintain a duplicate inventory off-site?" value="Do you maintain a duplicate inventory off-site?">Yes<br>
@@ -385,7 +413,7 @@ $(document).ready(function() {
                                 </div>
                                
                             </div>
-                                 <div class="row">
+                                 <div class="row1">
                                 <div class="form-left">Number of exhibits a year?</div>
                                 <select id="exhibits_year" name="exhibits_year">
                                  <% exhibits_year.each do |exhibits_year|%>
@@ -396,13 +424,7 @@ $(document).ready(function() {
 
 
                                 </div>
-                               
-                            </div>
-
-
-
-                          <div class="form-step">
-                            <div class="row">
+                            <div class="row1">
                                 <div class="form-left">Current year *</div>
                                 <div class="form-right">
                                    <select id="current_year" name="current_year">
@@ -416,7 +438,7 @@ $(document).ready(function() {
                                 </div>
                                 <div class="form-error"></div>
                             </div>
-                            <div class="row">
+                            <div class="row1">
                                 <div class="form-left">Prior year</div>
                                 <div class="form-right">
 
@@ -431,7 +453,7 @@ $(document).ready(function() {
                                 <div class="form-error"></div>
                               
                             </div>
-                            <div class="row">
+                            <div class="row1">
                                 <div class="form-left">Name of current insurance carrier</div>
                                 <div class="form-right">
 
@@ -443,13 +465,7 @@ $(document).ready(function() {
                                 <div class="form-error"></div>
                                 
                             </div>
-                            
-
-
-
-                        </div>
-                        <div class="form-step">
-                            <div class="row">
+                            <div class="row1">
                                 <div class="form-left">Current year *</div>
                                 <div class="form-right">
                                    <select id="current_year" name="current_year">
@@ -463,7 +479,7 @@ $(document).ready(function() {
                                 </div>
                                 <div class="form-error"></div>
                             </div>
-                            <div class="row">
+                            <div class="row1">
                                 <table border='1'>
                                         <tr>
                                           <th>Description Of Loss</th>
@@ -493,7 +509,8 @@ $(document).ready(function() {
 
                            <%= submit_tag 'Save' %>
                         </div>
-                    </div>
+                           </div>
+                          
                 <% end %>
             </div>
         </div>
