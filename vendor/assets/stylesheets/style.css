@@ -64,3 +64,4 @@ select, textarea, input[type="text"], input[type="password"], input[type="dateti
 
 .ldiv{ margin:10px}
 .rdiv{ margin:10px}
+#stripe_error { color: #DD0000; }
