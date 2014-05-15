@@ -135,17 +135,17 @@ $(document).ready(function() {
 
                 if(!pattern.test(userinput))
                     {
-                      $('#Mailing_Address').parent().parent().find('.form-error').html("Please enter valid email address ");
+                      $('#Mailing_Address').parent().parent().find('.form-error').html("Please enter valid Mailing Address ");
                     }
                                     
 
                  if($('#Studio_Address').val() == ''){
-                    $('#Studio_Address').parent().parent().find('.form-error').html("Studio Address is Required");
+                    $('#Studio_Address').parent().parent().find('.form-error').html("Please enter valid Studio Address");
                     err++;
                 }
                
                 if($('#us_states').val() == '0'){
-                    $('#us_states').parent().parent().find('.form-error').html("Please Select  states");
+                    $('#us_states').parent().parent().find('.form-error').html("Please Select  States");
                     err++;
                 } 
                 if($('#Zip_Code').val() == ''){
@@ -164,7 +164,7 @@ $(document).ready(function() {
 
                 if(!pattern.test(userinput1))
                     {
-                       $('#Email_address').parent().parent().find('.form-error').html("Please enter  valid email address");
+                       $('#Email_address').parent().parent().find('.form-error').html("Please enter  valid Email Address");
                     err++;
                     }
                      
