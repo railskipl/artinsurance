@@ -198,7 +198,7 @@
 <div class="row1">
 <div id="page">
             <div id="wrapper">
-                <h3>Account Registration</h3>
+                <h3>Artist Studio Transport & Exhibition Form</h3>
                 <%= form_tag url_for(:controller => 'artists', :action => 'create'), :method => 'post',:id => 'feedbackform' do |f| %>
 
 
@@ -448,7 +448,7 @@
                                 <div class="form-error"></div>
                                 </div>
                             <div class="row1">
-                                <h2 style="font-size:23.5px!important;">Annual Sales</h2>
+                                <span style="font-size:19px!important;">Annual Sales</span> <br/>
                                 <div class="form-left">Current year <span style="color:red;">*</span></div>
                                 <div class="form-right">
                                    <select id="current_year" name="current_year">
@@ -491,8 +491,8 @@
                             </div>
                             
 
-                            <div class="row1"><h2 style="font-size:23.5px!important;">Lost history (For last 5 years)</h2>
-                                
+                            <div class="row1"><span style="font-size:19px!important;">Lost history (For last 5 years)</span><br/>
+
                                 <div class="form-left">Description Of Loss</div>
                                 <div class="form-right"><%=text_field_tag 'Description Of Loss'%></div>
                                 <div class="form-error"></div>
