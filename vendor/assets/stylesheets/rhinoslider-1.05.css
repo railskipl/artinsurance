@@ -87,7 +87,6 @@
     position: relative;
     top: -438px;
     z-index: 10;
-    background: #fff;
     padding:0;
     float:left;
 }
@@ -170,6 +169,48 @@ ul, ol {
     text-decoration: none;
     width: 150px;
     z-index: 10;
-}.
+}
 
 
+@media only screen and (min-width: 320px) and (max-width: 768px) {
+
+.form-step {
+    min-height: 650px;
+    padding: 0 !important;
+    top: 300px !important;
+}
+
+.rhino-bullets li {
+    display: block;
+    margin: 0;
+    width: auto;
+    padding:8px 0
+}
+
+
+.rhino-bullets li a.rhino-bullet {
+    -moz-user-select: none;
+    background: none repeat scroll 0 0 #F8FDFF;
+    border: 1px solid #EEEEEE;
+    color: #000000;
+    cursor: pointer;
+    font-family: "Lucida Sans Unicode","Lucida Grande",sans-serif;
+    font-size: 13px;
+    height: auto;
+    padding: 10px 0px;
+    text-align: center;
+    text-decoration: none;
+    width: 280px;
+    display:block
+}
+
+.rhino-bullets li {
+    
+    margin: 0;
+    padding: 0px 0;
+    width: auto;
+}
+       
+       
+    }
+    
