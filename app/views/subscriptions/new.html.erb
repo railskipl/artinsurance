@@ -31,7 +31,8 @@
   </div>  
   <div class="field">
     <%= f.label :price %>
-    <%= f.text_field :price %>
+    <%= f.text_field :price, :value=> session[:anualpremium], :disable=> true %>
+    <%= f.hidden_field :price, :value=> session[:anualpremium] %>
   </div>  
 
   <div class="field">

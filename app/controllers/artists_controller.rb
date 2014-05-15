@@ -4,10 +4,7 @@ class ArtistsController < ApplicationController
   def index
     @artists = Artist.all
 
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @artists }
-    end
+    redirect_to root_path
   end   
 
   # GET /artists/1
@@ -57,6 +54,7 @@ class ArtistsController < ApplicationController
          @limits_of_studio_insurance = params[:higher_limits]
          @exhibits_year = params[:exhibits_year]
          @anualpremium = ((@limits_of_studio_insurance).to_i + (@exhibits_year).to_i).to_i
+         session[:anualpremium] = @anualpremium
 
      @grades = { "Name of Applicant" => params[:Name_of_Applicant],
            "Mailing Address" => params[:Mailing_Address],
