@@ -120,9 +120,6 @@ $(document).ready(function() {
             var step1_validation = function(){
 
                 var err = 0;
-                var userinput = $(Mailing_Address).val();
-                var userinput1 = $(Email_address).val();
-                var pattern = /^\b[A-Z0-9._%-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b$/i
                 
                 if($('#Name_of_Applicant').val() == ''){
                     $('#Name_of_Applicant').parent().parent().find('.form-error').html(" Name is Required");
@@ -132,13 +129,6 @@ $(document).ready(function() {
                     $('#Mailing_Address').parent().parent().find('.form-error').html("Mailing Address is Required");
                     err++;
                 }
-
-                if(!pattern.test(userinput))
-                    {
-                      $('#Mailing_Address').parent().parent().find('.form-error').html("Please enter valid email address ");
-                    }
-                                    
-
                  if($('#Studio_Address').val() == ''){
                     $('#Studio_Address').parent().parent().find('.form-error').html("Studio Address is Required");
                     err++;
@@ -160,14 +150,6 @@ $(document).ready(function() {
                     $('#Email_address').parent().parent().find('.form-error').html("Please Select  Email address");
                     err++;
                 }
-
-
-                if(!pattern.test(userinput1))
-                    {
-                       $('#Email_address').parent().parent().find('.form-error').html("Please enter  valid email address");
-                    err++;
-                    }
-                     
                  
 
                 if(err == 0){
