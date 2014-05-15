@@ -7,8 +7,8 @@ gem 'rails', '3.2.16'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 
-#gem 'mysql2'
-gem 'sqlite3'
+gem 'mysql2'
+#gem 'sqlite3'
 
 gem 'execjs'
 gem 'therubyracer'
@@ -18,7 +18,7 @@ gem 'stripe'
 gem 'wkhtmltopdf-binary'
 gem 'wicked_pdf'
 
-#gem 'pg'
+gem 'pg'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
