@@ -504,7 +504,9 @@
                             </div> 
                              <div class="row1">
                                 <div class="form-left">Date</div>
-                                <div class="form-right">  <%=text_field_tag 'Date'%></div>
+                                <div class="form-right">  <%= date_select("card_signup", "dob", { :end_year => DateTime.now.year - 100,
+                                         },
+                                         :style => "width: 62px;")%></div>
                                 <div class="form-error"></div>
                             </div>
                             
