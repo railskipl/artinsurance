@@ -112,8 +112,9 @@ $(document).ready(function() {
                     case 'rhino-item3':
                         step4_validation();
                         break; 
-                      
-                           
+                    case 'rhino-item4':
+                        step5_validation();
+                        break;           
                 }
             });
 
@@ -122,7 +123,10 @@ $(document).ready(function() {
                 var err = 0;
                 var userinput = $(Mailing_Address).val();
                 var userinput1 = $(Email_address).val();
-                
+
+                var userinput2 = $(Retype_EMail).val();
+
+
                 var pattern = /^\b[A-Z0-9._%-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b$/i
                 
                 if($('#Name_of_Applicant').val() == ''){
@@ -154,21 +158,37 @@ $(document).ready(function() {
                     err++;
                 }
                   if($('#Phone Number').val() == ''){
-                    $('#Phone Number').parent().parent().find('.form-error').html("Please Select  Phone Number");
+                    $('#Phone Number').parent().parent().find('.form-error').html("Please select phone number");
                     err++;
                 }
                   if($('#Email_address').val() == ''){
-                    $('#Email_address').parent().parent().find('.form-error').html("Please Select  Email address");
+                    $('#Email_address').parent().parent().find('.form-error').html("Please select  email address");
                     err++;
                 }
 
 
                 if(!pattern.test(userinput1))
                     {
+
                        $('#Email_address').parent().parent().find('.form-error').html("Please enter  valid Email Address");
+
                     err++;
                     }
+
+
+
+                  if($('#Retype_EMail').val() == ''){
+                    $('#Retype_EMail').parent().parent().find('.form-error').html("Please select email address");
+                    err++;
+                   }
                      
+
+                   if(!pattern.test(userinput2))
+                    {
+                       $('#Retype_EMail').parent().parent().find('.form-error').html("Please enter valid email address");
+                       err++;
+                    }  
+
                  
 
                 if(err == 0){
@@ -185,9 +205,24 @@ $(document).ready(function() {
 
             var step2_validation = function(){
                 var err = 0;
-
+              
+                if($('#higher_limits').val() == null || $('#higher_limits').val() == ""){
+                    $('#higher_limits').parent().parent().find('.form-error').html("Limit of Studio Insurance is required");
+                    err++;
+                }
+                
+                if($('#limit_of_Insurance_at_Other_Location').val() == ''){
+                    $('#limit_of_Insurance_at_Other_Location').parent().parent().find('.form-error').html("limit of Insurance at other location is required");
+                    err++;
+                }
+                
+                 if($('#limit_of_Insurance_While_in_Transit').val() == ''){
+                      $('#limit_of_Insurance_While_in_Transit').parent().parent().find('.form-error').html("Limit of Insurance while in transit is required");
+                      err++;
+                  }
+                
                 if($('#Policy_Deductable').val() == ''){
-                    $('#Policy_Deductable').parent().parent().find('.form-error').html("Policy_Deductable is Required");
+                    $('#Policy_Deductable').parent().parent().find('.form-error').html("Policy deductable is required");
                     err++;
                 }
                                 
@@ -205,12 +240,15 @@ $(document).ready(function() {
             var step3_validation = function(){
                 var err = 0;
 
+              
+
                 if($('#Deadbolts').val() == ''){
-                    $('#Deadbolts').parent().parent().find('.form-error').html("Deadbolts is Required");
+                    $('#Deadbolts').parent().parent().find('.form-error').html("Deadbolts is required");
                     err++;
                 }
+                
                 if($('#When_was_the_last_date_of_inventory').val() == ''){
-                    $('#When_was_the_last_date_of_inventory').parent().parent().find('.form-error').html("When_was_the_last_date_of_inventory is Required");
+                    $('#When_was_the_last_date_of_inventory').parent().parent().find('.form-error').html("Last date of inventory is required");
                     err++;
                 }
                 
@@ -228,12 +266,45 @@ $(document).ready(function() {
             var step4_validation = function(){
                 var err = 0;
 
-                if($('#Deadbolts').val() == ''){
-                    $('#Deadbolts').parent().parent().find('.form-error').html("Deadbolts is Required");
+                if($('#finished_art_work').val() == ''){
+                    $('#finished_art_work').parent().parent().find('.form-error').html("Average value of finished art work is required");
                     err++;
                 }
-                if($('#When_was_the_last_date_of_inventory').val() == ''){
-                    $('#When_was_the_last_date_of_inventory').parent().parent().find('.form-error').html("When_was_the_last_date_of_inventory is Required");
+                if($('#single_item').val() == ''){
+                    $('#single_item').parent().parent().find('.form-error').html("Maximum value of single item is required");
+                    err++;
+                }
+                
+                if(err == 0){
+                    $(".rhino-active-bullet").removeClass("step-error").addClass("step-success");
+                    $(".rhino-next").show();
+                    $('.form-submit').hide();
+                    $('.rhino-next').trigger('click');
+                }else{
+                    $(".rhino-active-bullet").removeClass("step-success").addClass("step-error");
+                }
+
+            };
+            
+            var step5_validation = function(){
+                var err = 0;
+
+                if($('#exhibits_year').val() == ''){
+                    $('#exhibits_year').parent().parent().find('.form-error').html("Please select exhibits year");
+                    err++;
+                }
+                if($('#current_year').val() == ''){
+                    $('#current_year').parent().parent().find('.form-error').html("Please select current year");
+                    err++;
+                }
+                
+                if($('#prior_year').val() == ''){
+                    $('#prior_year').parent().parent().find('.form-error').html("Please select prior year");
+                    err++;
+                } 
+                
+                if($('#Name_of_current_insurance_carrier').val() == ''){
+                    $('#Name_of_current_insurance_carrier').parent().parent().find('.form-error').html("Name of current insurance carrier is required");
                     err++;
                 }
                 
