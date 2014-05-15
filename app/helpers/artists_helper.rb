@@ -61,7 +61,7 @@ end
 
 def higher_limits
       [
-      'Higher Limits',
+      'Select',
       '$125000',
       '$150000',
       '$175000',
@@ -76,7 +76,7 @@ end
 
 def limit_of_Insurance_at_Other_Location
       [
-      'Higher Limits',
+      '',
       '$125000',
       '$150000',
       '$175000',
@@ -92,7 +92,7 @@ end
 
 def limit_of_Insurance_While_in_Transit
       [
-      'Higher Limits',
+      '',
       '$125000',
       '$150000',
       '$175000',
@@ -108,7 +108,7 @@ end
 
 def finished_art_work
       [
-        'click here',
+        '',
         'Under $5,000',
         '$5,001-$15,000',
         '$15,001-$30,000',
@@ -120,7 +120,7 @@ end
 
 def single_item
       [
-        'click here',
+        '',
         'Under $5,000',
         '$5,001-$15,000',
         '$15,001-$30,000',
@@ -148,7 +148,7 @@ end
 
 def current_year
       [
-        'click here',
+        '',
         'Under $5,000',
         '$5,001-$15,000',
         '$15,001-$30,000',
@@ -160,7 +160,7 @@ end
 
 def prior_year
       [
-        'click here',
+        '',
         'Under $5,000',
         '$5,001-$15,000',
         '$15,001-$30,000',

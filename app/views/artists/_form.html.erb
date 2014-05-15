@@ -255,7 +255,7 @@
                                 <div class="form-error"></div>
                             </div>
                              <div class="row1">
-                                <div class="form-left">Re-type Email</div>
+                                <div class="form-left">Re-type Email<span style="color:red;">*</span></div>
                                 <div class="form-right"> <%=text_field_tag 'Retype_EMail'%></div>
                                 <div class="form-error"></div>
                             </div>
@@ -263,29 +263,28 @@
                         </div>
                         <div class="form-step" >
                             <div class="row1">
-                                <div class="form-left">Limit of Studio Insurance *</div>
+                                <div class="form-left">Limit of Studio Insurance <span style="color:red;">*</span></div>
                                 <div class="form-right">
-                                   <%= select_tag(:higher_limits, options_for_select([['Higher Limits'], ['$100000', 1000], ['$125000', 1062], ['$150000', 1203], ['$175000', 1344], ['$200000', 1484], ['$225000', 1025], ['$250000', 1765],['$275000', 1907],['$300000', 2047]],selected: :higher_limits )) %>
+                                   <%= select_tag(:higher_limits, options_for_select([[''], ['$100000', 1000], ['$125000', 1062], ['$150000', 1203], ['$175000', 1344], ['$200000', 1484], ['$225000', 1025], ['$250000', 1765],['$275000', 1907],['$300000', 2047]],selected: :higher_limits )) %>
                                 </div>
+                                <div class="form-error"></div>
                             </div>
 
 
 
                             <div class="row1">
-                                <div class="form-left">Limit of Insurance at Other Location *</div>
+                                <div class="form-left">Limit of Insurance at Other Location <span style="color:red;">*</span></div>
                                 <div class="form-right">
                                    <select id="limit_of_Insurance_at_Other_Location" name="limit_of_Insurance_at_Other_Location">
                                   <% limit_of_Insurance_at_Other_Location.each do |limit_of_Insurance_at_Other_Location|%>
                                    <option value="<%=limit_of_Insurance_at_Other_Location%>"><%= limit_of_Insurance_at_Other_Location%></option>
                                     <%end%>
                                     </select></br>
-
-
-
                                 </div>
+                                <div class="form-error"></div>
                             </div>
                             <div class="row1">
-                                <div class="form-left">Limit of Insurance While in Transit *</div>
+                                <div class="form-left">Limit of Insurance While in Transit <span style="color:red;">*</span></div>
                                 <div class="form-right">
 
                                     <select id="limit_of_Insurance_While_in_Transit" name="limit_of_Insurance_While_in_Transit">
@@ -293,9 +292,8 @@
                                      <option value="<%=limit_of_Insurance_While_in_Transit%>"><%= limit_of_Insurance_While_in_Transit%></option>
                                    <%end%>
                                     </select>
-
-
                                 </div>
+                                <div class="form-error"></div>
                             </div> 
                             <div class="row1">
                                 <div class="form-left">Policy Deductable<span style="color:red;">*</span></div>
@@ -320,7 +318,7 @@
                         </div>
                         <div class="form-step">
                             <div class="row1">
-                                <div class="form-left">Deadbolts <span style="color:red;">*</span></div>
+                                <div class="form-left">Deadbolts</div>
                                 <div class="form-right"><input type="checkbox" name="checkbox" id="checkbox_id" value="Deadbolts"></div>
                                 <div class="form-error"></div>
                             </div>
@@ -333,7 +331,7 @@
                         
                           
                             <div class="row1">
-                                <div class="form-left">Only local alarm system <span style="color:red;">*</span></div>
+                                <div class="form-left">Only local alarm system </div>
                                 <div class="form-right"><input type="checkbox" name="checkbox" id="checkbox_id" value="value"></div>
                                 <div class="form-error"></div>
                             </div>
@@ -365,21 +363,18 @@
 
                              <h2 style="font-size:23.5px!important;"> Exposure</h2>
                              <div class="row1">
-                                <div class="form-left">'What is the average value of finished art work?'</div>
+                                <div class="form-left">What is the average value of finished art work? <span style="color:red;">*</span></div>
                                 <div class="form-right">
                                       <select id="finished_art_work" name="finished_art_work">
                                      <% finished_art_work.each do |work|%>
                                        <option value="<%=work%>"><%= work%></option>
                                      <%end%>
                                       </select>
-
-
-
                                 </div>
-                               
+                               <div class="form-error"></div>
                             </div>
                             <div class="row1">
-                                <div class="form-left">What is the maximum value of single item?</div>
+                                <div class="form-left">What is the maximum value of single item? <span style="color:red;">*</span></div>
                                 <div class="form-right">
                                       <select id="single_item" name="single_item">
                                         <% single_item.each do |single_item|%>
@@ -387,9 +382,8 @@
                                         <%end%>
                                        </select>
 
-
-
                                 </div>
+                                <div class="form-error"></div>
                                
                             </div>
                             <div class="row1">
@@ -444,11 +438,12 @@
                                
                             </div>
                                  <div class="row1">
-                                <div class="form-left">Number of exhibits a year?</div>
+                                <div class="form-left">Number of exhibits a year? <span style="color:red;">*</span></div>
+                                <div class="form-right">
                                 <%= select_tag(:exhibits_year, options_for_select([['5 or less'], ['6 - $25', 25], ['7 - $50', 50], ['8 - $75', 75], ['9 - $100', 100], ['10 - $125', 125], ['11 - $150', 150], ['12 - $175', 175],['13 - $200', 200],['14 - $225', 225],['15 - $250', 250]],selected: :exhibits_year )) %>
+                                </div>
 
-
-
+                                <div class="form-error"></div>
                                 </div>
                             <div class="row1">
                                 <div class="form-left">Current year <span style="color:red;">*</span></div>
@@ -465,7 +460,7 @@
                                 <div class="form-error"></div>
                             </div>
                             <div class="row1">
-                                <div class="form-left">Prior year</div>
+                                <div class="form-left">Prior year <span style="color:red;">*</span></div>
                                 <div class="form-right">
 
                                    <select id="prior_year" name="prior_year">
@@ -480,7 +475,7 @@
                               
                             </div>
                             <div class="row1">
-                                <div class="form-left">Name of current insurance carrier</div>
+                                <div class="form-left">Name of current insurance carrier <span style="color:red;">*</span></div>
                                 <div class="form-right">
 
                                    <%=text_field_tag 'Name of current insurance carrier'%>
@@ -491,20 +486,7 @@
                                 <div class="form-error"></div>
                                 
                             </div>
-                            <div class="row1">
-                                <div class="form-left">Current year <span style="color:red;">*</span></div>
-                                <div class="form-right">
-                                   <select id="current_year" name="current_year">
-                                     <% current_year.each do |current_year|%>
-                                       <option value="<%=current_year%>"><%= current_year%></option>
-                                     <%end%>
-                                    </select>
-
-
-
-                                </div>
-                                <div class="form-error"></div>
-                            </div>
+                            
 
                             <div class="row1">
                                 <div class="form-left">Description Of Loss</div>
