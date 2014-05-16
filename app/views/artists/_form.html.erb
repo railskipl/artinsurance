@@ -1,4 +1,5 @@
 
+
         <style type="text/css">
             body { background-color:#fff; }
           
@@ -231,7 +232,7 @@
                             </div> 
 
                             <div class="row1">
-                                <div class="form-left">Address 2<span style="color:red;">*</span></div>
+                                <div class="form-left">Address 2</div>
                                 <div class="form-right"> <%=text_field_tag 'Address 2'%></div>
                                 <div class="form-error"></div>
                             </div> 
@@ -306,7 +307,11 @@
                                 <div class="form-left">Re-type Email<span style="color:red;">*</span></div>
                                 <div class="form-right"> <%=text_field_tag 'Retype_EMail'%></div>
                                 <div class="form-error"></div>
+
                             </div>
+
+                            
+                            
 
                         </div>
                         <div class="form-step" >
@@ -651,8 +656,14 @@
                                 <div class="form-error"></div>
                             </div>
                             
+                            <div class="row1">
+                                <span style="font-size:19px!important;">Lost history (For last 5 years)</span> &nbsp;&nbsp;&nbsp;&nbsp;
+                                 <a href="javascript:void(0);" onclick="hideStuff('loss', 'show', this); return false;" id="hide">Skip</a>
+                                 <a href="javascript:void(0);" onclick="showStuff('loss', 'hide', this); return false;" style="display: none;" id="show">show</a>
+                            </div>
 
-                            <div class="row1"><span style="font-size:19px!important;">Lost history (For last 5 years)</span><br/>    
+                            <div id="loss">
+                            <div class="row1">
                                 <div class="form-left">Description Of Loss</div>
                                 <div class="form-right"><%=text_field_tag 'Description Of Loss'%></div>
                                 <div class="form-error"></div>
@@ -672,7 +683,7 @@
                                          :style => "width: 62px;")%></div>
                                 <div class="form-error"></div>
                             </div>
-                            
+                            </div>
 
 
                           <div class="actions" style="float:right">
@@ -701,4 +712,21 @@
         confirm("This Program Exclude flood and windstorms in your area.would you like to continue?")
     }
 }
-</script>        
+</script>   
+
+
+<script type="text/javascript">
+function hideStuff(id,div1, btn) {
+    document.getElementById(id).style.display = 'none';
+    // hide the link
+    btn.style.display = 'none';
+    document.getElementById(div1).style.display = 'block';
+}
+
+function showStuff(id,div2, btn) {
+    document.getElementById(id).style.display = 'block';
+    // hide the link
+    btn.style.display = 'none';
+    document.getElementById(div2).style.display = 'block';
+}
+</script>
