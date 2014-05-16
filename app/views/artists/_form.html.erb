@@ -11,7 +11,7 @@
                 height:auto;
                 background:#f4f4f4;
                 overflow: hidden;
-                min-height: 650px;
+                min-height: 1100px;
 
             }
             #wrapper h3{
@@ -53,7 +53,7 @@
             .form-step{
 
                 padding:0 !important; top: 30px!important;
-                min-height: 650px;
+                min-height: 1100px;
 
             }
 
@@ -62,7 +62,7 @@
                 display: block;
                 position: absolute;
                 right: 0;
-                bottom: -150px;
+                bottom: -450px;
                 -moz-user-select: none;
                 background: none repeat scroll 0 0 #6F95DC;
                 border-radius: 5px 5px 5px 5px;
@@ -161,6 +161,14 @@
             }
 
 
+            .row2 {
+             float: left;
+             margin: 0 0;
+             width: 100%;
+            }
+
+
+
             @media only screen and (min-width: 320px) and (max-width: 768px) {
 
             .form-step {
@@ -184,9 +192,11 @@
                  .form-submit{
                 
                 bottom: -626px;
-                width: 73px;
+                width: 73px; }
 
-            }
+
+
+
 
         }
 
@@ -198,7 +208,7 @@
 <div class="row1">
 <div id="page">
             <div id="wrapper">
-                <h3>Artist Studio Transport & Exhibition Form</h3>
+                <h1>Artist Studio Transport & Exhibition Form</h1>
                 <%= form_tag url_for(:controller => 'artists', :action => 'create'), :method => 'post',:id => 'feedbackform' do |f| %>
 
 
@@ -212,11 +222,39 @@
                                 <div class="form-right"><%=text_field_tag 'Name_of_Applicant'%></div>
                                 <div class="form-error"></div>
                             </div>
+
+
                             <div class="row1">
-                                <div class="form-left">Mailing Address <span style="color:red;">*</span></div>
-                                <div class="form-right"> <%=text_field_tag 'Mailing_Address'%></div>
+                                <div class="form-left">Address 1<span style="color:red;">*</span></div>
+                                <div class="form-right"> <%=text_field_tag 'Address 1'%></div>
                                 <div class="form-error"></div>
                             </div> 
+
+                            <div class="row1">
+                                <div class="form-left">Address 2<span style="color:red;">*</span></div>
+                                <div class="form-right"> <%=text_field_tag 'Address 2'%></div>
+                                <div class="form-error"></div>
+                            </div> 
+
+                            <div class="row1">
+                                <div class="form-left">City<span style="color:red;">*</span></div>
+                                <div class="form-right"> <%=text_field_tag 'City'%></div>
+                                <div class="form-error"></div>
+                            </div> 
+
+                            <div class="row1">
+                                <div class="form-left">State<span style="color:red;">*</span></div>
+                                <div class="form-right"> <%=text_field_tag 'State'%></div>
+                                <div class="form-error"></div>
+                            </div> 
+
+                            <div class="row1">
+                                <div class="form-left"> Zip +4<span style="color:red;">*</span></div>
+                                <div class="form-right"> <%=text_field_tag 'Zip +4'%></div>
+                                <div class="form-error"></div>
+                            </div> 
+
+
                              <div class="row1">
                                 <div class="form-left">Studio Address <span style="color:red;">*</span></div>
                                 <div class="form-right">  <%=text_field_tag 'Studio_Address'%></div>
@@ -234,26 +272,36 @@
                                 </div>
                                 <div class="form-error"></div>
                             </div>
+
+
                             <div class="row1">
                                 <div class="form-left">Zip Code<span style="color:red;">*</span></div>
                                 <div class="form-right"> <%=text_field_tag 'Zip_Code'%></div>
                                 <div class="form-error"></div>
                             </div>
+
+
                             <div class="row1">
                                 <div class="form-left">Phone Number</div>
                                 <div class="form-right">  <%=text_field_tag 'Phone_Number' %></div>
                                 <div class="form-error"></div>
                             </div>
+
+
                             <div class="row1">
                                 <div class="form-left">Fax</div>
                                 <div class="form-right"> <%=text_field_tag 'Fax'%></div>
                                 <div class="form-error"></div>
                             </div>
+
+
                              <div class="row1">
                                 <div class="form-left">Email Address<span style="color:red;">*</span></div>
                                 <div class="form-right"> <%=text_field_tag 'Email_address'%></div>
                                 <div class="form-error"></div>
                             </div>
+
+
                              <div class="row1">
                                 <div class="form-left">Re-type Email<span style="color:red;">*</span></div>
                                 <div class="form-right"> <%=text_field_tag 'Retype_EMail'%></div>
@@ -266,7 +314,7 @@
                             <div class="row1">
                                 <div class="form-left">Limit of Studio Insurance <span style="color:red;">*</span></div>
                                 <div class="form-right">
-                                   <%= select_tag(:higher_limits, options_for_select([[''], ['$100000', 1000], ['$125000', 1062], ['$150000', 1203], ['$175000', 1344], ['$200000', 1484], ['$225000', 1025], ['$250000', 1765],['$275000', 1907],['$300000', 2047]],selected: :higher_limits )) %>
+                                   <%= select_tag(:higher_limits, options_for_select([ ['$100000', 1000], ['$125000', 1062], ['$150000', 1203], ['$175000', 1344], ['$200000', 1484], ['$225000', 1025], ['$250000', 1765],['$275000', 1907],['$300000', 2047]],selected: :higher_limits )) %>
                                 </div>
                                 <div class="form-error"></div>
                             </div>
@@ -301,23 +349,143 @@
                                 <div class="form-right"><%=text_field_tag 'Policy_Deductable'%></div>
                                 <div class="form-error"></div>
                             </div>
-                             <h2 style="font-size:23.5px!important;">Fire Protection</h2>
-                            <div class="row1">
-                                <div class="form-left" style="margin-botom:10px">Is there an automatic sprinkler system on premises?</div>
-                                <div class="form-right">
-
-
-                                    <input type="radio" name="Is there an automatic sprinkler system on premises?" value="Is there an automatic sprinkler system on premises?">&nbsp;&nbsp;Yes<br>
-                                    <input type="radio" name="Is there an automatic sprinkler system on premises?" value="Is there an automatic sprinkler system on premises?">&nbsp;&nbsp;No<br>
 
 
 
-                                </div>
+
+                        <h2 style="font-size:23.5px!important;">You Work (Check all that apply)</h2>
+                             
+                            <div class="row2">
+                                <div class="form-left">Paintings</div>
+                                <div class="form-right"><input type="checkbox" name="checkbox" id="checkbox_id" value="Paintings"></div>
+
+
+                                <div class="form-left">Furniture</div>
+                                <div class="form-right"><input type="checkbox" name="checkbox" id="checkbox_id" value="Furniture"></div>
+                                <div class="form-error"></div>
+                            </div>
+                            
+                        
+                          
+                            <div class="row2">
+                                <div class="form-left">Drawings </div>
+                                <div class="form-right"><input type="checkbox" name="checkbox" id="checkbox_id" value="Drawings"></div>
+
+                                <div class="form-left">Tapestries, Rugs, Fabrics</div>
+                                <div class="form-right"><input type="checkbox" name="checkbox" id="checkbox_id" value="Tapestries, Rugs, Fabrics"></div>
                                 <div class="form-error"></div>
                             </div>
 
+
+                            
+
+                             <div class="row2">
+                                <div class="form-left">Photographs</div>
+                                <div class="form-right"><input type="checkbox" name="checkbox" id="checkbox_id" value="Photographs"></div>
+
+                                <div class="form-left">Antique Jewelry</div>
+                                <div class="form-right"><input type="checkbox" name="checkbox" id="checkbox_id" value="Antique Jewelry"></div>
+                                <div class="form-error"></div>                              
+                            </div>
+
+                             
+
+                            <div class="row2">
+                                <div class="form-left">Sculptures – Fragile</div>
+                                <div class="form-right"><input type="checkbox" name="checkbox" id="checkbox_id" value="Sculptures – Fragile"></div>
+
+                                <div class="form-left">Silver</div>
+                                <div class="form-right"><input type="checkbox" name="checkbox" id="checkbox_id" value="Silver"></div>
+                                <div class="form-error"></div>                               
+                            </div>
+
+                            
+
+                            <div class="row2">
+                                <div class="form-left">Sculptures – Non Fragile</div>
+                                <div class="form-right"><input type="checkbox" name="checkbox" id="checkbox_id" value="Sculptures – Non Fragile"></div>
+
+                                <div class="form-left">Breakable (glass, ceramics, etc.)</div>
+                                <div class="form-right"><input type="checkbox" name="checkbox" id="checkbox_id" value="Breakable (glass, ceramics, etc.)"></div>
+                                <div class="form-error"></div>                              
+                            </div>
+
+                            
+
+
+                            <%=label_tag 'Studio is located in a' %>
+                                <select id="prior_year" name="studio">
+                                           <% studio.each do |studio|%>
+                                             <option value="<%=studio%>"><%= studio%></option>
+                                           <%end%>
+                                </select></br>
+                                                            
+                                      
+
+                             <div class="row2">
+                                <div class="form-left">Year Built?</div>
+                                 <div class="form-left">Pre 1950
+
+                                 <input type="checkbox" name="checkbox" id="checkbox_id" value="Pre 1950">
+
+                                 </div>
+
+                                <div class="form-right"></div>
+                                    <div class="form-left">After 1950 <input type="checkbox" name=" checkbox" id="checkbox_id" value="After 1950"></div>
+                                        <div class="form-right"></div>
+                                        <div class="form-error"></div> 
+                                    </div>
+
+
+
+
+
+                             <div class="row2">
+                                <div class="form-left">Studio & storage of art are in a basement? </div>
+                                <div class="form-right">
+                                     <input type="radio" name="Studio & storage of art are in a basement?" value="Do you keep a record of sales?">&nbsp;&nbsp;Yes
+                                     <input type="radio" name="Studio & storage of art are in a basement?" value="Do you keep a record of sales?">&nbsp;&nbsp;No<br>
+                                </div>                               
+                              </div>   
+
+
+
+                            <div class="row2">
+                                <div class="form-left">Is there a history of a back-up drain and/or sewer? </div>
+                                <div class="form-right">
+                                     <input type="radio" name="Is there a history of a back-up drain and/or sewer?" value="Do you keep a record of sales?">&nbsp;&nbsp;Yes
+                                     <input type="radio" name="Is there a history of a back-up drain and/or sewer?" value="Do you keep a record of sales?">&nbsp;&nbsp;No<br>
+                                </div>
+                            </div>   
+
+
+
+                            <div class="row2">
+                                <div class="form-left">If yes works stored on skits or shelf?</div>
+                                <div class="form-right">
+                                     <input type="radio" name="If yes works stored on skits or shelf?" value="Do you keep a record of sales?">&nbsp;&nbsp;Yes
+                                     <input type="radio" name="If yes works stored on skits or shelf?" value="Do you keep a record of sales?">&nbsp;&nbsp;No<br>
+                                </div>
+                            </div>     
+
                         </div>
+
+
+
                         <div class="form-step">
+
+                            <h2 style="font-size:23.5px!important;">Fire Protection</h2>
+                            <div class="row1">
+                                <div class="form-left" style="margin-botom:10px">Is there an automatic sprinkler system on premises?</div>
+                                <div class="form-right">
+                                    <input type="radio" name="Is there an automatic sprinkler system on premises?" value="Is there an automatic sprinkler system on premises?">&nbsp;&nbsp;Yes
+                                    <input type="radio" name="Is there an automatic sprinkler system on premises?" value="Is there an automatic sprinkler system on premises?">&nbsp;&nbsp;No<br>
+                                </div>
+                                <div class="form-error"></div>
+                            </div> 
+
+
+
                             <h2 style="font-size:23.5px!important;"> Security</h2>
                             <div class="row1">
                                 <div class="form-left">Deadbolts</div>
@@ -355,15 +523,10 @@
                                 <div class="form-error"></div>
                                
                             </div>
-                                
-                               
-                            </div>
 
 
 
-                          <div class="form-step">
-
-                             <h2 style="font-size:23.5px!important;"> Exposure</h2>
+                            <h2 style="font-size:23.5px!important;"> Exposure</h2>
                              <div class="row1">
                                 <div class="form-left">What is the average value of finished art work? <span style="color:red;">*</span></div>
                                 <div class="form-right">
@@ -375,6 +538,8 @@
                                 </div>
                                <div class="form-error"></div>
                             </div>
+
+
                             <div class="row1">
                                 <div class="form-left">What is the maximum value of single item? <span style="color:red;">*</span></div>
                                 <div class="form-right">
@@ -383,70 +548,72 @@
                                         <option value="<%=single_item%>"><%= single_item%></option>
                                         <%end%>
                                        </select>
-
                                 </div>
-                                <div class="form-error"></div>
-                               
+                                <div class="form-error"></div>                               
                             </div>
+
+
                             <div class="row1">
                                 <div class="form-left">Do you keep a detailed and itemized?</div>
                                 <div class="form-right">
-                                     <input type="radio" name="Do you keep a detailed and itemized?" value="Do you keep a detailed and itemized?">&nbsp;&nbsp;Yes<br>
+                                     <input type="radio" name="Do you keep a detailed and itemized?" value="Do you keep a detailed and itemized?">&nbsp;&nbsp;Yes
                                     <input type="radio" name="Do you keep a detailed and itemized?" value="Do you keep a detailed and itemized?">&nbsp;&nbsp;No
-
-
-
                                 </div>
-                               
                             </div>
-
-                              <div class="row1">
-                                <div class="form-left">Do you keep a record of sales? </div>
-                                <div class="form-right">
-                                     <input type="radio" name="Do you keep a record of sales?" value="Do you keep a record of sales?">&nbsp;&nbsp;Yes<br>
-                                     <input type="radio" name="Do you keep a record of sales?" value="Do you keep a record of sales?">&nbsp;&nbsp;No<br>
-
-
-
-                                </div>
+                                
                                
-                            </div>
+                          </div>
+
+
+
+
+
+
+
+                          <div class="form-step">
+
+                             
+
 
                              <div class="row1">
-                                <div class="form-left">When was the last date of inventory?</div>
+                                <div class="form-left">Do you keep a record of sales? </div>
                                 <div class="form-right">
-                                    <%=text_field_tag 'When_was_the_last_date_of_inventory?'%>
-
-
-
+                                     <input type="radio" name="Do you keep a record of sales?" value="Do you keep a record of sales?">&nbsp;&nbsp;Yes
+                                     <input type="radio" name="Do you keep a record of sales?" value="Do you keep a record of sales?">&nbsp;&nbsp;No<br>
                                 </div>
-                               
                             </div>
+
+
                            
 
+                           <div class="row1">
+                                <div class="form-left">When was the last date of inventory?</div>
+                                <div class="form-right">  <%= date_select("card_signup", "dob", { :end_year => DateTime.now.year - 4, :start_year => DateTime.now.year
+                                         },
+                                         :style => "width: 62px;")%></div>
+                                <div class="form-error"></div>
+                            </div>
 
 
-                        </div>
-                        <div class="form-step">
+
                             <div class="row1">
                                 <div class="form-left">Do you maintain a duplicate inventory off-site?</div>
                                 <div class="form-right">
-                                    <input type="radio" name="Do you maintain a duplicate inventory off-site?" value="Do you maintain a duplicate inventory off-site?">&nbsp;&nbsp;Yes<br>
+                                    <input type="radio" name="Do you maintain a duplicate inventory off-site?" value="Do you maintain a duplicate inventory off-site?">&nbsp;&nbsp;Yes
                                     <input type="radio" name="Do you maintain a duplicate inventory off-site?" value="Do you maintain a duplicate inventory off-site?">&nbsp;&nbsp;No<br>
-
-
-
-                                </div>
-                               
+                                </div>                               
                             </div>
-                                 <div class="row1">
+
+
+                              <div class="row1">
                                 <div class="form-left">Number of exhibits a year? <span style="color:red;">*</span></div>
                                 <div class="form-right">
                                 <%= select_tag(:exhibits_year, options_for_select([['5 or less'], ['6 - $25', 25], ['7 - $50', 50], ['8 - $75', 75], ['9 - $100', 100], ['10 - $125', 125], ['11 - $150', 150], ['12 - $175', 175],['13 - $200', 200],['14 - $225', 225],['15 - $250', 250]],selected: :exhibits_year )) %>
                                 </div>
-
                                 <div class="form-error"></div>
-                                </div>
+                              </div>
+
+
                             <div class="row1">
                                 <span style="font-size:19px!important;">Annual Sales</span> <br/>
                                 <div class="form-left">Current year <span style="color:red;">*</span></div>
@@ -456,12 +623,11 @@
                                        <option value="<%=current_year%>"><%= current_year%></option>
                                      <%end%>
                                     </select>
-
-
-
                                 </div>
                                 <div class="form-error"></div>
                             </div>
+
+
                             <div class="row1">
                                 <div class="form-left">Prior year <span style="color:red;">*</span></div>
                                 <div class="form-right">
@@ -471,41 +637,36 @@
                                      <option value="<%=prior_year%>"><%= prior_year%></option>
                                    <%end%>
                                      </select>
-
-
                                 </div>
                                 <div class="form-error"></div>
-                              
                             </div>
+
+
                             <div class="row1">
                                 <div class="form-left">Name of current insurance carrier <span style="color:red;">*</span></div>
                                 <div class="form-right">
-
                                    <%=text_field_tag 'Name of current insurance carrier'%>
                                      </select>
-
-
                                 </div>
                                 <div class="form-error"></div>
-                                
                             </div>
                             
 
-                            <div class="row1"><span style="font-size:19px!important;">Lost history (For last 5 years)</span><br/>
-
+                            <div class="row1"><span style="font-size:19px!important;">Lost history (For last 5 years)</span><br/>    
                                 <div class="form-left">Description Of Loss</div>
                                 <div class="form-right"><%=text_field_tag 'Description Of Loss'%></div>
                                 <div class="form-error"></div>
                             </div>
+
                             <div class="row1">
                                 <div class="form-left">Amount Of Loss</div>
                                 <div class="form-right"> <%=text_field_tag 'Amount Of Loss'%></div>
                                 <div class="form-error"></div>
                             </div> 
+
                              <div class="row1">
                                 <div class="form-left">Date</div>
-                                <div class="form-right">  <%= date_select("card_signup", "dob", { :end_year => DateTime.now.year - 100,
-                                         },
+                                <div class="form-right">  <%= date_select("card_signup", "dob", { :end_year => DateTime.now.year - 100,},
                                          :style => "width: 62px;")%></div>
                                 <div class="form-error"></div>
                             </div>
@@ -513,15 +674,13 @@
 
 
                           <div class="actions" style="float:right">
-                            
-
                             <%= submit_tag 'Submit',:class => "sbt-btn", :style=>"width: 110px; position: relative; margin: 0px; bottom: -10px;" %>
                           </div>
 
-                        </div>
-                       
-                          
-               
+                    </div>
+
+
+                            
             </div>
              <% end %>
         </div>
@@ -537,7 +696,7 @@
     var dropdown = document.getElementById("us_states");
     dropdown.onchange = function(event){
     if(dropdown.value=="Alabama" || dropdown.value=="Connecticut" || dropdown.value=="Delaware" || dropdown.value=="Florida" || dropdown.value=="Georgia" || dropdown.value=="Louisiana" || dropdown.value=="Maine"  || dropdown.value=="Mississippi"  || dropdown.value=="New Jersey" || dropdown.value=="New York" || dropdown.value=="North Carolina"  || dropdown.value=="California"  || dropdown.value=="Pennsylvania" || dropdown.value=="South Carolina"  || dropdown.value=="Texas"  ||dropdown.value=="Virginia" ){
-        confirm("Exclude flood and windstorms in your area.would you like to continue?")
+        confirm("This Program Exclude flood and windstorms in your area.would you like to continue?")
     }
 }
 </script>        

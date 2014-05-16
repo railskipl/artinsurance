@@ -121,7 +121,7 @@ $(document).ready(function() {
             var step1_validation = function(){
 
                 var err = 0;
-                var userinput = $(Mailing_Address).val();
+                // var userinput = $(Mailing_Address).val();
                 var userinput1 = $(Email_address).val();
 
                 var userinput2 = $(Retype_EMail).val();
@@ -138,10 +138,10 @@ $(document).ready(function() {
                     err++;
                 }
 
-                if(!pattern.test(userinput))
-                    {
-                      $('#Mailing_Address').parent().parent().find('.form-error').html("Please enter valid Mailing Address ");
-                    }
+                // if(!pattern.test(userinput))
+                //     {
+                //       $('#Mailing_Address').parent().parent().find('.form-error').html("Please enter valid Mailing Address ");
+                //     }
                                     
 
                  if($('#Studio_Address').val() == ''){

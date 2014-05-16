@@ -172,7 +172,7 @@ end
 
 def studio
       [
-        'Click here for construction type',
+        
         'Brick/Masonry',
         'Frame',
         'Other',

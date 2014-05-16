@@ -351,3 +351,33 @@
 
                             <%=label_tag 'Date' %>    
                             <%=text_field_tag 'Date'%></tr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                            <%= date_select :year, :order => [:year], :start_year => 2010, :end_year => Time.now.year, :prompt => {:year => "Select year"} %>
+
+
+
+                            <%= date_select :student, :admission_year, {:end_year => Date.today.year, :start_year => Date.today.year- 4, :discard_day => true, :discard_month => true} %>
