@@ -9,15 +9,6 @@
 			</div>
 	  </div>
 		
-		
-		
-		
-		
-		
-		
-		
-		
-		
 	</div>
 
 </header>
@@ -155,10 +146,47 @@ $(document).ready(function() {
                     $('#Zip_Code').parent().parent().find('.form-error').html("Please Select  Zip Code");
                     err++;
                 }
-                  if($('#Phone Number').val() == ''){
-                    $('#Phone Number').parent().parent().find('.form-error').html("Please select phone number");
+                  if($('#Phone_Number').val() == ''){
+                    $cf = $('#Phone_Number');
+                    
+                        phone =  $cf.val();
+                        phone = phone.replace(/[^0-9]/g,'');
+                        if (phone.length != 10) {
+                            
+                            $('#Phone_Number').parent().parent().find('.form-error').html("Phone number must include area code and prefix.");
+                            
+                        } else {
+                            area = phone.substring(0,3);
+                            prefix = phone.substring(3,6);
+                            line = phone.substring(6);
+                             $cf.val('(' + area + ') ' + prefix + '-' + line);
+                        }
+                    
+                    
                     err++;
                 }
+
+                if($('#Fax').val() == ''){
+                    $cf = $('#Fax');
+                    
+                        phone =  $cf.val();
+                        phone = phone.replace(/[^0-9]/g,'');
+                        if (phone.length != 10) {
+                            
+                            $('#Fax').parent().parent().find('.form-error').html("Fax number must include area code and prefix.");
+                            
+                        } else {
+                            area = phone.substring(0,3);
+                            prefix = phone.substring(3,6);
+                            line = phone.substring(6);
+                             $cf.val('(' + area + ') ' + prefix + '-' + line);
+                        }
+                    
+                    
+                    err++;
+                }
+
+
                   if($('#Email_address').val() == ''){
                     $('#Email_address').parent().parent().find('.form-error').html("Please select  email address");
                     err++;
