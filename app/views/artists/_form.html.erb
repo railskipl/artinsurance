@@ -168,6 +168,11 @@
             }
 
 
+form {
+    margin: 0 !important;
+}
+
+
 
             @media only screen and (min-width: 320px) and (max-width: 768px) {
 
@@ -205,19 +210,20 @@
 
 
 
-<div class="row1">
-<div id="page">
+<div class="container">
+
             <div id="wrapper">
-                <h1>Artist Studio Transport & Exhibition Form</h1>
+                <h3>Artist Studio Transport & Exhibition Form</h3>
                 <%= form_tag url_for(:controller => 'artists', :action => 'create'), :method => 'post',:id => 'feedbackform' do |f| %>
 
 
                     <div id="slider">
                         <div class="form-step" >
 
+                        <div class="span6">
+                        
 
-
-                            <div class="row1">
+                        <div class="row1">
                                 <div class="form-left">Name of Applicant <span style="color:red;">*</span></div>
                                 <div class="form-right"><%=text_field_tag 'Name_of_Applicant'%></div>
                                 <div class="form-error"></div>
@@ -261,7 +267,15 @@
                                 <div class="form-error"></div>
                             </div>
 
-                            <div class="row1">
+
+
+                        </div>
+
+
+                          <div class="span5">
+                          
+
+                          <div class="row1">
                                 <div class="form-left">State <span style="color:red;">*</span></div>
                                 <div class="form-right">
                                     <select id ="us_states" name="us_states">
@@ -308,8 +322,17 @@
                                 <div class="form-error"></div>
                             </div>
 
+
+
+                          </div>
+
+                            
+                            
                         </div>
                         <div class="form-step" >
+
+                        <div class="span6">
+
                             <h2 style="font-size:23.5px!important;"> Limits of Insurance</h2>
                             <div class="row1">
                                 <div class="form-left">Limit of Studio Insurance <span style="color:red;">*</span></div>
@@ -332,6 +355,9 @@
                                 </div>
                                 <div class="form-error"></div>
                             </div>
+
+
+
                             <div class="row1">
                                 <div class="form-left">Limit of Insurance While in Transit <span style="color:red;">*</span></div>
                                 <div class="form-right">
@@ -344,14 +370,21 @@
                                 </div>
                                 <div class="form-error"></div>
                             </div> 
+
+
+
                             <div class="row1">
                                 <div class="form-left">Policy Deductable<span style="color:red;">*</span></div>
                                 <div class="form-right"><%=text_field_tag 'Policy_Deductable'%></div>
                                 <div class="form-error"></div>
                             </div>
 
+                        </div>
 
 
+
+                        <div class="span5">
+                         
 
                         <h2 style="font-size:23.5px!important;">You Work (Check all that apply)</h2>
                              
@@ -410,8 +443,23 @@
                                 <div class="form-error"></div>                              
                             </div>
 
-                            
 
+
+                        </div>
+
+                            
+    
+
+                        </div>
+
+
+
+                        <div class="form-step">
+
+
+                          <div class="span6">
+
+                         
 
                             <%=label_tag 'Studio is located in a' %>
                                 <select id="prior_year" name="studio">
@@ -466,13 +514,7 @@
                                      <input type="radio" name="If yes works stored on skits or shelf?" value="Do you keep a record of sales?">&nbsp;&nbsp;Yes
                                      <input type="radio" name="If yes works stored on skits or shelf?" value="Do you keep a record of sales?">&nbsp;&nbsp;No<br>
                                 </div>
-                            </div>     
-
-                        </div>
-
-
-
-                        <div class="form-step">
+                            </div> 
 
                             <h2 style="font-size:23.5px!important;">Fire Protection</h2>
                             <div class="row1">
@@ -482,9 +524,14 @@
                                     <input type="radio" name="Is there an automatic sprinkler system on premises?" value="Is there an automatic sprinkler system on premises?">&nbsp;&nbsp;No<br>
                                 </div>
                                 <div class="form-error"></div>
-                            </div> 
+                            </div>
+
+                          </div>
 
 
+
+
+                           <div class="span5">
 
                             <h2 style="font-size:23.5px!important;"> Security</h2>
                             <div class="row1">
@@ -523,10 +570,23 @@
                                 <div class="form-error"></div>
                                
                             </div>
+                           </div>
+
+                         </div>
 
 
 
-                            <h2 style="font-size:23.5px!important;"> Exposure</h2>
+
+
+
+
+                          <div class="form-step">
+
+                          <div class="span6">
+
+
+
+                          <h2 style="font-size:23.5px!important;"> Exposure</h2>
                              <div class="row1">
                                 <div class="form-left">What is the average value of finished art work? <span style="color:red;">*</span></div>
                                 <div class="form-right">
@@ -562,15 +622,7 @@
                             </div>
                                 
                                
-                          </div>
 
-
-
-
-
-
-
-                          <div class="form-step">
 
                              
 
@@ -612,9 +664,19 @@
                                 </div>
                                 <div class="form-error"></div>
                               </div>
+                          </div>
+
+                          </div>
 
 
-                            <div class="row1">
+
+                          
+
+                          <div class="form-step">
+
+                          <div class="span6">
+
+                          <div class="row1">
                                 <span style="font-size:19px!important;">Annual Sales</span> <br/>
                                 <div class="form-left">Current year <span style="color:red;">*</span></div>
                                 <div class="form-right">
@@ -678,15 +740,18 @@
                           <div class="actions" style="float:right">
                             <%= submit_tag 'Submit',:class => "sbt-btn", :style=>"width: 110px; position: relative; margin: 0px; bottom: -10px;" %>
                           </div>
+                         </div>
+                       </div>
+                            
 
-                    </div>
+           
 
 
                             
             </div>
              <% end %>
         </div>
-       </div>
+      
     </div>
 
 
