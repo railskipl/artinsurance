@@ -666,7 +666,9 @@
 
                              <div class="row1">
                                 <div class="form-left">Date</div>
-                                <div class="form-right">  <%= date_select("card_signup", "dob", { :end_year => DateTime.now.year - 100,},
+
+                                <div class="form-right">  <%= date_select("card_signup", "dob", { :end_year => DateTime.now.year + 10,:start_year => DateTime.now.year - 200
+                                         },
                                          :style => "width: 62px;")%></div>
                                 <div class="form-error"></div>
                             </div>
