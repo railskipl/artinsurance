@@ -376,7 +376,7 @@ form {
                             <div class="row1">
                                 <div class="form-left">Limit of Studio Insurance <span style="color:red;">*</span></div>
                                 <div class="form-right">
-                                   <%= select_tag(:higher_limits, options_for_select([ ['$100,000','$ 1,000'], ['$125,000', '$ 1,062'], ['$150,000','$ 1,203'], ['$175,000','$ 1,344'], ['$200,000','$ 1,484'], ['$225,000','$ 1,025'], ['$250,000','$ 1,765'],['$275,000','$ 1,907'],['$300,000','$ 2,047']],selected: :higher_limits )) %>
+                                   <%= select_tag(:higher_limits, options_for_select([ ['$100,000',1000], ['$125,000',1062], ['$150,000',1203], ['$175,000',1344], ['$200,000',1484], ['$225,000',1025], ['$250,000',1765],['$275,000',1907],['$300,000',2047]],selected: :higher_limits )) %>
                                 </div>
                                 <div class="form-error"></div>
                             </div>
@@ -543,8 +543,8 @@ form {
                              <div class="row2">
                                 <div class="form-left">Studio & storage of art are in a basement? </div>
                                 <div class="form-right">
-                                     <input type="radio" id="Studio"  name="Studio & storage of art are in a basement" value="Do you keep a record of sales?">&nbsp;&nbsp;Yes
-                                     <input type="radio" id="Studio" name="Studio & storage of art are in a basement" value="Do you keep a record of sales?">&nbsp;&nbsp;No
+                                     <input type="radio" id="Studio"  name="Studio & storage of art are in a basement" value="Yes">&nbsp;&nbsp;Yes
+                                     <input type="radio" id="Studio" name="Studio & storage of art are in a basement" value="No">&nbsp;&nbsp;No
                                      <a class="more" title="" rel="tooltip" href="#" data-original-title="Studio & storage of art are in a basement?" style="float:right"> <strong> ?</strong></a>
                                 </div>                               
  
@@ -557,8 +557,8 @@ form {
                             <div class="row2">
                                 <div class="form-left">Is there a history of a back-up drain and/or sewer? </div>
                                 <div class="form-right">
-                                     <input type="radio" id="rsales" name="Is there a history of a back-up drain and/or sewer?" value="Do you keep a record of sales?">&nbsp;&nbsp;Yes
-                                     <input type="radio" id="rsales" name="Is there a history of a back-up drain and/or sewer?" value="Do you keep a record of sales?">&nbsp;&nbsp;No
+                                     <input type="radio" id="rsales" name="Is there a history of a back-up drain and/or sewer?" value="Yes">&nbsp;&nbsp;Yes
+                                     <input type="radio" id="rsales" name="Is there a history of a back-up drain and/or sewer?" value="No">&nbsp;&nbsp;No
                                      <a class="more" title="" rel="tooltip" href="#" data-original-title="Is there a history of a back-up drain and/or sewer? " style="float:right"> <strong> ?</strong></a>
                                 </div>
                                 <div class="form-error"></div>
@@ -569,8 +569,8 @@ form {
                             <div class="row2">
                                 <div class="form-left">If yes works stored on skits or shelf?</div>
                                 <div class="form-right">
-                                     <input type="radio" id="stored_on_skits" name="If yes works stored on skits or shelf?" value="Do you keep a record of sales?">&nbsp;&nbsp;Yes
-                                     <input type="radio" id="stored_on_skits" name="If yes works stored on skits or shelf?" value="Do you keep a record of sales?">&nbsp;&nbsp;No
+                                     <input type="radio" id="stored_on_skits" name="If yes works stored on skits or shelf?" value="Yes">&nbsp;&nbsp;Yes
+                                     <input type="radio" id="stored_on_skits" name="If yes works stored on skits or shelf?" value="No">&nbsp;&nbsp;No
                                      <a class="more" title="" rel="tooltip" href="#" data-original-title="If yes works stored on skits or shelf?" style="float:right"> <strong> ?</strong></a>
                                 </div>
                                 <div class="form-error"></div>
@@ -679,8 +679,8 @@ form {
                             <div class="row1">
                                 <div class="form-left">Do you keep a detailed and itemized?</div>
                                 <div class="form-right">
-                                     <input type="radio" id="detailed_itemized" name="Do you keep a detailed and itemized?" value="Do you keep a detailed and itemized?">&nbsp;&nbsp;Yes
-                                    <input type="radio" id="detailed_itemized" name="Do you keep a detailed and itemized?" value="Do you keep a detailed and itemized?">&nbsp;&nbsp;No
+                                     <input type="radio" id="detailed_itemized" name="Do you keep a detailed and itemized?" value="Yes">&nbsp;&nbsp;Yes
+                                    <input type="radio" id="detailed_itemized" name="Do you keep a detailed and itemized?" value="No">&nbsp;&nbsp;No
                                     <a class="more" title="" rel="tooltip" href="#" data-original-title="Do you keep a detailed and itemized?" style="float:right"> <strong> ?</strong></a>
                                 </div>
                                 <div class="form-error"></div> 
@@ -695,8 +695,8 @@ form {
                              <div class="row1">
                                 <div class="form-left">Do you keep a record of sales? </div>
                                 <div class="form-right">
-                                     <input type="radio" id="record_sales" name="Do you keep a record of sales?" value="Do you keep a record of sales?">&nbsp;&nbsp;Yes
-                                     <input type="radio" id="record_sales" name="Do you keep a record of sales?" value="Do you keep a record of sales?">&nbsp;&nbsp;No
+                                     <input type="radio" id="record_sales" name="Do you keep a record of sales?" value="Yes">&nbsp;&nbsp;Yes
+                                     <input type="radio" id="record_sales" name="Do you keep a record of sales?" value="No">&nbsp;&nbsp;No
                                      <a class="more" title="" rel="tooltip" href="#" data-original-title="Do you keep a record of sales? " style="float:right"> <strong> ?</strong></a>
                                 </div>
                                 <div class="form-error"></div> 
@@ -721,8 +721,8 @@ form {
                             <div class="row1">
                                 <div class="form-left">Do you maintain a duplicate inventory off-site?</div>
                                 <div class="form-right">
-                                    <input type="radio" id="inventory_off" name="Do you maintain a duplicate inventory off-site?" value="Do you maintain a duplicate inventory off-site?">&nbsp;&nbsp;Yes
-                                    <input type="radio" id="inventory_off" name="Do you maintain a duplicate inventory off-site?" value="Do you maintain a duplicate inventory off-site?">&nbsp;&nbsp;No
+                                    <input type="radio" id="inventory_off" name="Do you maintain a duplicate inventory off-site?" value="Yes">&nbsp;&nbsp;Yes
+                                    <input type="radio" id="inventory_off" name="Do you maintain a duplicate inventory off-site?" value="No">&nbsp;&nbsp;No
                                     <a class="more" title="" rel="tooltip" href="#" data-original-title="Do you maintain a duplicate inventory off-site?" style="float:right"> <strong> ?</strong></a>
                                 </div> 
                                 <div class="form-error"></div>                              
@@ -732,7 +732,7 @@ form {
                               <div class="row1">
                                 <div class="form-left">Number of exhibits a year? <span style="color:red;">*</span></div>
                                 <div class="form-right">
-                                <%= select_tag(:exhibits_year, options_for_select([['5 or less'], ['6 - $25', 25], ['7 - $50', 50], ['8 - $75', 75], ['9 - $100', 100], ['10 - $125', 125], ['11 - $150', 150], ['12 - $175', 175],['13 - $200', 200],['14 - $225', 225],['15 - $250', 250]],selected: :exhibits_year )) %>
+                                <%= select_tag(:exhibits_year, options_for_select([['5 or less', 0], ['6 - $25', 25], ['7 - $50', 50], ['8 - $75', 75], ['9 - $100', 100], ['10 - $125', 125], ['11 - $150', 150], ['12 - $175', 175],['13 - $200', 200],['14 - $225', 225],['15 - $250', 250]],selected: :exhibits_year )) %>
                                  <a class="more" title="" rel="tooltip" href="#" data-original-title="Number of exhibits a year? " style="float:right"> <strong> ?</strong></a>
                                 </div>
                                 <div class="form-error"></div>
@@ -779,7 +779,7 @@ form {
                             <div class="row1">
                                 <div class="form-left">Name of current insurance carrier <span style="color:red;">*</span></div>
                                 <div class="form-right">
-                                   <%=text_field_tag 'Name of current insurance carrier',nil,placeholder:"Please Enter the value"%>
+                                   <%=text_field_tag 'Name of current insurance carrier',nil,placeholder:"Name of current insurance carrier"%>
                                      </select>
                                 </div>
                                 <div class="form-error"></div>

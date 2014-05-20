@@ -59,6 +59,7 @@ class ArtistsController < ApplicationController
          @exhibits_year = params[:exhibits_year]
          @anualpremium = ((@limits_of_studio_insurance).to_i + (@exhibits_year).to_i).to_i
          session[:anualpremium] = @anualpremium
+         
      @grades = { "Name of Applicant" => params[:name_of_applicant],
            "Address 1" => params[:Address1],
            "Address 2" => params[:Address2],
