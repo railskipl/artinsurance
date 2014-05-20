@@ -273,10 +273,21 @@ $(document).ready(function() {
                   err++;
                 }
                 
-                if($('#When_was_the_last_date_of_inventory').val() == ''){
-                    $('#When_was_the_last_date_of_inventory').parent().parent().find('.form-error').html("Last date of inventory is required");
+                if($('input[id=rsales]:checked').length<=0){
+                    $('#rsales').parent().parent().find('.form-error').html("This field is required");
                     err++;
                 }
+                
+                if($('input[id=stored_on_skits]:checked').length<=0){
+                    $('#stored_on_skits').parent().parent().find('.form-error').html("This field is required");
+                    err++;
+                }
+                
+                if($('input[id=automatic_sprinkler]:checked').length<=0){
+                    $('#automatic_sprinkler').parent().parent().find('.form-error').html("This field is required");
+                    err++;
+                }
+                
                 
                 if(err == 0){
                     $(".rhino-active-bullet").removeClass("step-error").addClass("step-success");
@@ -300,6 +311,21 @@ $(document).ready(function() {
                     $('#single_item').parent().parent().find('.form-error').html("Maximum value of single item is required");
                     err++;
                 }
+                
+                 if($('input[id=detailed_itemized]:checked').length<=0){
+                      $('#detailed_itemized').parent().parent().find('.form-error').html("This field is required");
+                      err++;
+                  }
+                  
+                   if($('input[id=record_sales]:checked').length<=0){
+                        $('#record_sales').parent().parent().find('.form-error').html("This field is required");
+                        err++;
+                    }
+                    
+                     if($('input[id=inventory_off]:checked').length<=0){
+                          $('#inventory_off').parent().parent().find('.form-error').html("This field is required");
+                          err++;
+                      }
                 
                 if(err == 0){
                     $(".rhino-active-bullet").removeClass("step-error").addClass("step-success");
