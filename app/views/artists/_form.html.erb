@@ -215,7 +215,7 @@ form {
 
             <div id="wrapper">
 
-                <h3>Artist Studio Transport & Exhibition Form</h3>
+                <h3>Artist Studio, Transport & Exhibition Coverage</h3>
                 <%= form_tag url_for(:controller => 'artists', :action => 'create'), :method => 'post',:id => 'feedbackform' do |f| %>
                 <%= javascript_include_tag "facebox.js" %>
                 <%= stylesheet_link_tag "facebox.css" %>
@@ -365,7 +365,7 @@ form {
                             <div class="row1">
                                 <div class="form-left">Limit of Studio Insurance <span style="color:red;">*</span></div>
                                 <div class="form-right">
-                                   <%= select_tag(:higher_limits, options_for_select([ ['$100000', 1000], ['$125000', 1062], ['$150000', 1203], ['$175000', 1344], ['$200000', 1484], ['$225000', 1025], ['$250000', 1765],['$275000', 1907],['$300000', 2047]],selected: :higher_limits )) %>
+                                   <%= select_tag(:higher_limits, options_for_select([ ['$100,000','$ 1,000'], ['$125,000', '$ 1,062'], ['$150,000','$ 1,203'], ['$175,000','$ 1,344'], ['$200,000','$ 1,484'], ['$225,000','$ 1,025'], ['$250,000','$ 1,765'],['$275,000','$ 1,907'],['$300,000','$ 2,047']],selected: :higher_limits )) %>
                                 </div>
                                 <div class="form-error"></div>
                             </div>
@@ -375,27 +375,21 @@ form {
                             <div class="row1">
                                 <div class="form-left">Limit of Insurance at Other Location <span style="color:red;">*</span></div>
                                 <div class="form-right">
-                                   <select id="limit_of_Insurance_at_Other_Location" name="limit_of_Insurance_at_Other_Location">
-                                  <% limit_of_Insurance_at_Other_Location.each do |limit_of_Insurance_at_Other_Location|%>
-                                   <option value="<%=limit_of_Insurance_at_Other_Location%>"><%= limit_of_Insurance_at_Other_Location%></option>
-                                    <%end%>
-                                    </select></br>
+                                    <div class="form-right"> <%=text_field_tag 'limit_of_Insurance_at_Other_Location',nil,value:'$100,000'%></div>
+                                   </br>
                                 </div>
                                 <div class="form-error"></div>
                             </div>
-
 
 
                             <div class="row1">
                                 <div class="form-left">Limit of Insurance While in Transit <span style="color:red;">*</span></div>
                                 <div class="form-right">
 
-                                    <select id="limit_of_Insurance_While_in_Transit" name="limit_of_Insurance_While_in_Transit">
-                                   <% limit_of_Insurance_While_in_Transit.each do |limit_of_Insurance_While_in_Transit|%>
-                                     <option value="<%=limit_of_Insurance_While_in_Transit%>"><%= limit_of_Insurance_While_in_Transit%></option>
-                                   <%end%>
-                                    </select>
+                                    <div class="form-right"> <%=text_field_tag 'limit_of_Insurance_While_in_Transit',nil,value:'$100,000'%></div>
+                                   </br>
                                 </div>
+                                
                                 <div class="form-error"></div>
                             </div> 
 
@@ -403,7 +397,7 @@ form {
 
                             <div class="row1">
                                 <div class="form-left">Policy Deductable<span style="color:red;">*</span></div>
-                                <div class="form-right"><%=text_field_tag 'Policy_Deductable'%></div>
+                                <div class="form-right"><%=text_field_tag 'Policy_Deductable',nil,value: '$100,000'%></div>
                                 <div class="form-error"></div>
                             </div>
 
@@ -534,8 +528,8 @@ form {
                              <div class="row2">
                                 <div class="form-left">Studio & storage of art are in a basement? </div>
                                 <div class="form-right">
-                                     <input type="radio" name="Studio & storage of art are in a basement?" value="Do you keep a record of sales?">&nbsp;&nbsp;Yes
-                                     <input type="radio" name="Studio & storage of art are in a basement?" value="Do you keep a record of sales?">&nbsp;&nbsp;No<br>
+                                     <input type="radio" name="Studio & storage of art are in a basement" value="Do you keep a record of sales?">&nbsp;&nbsp;Yes
+                                     <input type="radio" name="Studio & storage of art are in a basement" value="Do you keep a record of sales?">&nbsp;&nbsp;No<br>
                                 </div>                               
                               </div>   
 
@@ -713,7 +707,6 @@ form {
                           </div>
 
 
-
                           
 
                           <div class="form-step">
@@ -784,7 +777,13 @@ form {
                                          :style => "width: 62px;")%></div>
                                 <div class="form-error"></div>
                             </div>
+                            <div class="form-right">
+                                    <div class="actions" >
+                                <%= link_to "Preview", "javascript:void(0);", :id=>"previes123", :class=>"sbt-btn", :style=>"position: relative; padding: 9px 10px; top: -2px;"%>
 
+
+                                    </div>
+                                </div>
 
 
                             <div class="row1">
@@ -830,7 +829,7 @@ form {
     var dropdown = document.getElementById("us_states");
     dropdown.onchange = function(event){
     if(dropdown.value=="Alabama" || dropdown.value=="Connecticut" || dropdown.value=="Delaware" || dropdown.value=="Florida" || dropdown.value=="Georgia" || dropdown.value=="Louisiana" || dropdown.value=="Maine"  || dropdown.value=="Mississippi"  || dropdown.value=="New Jersey" || dropdown.value=="New York" || dropdown.value=="North Carolina"  || dropdown.value=="California"  || dropdown.value=="Pennsylvania" || dropdown.value=="South Carolina"  || dropdown.value=="Texas"  ||dropdown.value=="Virginia" ){
-        confirm("This Program Exclude flood and windstorms in your area.would you like to continue?")
+        confirm("This program exclude flood and windstorms in your area.would you like to continue?")
     }
 }
 </script>   

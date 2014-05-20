@@ -185,8 +185,8 @@ $(document).ready(function() {
 
 
 
-                  if($('#Retype_EMail').val() == ''){
-                    $('#Retype_EMail').parent().parent().find('.form-error').html("Please select email address");
+                  if($('#Retype_EMail').val() != userinput1){
+                    $('#Retype_EMail').parent().parent().find('.form-error').html("Please enter Re-type Email same as Email Address");
                     err++;
                    }
                      
@@ -196,7 +196,11 @@ $(document).ready(function() {
                        $('#Retype_EMail').parent().parent().find('.form-error').html("Please enter valid email address");
                        err++;
                     }  
-
+                    if($('#Retype_EMail').val() == ''){
+                    $('#Retype_EMail').parent().parent().find('.form-error').html("Please select email address");
+                    err++;
+                   }
+                    
                  
 
                 if(err == 0){
