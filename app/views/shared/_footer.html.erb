@@ -48,7 +48,7 @@
 	
 
  
-  <%= javascript_include_tag "rhinoslider-1.05.min.js","mousewheel.js","easing.js" %> 
+  <%= javascript_include_tag "bootstrap.js","rhinoslider-1.05.min.js","mousewheel.js","easing.js" %> 
 
 <script type="text/javascript">
 $(document).ready(function() {
@@ -118,12 +118,12 @@ $(document).ready(function() {
 
                 var pattern = /^\b[A-Z0-9._%-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b$/i
                 
-                if($('#Name_of_Applicant').val() == ''){
-                    $('#Name_of_Applicant').parent().parent().find('.form-error').html("Name is required");
+                if($('#name_of_applicant').val() == ''){
+                    $('#name_of_applicant').parent().parent().find('.form-error').html("Name is required");
                     err++;
                 }
-                if($('#Address_1').val() == ''){
-                    $('#Address_1').parent().parent().find('.form-error').html("Address is required");
+                if($('#Address1').val() == ''){
+                    $('#Address1').parent().parent().find('.form-error').html("Address is required");
                     err++;
                 }
 
@@ -131,6 +131,14 @@ $(document).ready(function() {
                     
                       $('#City').parent().parent().find('.form-error').html("City is required");
                     }
+                    
+                if($('#State').val() == ''){
+                  $('#State').parent().parent().find('.form-error').html("State is required");
+                }
+                
+                if($('#Zip_4').val() == ''){
+                  $('#Zip_4').parent().parent().find('.form-error').html("Zip code is required");
+                }
                                     
 
                  if($('#Studio_Address').val() == ''){
@@ -333,6 +341,18 @@ $(document).ready(function() {
            
 
         </script>
+        
+        
+        <script language="javascript">
+           $(document).ready(function(){
+        	$("[rel='tooltip']")   .tooltip({
+                 animated: 'fade',
+                 placement: 'right',
+             });
+            })
+        </script>
+        
+        
 
  	 
 
