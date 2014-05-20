@@ -366,12 +366,15 @@ $(document).ready(function() {
 
 
               $(document).ready(function() {
-              var valuesToSubmit = jQuery('#feedbackform').serialize();
+              var valuesToSubmit = $('#feedbackform').serialize();
               $('#previes123').click(function() {
                     $.ajax({
                     type: "POST",
                     url: "<%= artist_preview_artists_path %>",
-                    data: valuesToSubmit
+                    data: $('#feedbackform').serialize(),
+                          success: function( response ) {
+                            console.log( response );
+                          }
                     });
                   });
                });
