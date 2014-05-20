@@ -48,7 +48,7 @@
 	
 
  
-  <%= javascript_include_tag "rhinoslider-1.05.min.js","mousewheel.js","easing.js" %> 
+  <%= javascript_include_tag "bootstrap.js","rhinoslider-1.05.min.js","mousewheel.js","easing.js" %> 
 
 <script type="text/javascript">
 $(document).ready(function() {
@@ -337,7 +337,10 @@ $(document).ready(function() {
         
         <script language="javascript">
            $(document).ready(function(){
-        	$("[rel='tooltip']").tooltip();
+        	$("[rel='tooltip']")   .tooltip({
+                 animated: 'fade',
+                 placement: 'right',
+             });
             })
         </script>
 
