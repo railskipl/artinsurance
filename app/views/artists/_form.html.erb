@@ -1,4 +1,4 @@
-    
+
 
         <style type="text/css">
             body { background-color:#fff; }
@@ -284,12 +284,7 @@ form {
                                 <div class="form-error"></div>
                             </div> 
 
-                            <div class="row1">
-                                <div class="form-left">State<span style="color:red;">*</span></div>
-                                <div class="form-right"> <%=text_field_tag 'State'%></div>
-                                <div class="form-error"></div>
-                            </div> 
-
+                          
                             <div class="row1">
                                 <div class="form-left"> Zip +4<span style="color:red;">*</span></div>
                                 <div class="form-right"> <%=text_field_tag 'Zip+4'%></div>
@@ -784,7 +779,7 @@ form {
                             <div class="row1">
                                 <div class="form-left">Name of current insurance carrier <span style="color:red;">*</span></div>
                                 <div class="form-right">
-                                   <%=text_field_tag 'Name of current insurance carrier'%>
+                                   <%=text_field_tag 'Name of current insurance carrier',nil,placeholder:"Please Enter the value"%>
                                      </select>
                                 </div>
                                 <div class="form-error"></div>
