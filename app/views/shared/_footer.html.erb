@@ -267,6 +267,12 @@ $(document).ready(function() {
                     err++;
                 }
                 
+                if($('input[id=Studio]:checked').length<=0)
+                {
+                  $('#Studio').parent().parent().find('.form-error').html("Studio & storage of art are required");
+                  err++;
+                }
+                
                 if($('#When_was_the_last_date_of_inventory').val() == ''){
                     $('#When_was_the_last_date_of_inventory').parent().parent().find('.form-error').html("Last date of inventory is required");
                     err++;
