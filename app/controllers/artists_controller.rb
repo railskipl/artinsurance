@@ -1,4 +1,5 @@
 class ArtistsController < ApplicationController
+   respond_to :html, :js
   # GET /artists
   # GET /artists.json
   def index
