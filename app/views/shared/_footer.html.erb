@@ -132,9 +132,6 @@ $(document).ready(function() {
                       $('#City').parent().parent().find('.form-error').html("City is required");
                     }
                     
-                if($('#State').val() == ''){
-                  $('#State').parent().parent().find('.form-error').html("State is required");
-                }
                 
                 if($('#Zip_4').val() == ''){
                   $('#Zip_4').parent().parent().find('.form-error').html("Zip code is required");
@@ -150,11 +147,7 @@ $(document).ready(function() {
                     $('#us_states').parent().parent().find('.form-error').html("Please Select  states");
                     err++;
                 } 
-                if($('#Zip_Code').val() == ''){
-                    $('#Zip_Code').parent().parent().find('.form-error').html("Please Select  Zip Code");
-                    err++;
-                }
-
+                
 
                 if($('#Phone_Number').val() == '' || $('#Phone_Number').val() != ''){
                     $cf = $('#Phone_Number');
