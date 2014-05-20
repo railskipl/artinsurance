@@ -122,8 +122,7 @@
 }
 .dialog-content {
     float: left;
-    height: 350px;
-    overflow: scroll;
+    height: auto;
     padding: 12px;
     width: 750px;
 }
