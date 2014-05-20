@@ -352,6 +352,25 @@ $(document).ready(function() {
             })
         </script>
         
+          <%= javascript_include_tag "facebox.js" %>
+          <%= stylesheet_link_tag "facebox.css" %>
+
+          <script>
+
+
+
+              $(document).ready(function() {
+              var valuesToSubmit = jQuery('#feedbackform').serialize();
+              $('#previes123').click(function() {
+                    $.ajax({
+                    type: "POST",
+                    url: "<%= artist_preview_artists_path %>",
+                    data: valuesToSubmit
+                    });
+                  });
+               });
+          </script>
+        
         
 
  	 

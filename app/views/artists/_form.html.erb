@@ -211,32 +211,12 @@ form {
 
 
 
-<div class="container">
+        <div class="container">
 
             <div id="wrapper">
 
                 <h3>Artist Studio, Transport & Exhibition Coverage</h3>
                 <%= form_tag url_for(:controller => 'artists', :action => 'create'), :method => 'post',:id => 'feedbackform' do |f| %>
-                <%= javascript_include_tag "facebox.js" %>
-                <%= stylesheet_link_tag "facebox.css" %>
-
-                <script>
-    
-                    jQuery.noConflict();
-                     
-                    jQuery(document).ready(function() {
-                    var valuesToSubmit = jQuery('#feedbackform').serialize();
-                    jQuery('#previes123').click(function() {
-                          jQuery.ajax({
-                          type: "POST",
-                          url: "<%= artist_preview_artists_path %>",
-                          data: valuesToSubmit,
-                          });
-                        });
-                     });
-                </script>
-                   
-
                    
                     <div id="slider">
                         <div class="form-step" >
@@ -248,6 +228,7 @@ form {
                                 <div class="form-left">Name of Applicant <span style="color:red;">*</span></div>
                                 <div class="form-right"><%=text_field_tag 'name_of_applicant'%> </div>
                                 <div class="form-error"></div>
+                                
                             </div>
 
 
@@ -298,6 +279,7 @@ form {
                                     </select>
                                 </div>
                                 <div class="form-error"></div>
+                                
                             </div>
 
 
