@@ -162,9 +162,9 @@ $(document).ready(function() {
                         phone = $cf.val();
                         phone = phone.replace(/[^0-9]/g,'');
                         if (phone.length != 10) {
-                         $('#Phone_Number').parent().parent().find('.form-error').html("Phone number must include area code and prefix.");   
-                        } 
-                      
+                         $('#Phone_Number').parent().parent().find('.form-error').html("Phone number must include area code and prefix."); 
+                         err++;  
+                        }      
                 }
 
                 if($('#Fax').val() == '' || $('#Fax').val() != ''){
@@ -173,9 +173,9 @@ $(document).ready(function() {
                         phone = $cf.val();
                         phone = phone.replace(/[^0-9]/g,'');
                         if (phone.length != 10) {
-                         $('#Fax').parent().parent().find('.form-error').html("Fax number must include area code and prefix.");   
-                        } 
-                      
+                         $('#Fax').parent().parent().find('.form-error').html("Fax number must include area code and prefix."); 
+                         err++;  
+                        }      
                 }
 
 
