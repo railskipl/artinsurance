@@ -94,7 +94,7 @@
                 float: left;
                 font-size: 13px;
                 font-weight: bold;
-                padding: 5px;
+                padding: 5px 0;
                 width: 200px;
             }
             .form-right{
@@ -139,7 +139,8 @@
                 color: red;
                 font-size: 12px;
                 float :left;
-                padding: 5px;
+                padding: 0 5px;
+                clear: left
             }
 
             .step-error{
@@ -181,6 +182,7 @@ form {
                 min-height: 1050px;
                 padding: 0 !important;
                 top: 220px !important;
+                margin-left: 20px!important
             }
 
             #wrapper{
@@ -192,19 +194,51 @@ form {
                 height:auto;
                 background:#f4f4f4;
                 overflow: hidden;
-                min-height: 1300px;}
+                min-height: 1360px;}
 
 
                  .form-submit{
                 
-                bottom: -835px;
+                bottom: -885px;
                 width: 73px; }
+
+
+                .rhino-prev, .rhino-next {
+                    bottom: -885px;
+                    width: 56px;
+}
 
 
 
 
 
         }
+
+
+
+         @media only screen and (min-width: 768px) and (max-width: 1024px) {
+
+
+
+                        .form-left {
+                color: #717171;
+                
+                font-size: 13px;
+                font-weight: bold;
+                padding: 5px 0;
+                width: 200px;
+                float: none;
+            }
+                .form-right {
+                    
+                    width: 133px;
+                    float: none;
+                }
+
+
+
+
+         }
 
 
         </style>
@@ -495,12 +529,15 @@ form {
 
                                  <input type="checkbox" name="checkbox" id="checkbox_id" value="Pre 1950">
 
+                                 After 1950 
+                                 <input type="checkbox" name=" checkbox" id="checkbox_id" value="After 1950">
+                                     <a class="more" title="" rel="tooltip" href="#" data-original-title="Year Built" style="float:right"> <strong> ?</strong></a>
+
                                  </div>
 
-                                <div class="form-right"></div>
-                                    <div class="form-left">After 1950 <input type="checkbox" name=" checkbox" id="checkbox_id" value="After 1950">
-                                     <a class="more" title="" rel="tooltip" href="#" data-original-title="Year Built" style="float:right"> <strong> ?</strong></a></div>
-                                        <div class="form-right"></div>
+                               
+                                    
+                                       
                                         <div class="form-error"></div> 
                                     </div>
 
@@ -511,8 +548,8 @@ form {
                              <div class="row2">
                                 <div class="form-left">Studio & storage of art are in a basement? </div>
                                 <div class="form-right">
-                                     <input type="radio" name="Studio & storage of art are in a basement" value="Do you keep a record of sales?">&nbsp;&nbsp;Yes
-                                     <input type="radio" name="Studio & storage of art are in a basement" value="Do you keep a record of sales?">&nbsp;&nbsp;No
+                                     <input type="radio" id="Studio" name="Studio & storage of art are in a basement" value="Do you keep a record of sales?">&nbsp;&nbsp;Yes
+                                     <input type="radio" id="Studio" name="Studio & storage of art are in a basement" value="Do you keep a record of sales?">&nbsp;&nbsp;No
                                      <a class="more" title="" rel="tooltip" href="#" data-original-title="Studio & storage of art are in a basement?" style="float:right"> <strong> ?</strong></a>
                                 </div>                               
  
@@ -779,13 +816,15 @@ form {
 
 
                             <div class="row1">
-                                <div class="form-left"></div>
+                                <div class="form-left">
+                                    <%= link_to "Preview", "javascript:void(0);", :id=>"previes123", :class=>"sbt-btn", :style=>"position: relative; padding: 9px 10px; top: -2px;"%>
+                                </div>
 
                                 <div class="form-right">
                                     
                                     <div class="actions" >
 
-                                    <%= submit_tag 'Submit',:class => "sbt-btn", :style=>"width: 110px; position: relative; margin: 0px; bottom: -10px;" %>
+                                    <%= submit_tag 'Submit',:class => "sbt-btn", :style=>"width: 110px; margin: 0px; bottom: -10px;" %>
                                 
                                      </div>
                                 </div>
@@ -794,13 +833,7 @@ form {
                                 
                                
                             </div>
-                                <div class="form-right">
-                                    <div class="actions" >
-                                <%= link_to "Preview", "javascript:void(0);", :id=>"previes123", :class=>"sbt-btn", :style=>"position: relative; padding: 9px 10px; top: -2px;"%>
-
-
-                                    </div>
-                                </div>
+                                
                             </div>
 
 
