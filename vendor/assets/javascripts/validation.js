@@ -48,7 +48,20 @@ required:"Please enter card_year"
 }
 });
 
+jQuery("#feedbackform").validate({
+errorElement:'div',
+rules: {
+"artist[Description Of Loss]":{
+required: true
+}
+},
+messages: {
+"artist[Description Of Loss]":{
+required: "Please enter the Description Of Loss"
 
+                     }
+          }
+});
 
 
 
