@@ -71,7 +71,7 @@ $(document).ready(function() {
 
 
 
-                var info = ["Step 1 ","Step 2","Step 3","Step 4","Step 5"];
+                var info = ["Step 1 ","Step 2","Step 3","Step 4","&nbsp;&nbsp;&nbsp;"];
                 
                 $('.rhino-bullet').each(function(index){
                     $(this).html(info[index]+'</a>');
@@ -112,26 +112,29 @@ $(document).ready(function() {
             var step1_validation = function(){
 
                 var err = 0;
-                // var userinput = $(Mailing_Address).val();
+               
                 var userinput1 = $(Email_address).val();
                 var userinput2 = $(Retype_EMail).val();
 
                 var pattern = /^\b[A-Z0-9._%-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b$/i
                 
                 if($('#Name_of_Applicant').val() == ''){
-                    $('#Name_of_Applicant').parent().parent().find('.form-error').html(" Name is Required");
+                    $('#Name_of_Applicant').parent().parent().find('.form-error').html("Name is required");
                     err++;
                 }
-                if($('#Mailing_Address').val() == ''){
-                    $('#Mailing_Address').parent().parent().find('.form-error').html("Mailing Address is Required");
+                if($('#Address_1').val() == ''){
+                    $('#Address_1').parent().parent().find('.form-error').html("Address is required");
                     err++;
                 }
 
-
+                if($('#City').val() == ''){
+                    
+                      $('#City').parent().parent().find('.form-error').html("City is required");
+                    }
                                     
 
                  if($('#Studio_Address').val() == ''){
-                    $('#Studio_Address').parent().parent().find('.form-error').html("Studio Address is Required");
+                    $('#Studio_Address').parent().parent().find('.form-error').html("Studio Address is required");
                     err++;
                 }
                
@@ -156,13 +159,13 @@ $(document).ready(function() {
                       
                 }
 
-                if($('#Fax').val() == '' || $('#Phone_Number').val() != ''){
-                    $cf = $('#Phone_Number');
+                if($('#Fax').val() == '' || $('#Fax').val() != ''){
+                    $cf = $('#Fax');
                     //$cf.blur(function(e){
                         phone = $cf.val();
                         phone = phone.replace(/[^0-9]/g,'');
                         if (phone.length != 10) {
-                         $('#Phone_Number').parent().parent().find('.form-error').html("Phone number must include area code and prefix.");   
+                         $('#Fax').parent().parent().find('.form-error').html("Fax number must include area code and prefix.");   
                         } 
                       
                 }

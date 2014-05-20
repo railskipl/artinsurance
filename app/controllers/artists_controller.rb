@@ -34,6 +34,11 @@ class ArtistsController < ApplicationController
     end
   end
 
+
+  def new1
+    
+  end
+
   # GET /artists/1/edit
   def edit
     @artist = Artist.find(params[:id])
@@ -41,9 +46,7 @@ class ArtistsController < ApplicationController
 
   # POST /artists
   # POST /artists.json
-  def test
-
-  end
+ 
 
   def home
   end
@@ -56,8 +59,12 @@ class ArtistsController < ApplicationController
          @anualpremium = ((@limits_of_studio_insurance).to_i + (@exhibits_year).to_i).to_i
          session[:anualpremium] = @anualpremium
 
-     @grades = { "Name of Applicant" => params[:Name_of_Applicant],
-           "Mailing Address" => params[:Mailing_Address],
+     @grades = { "Name of Applicant" => params[:name_of_applicant],
+           "Address 1" => params[:Address1],
+           "Address 2" => params[:Address2],
+           "City" => params[:City],
+           "State" => params[:State],
+           "Zip +4" => params[:Zip4],
            "Studio Address" => params[:current_year],
            "City" => params[:City],
            "us_states" => params[:us_states],
@@ -80,16 +87,13 @@ class ArtistsController < ApplicationController
            "annual_premium" => @anualpremium
            
          }
-        
-        
+         @email = params[:Email_address]
+         session[:email] = @email
 
-    respond_to do |format|
+      respond_to do |format|
       if @artist.save
         format.html { redirect_to new_subscription_path, notice: 'Artist was successfully created.' }
-        
         format.json { render json: @artist, status: :created, location: @artist }
-           
-
         ArtMail.art_mail(@grades).deliver
         
       else
@@ -99,6 +103,15 @@ class ArtistsController < ApplicationController
      end
     
   end
+
+
+
+  def artist_preview
+    @value = params
+    # raise @value.inspect
+  end
+
+
 
   # PUT /artists/1
   # PUT /artists/1.json
@@ -116,6 +129,12 @@ class ArtistsController < ApplicationController
     end
   end
 
+  
+def preview
+  @artist = Artist.find(params[:id])
+  
+end
+
   # DELETE /artists/1
   # DELETE /artists/1.json
   def destroy
@@ -128,3 +147,5 @@ class ArtistsController < ApplicationController
     end
   end
 end
+
+

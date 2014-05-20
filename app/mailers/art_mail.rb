@@ -7,13 +7,10 @@ class ArtMail < ActionMailer::Base
 def art_mail(grades)
 	
 	@grades = grades
-	email1 = "andrewxodo@gmail.com"
-    email2 = "andrew@madloch.com"
-    email3 = "andrew@veraxon.com"
-    email4 = "ankit@kunalinfotech.net" 
-    email5 = "andrew@yougame.com"
+	email1 = "priya11051988@gmail.com"
+    email2 = "priyanka.naphade@madloch.com"
     
-    recipients = email1, email2, email3, email4, email5
+    recipients = email1, email2
     subject = "Insurence"
    
         mail(:subject => 'Insurance', :to => recipients.join(','))  do |format|
@@ -40,3 +37,5 @@ end
 #   end
 
 end
+
+

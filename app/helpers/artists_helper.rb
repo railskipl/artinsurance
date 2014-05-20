@@ -76,7 +76,6 @@ end
 
 def limit_of_Insurance_at_Other_Location
       [
-      '',
       '$125000',
       '$150000',
       '$175000',
@@ -92,7 +91,6 @@ end
 
 def limit_of_Insurance_While_in_Transit
       [
-      '',
       '$125000',
       '$150000',
       '$175000',
@@ -108,7 +106,6 @@ end
 
 def finished_art_work
       [
-        '',
         'Under $5,000',
         '$5,001-$15,000',
         '$15,001-$30,000',
@@ -120,7 +117,6 @@ end
 
 def single_item
       [
-        '',
         'Under $5,000',
         '$5,001-$15,000',
         '$15,001-$30,000',
@@ -148,7 +144,6 @@ end
 
 def current_year
       [
-        '',
         'Under $5,000',
         '$5,001-$15,000',
         '$15,001-$30,000',
@@ -160,7 +155,6 @@ end
 
 def prior_year
       [
-        '',
         'Under $5,000',
         '$5,001-$15,000',
         '$15,001-$30,000',

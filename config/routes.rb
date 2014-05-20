@@ -1,9 +1,14 @@
 Artinsurence::Application.routes.draw do
-  resources :artists
+  resources :artists do
+    collection do 
+      post :artist_preview
+    end
+  end
   root :to => 'artists#home'
   match "artists/create" => "artists#create", via: :post
   
   resources :subscriptions
+
 
   
   

@@ -35,7 +35,7 @@
     font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
 }
 /*changed*/
-.rhino-prev, .rhino-next { bottom:-450px; }
+.rhino-prev, .rhino-next { bottom:-110px; }
 /*changed*/
 .rhino-prev {
     left:0px;
@@ -128,7 +128,7 @@ ul, ol {
     border: 1px solid #EEEEEE;
     font-size: 10px;
     text-align: center;
-    padding: 10px 119px;
+    padding: 10px 93px;
     color: #000;
     text-decoration:none;
     -webkit-user-select:none;

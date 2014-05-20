@@ -7,11 +7,7 @@ class SubscriptionsController < ApplicationController
       @subscription.paypal_customer_token = params[:PayerID]
       @subscription.email = @subscription.paypal.checkout_details.email
      end
-    end
-		
-	
-
-   
+  end
 
 def create
 
@@ -26,7 +22,10 @@ def create
     else
      render :new
     end
-   end
+end
+
+
+
 
 private
 
@@ -38,13 +37,5 @@ private
       params[:subscription]
      end
   end
-
-
-
-
-
-
-
-
 
 end

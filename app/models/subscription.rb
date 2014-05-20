@@ -1,11 +1,7 @@
 class Subscription < ActiveRecord::Base
   attr_accessible  :email,  :stripe_card_token, :stripe_customer_token, :token, :price
 
-
    attr_accessor :stripe_card_token
-
-  # validates_presence_of :price, :card_number
-   
 
    def save_with_payment
     if valid?
@@ -14,8 +10,6 @@ class Subscription < ActiveRecord::Base
       save!
        end
   end
-  
-
 end
 
 

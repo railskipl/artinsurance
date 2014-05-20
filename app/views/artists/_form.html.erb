@@ -1,4 +1,5 @@
 
+
         <style type="text/css">
             body { background-color:#fff; }
           
@@ -11,18 +12,17 @@
                 height:auto;
                 background:#f4f4f4;
                 overflow: hidden;
-                min-height: 1100px;
+                min-height: 670px;
 
             }
             #wrapper h3{
                 font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
-                font-size:16px;
+                font-size:20px;
                 height:60px;
                 margin:0;
                 padding:16px 0 0 20px;
-                text-shadow: 1px 1px 2px #000;
-                filter: dropshadow(color=#000, offx=1, offy=1);
-                color:#fff;
+                
+                color:#000;
             }
             #slider {
 
@@ -62,7 +62,7 @@
                 display: block;
                 position: absolute;
                 right: 0;
-                bottom: -450px;
+                bottom: -110px;
                 -moz-user-select: none;
                 background: none repeat scroll 0 0 #6F95DC;
                 border-radius: 5px 5px 5px 5px;
@@ -138,7 +138,8 @@
             .form-error{
                 color: red;
                 font-size: 12px;
-                padding: 8px;
+                float :left;
+                padding: 5px;
             }
 
             .step-error{
@@ -191,12 +192,12 @@ form {
                 height:auto;
                 background:#f4f4f4;
                 overflow: hidden;
-                min-height: 1106px;}
+                min-height: 1300px;}
 
 
                  .form-submit{
                 
-                bottom: -626px;
+                bottom: -835px;
                 width: 73px; }
 
 
@@ -213,32 +214,52 @@ form {
 <div class="container">
 
             <div id="wrapper">
+
                 <h3>Artist Studio Transport & Exhibition Form</h3>
                 <%= form_tag url_for(:controller => 'artists', :action => 'create'), :method => 'post',:id => 'feedbackform' do |f| %>
+                <%= javascript_include_tag "facebox.js" %>
+                <%= stylesheet_link_tag "facebox.css" %>
 
+                <script>
+    
+                    jQuery.noConflict();
+                     
+                    jQuery(document).ready(function() {
+                    var valuesToSubmit = jQuery('#feedbackform').serialize();
+                    jQuery('#previes123').click(function() {
+                          jQuery.ajax({
+                          type: "POST",
+                          url: "<%= artist_preview_artists_path %>",
+                          data: valuesToSubmit,
+                          });
+                        });
+                     });
+                </script>
+                   
 
+                   
                     <div id="slider">
                         <div class="form-step" >
 
                         <div class="span6">
                         
 
-                        <div class="row1">
+                            <div class="row1">
                                 <div class="form-left">Name of Applicant <span style="color:red;">*</span></div>
-                                <div class="form-right"><%=text_field_tag 'Name_of_Applicant'%></div>
+                                <div class="form-right"><%=text_field_tag 'name_of_applicant'%></div>
                                 <div class="form-error"></div>
                             </div>
 
 
                             <div class="row1">
                                 <div class="form-left">Address 1<span style="color:red;">*</span></div>
-                                <div class="form-right"> <%=text_field_tag 'Address 1'%></div>
+                                <div class="form-right"> <%=text_field_tag 'Address1'%></div>
                                 <div class="form-error"></div>
                             </div> 
 
                             <div class="row1">
-                                <div class="form-left">Address 2<span style="color:red;">*</span></div>
-                                <div class="form-right"> <%=text_field_tag 'Address 2'%></div>
+                                <div class="form-left">Address 2</div>
+                                <div class="form-right"> <%=text_field_tag 'Address2'%></div>
                                 <div class="form-error"></div>
                             </div> 
 
@@ -256,7 +277,7 @@ form {
 
                             <div class="row1">
                                 <div class="form-left"> Zip +4<span style="color:red;">*</span></div>
-                                <div class="form-right"> <%=text_field_tag 'Zip +4'%></div>
+                                <div class="form-right"> <%=text_field_tag 'Zip+4'%></div>
                                 <div class="form-error"></div>
                             </div> 
 
@@ -264,6 +285,18 @@ form {
                              <div class="row1">
                                 <div class="form-left">Studio Address <span style="color:red;">*</span></div>
                                 <div class="form-right">  <%=text_field_tag 'Studio_Address'%></div>
+                                <div class="form-error"></div>
+                            </div>
+
+                            <div class="row1">
+                                <div class="form-left">State <span style="color:red;">*</span></div>
+                                <div class="form-right">
+                                    <select id ="us_states" name="us_states">
+                                      <% us_states.each do |us_states|%>
+                                       <option value="<%=us_states%>"><%= us_states%></option>
+                                     <%end%>
+                                    </select>
+                                </div>
                                 <div class="form-error"></div>
                             </div>
 
@@ -275,17 +308,7 @@ form {
                           <div class="span5">
                           
 
-                          <div class="row1">
-                                <div class="form-left">State <span style="color:red;">*</span></div>
-                                <div class="form-right">
-                                    <select id ="us_states" name="us_states">
-                                      <% us_states.each do |us_states|%>
-                                       <option value="<%=us_states%>"><%= us_states%></option>
-                                     <%end%>
-                                    </select>
-                                </div>
-                                <div class="form-error"></div>
-                            </div>
+                          
 
 
                             <div class="row1">
@@ -320,15 +343,20 @@ form {
                                 <div class="form-left">Re-type Email<span style="color:red;">*</span></div>
                                 <div class="form-right"> <%=text_field_tag 'Retype_EMail'%></div>
                                 <div class="form-error"></div>
+
                             </div>
+
 
 
 
                           </div>
 
-                            
-                            
                         </div>
+
+
+
+
+
                         <div class="form-step" >
 
                         <div class="span6">
@@ -391,19 +419,23 @@ form {
                             <div class="row2">
                                 <div class="form-left">Paintings</div>
                                 <div class="form-right"><input type="checkbox" name="checkbox" id="checkbox_id" value="Paintings"></div>
+                                 <div class="form-error"></div>
+                             </div> 
 
-
+                             <div class="row2">
                                 <div class="form-left">Furniture</div>
                                 <div class="form-right"><input type="checkbox" name="checkbox" id="checkbox_id" value="Furniture"></div>
                                 <div class="form-error"></div>
                             </div>
-                            
                         
                           
                             <div class="row2">
                                 <div class="form-left">Drawings </div>
                                 <div class="form-right"><input type="checkbox" name="checkbox" id="checkbox_id" value="Drawings"></div>
+                                 <div class="form-error"></div>
+                             </div>
 
+                             <div class="row2">
                                 <div class="form-left">Tapestries, Rugs, Fabrics</div>
                                 <div class="form-right"><input type="checkbox" name="checkbox" id="checkbox_id" value="Tapestries, Rugs, Fabrics"></div>
                                 <div class="form-error"></div>
@@ -415,7 +447,11 @@ form {
                              <div class="row2">
                                 <div class="form-left">Photographs</div>
                                 <div class="form-right"><input type="checkbox" name="checkbox" id="checkbox_id" value="Photographs"></div>
+                                <div class="form-error"></div>
+                              </div>
 
+
+                              <div class="row2">
                                 <div class="form-left">Antique Jewelry</div>
                                 <div class="form-right"><input type="checkbox" name="checkbox" id="checkbox_id" value="Antique Jewelry"></div>
                                 <div class="form-error"></div>                              
@@ -426,7 +462,11 @@ form {
                             <div class="row2">
                                 <div class="form-left">Sculptures – Fragile</div>
                                 <div class="form-right"><input type="checkbox" name="checkbox" id="checkbox_id" value="Sculptures – Fragile"></div>
+                                <div class="form-error"></div>
+                            </div>
 
+
+                             <div class="row2">
                                 <div class="form-left">Silver</div>
                                 <div class="form-right"><input type="checkbox" name="checkbox" id="checkbox_id" value="Silver"></div>
                                 <div class="form-error"></div>                               
@@ -437,7 +477,10 @@ form {
                             <div class="row2">
                                 <div class="form-left">Sculptures – Non Fragile</div>
                                 <div class="form-right"><input type="checkbox" name="checkbox" id="checkbox_id" value="Sculptures – Non Fragile"></div>
+                                <div class="form-error"></div>
+                             </div>
 
+                            <div class="row2">
                                 <div class="form-left">Breakable (glass, ceramics, etc.)</div>
                                 <div class="form-right"><input type="checkbox" name="checkbox" id="checkbox_id" value="Breakable (glass, ceramics, etc.)"></div>
                                 <div class="form-error"></div>                              
@@ -634,9 +677,11 @@ form {
                                      <input type="radio" name="Do you keep a record of sales?" value="Do you keep a record of sales?">&nbsp;&nbsp;No<br>
                                 </div>
                             </div>
-
-
                            
+                           </div>
+
+
+                           <div class="span5">
 
                            <div class="row1">
                                 <div class="form-left">When was the last date of inventory?</div>
@@ -645,7 +690,6 @@ form {
                                          :style => "width: 62px;")%></div>
                                 <div class="form-error"></div>
                             </div>
-
 
 
                             <div class="row1">
@@ -713,8 +757,14 @@ form {
                                 <div class="form-error"></div>
                             </div>
                             
+                            <div class="row1">
+                                <span style="font-size:19px!important;">Lost history (For last 5 years)</span> &nbsp;&nbsp;&nbsp;&nbsp;
+                                 <a href="javascript:void(0);" onclick="hideStuff('loss', 'show', this); return false;" id="hide">Skip</a>
+                                 <a href="javascript:void(0);" onclick="showStuff('loss', 'hide', this); return false;" style="display: none;" id="show">show</a>
+                            </div>
 
-                            <div class="row1"><span style="font-size:19px!important;">Lost history (For last 5 years)</span><br/>    
+                            <div id="loss">
+                            <div class="row1">
                                 <div class="form-left">Description Of Loss</div>
                                 <div class="form-right"><%=text_field_tag 'Description Of Loss'%></div>
                                 <div class="form-error"></div>
@@ -734,12 +784,29 @@ form {
                                          :style => "width: 62px;")%></div>
                                 <div class="form-error"></div>
                             </div>
-                            
 
 
-                          <div class="actions" style="float:right">
-                            <%= submit_tag 'Submit',:class => "sbt-btn", :style=>"width: 110px; position: relative; margin: 0px; bottom: -10px;" %>
-                          </div>
+
+                            <div class="row1">
+                                <div class="form-left"></div>
+
+                                <div class="form-right">
+                                    
+                                    <div class="actions" >
+
+                                    <%= submit_tag 'Submit',:class => "sbt-btn", :style=>"width: 110px; position: relative; margin: 0px; bottom: -10px;" %>
+                                
+                                     </div>
+                                </div>
+
+
+                                
+                               
+                            </div>
+                            </div>
+
+
+                          
                          </div>
                        </div>
                             
@@ -766,4 +833,21 @@ form {
         confirm("This Program Exclude flood and windstorms in your area.would you like to continue?")
     }
 }
-</script>        
+</script>   
+
+
+<script type="text/javascript">
+function hideStuff(id,div1, btn) {
+    document.getElementById(id).style.display = 'none';
+    // hide the link
+    btn.style.display = 'none';
+    document.getElementById(div1).style.display = 'block';
+}
+
+function showStuff(id,div2, btn) {
+    document.getElementById(id).style.display = 'block';
+    // hide the link
+    btn.style.display = 'none';
+    document.getElementById(div2).style.display = 'block';
+}
+</script>
