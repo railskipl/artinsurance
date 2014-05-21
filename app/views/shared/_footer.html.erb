@@ -49,7 +49,7 @@
 	
 
  
-  <%= javascript_include_tag "rhinoslider-1.05.min.js","mousewheel.js","easing.js" %> 
+  <%= javascript_include_tag "bootstrap.js","rhinoslider-1.05.min.js","mousewheel.js","easing.js" %> 
 
 <script type="text/javascript">
 $(document).ready(function() {
@@ -120,12 +120,12 @@ $(document).ready(function() {
 
                 var pattern = /^\b[A-Z0-9._%-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b$/i
                 
-                if($('#Name_of_Applicant').val() == ''){
-                    $('#Name_of_Applicant').parent().parent().find('.form-error').html("Name is required");
+                if($('#name_of_applicant').val() == ''){
+                    $('#name_of_applicant').parent().parent().find('.form-error').html("Name is required");
                     err++;
                 }
-                if($('#Address_1').val() == ''){
-                    $('#Address_1').parent().parent().find('.form-error').html("Address is required");
+                if($('#Address1').val() == ''){
+                    $('#Address1').parent().parent().find('.form-error').html("Address is required");
                     err++;
                 }
 
@@ -133,6 +133,11 @@ $(document).ready(function() {
                     
                       $('#City').parent().parent().find('.form-error').html("City is required");
                     }
+                    
+                
+                if($('#Zip_4').val() == ''){
+                  $('#Zip_4').parent().parent().find('.form-error').html("Zip code is required");
+                }
                                     
 
                  if($('#Studio_Address').val() == ''){
@@ -144,11 +149,7 @@ $(document).ready(function() {
                     $('#us_states').parent().parent().find('.form-error').html("Please Select  states");
                     err++;
                 } 
-                if($('#Zip_Code').val() == ''){
-                    $('#Zip_Code').parent().parent().find('.form-error').html("Please Select  Zip Code");
-                    err++;
-                }
-
+                
 
                 if($('#Phone_Number').val() == '' || $('#Phone_Number').val() != ''){
                     $cf = $('#Phone_Number');
@@ -156,9 +157,9 @@ $(document).ready(function() {
                         phone = $cf.val();
                         phone = phone.replace(/[^0-9]/g,'');
                         if (phone.length != 10) {
-                         $('#Phone_Number').parent().parent().find('.form-error').html("Phone number must include area code and prefix.");   
-                        } 
-                      
+                         $('#Phone_Number').parent().parent().find('.form-error').html("Phone number must include area code and prefix."); 
+                         err++;  
+                        }      
                 }
 
                 if($('#Fax').val() == '' || $('#Fax').val() != ''){
@@ -167,9 +168,9 @@ $(document).ready(function() {
                         phone = $cf.val();
                         phone = phone.replace(/[^0-9]/g,'');
                         if (phone.length != 10) {
-                         $('#Fax').parent().parent().find('.form-error').html("Fax number must include area code and prefix.");   
-                        } 
-                      
+                         $('#Fax').parent().parent().find('.form-error').html("Fax number must include area code and prefix."); 
+                         err++;  
+                        }      
                 }
 
 
@@ -187,8 +188,8 @@ $(document).ready(function() {
 
 
 
-                  if($('#Retype_EMail').val() == ''){
-                    $('#Retype_EMail').parent().parent().find('.form-error').html("Please select email address");
+                  if($('#Retype_EMail').val() != userinput1){
+                    $('#Retype_EMail').parent().parent().find('.form-error').html("Please enter Re-type Email same as Email Address");
                     err++;
                    }
                      
@@ -198,7 +199,11 @@ $(document).ready(function() {
                        $('#Retype_EMail').parent().parent().find('.form-error').html("Please enter valid email address");
                        err++;
                     }  
-
+                    if($('#Retype_EMail').val() == ''){
+                    $('#Retype_EMail').parent().parent().find('.form-error').html("Please select email address");
+                    err++;
+                   }
+                    
                  
 
                 if(err == 0){
@@ -257,10 +262,27 @@ $(document).ready(function() {
                     err++;
                 }
                 
-                if($('#When_was_the_last_date_of_inventory').val() == ''){
-                    $('#When_was_the_last_date_of_inventory').parent().parent().find('.form-error').html("Last date of inventory is required");
+                if($('input[id=Studio]:checked').length<=0)
+                {
+                  $('#Studio').parent().parent().find('.form-error').html("Studio & storage of art are required");
+                  err++;
+                }
+                
+                if($('input[id=rsales]:checked').length<=0){
+                    $('#rsales').parent().parent().find('.form-error').html("This field is required");
                     err++;
                 }
+                
+                if($('input[id=stored_on_skits]:checked').length<=0){
+                    $('#stored_on_skits').parent().parent().find('.form-error').html("This field is required");
+                    err++;
+                }
+                
+                if($('input[id=automatic_sprinkler]:checked').length<=0){
+                    $('#automatic_sprinkler').parent().parent().find('.form-error').html("This field is required");
+                    err++;
+                }
+                
                 
                 if(err == 0){
                     $(".rhino-active-bullet").removeClass("step-error").addClass("step-success");
@@ -284,6 +306,21 @@ $(document).ready(function() {
                     $('#single_item').parent().parent().find('.form-error').html("Maximum value of single item is required");
                     err++;
                 }
+                
+                 if($('input[id=detailed_itemized]:checked').length<=0){
+                      $('#detailed_itemized').parent().parent().find('.form-error').html("This field is required");
+                      err++;
+                  }
+                  
+                   if($('input[id=record_sales]:checked').length<=0){
+                        $('#record_sales').parent().parent().find('.form-error').html("This field is required");
+                        err++;
+                    }
+                    
+                     if($('input[id=inventory_off]:checked').length<=0){
+                          $('#inventory_off').parent().parent().find('.form-error').html("This field is required");
+                          err++;
+                      }
                 
                 if(err == 0){
                     $(".rhino-active-bullet").removeClass("step-error").addClass("step-success");
@@ -331,6 +368,40 @@ $(document).ready(function() {
            
 
         </script>
+        
+        
+        <script language="javascript">
+           $(document).ready(function(){
+        	$("[rel='tooltip']")   .tooltip({
+                 animated: 'fade',
+                 placement: 'right',
+             });
+            })
+        </script>
+        
+          <%= javascript_include_tag "facebox.js" %>
+          <%= stylesheet_link_tag "facebox.css" %>
+
+          <script>
+
+
+
+              $(document).ready(function() {
+              var valuesToSubmit = $('#feedbackform').serialize();
+              $('#previes123').click(function() {
+                    $.ajax({
+                    type: "POST",
+                    url: "<%= artist_preview_artists_path %>",
+                    data: $('#feedbackform').serialize(),
+                          success: function( response ) {
+                            console.log( response );
+                          }
+                    });
+                  });
+               });
+          </script>
+        
+        
 
  	 
 

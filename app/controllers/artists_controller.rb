@@ -1,4 +1,5 @@
 class ArtistsController < ApplicationController
+   respond_to :html, :js
   # GET /artists
   # GET /artists.json
   def index
@@ -54,17 +55,15 @@ class ArtistsController < ApplicationController
          @exhibits_year = params[:exhibits_year]
          @anualpremium = ((@limits_of_studio_insurance).to_i + (@exhibits_year).to_i).to_i
          session[:anualpremium] = @anualpremium
-
+         
      @grades = { "Name of Applicant" => params[:name_of_applicant],
            "Address 1" => params[:Address1],
            "Address 2" => params[:Address2],
            "City" => params[:City],
-           "State" => params[:State],
            "Zip +4" => params[:Zip4],
            "Studio Address" => params[:current_year],
            "City" => params[:City],
            "us_states" => params[:us_states],
-           "Zip Code" => params[:Zip_Code],
            "Phone Number" => params[:Phone_Number],
            "Fax" => params[:Fax],
            "E-mail address" => params[:Email_address],
