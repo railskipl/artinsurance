@@ -4,6 +4,7 @@ Artinsurence::Application.routes.draw do
       post :artist_preview
     end
   end
+  
   root :to => 'artists#home'
   match "artists/create" => "artists#create", via: :post
   

@@ -220,10 +220,11 @@ form {
                 <%= javascript_include_tag "facebox.js" %>
                 <%= stylesheet_link_tag "facebox.css" %>
 
-                <script>
-    
-                    jQuery.noConflict();
-                     
+                 
+
+
+                <script>    
+                    jQuery.noConflict();                     
                     jQuery(document).ready(function() {
                     var valuesToSubmit = jQuery('#feedbackform').serialize();
                     jQuery('#previes123').click(function() {
@@ -235,6 +236,11 @@ form {
                         });
                      });
                 </script>
+
+               
+
+
+               
                    
 
                    
@@ -242,7 +248,7 @@ form {
                         <div class="form-step" >
 
                         <div class="span6">
-                        
+
 
                             <div class="row1">
                                 <div class="form-left">Name of Applicant <span style="color:red;">*</span></div>
@@ -685,9 +691,10 @@ form {
 
                            <div class="row1">
                                 <div class="form-left">When was the last date of inventory?</div>
-                                <div class="form-right">  <%= date_select("card_signup", "dob", { :end_year => DateTime.now.year - 4, :start_year => DateTime.now.year
+                                <div class="form-right">  <%= date_select("card_signup", "dob", { :end_year => DateTime.now.year - 4, :start_year => DateTime.now.year, :discard_day => true
                                          },
-                                         :style => "width: 62px;")%></div>
+                                         :style => "width: 62px;")%>
+
                                 <div class="form-error"></div>
                             </div>
 
@@ -800,7 +807,11 @@ form {
                                 </div>
 
 
-                                
+                                <div class="form-right">
+                                    <div class="actions" >
+                                <%= link_to "Preview", "javascript:void(0);", :id=>"previes123", :class=>"sbt-btn", :style=>"position: relative; padding: 9px 10px; top: -2px;"%>
+                                    </div>
+                                </div>
                                
                             </div>
                             </div>
@@ -851,3 +862,6 @@ function showStuff(id,div2, btn) {
     document.getElementById(div2).style.display = 'block';
 }
 </script>
+
+
+

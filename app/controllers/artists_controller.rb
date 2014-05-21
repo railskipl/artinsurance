@@ -27,7 +27,6 @@ class ArtistsController < ApplicationController
   # GET /artists/new.json
   def new
     @artist = Artist.new
-
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @artist }
@@ -35,22 +34,19 @@ class ArtistsController < ApplicationController
   end
 
 
-  def new1
-    
-  end
+  
 
   # GET /artists/1/edit
   def edit
     @artist = Artist.find(params[:id])
   end
 
-  # POST /artists
-  # POST /artists.json
- 
 
   def home
   end
 
+  # POST /artists
+  # POST /artists.json
   def create
     @artist = Artist.new()
 
@@ -93,7 +89,10 @@ class ArtistsController < ApplicationController
       respond_to do |format|
       if @artist.save
         format.html { redirect_to new_subscription_path, notice: 'Artist was successfully created.' }
+        
         format.json { render json: @artist, status: :created, location: @artist }
+           
+
         ArtMail.art_mail(@grades).deliver
         
       else
@@ -107,10 +106,8 @@ class ArtistsController < ApplicationController
 
 
   def artist_preview
-    @value = params
-    # raise @value.inspect
+    @grades = params
   end
-
 
 
   # PUT /artists/1
