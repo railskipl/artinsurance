@@ -56,14 +56,17 @@ class ArtistsController < ApplicationController
          @anualpremium = ((@limits_of_studio_insurance).to_i + (@exhibits_year).to_i).to_i
          session[:anualpremium] = @anualpremium
          
-     @grades = { "Name of Applicant" => params[:name_of_applicant],
+     @grades = { "First Name" => params[:first_name],
+           "last Name" => params[:last_name],
            "Address 1" => params[:Address1],
            "Address 2" => params[:Address2],
            "City" => params[:City],
-           "Zip +4" => params[:Zip4],
-           "Studio Address" => params[:current_year],
-           "City" => params[:City],
+           "state" => params[:state],
+           "Zip" => params[:Zip],
+           "Studio Address" => params[:Studio_Address],
+           "Studio City" => params[:Studio_City],
            "us_states" => params[:us_states],
+           "Zip Code" => params[:Zip_Code],
            "Phone Number" => params[:Phone_Number],
            "Fax" => params[:Fax],
            "E-mail address" => params[:Email_address],

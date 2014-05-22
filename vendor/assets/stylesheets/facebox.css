@@ -41,12 +41,7 @@
   right:5px;
   padding:2px;
   background:#fff;
-}
-#facebox .close img{
-  opacity:0.3;
-}
-#facebox .close:hover img{
-  opacity:1.0;
+  opacity: 0.65 !important;
 }
 
 #facebox .loading {
@@ -77,22 +72,8 @@
 .facebox_overlayBG {
   background-color: #000;
   z-index: 99;
-  opacity:0.3 !important;
+
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 .titleBar {

@@ -381,3 +381,18 @@
 
 
                             <%= date_select :student, :admission_year, {:end_year => Date.today.year, :start_year => Date.today.year- 4, :discard_day => true, :discard_month => true} %>
+
+
+
+                            var pattern1 = /\(?([0-9]{3})\)\ ([0-9]{3})\-([0-9]{4})/
+
+
+
+
+
+
+
+
+
+
+                            <a class="more" title="" rel="tooltip" href="#" data-original-title="Covered Property: Works of art by you being held for sale or sold but not delivered or removed, your property of other in your care, custondy or control, and for which you may be liable or assume liability prior to losss or damage." style="float:none"> <strong> ?</strong></a></span></div>

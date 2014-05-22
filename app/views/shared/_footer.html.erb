@@ -117,8 +117,11 @@ $(document).ready(function() {
                
                 var userinput1 = $(Email_address).val();
                 var userinput2 = $(Retype_EMail).val();
+                var userinput3 = $(Phone_Number).val();
+                var userinput4 = $(Fax).val();
 
                 var pattern = /^\b[A-Z0-9._%-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b$/i
+                var pattern1 = /\(?([0-9]{3})\)\ ([0-9]{3})\-([0-9]{4})/
                 
                 if($('#name_of_applicant').val() == ''){
                     $('#name_of_applicant').parent().parent().find('.form-error').html("Name is required");
@@ -151,27 +154,28 @@ $(document).ready(function() {
                 } 
                 
 
-                if($('#Phone_Number').val() == '' || $('#Phone_Number').val() != ''){
-                    $cf = $('#Phone_Number');
-                    //$cf.blur(function(e){
-                        phone = $cf.val();
-                        phone = phone.replace(/[^0-9]/g,'');
-                        if (phone.length != 10) {
-                         $('#Phone_Number').parent().parent().find('.form-error').html("Phone number must include area code and prefix."); 
-                         err++;  
-                        }      
+                if($('#Phone_Number').val() == ''){
+                    $('#Phone_Number').parent().parent().find('.form-error').html("Please Select  Phone Number");
+                    err++;     
                 }
 
-                if($('#Fax').val() == '' || $('#Fax').val() != ''){
-                    $cf = $('#Fax');
-                    //$cf.blur(function(e){
-                        phone = $cf.val();
-                        phone = phone.replace(/[^0-9]/g,'');
-                        if (phone.length != 10) {
-                         $('#Fax').parent().parent().find('.form-error').html("Fax number must include area code and prefix."); 
-                         err++;  
-                        }      
+                if(!pattern1.test(userinput3))
+                    {
+                       $('#Phone_Number').parent().parent().find('.form-error').html("Please enter valid Phone number");
+                    err++;
+                    }
+
+                if($('#Fax').val() == ''){
+                    $('#Fax').parent().parent().find('.form-error').html("Please Select  Fax Number");
+                    err++;     
                 }
+
+
+                if(!pattern1.test(userinput4))
+                    {
+                       $('#Fax').parent().parent().find('.form-error').html("Please enter valid Fax number");
+                    err++;
+                    }
 
 
                   if($('#Email_address').val() == ''){
