@@ -250,6 +250,7 @@ form {
             <div id="wrapper">
 
                 <h3>Artist Studio, Transport & Exhibition Coverage</h3>
+                <div style="position: relative; float: right; right: 43px; top: -45px;">Fields marked asterisk (<span style="color: #FF0000; font-weight: bold; position: relative; top: 3px;">*</span>) are mandatory.</div>
                 <%= form_tag url_for(:controller => 'artists', :action => 'create'), :method => 'post',:id => 'feedbackform' do |f| %>
                    
                     <div id="slider">
@@ -375,7 +376,10 @@ form {
                             <div class="row1">
                                 <div class="form-left">Limit of Insurance at Other Location <span style="color:red;">*</span></div>
                                 <div class="form-right">
-                                    <div class="form-right"> <%=text_field_tag 'limit_of_Insurance_at_Other_Location',nil,value:'$100,000'%></div>
+                                    <div class="form-right"> 
+                                        
+
+                                        <%=text_field_tag 'limit_of_Insurance_at_Other_Location',nil,value:'$100,000', :onkeypress=>"limit_of_Insurance(this);"%></div>
                                    </br>
                                 </div>
                                 <div class="form-error"></div>
@@ -386,7 +390,7 @@ form {
                                 <div class="form-left">Limit of Insurance While in Transit <span style="color:red;">*</span></div>
                                 <div class="form-right">
 
-                                    <div class="form-right"> <%=text_field_tag 'limit_of_Insurance_While_in_Transit',nil,value:'$100,000'%></div>
+                                    <div class="form-right"> <%=text_field_tag 'limit_of_Insurance_While_in_Transit',nil,value:'$100,000', :onkeypress=>"limit_of_Insurance(this);" %></div>
                                    </br>
                                 </div>
                                 
@@ -397,7 +401,9 @@ form {
 
                             <div class="row1">
                                 <div class="form-left">Policy Deductable<span style="color:red;">*</span></div>
-                                <div class="form-right"><%=text_field_tag 'Policy_Deductable',nil,value: '$100,000'%></div>
+                                <div class="form-right"><%=text_field_tag 'Policy_Deductable',nil,value: '$1,000', :disabled=> true %>
+                                    <%= hidden_field_tag 'Policy_Deductable',nil,value: '$1,000' %>
+                                </div>
                                 <div class="form-error"></div>
                             </div>
 
@@ -408,30 +414,30 @@ form {
                         <div class="span5">
                          
 
-                        <h2 style="font-size:23.5px!important;">You Work (Check all that apply)</h2>
+                        <h2 style="font-size:23.5px!important;">Genre You Work <span style="font-size:11px">(Check all that apply)</span></h2>
                              
                             <div class="row2">
-                                <div class="form-left">Paintings</div>
-                                <div class="form-right"><input type="checkbox" name="checkbox" id="checkbox_id" value="Paintings"></div>
+                                <div class="form-left">Paintings<span style="color:red;">*</span></div>
+                                <div class="form-right"><input type="checkbox" name="checkbox" id="paintings" value="Paintings"></div>
                                  <div class="form-error"></div>
                              </div> 
 
                              <div class="row2">
-                                <div class="form-left">Furniture</div>
-                                <div class="form-right"><input type="checkbox" name="checkbox" id="checkbox_id" value="Furniture"></div>
+                                <div class="form-left">Furniture<span style="color:red;">*</span></div>
+                                <div class="form-right"><input type="checkbox" name="checkbox" id="purniture" value="Furniture"></div>
                                 <div class="form-error"></div>
                             </div>
                         
                           
                             <div class="row2">
-                                <div class="form-left">Drawings </div>
-                                <div class="form-right"><input type="checkbox" name="checkbox" id="checkbox_id" value="Drawings"></div>
+                                <div class="form-left">Drawings<span style="color:red;">*</span></div>
+                                <div class="form-right"><input type="checkbox" name="checkbox" id="drawings" value="Drawings"></div>
                                  <div class="form-error"></div>
                              </div>
 
                              <div class="row2">
-                                <div class="form-left">Tapestries, Rugs, Fabrics</div>
-                                <div class="form-right"><input type="checkbox" name="checkbox" id="checkbox_id" value="Tapestries, Rugs, Fabrics"></div>
+                                <div class="form-left">Tapestries, Rugs, Fabrics<span style="color:red;">*</span></div>
+                                <div class="form-right"><input type="checkbox" name="checkbox" id="fabrics" value="Tapestries, Rugs, Fabrics"></div>
                                 <div class="form-error"></div>
                             </div>
 
@@ -439,44 +445,50 @@ form {
                             
 
                              <div class="row2">
-                                <div class="form-left">Photographs</div>
-                                <div class="form-right"><input type="checkbox" name="checkbox" id="checkbox_id" value="Photographs"></div>
+                                <div class="form-left">Photographs<span style="color:red;">*</span></div>
+                                <div class="form-right"><input type="checkbox" name="checkbox" id="photographs" value="Photographs"></div>
                                 <div class="form-error"></div>
                               </div>
 
 
                               <div class="row2">
-                                <div class="form-left">Antique Jewelry</div>
-                                <div class="form-right"><input type="checkbox" name="checkbox" id="checkbox_id" value="Antique Jewelry"></div>
+                                <div class="form-left">Antique Jewelry<span style="color:red;">*</span></div>
+                                <div class="form-right"><input type="checkbox" name="checkbox" id="jewelry" value="Antique Jewelry"></div>
                                 <div class="form-error"></div>                              
                             </div>
 
                              
 
                             <div class="row2">
-                                <div class="form-left">Sculptures – Fragile</div>
-                                <div class="form-right"><input type="checkbox" name="checkbox" id="checkbox_id" value="Sculptures – Fragile"></div>
+                                <div class="form-left">Sculptures – Fragile<span style="color:red;">*</span></div>
+                                <div class="form-right"><input type="checkbox" name="checkbox" id="sculptures" value="Sculptures – Fragile"></div>
                                 <div class="form-error"></div>
                             </div>
 
 
                              <div class="row2">
-                                <div class="form-left">Silver</div>
-                                <div class="form-right"><input type="checkbox" name="checkbox" id="checkbox_id" value="Silver"></div>
+                                <div class="form-left">Silver<span style="color:red;">*</span></div>
+                                <div class="form-right"><input type="checkbox" name="checkbox" id="silver" value="Silver"></div>
                                 <div class="form-error"></div>                               
                             </div>
 
                             
 
                             <div class="row2">
-                                <div class="form-left">Sculptures – Non Fragile</div>
-                                <div class="form-right"><input type="checkbox" name="checkbox" id="checkbox_id" value="Sculptures – Non Fragile"></div>
+                                <div class="form-left">Sculptures – Non Fragile<span style="color:red;">*</span></div>
+                                <div class="form-right"><input type="checkbox" name="checkbox" id="non_Fragile" value="Sculptures – Non Fragile"></div>
                                 <div class="form-error"></div>
                              </div>
 
                             <div class="row2">
-                                <div class="form-left">Breakable (glass, ceramics, etc.)</div>
-                                <div class="form-right"><input type="checkbox" name="checkbox" id="checkbox_id" value="Breakable (glass, ceramics, etc.)"></div>
+                                <div class="form-left">Breakable (glass, ceramics, etc.)<span style="color:red;">*</span></div>
+                                <div class="form-right"><input type="checkbox" name="checkbox" id="breakable" value="Breakable (glass, ceramics, etc.)"></div>
+                                <div class="form-error"></div>                              
+                            </div>
+
+                            <div class="row2">
+                                <div class="form-left">Other<span style="color:red;">*</span></div>
+                                <div class="form-right"><input type="checkbox" name="checkbox" id="other" value="Other"></div>
                                 <div class="form-error"></div>                              
                             </div>
 
@@ -556,7 +568,7 @@ form {
 
 
                             <div class="row2">
-                                <div class="form-left">If yes works stored on skits or shelf?</div>
+                                <div class="form-left">If yes works stored on skids or shelf?</div>
                                 <div class="form-right">
                                      <input type="radio" id="stored_on_skits" name="If yes works stored on skits or shelf?" value="Yes">&nbsp;&nbsp;Yes
                                      <input type="radio" id="stored_on_skits" name="If yes works stored on skits or shelf?" value="No">&nbsp;&nbsp;No
@@ -585,41 +597,47 @@ form {
 
                             <h2 style="font-size:23.5px!important;"> Security</h2>
                             <div class="row1">
-                                <div class="form-left">Deadbolts</div>
-                                <div class="form-right"><input type="checkbox" name="checkbox" id="checkbox_id" value="Deadbolts"></div>
+                                <div class="form-left">Deadbolts<span style="color:red;">*</span></div>
+                                <div class="form-right"><input type="checkbox" name="checkbox" id="deadbolts" value="Deadbolts"></div>
                                 <div class="form-error"></div>
                             </div>
                             <div class="row1">
-                                <div class="form-left">Alarm system – rings to central base</div>
-                                <div class="form-right"><input type="checkbox" name="checkbox" id="checkbox_id" value="value"></div>
+                                <div class="form-left">Alarm system – rings to central base<span style="color:red;">*</span></div>
+                                <div class="form-right"><input type="checkbox" name="checkbox" id="alarm" value="Alarm system – rings to central base"></div>
                                 <div class="form-error"></div>
                                
                             </div>
                         
                           
                             <div class="row1">
-                                <div class="form-left">Only local alarm system </div>
-                                <div class="form-right"><input type="checkbox" name="checkbox" id="checkbox_id" value="value"></div>
+                                <div class="form-left">Only local alarm system<span style="color:red;">*</span> </div>
+                                <div class="form-right"><input type="checkbox" name="checkbox" id="local_alaram" value="Only local alarm system"></div>
                                 <div class="form-error"></div>
                             </div>
                             <div class="row1">
-                                <div class="form-left">Cameras</div>
-                                <div class="form-right"><input type="checkbox" name="checkbox" id="checkbox_id" value="value"></div>
+                                <div class="form-left">Cameras<span style="color:red;">*</span></div>
+                                <div class="form-right"><input type="checkbox" name="checkbox" id="cameras" value="Cameras"></div>
                                 <div class="form-error"></div>
                                
                             </div>
                              <div class="row1">
-                                <div class="form-left">Gates</div>
-                                <div class="form-right"><input type="checkbox" name="checkbox" id="checkbox_id" value="value"></div>
+                                <div class="form-left">Gates<span style="color:red;">*</span></div>
+                                <div class="form-right"><input type="checkbox" name="checkbox" id="gates" value="Gates"></div>
                                 <div class="form-error"></div>
                                
                             </div>
                              <div class="row1">
-                                <div class="form-left">Watchmen/guards/ doorman</div>
-                                <div class="form-right"><input type="checkbox" name="checkbox" id="checkbox_id" value="value"></div>
+                                <div class="form-left">Watchmen/guards/ doorman<span style="color:red;">*</span></div>
+                                <div class="form-right"><input type="checkbox" name="checkbox" id="watchmen" value="Watchmen/guards/ doorman"></div>
                                 <div class="form-error"></div>
-                               
                             </div>
+
+                            <div class="row1">
+                                <div class="form-left">No security<span style="color:red;">*</span></div>
+                                <div class="form-right"><input type="checkbox" name="checkbox" id="no_security" value="No security"></div>
+                                <div class="form-error"></div>
+                            </div>
+
                            </div>
 
                          </div>
@@ -870,4 +888,16 @@ function showStuff(id,div2, btn) {
     btn.style.display = 'none';
     document.getElementById(div2).style.display = 'block';
 }
+
+
+function limit_of_Insurance(selBox) {
+    
+    if(selBox.value != '$100,000')
+    {
+        alert("More coverage options contact our office.");
+        document.getElementById('limit_of_Insurance_at_Other_Location').value = '$100,000';
+        document.getElementById('limit_of_Insurance_While_in_Transit').value = '$100,000';
+    }
+}
+
 </script>
