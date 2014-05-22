@@ -333,7 +333,7 @@ form {
                             
 
                             <div class="row1">
-                                <div class="form-left">Studio Address <span style="color:red;">* <a class="more" title="" rel="tooltip" href="#" data-original-title="This is your where studio is located,complete address,city,state,zip." style="float:none"> <strong> ?</strong></a></span></div>
+                                <div class="form-left">Studio Address <span style="color:red;">* <a class="more" title="" rel="tooltip" href="#" data-original-title="This is  where your studio is located,complete address,city,state,zip." style="float:none"> <strong> ?</strong></a></span></div>
                                 <div class="form-right">  <%=text_field_tag 'Studio_Address'%></div>
                                 <div class="form-error"></div>
                             </div> 
@@ -346,7 +346,7 @@ form {
 
                           <div class="span5">
 
-                          <div class="row1">
+                           <div class="row1">
                                 <div class="form-left">Studio City<span style="color:red;">*</span></div>
                                 <div class="form-right"> <%=text_field_tag 'Studio_City'%></div>
                                 <div class="form-error"></div>
@@ -888,12 +888,21 @@ form {
                                 <div class="form-error"></div>
                             </div> 
 
-                             <div class="row1">
-                                <div class="form-left">Date</div>
+                             
 
-                                <div class="form-right">  <%= date_select("card_signup", "dob", { :end_year => DateTime.now.year + 10,:start_year => DateTime.now.year - 200
+
+                            <div class="row1">
+                                <div class="form-left">Date </div>
+
+
+                                <div class="form-right" style="width: 195px!important">  <%= date_select("card_signup", "dob", { :end_year => DateTime.now.year + 10, :start_year => DateTime.now.year - 200
+
                                          },
-                                         :style => "width: 62px;")%></div>
+                                         :style => "width: 62px;")%>
+                                         
+                                     </div>
+
+
                                 <div class="form-error"></div>
                             </div>
                         
@@ -901,16 +910,18 @@ form {
 
 
 
-                            <div style="position: relative; left: 166px; top: 62px;" class="row1">
+                            <div style="position: absolute; left: 176px; top: 414px;" class="row1">
                                 <div class="form-left">
-                                    <%= link_to "Preview", "javascript:void(0);", :id=>"previes123", :class=>"sbt-btn", :style=>"position: relative; padding: 9px 10px; top: -2px;"%>                                    
+                                    <%= link_to "Preview", "javascript:void(0);", :id=>"previes123", :class=>"sbt-btn", :style=>"position: relative; padding: 9px; left:50px; 10px; top: -2px;"%>                                    
                                 </div>
 
                                 <div class="form-right">
                                     
                                     <div class="actions" >
 
-                                    <%= submit_tag 'Submit',:class => "sbt-btn", :style=>"width: 110px; margin: 0px; bottom: -10px;" %>
+                                    <%= submit_tag 'Submit',:class => "sbt-btn", :style=>"width: 125px; margin: 0px; bottom: -10px; border:none; position: relative;
+                                        top: 3px;
+                                        }" %>
                                 
                                      </div>
                                 </div>
