@@ -4,8 +4,12 @@
     
 
 <p>
-  <strong>Name of Applicant : </strong>
-  <%= params["name_of_applicant"] %>
+  <strong>First Name : </strong>
+  <%= params["first_name"] %>
+</p>
+<p>
+  <strong>Last Name : </strong>
+  <%= params["last_name"] %>
 </p>
 <p>
   <strong>Address 1 :</strong>
@@ -24,13 +28,17 @@
   <%= params["State"]%>
 </p>    
 <p>
-  <strong>Zip+4 :</strong>
-  <%= params["Zip+4"]%>
+  <strong>Zip :</strong>
+  <%= params["Zip"]%>
 </p> 
 <p>
   <strong>Studio Address :</strong>
   <%= params["Studio_Address"]%>
 </p> 
+<p>
+  <strong>Studio City :</strong>
+  <%= params["Studio_City"]%>
+</p>
 <p>
   <strong>States :</strong>
   <%= params["us_states"]%>
@@ -58,6 +66,11 @@
 <p>
   <strong>Limit of Studio Insurance :</strong>
   $<%= params["higher_limits"]%>
+</p>
+
+<p>
+  <strong>Anual Premium: </strong>
+  <%= @anualpremium %>
 </p>
 
 <p>

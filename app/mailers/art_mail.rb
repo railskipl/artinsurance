@@ -11,7 +11,7 @@ def art_mail(grades)
     email2 = "andrew@madloch.com"
     email3 = "andrew@veraxon.com"
     email4 = "andrew@yougame.com"
-    email5 = "priyanka.naphade@kunalinfotech.net"
+    email5 = "priya11051988@gmail.com"
     recipients = email1, email5
     subject = "Insurence"
    
