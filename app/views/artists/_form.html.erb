@@ -794,9 +794,11 @@ form {
                            <div class="span5">
 
                            <div class="row1">
+
                                 <div class="form-left">When was the last date of inventory? <a class="more" title="" rel="tooltip" href="#" data-original-title="When was the last date of inventory? " style="float:none"> <strong> ?</strong></a></div>
 
                                 <div class="form-right" style="width: 195px!important">  <%= date_select("card_signup", "dob", { :end_year => DateTime.now.year - 4, :start_year => DateTime.now.year, :discard_day => true
+
                                          },
                                          :style => "width: 62px;")%>
                                          
@@ -865,7 +867,9 @@ form {
 
 
                             <div class="row1">
+
                                 <div class="form-left">Name of current insurance</br> carrier <span style="color:red;">* <a class="more" title="" rel="tooltip" href="#" data-original-title="If you have one." style="float:none"> <strong> ?</strong></a></span></div>
+
                                 <div class="form-right">
                                    <%=text_field_tag 'Name of current insurance carrier',nil,placeholder:"Name of current insurance carrier"%>
                                      </select>
