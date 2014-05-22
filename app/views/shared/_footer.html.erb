@@ -123,33 +123,38 @@ $(document).ready(function() {
                 var pattern = /^\b[A-Z0-9._%-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b$/i
                 var pattern1 = /\(?([0-9]{3})\)\ ([0-9]{3})\-([0-9]{4})/
                 
-                if($('#name_of_applicant').val() == ''){
-                    $('#name_of_applicant').parent().parent().find('.form-error').html("Name is required");
+                if($('#first_name').val() == ''){
+                    
+                    err++;
+                }
+
+                if($('#last_name').val() == ''){
+                    
                     err++;
                 }
                 if($('#Address1').val() == ''){
-                    $('#Address1').parent().parent().find('.form-error').html("Address is required");
+                    
                     err++;
                 }
 
                 if($('#City').val() == ''){
                     
-                      $('#City').parent().parent().find('.form-error').html("City is required");
+                      err++;
                     }
                     
                 
                 if($('#Zip_4').val() == ''){
-                  $('#Zip_4').parent().parent().find('.form-error').html("Zip code is required");
+                  err++;
                 }
                                     
 
                  if($('#Studio_Address').val() == ''){
-                    $('#Studio_Address').parent().parent().find('.form-error').html("Studio Address is required");
+                    
                     err++;
                 }
                
                 if($('#us_states').val() == '0'){
-                    $('#us_states').parent().parent().find('.form-error').html("Please Select  states");
+                   
                     err++;
                 } 
                 
@@ -226,17 +231,17 @@ $(document).ready(function() {
                 var err = 0;
               
                 if($('#higher_limits').val() == null || $('#higher_limits').val() == ""){
-                    $('#higher_limits').parent().parent().find('.form-error').html("Limit of Studio Insurance is required");
+                    
                     err++;
                 }
                 
                 if($('#limit_of_Insurance_at_Other_Location').val() == ''){
-                    $('#limit_of_Insurance_at_Other_Location').parent().parent().find('.form-error').html("limit of Insurance at other location is required");
+                   
                     err++;
                 }
                 
                  if($('#limit_of_Insurance_While_in_Transit').val() == ''){
-                      $('#limit_of_Insurance_While_in_Transit').parent().parent().find('.form-error').html("Limit of Insurance while in transit is required");
+                      
                       err++;
                   }
                 
@@ -307,28 +312,28 @@ $(document).ready(function() {
               
 
                 if($('#Deadbolts').val() == ''){
-                    $('#Deadbolts').parent().parent().find('.form-error').html("Deadbolts is required");
+                    
                     err++;
                 }
                 
                 if($('input[id=Studio]:checked').length<=0)
                 {
-                  $('#Studio').parent().parent().find('.form-error').html("Studio & storage of art are required");
+                  
                   err++;
                 }
                 
                 if($('input[id=rsales]:checked').length<=0){
-                    $('#rsales').parent().parent().find('.form-error').html("This field is required");
+                   
                     err++;
                 }
                 
                 if($('input[id=stored_on_skits]:checked').length<=0){
-                    $('#stored_on_skits').parent().parent().find('.form-error').html("This field is required");
+                    
                     err++;
                 }
                 
                 if($('input[id=automatic_sprinkler]:checked').length<=0){
-                    $('#automatic_sprinkler').parent().parent().find('.form-error').html("This field is required");
+                    
                     err++;
                 }
 
@@ -376,26 +381,26 @@ $(document).ready(function() {
                 var err = 0;
 
                 if($('#finished_art_work').val() == ''){
-                    $('#finished_art_work').parent().parent().find('.form-error').html("Average value of finished art work is required");
+                   
                     err++;
                 }
                 if($('#single_item').val() == ''){
-                    $('#single_item').parent().parent().find('.form-error').html("Maximum value of single item is required");
+                    
                     err++;
                 }
                 
                  if($('input[id=detailed_itemized]:checked').length<=0){
-                      $('#detailed_itemized').parent().parent().find('.form-error').html("This field is required");
+                      
                       err++;
                   }
                   
                    if($('input[id=record_sales]:checked').length<=0){
-                        $('#record_sales').parent().parent().find('.form-error').html("This field is required");
+                       
                         err++;
                     }
                     
                      if($('input[id=inventory_off]:checked').length<=0){
-                          $('#inventory_off').parent().parent().find('.form-error').html("This field is required");
+                         
                           err++;
                       }
                 
@@ -414,21 +419,21 @@ $(document).ready(function() {
                 var err = 0;
 
                 if($('#exhibits_year').val() == ''){
-                    $('#exhibits_year').parent().parent().find('.form-error').html("Please select exhibits year");
+                   
                     err++;
                 }
                 if($('#current_year').val() == ''){
-                    $('#current_year').parent().parent().find('.form-error').html("Please select current year");
+                    
                     err++;
                 }
                 
                 if($('#prior_year').val() == ''){
-                    $('#prior_year').parent().parent().find('.form-error').html("Please select prior year");
+                    
                     err++;
                 } 
                 
                 if($('#Name_of_current_insurance_carrier').val() == ''){
-                    $('#Name_of_current_insurance_carrier').parent().parent().find('.form-error').html("Name of current insurance carrier is required");
+                    
                     err++;
                 }
                 
