@@ -272,10 +272,7 @@ form {
                      });
                 </script>
 
-               
-
-
-             
+                   
                     <div id="slider">
                         <div class="form-step" >
 
@@ -723,11 +720,13 @@ form {
                            <div class="row1">
                                 <div class="form-left">When was the last date of inventory?</div>
 
-                                <div class="form-right" style="width: 195px!important">  <%= date_select("card_signup", "dob", { :end_year => DateTime.now.year - 4, :start_year => DateTime.now.year
+                                <div class="form-right" style="width: 195px!important">  <%= date_select("card_signup", "dob", { :end_year => DateTime.now.year - 4, :start_year => DateTime.now.year, :discard_day => true
                                          },
                                          :style => "width: 62px;")%>
-                                    <a class="more" title="" rel="tooltip" href="#" data-original-title="When was the last date of inventory? " style="float:right"> <strong> ?</strong></a>
+                                         <a class="more" title="" rel="tooltip" href="#" data-original-title="When was the last date of inventory? " style="float:right"> <strong> ?</strong></a>
                                      </div>
+
+
                                 <div class="form-error"></div>
                             </div>
 
@@ -777,9 +776,8 @@ form {
 
 
                             <div class="row1">
-                                <div class="form-left">Prior year <span style="color:red;">*</span></div>
+                               <div class="form-left">Prior year <span style="color:red;">*</span></div>
                                 <div class="form-right">
-
                                    <select id="prior_year" name="prior_year">
                                    <% prior_year.each do |prior_year|%>
                                      <option value="<%=prior_year%>"><%= prior_year%></option>
@@ -844,11 +842,7 @@ form {
                                 </div>
 
 
-                                <div class="form-right">
-                                    <div class="actions" >
-                                <%= link_to "Preview", "javascript:void(0);", :id=>"previes123", :class=>"sbt-btn", :style=>"position: relative; padding: 9px 10px; top: -2px;"%>
-                                    </div>
-                                </div>
+                                
                                
                             </div>
                                 
