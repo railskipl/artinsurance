@@ -161,14 +161,11 @@ $(document).ready(function() {
                 } 
                 
 
-                if($('#Phone_Number').val() == ''){
-                    $('#Phone_Number').parent().parent().find('.form-error').html("Please Select  Phone Number");
-                    err++;     
-                }
+               
 
                 if(!pattern1.test(userinput3))
                     {
-                       $('#Phone_Number').parent().parent().find('.form-error').html("Please enter valid Phone number");
+                       
                     err++;
                     }
 
@@ -249,45 +246,11 @@ $(document).ready(function() {
                 }
 
 
-                if(!$("#paintings").is(':checked')){
+                if(!$("#paintings").is(':checked') || !$("#purniture").is(':checked') || !$("#drawings").is(':checked') || !$("#fabrics").is(':checked') || !$("#photographs").is(':checked') || !$("#jewelry").is(':checked') || !$("#sculptures").is(':checked') || !$("#silver").is(':checked') || !$("#non_Fragile").is(':checked') || !$("#breakable").is(':checked')){
                     err++;
                 }
 
-                if(!$("#purniture").is(':checked')){
-                    err++;
-                }
-
-                if(!$("#drawings").is(':checked')){
-                    err++;
-                }
-
-                if(!$("#fabrics").is(':checked')){
-                    err++;
-                }
-
-                if(!$("#photographs").is(':checked')){
-                    err++;
-                }
-
-                if(!$("#jewelry").is(':checked')){
-                    err++;
-                }
-
-                if(!$("#sculptures").is(':checked')){
-                    err++;
-                }
-
-                if(!$("#silver").is(':checked')){
-                    err++;
-                }
-
-                if(!$("#non_Fragile").is(':checked')){
-                    err++;
-                }
-
-                if(!$("#breakable").is(':checked')){
-                    err++;
-                }
+        
 
                 if(!$("#other").is(':checked')){
                     err++;
@@ -336,31 +299,8 @@ $(document).ready(function() {
                     err++;
                 }
 
-                if(!$("#deadbolts").is(':checked')){
-                    err++;
-                }
-
-                if(!$("#alarm").is(':checked')){
-                    err++;
-                }
-
-                if(!$("#local_alaram").is(':checked')){
-                    err++;
-                }
-
-                if(!$("#cameras").is(':checked')){
-                    err++;
-                }
-
-                if(!$("#gates").is(':checked')){
-                    err++;
-                }
-
-                if(!$("#watchmen").is(':checked')){
-                    err++;
-                }
-
-                if(!$("#no_security").is(':checked')){
+                if(!$("#deadbolts").is(':checked') || !$("#alarm").is(':checked') || !$("#local_alaram").is(':checked') || !$("#cameras").is(':checked') || !$("#gates").is(':checked') || !$("#watchmen").is(':checked') || !$("#no_security").is(':checked')){
+                    
                     err++;
                 }
                 
