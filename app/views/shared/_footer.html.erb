@@ -51,17 +51,19 @@
  
   <%= javascript_include_tag "bootstrap.js","rhinoslider-1.05.min.js","mousewheel.js","easing.js" %> 
 
-<script type="text/javascript">
-$(document).ready(function() {
+
+    <script type="text/javascript">
+        $(document).ready(function() {
                 $('#slider').rhinoslider({
                     controlsPlayPause: false,
+                    controlsKeyboard:false,
                     showControls: 'always',
                     showBullets: 'always',
                     controlsMousewheel: false,
                     prevText: 'Back',
                     nextText:'Proceed',
-        slidePrevDirection: 'toRight',
-    slideNextDirection: 'toLeft'
+                    slidePrevDirection: 'toRight',
+                    slideNextDirection: 'toLeft'
                 });
 
                 
@@ -115,13 +117,13 @@ $(document).ready(function() {
 
                 var err = 0;
                
-                var userinput1 = $(Email_address).val();
-                var userinput2 = $(Retype_EMail).val();
-                var userinput3 = $(Phone_Number).val();
-                var userinput4 = $(Fax).val();
+                var userinput1 = $('#Email_address').val();
+                var userinput2 = $('#Retype_EMail').val();
+                var userinput3 = $('#Phone_Number').val();
+                var userinput4 = $('#Fax').val();
 
-                var pattern = /^\b[A-Z0-9._%-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b$/i
-                var pattern1 = /^\d{3}\ \d{3}\-\d{4}$/
+                var pattern = /^\b[A-Z0-9._%-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b$/i;
+                var pattern1 = /^[(]{0,1}[0-9]{3}[)\.\- ]{0,1}[0-9]{3}[\.\- ]{0,1}[0-9]{4}$/;
                 
                 if($('#first_name').val() == ''){
                     
@@ -160,12 +162,11 @@ $(document).ready(function() {
                     err++;
                 } 
                 
-
                
 
                 if(!pattern1.test(userinput3))
                     {
-                       
+                       $('#Phone_Number').parent().parent().find('.form-error').html("Please enter valid phone number.");
                     err++;
                     }
 
@@ -244,9 +245,12 @@ $(document).ready(function() {
                 if($('#Policy_Deductable').val() == ''){
                     err++;
                 }
+                    
+             
 
-
-                if(!$("#paintings").is(':checked') || !$("#purniture").is(':checked') || !$("#drawings").is(':checked') || !$("#fabrics").is(':checked') || !$("#photographs").is(':checked') || !$("#jewelry").is(':checked') || !$("#sculptures").is(':checked') || !$("#silver").is(':checked') || !$("#non_Fragile").is(':checked') || !$("#breakable").is(':checked')){
+                if((!$("#paintings").is(':checked')) && (!$("#purniture").is(':checked')) && (!$("#drawings").is(':checked')) && (!$("#fabrics").is(':checked')) && (!$("#photographs").is(':checked')) && (!$("#jewelry").is(':checked')) && (!$("#sculptures").is(':checked')) && (!$("#silver").is(':checked')) && (!$("#non_Fragile").is(':checked')) && (!$("#breakable").is(':checked'))){
+                    
+                    $('#paintings').parent().parent().find('.form-error').html("Please select atleast one checkbox.");
                     err++;
                 }
 
