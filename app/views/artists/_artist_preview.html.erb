@@ -69,7 +69,7 @@
 </p>
 
 <p>
-  <strong>Anual Premium: </strong>
+  <strong>Annual Premium: </strong>
   <%= @anualpremium %>
 </p>
 
@@ -113,10 +113,9 @@
   <%= params["card_signup"]["dob(2i)"]%> - <%= params["card_signup"]["dob(1i)"]  %>
 </p>
 <p>
-  <strong>Number of exhibits a year? :
-  
-  </strong>
-  <%= params["exhibits_year"]%>
+  <strong>Number of exhibits a year? :</strong>
+
+  <% if params["exhibits_year"] == "0" %> 5 or less <% else %> <%= params["exhibits_year"] %> <% end %>
 </p>
 <p>
   <strong>Current year :
