@@ -188,8 +188,8 @@
 
                 if(!pattern.test(userinput1))
                     {
-                       $('#Email_address').parent().parent().find('.form-error').html("Please enter valid email address");
-                    err++;
+                        $('#Retype_EMail').parent().parent().find('.form-error').html("Please enter valid email address");  
+                        err++;
                     }
 
 
@@ -206,7 +206,7 @@
                        err++;
                     }  
                     if($('#Retype_EMail').val() == ''){
-                    $('#Retype_EMail').parent().parent().find('.form-error').html("Please select email address");
+                    
                     err++;
                    }
                     
