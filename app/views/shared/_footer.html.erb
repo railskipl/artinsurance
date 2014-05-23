@@ -175,7 +175,7 @@
                 {
                     if(!pattern1.test(userinput4))
                         {
-                           
+                           $('#Fax').parent().parent().find('.form-error').html("Please enter valid Fax number.");
                         err++;
                         }
                      
@@ -248,17 +248,12 @@
                     
              
 
-                if((!$("#paintings").is(':checked')) && (!$("#purniture").is(':checked')) && (!$("#drawings").is(':checked')) && (!$("#fabrics").is(':checked')) && (!$("#photographs").is(':checked')) && (!$("#jewelry").is(':checked')) && (!$("#sculptures").is(':checked')) && (!$("#silver").is(':checked')) && (!$("#non_Fragile").is(':checked')) && (!$("#breakable").is(':checked'))){
+                if((!$("#paintings").is(':checked')) && (!$("#purniture").is(':checked')) && (!$("#drawings").is(':checked')) && (!$("#fabrics").is(':checked')) && (!$("#photographs").is(':checked')) && (!$("#jewelry").is(':checked')) && (!$("#sculptures").is(':checked')) && (!$("#silver").is(':checked')) && (!$("#non_Fragile").is(':checked')) && (!$("#breakable").is(':checked')) && (!$("#other").is(':checked'))){
                     
-                    $('#paintings').parent().parent().find('.form-error').html("Please select atleast one checkbox.");
+                    $('#other').parent().parent().find('.form-error').html("Please select atleast one checkbox.");
                     err++;
                 }
 
-        
-
-                if(!$("#other").is(':checked')){
-                    err++;
-                }
 
                                 
                 if(err == 0){
@@ -303,8 +298,9 @@
                     err++;
                 }
 
-                if(!$("#deadbolts").is(':checked') || !$("#alarm").is(':checked') || !$("#local_alaram").is(':checked') || !$("#cameras").is(':checked') || !$("#gates").is(':checked') || !$("#watchmen").is(':checked') || !$("#no_security").is(':checked')){
+                if((!$("#deadbolts").is(':checked')) && (!$("#alarm").is(':checked')) && (!$("#local_alaram").is(':checked')) && (!$("#cameras").is(':checked')) && (!$("#gates").is(':checked')) && (!$("#watchmen").is(':checked')) && (!$("#no_security").is(':checked'))){
                     
+                    $('#no_security').parent().parent().find('.form-error').html("Please select atleast one checkbox.");
                     err++;
                 }
                 
