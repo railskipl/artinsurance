@@ -18,6 +18,8 @@ def create
       end
 
     if @subscription.save_with_payment
+      session[:email] = nil
+      session[:anualpremium] = nil
       redirect_to @subscription, :notice => "Thank you for subscribing!"
     else
      render :new
