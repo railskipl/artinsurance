@@ -121,9 +121,12 @@
                 var userinput2 = $('#Retype_EMail').val();
                 var userinput3 = $('#Phone_Number').val();
                 var userinput4 = $('#Fax').val();
+                var zip_code1 = $('#Zip').val();
+                var zip_code2 = $('#Zip_Code').val();
 
                 var pattern = /^\b[A-Z0-9._%-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b$/i;
                 var pattern1 = /^[(]{0,1}[0-9]{3}[)\.\- ]{0,1}[0-9]{3}[\.\- ]{0,1}[0-9]{4}$/;
+                var zip_reg = /^[0-9]{5}(?:-[0-9]{4})?$/;
                 
                 if($('#first_name').val() == ''){
                     
@@ -145,9 +148,10 @@
                     }
                     
                 
-                if($('#Zip_4').val() == ''){
-                  err++;
-
+                if(!zip_reg.test(zip_code1))
+                {
+                    
+                    err++;
                 }
 
                                     
@@ -161,6 +165,12 @@
                    
                     err++;
                 } 
+
+                if(!zip_reg.test(zip_code2))
+                {
+                    
+                    err++;
+                }
                 
                
 
