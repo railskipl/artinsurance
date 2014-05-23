@@ -12,16 +12,29 @@
 
 <body>
 
+<style>
+.logo {
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 35px;
+    font-weight: bold;
+    line-height: normal;
+    margin: 20px 0;
+}
+.logo span {
+    font-size: 20px;
+    font-style: italic;
+}
+.form_bg {
+    background: linear-gradient(to bottom, #E8E8E8 0%, #F9F9F9 7%, #F9F9F9 50%, #F9F9F9 93%, #E8E8E8 100%) repeat scroll 0 0 rgba(0, 0, 0, 0);
+}
+.footer {
+    padding: 20px 0;
+    text-align: center;
+}
+</style>
+
 <header>
 	<div class="container">
-		
-		
-		
-		
-		
-		
-		
-		
 		
 		
 		<div class="container">
@@ -38,29 +51,35 @@
 			
 			
 				
-				<table class="table">
+				<table class="table" width="100%">
   <tr>
-    <td>BINDER</td>
-    <td>&nbsp;</td>
+    <td width="60%"><div class="logo">Bernard Fleischer &amp; Sons, Inc. <span>est. 1949</span></div></td>
+    <td style="float:right">
+      <div class="phone"><img alt="" src="http://artinsurance.herokuapp.com/assets/phone_icon.png"></div>
+      <div class="number">
+          <span>CALL US NOW</span> <br>
+            (800) 921 1008  
+          </div>
+    </td>
   </tr>
   <tr>
-    <td>Policy no:</td>
+    <td><strong>Policy no :</strong></td>
     <td>TBA draw from pre determine  list</td>
   </tr>
   <tr>
-    <td>Binding Effective:</td>
+    <td><strong>Binding Effective :</strong></td>
     <td><%= Date.today %>&ndash; <%= Date.today + 1.year - 1%> (  pre-fill from date credit card goes through)</td>
   </tr>
   <tr>
-    <td>Company:</td>
+    <td><strong>Company :</strong></td>
     <td>Markel American Insurance  Company Best Rated A (Excellent);  Financial Size Category: XIII</td>
   </tr>
   <tr>
-    <td>Producer:</td>
+    <td><strong>Producer :</strong></td>
     <td>Bernard Fleischer &amp; Sons (see page 3 on  excel sheet to determine)</td>
   </tr>
   <tr>
-  <td>Anual Premium</td>
+  <td><strong>Anual Premium :</strong></td>
     <td><%= raw @grades["annual_premium"] %></td>
   </tr>
 
@@ -69,171 +88,153 @@
  
 
   <tr>
-    <td>First Name</td>
+    <td><strong>First Name :</strong></td>
     <td> <%=raw @grades["First Name"]%></td>
   </tr>
 
   <tr>
-    <td>Last Name</td>
+    <td><strong>Last Name :</strong></td>
     <td> <%=raw @grades["last Name"]%></td>
   </tr>
 
   <tr>
-    <td>Address 1</td>
+    <td><strong>Address 1 :</strong></td>
     <td> <%=raw @grades["Address 1"]%></td>
   </tr>
 
   <tr>
-    <td>Address 2</td>
+    <td><strong>Address 2 :</strong></td>
     <td> <%=raw @grades["Address 2"]%></td>
   </tr>
 
    <tr>
-    <td>City </td>
+    <td><strong>City :</strong></td>
     <td><%=raw @grades["City"]%></td>
   </tr>
 
   <tr>
-    <td>State</td>
+    <td><strong>State :</strong></td>
     <td><%=raw @grades["State"]%></td>
   </tr>
 
 
   <tr>
-    <td>Zip </td>
+    <td><strong>Zip :</strong></td>
     <td><%=raw @grades["Zip"]%></td>
   </tr>
 
   <tr>
-    <td>Studio Address </td>
+    <td><strong>Studio Address :</strong></td>
     <td> <%=raw @grades["Studio Address"]%></td>
   </tr>
   <tr>
-    <td>Studio City </td>
+    <td><strong>Studio City :</strong></td>
     <td><%=raw @grades["Studio City"]%></td>
   </tr>
 
  
   <tr>
-    <td>State</td>
+    <td><strong>State :</strong></td>
     <td><%=raw @grades["us_states"]%></td>
   </tr>
 
   <tr>
-    <td>Zip Code </td>
+    <td><strong>Zip Code :</strong></td>
     <td><%=raw @grades["Zip Code"]%></td>
   </tr>
   
   <tr>
-    <td>Phone Number </td>
+    <td><strong>Phone Number :</strong></td>
     <td><%=raw @grades["Phone Number"]%></td>
   </tr>
   <tr>
-    <td>Fax 
-</td>
+    <td><strong>Fax :</strong></td>
     <td><%=raw @grades["Fax"]%></td>
   </tr>
   <tr>
-    <td>E-mail address</td>
+    <td><strong>E-mail address :</strong></td>
     <td><%=raw @grades["E-mail address"]%></td>
   </tr>
   <tr>
-    <td>Limit of Studio Insurance </td>
+    <td><strong>Limit of Studio Insurance :</strong></td>
     <td><%=raw @grades["higher_limits"]%></td>
   </tr>
   <tr>
-    <td>Limit of Insurance at Other Location </td>
+    <td><strong>Limit of Insurance at Other Location :</strong></td>
     <td> <%=raw @grades["limit_of_Insurance_at_Other_Location"]%></td>
   </tr>
   <tr>
-    <td>Limit of Insurance While in Transit</td>
-    <td><%=raw @grades["limit_of_Insurance_While_in_Transit "]%></td>
+    <td><strong>Limit of Insurance While in Transit :</strong></td>
+    <td><%=raw @grades["limit_of_Insurance_While_in_Transit"]%></td>
   </tr>
   <tr>
-    <td>Policy Deductable</td>
+    <td><strong>Policy Deductable :</strong></td>
     <td><%=raw @grades["Policy Deductable"]%></td>
   </tr>
-  <tr>
-    <td>Finished_art_work </td>
-    <td> <%=raw @grades["Finished_art_work "]%></td>
-  </tr>
-  <tr>
-    <td>Single_item </td>
-    <td><%=raw @grades["single_item"]%>
-</td>
-  </tr>
-  <tr>
-    <td>When was the last date of inventory</td>
-    <td> <%=raw @grades["When was the last date of inventory"]%>
-</td>
-  </tr>
-  <tr>
-    <td>exhibits_year 
- </td>
-    <td><%=raw @grades["exhibits_year"]%>
-</td>
-  </tr>
-   <tr>
-    <td>current_year
- </td>
-    <td><%=raw @grades["current_year"]%>
-</td>
-  </tr>
-  <tr>
-    <td>prior_year
- </td>
-    <td><%=raw @grades["prior_year"]%>
-</td>
-  </tr>
-   <tr>
-    <td>Name of current insurance carrier 
- </td>
-    <td> <%=raw @grades["Name of current insurance carrier"]%>
+  
 
-</td>
+  <tr>
+    <td><strong>Studio is located in a :</strong></td>
+    <td><%= raw @grades["studio"]%></td>
   </tr>
+
+<tr>
+  <td><strong>Studio & storage of art are in a basement :</strong></td>
+  <td><%= raw @grades["Studio & storage of art are in a basement"]%></td>
+</tr>
+
+<tr>
+    <td><strong>Finished_art_work </strong></td>
+    <td> <%= raw @grades["Finished_art_work "]%></td>
+</tr>
+
+<tr>
+  <td><strong>What is the maximum value of single item? :</strong></td>
+  <td><%= raw @grades["single_item"]%></td>
+</tr>
+
+<tr>
+  <td><strong>When was the last date of inventory? :</strong></td>
+  <td><%= raw @grades["card_signup_date"]%>-<%= raw @grades["card_signup_year"]  %></td>
+</tr>
+<tr>
+  <td><strong>Number of exhibits a year? :</strong></td>
+  <td><%= raw @grades["exhibits_year"]%></td>
+</tr>
+
+<tr>
+  <td><strong>Current year :</strong></td>
+  <td><%= raw @grades["current_year"]%></td>
+</tr>
+
+<tr>
+  <td><strong>Prior year :</strong></td>
+  <td><%= raw @grades["prior_year"]%></td>
+</tr>
+
+<tr>
+  <td><strong>Name of current insurance carrier :</strong></td>
+  <td><%= raw @grades["Name of current insurance carrier"]%></td>
+</tr>
+<tr>
+  <td><strong>Description Of Loss :</strong></td>
+  <td><%= raw @grades["Description Of Loss"]%></td>
+</tr>
+<tr>
+  <td><strong>Amount Of Loss :</strong></td>
+  <td><%= raw @grades["Amount Of Loss"]%></td>
+</tr>
+
+  
 </table>
 
 			
 			</div>
-			
-			
-			
-			
-			
-			
-
-		
-		
-		
-		
-			
-			
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-		
-		
 		
 		</div>
 		
-		
-		
-		
+		</div>
 		<div class="container form_bg" style="margin:10px 0">
-		
-		
-		
-		
-
-		
 		</div>
 		
 		
