@@ -68,10 +68,7 @@
   $<%= params["higher_limits"]%>
 </p>
 
-<p>
-  <strong>Annual Premium: </strong>
-  <%= @anualpremium %>
-</p>
+
 
 <p>
   <strong>Limit of Insurance at Other Location :</strong>
@@ -85,16 +82,48 @@
   <strong>Policy Deductable :</strong>
   <%= params["Policy_Deductable"]%>
 </p>
+
+<p>
+  <strong>Genre You Work :</strong>
+  <% if params["paintings"].present? %> <%= params["paintings"]%>, <% end %> <% if params["purniture"].present? %> <%= params["purniture"]%>,<% end %> <% if params["drawings"].present? %> <%= params["drawings"]%>,<% end %> <% if params["fabrics"].present? %> <%= params["fabrics"]%> ,<% end %> <% if params["photographs"].present? %> <%= params["photographs"]%>,<% end %> <% if params["jewelry"].present? %> <%= params["jewelry"]%>,<% end %> <% if params["sculptures"].present? %> <%= params["sculptures"]%>, <% end %> <% if params["silver"].present? %> <%= params["silver"]%>,<% end %> <% if params["non_Fragile"].present? %> <%= params["non_Fragile"]%>,<% end %> <% if params["breakable"].present? %> <%= params["breakable"]%>,<% end %> <% if params["other"].present? %><%= params["other"]%> <% end %>
+</p>
+
 <p>
   <strong>Studio is located in a :</strong>
   <%= params["studio"]%>
 </p>
 
 <p>
-  <strong>Studio & storage of art are in a basement :
+  <strong>Studio & storage of art are in a basement? :
   </strong>
   <%= params["Studio & storage of art are in a basement"]%>
 </p>
+
+<p>
+  <strong>Is there a history of a back-up drain and/or sewer? :
+  </strong>
+  <%= params["Is there a history of a back-up drain and/or sewer?"]%>
+</p>
+
+<p>
+  <strong>If yes works stored on skits or shelf? :
+  </strong>
+    <%= params["If yes works stored on skits or shelf?"]%>
+</p>
+
+<p>
+  <strong>Is there an automatic sprinkler system on premises? :
+  </strong>
+    <%= params["Is there an automatic sprinkler system on premises?"]%>
+</p>
+
+<p>
+  <strong>Security :</strong>
+  <% if params["deadbolts"].present? %> <%= params["deadbolts"]%>, <% end %> <% if params["alarm"].present? %> <%= params["alarm"]%> , <% end %> <% if params["local_alaram"].present? %> <%= params["local_alaram"]%> ,<% end %> <% if params["cameras"].present? %> <%= params["cameras"]%> ,<% end %> <% if params["gates"].present? %> <%= params["gates"]%> ,<% end %> <% if params["watchmen"].present? %> <%= params["watchmen"]%> ,<% end %> <% if params["no_security"].present? %> <%= params["no_security"]%> <% end %>
+</p>
+
+
+
 
 <p>
   <strong>What is the average value of finished art work? :

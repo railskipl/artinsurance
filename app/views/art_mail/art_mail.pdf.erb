@@ -168,6 +168,12 @@
     <td><strong>Policy Deductable :</strong></td>
     <td>$<%=raw @grades["Policy Deductable"]%></td>
   </tr>
+
+  <tr>
+    <td><strong>Genre You Work :</strong></td>
+    <td><% if @grades["paintings"].present? %> <%= raw @grades["paintings"]%>, <% end %> <% if @grades["purniture"].present? %> <%= raw @grades["purniture"]%> ,<% end %> <% if @grades["drawings"].present? %> <%= raw @grades["drawings"]%>, <% end %> <% if @grades["fabrics"].present? %> <%= raw @grades["fabrics"]%> ,<% end %> <% if @grades["photographs"].present? %> <%= raw @grades["photographs"]%> ,<% end %> <% if @grades["jewelry"].present? %> <%= raw @grades["jewelry"]%> ,<% end %> <% if @grades["sculptures"].present? %> <%= raw @grades["sculptures"]%> ,<% end %> <% if @grades["silver"].present? %> <%= raw @grades["silver"]%> ,<% end %> <% if @grades["non_Fragile"].present? %> <%= raw @grades["non_Fragile"]%> ,<% end %><% if @grades["breakable"].present? %> <%= raw @grades["breakable"]%> ,<% end %><% if @grades["other"].present? %><%= raw @grades["other"]%> <% end %>
+    </td>
+  </tr>
   
 
   <tr>
@@ -176,9 +182,31 @@
   </tr>
 
 <tr>
-  <td><strong>Studio & storage of art are in a basement :</strong></td>
+  <td><strong>Studio & storage of art are in a basement? :</strong></td>
   <td><%= raw @grades["Studio & storage of art are in a basement"]%></td>
 </tr>
+
+<tr>
+  <td><strong>Is there a history of a back-up drain and/or sewer? :</strong></td>
+  <td><%= raw @grades["Is_there_history_of_back_up_drain"]%></td>
+</tr>
+
+<tr>
+  <td><strong>If yes works stored on skits or shelf? :</strong></td>
+  <td><%= raw @grades["stored_on_skits_or_shelf"]%></td>
+</tr>
+
+<tr>
+  <td><strong>Is there an automatic sprinkler system on premises? :</strong></td>
+    <%= raw @grades["automatic_sprinkler_system"]%></td>
+</tr>
+
+<tr>
+  <td><strong>Security :</strong></td>
+  <td><% if @grades["deadbolts"].present? %> <%= raw @grades["deadbolts"]%>, <% end %> <% if @grades["alarm"].present? %> <%= raw @grades["alarm"]%> , <% end %> <% if @grades["local_alaram"].present? %> <%= raw @grades["local_alaram"]%> ,<% end %> <% if @grades["cameras"].present? %> <%= raw @grades["cameras"]%> ,<% end %> <% if @grades["gates"].present? %> <%= raw @grades["gates"]%> ,<% end %> <% if @grades["watchmen"].present? %> <%= raw @grades["watchmen"]%> ,<% end %> <% if @grades["no_security"].present? %> <%= raw @grades["no_security"]%> <% end %> </td>
+</tr>
+
+
 
 <tr>
     <td><strong>Finished art work </strong></td>
