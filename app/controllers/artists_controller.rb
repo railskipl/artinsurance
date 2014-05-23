@@ -82,12 +82,12 @@ class ArtistsController < ApplicationController
            "current_year" => params[:current_year],
            "prior_year" => params[:prior_year],
            "studio" => params[:studio],
-           "card_signup_date" => params[:card_signup][:dob(2i)],
-           "card_signup_year" => params[:card_signup][:dob(1i)],
-           "Studio & storage of art are in a basement" => params[:Studio & storage of art are in a basement],
+           "card_signup_date" => params[:card_signup][:"dob(2i)"],
+           "card_signup_year" => params[:card_signup][:"dob(1i)"],
+           "Studio & storage of art are in a basement" => params[:"Studio & storage of art are in a basement"],
            "Name of current insurance carrier" => params[:Name_of_current_insurance_carrier],
-           "Description Of Loss" => params[:Description Of Loss],
-           "Amount Of Loss" => params[:Amount Of Loss],
+           "Description Of Loss" => params[:"Description Of Loss"],
+           "Amount Of Loss" => params[:"Amount Of Loss"],
            "annual_premium" => @anualpremium
            
          }
