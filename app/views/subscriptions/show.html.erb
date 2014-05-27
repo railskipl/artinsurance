@@ -112,7 +112,7 @@ function validate()
 <%= form_for :feedback, :url=>{:controller=>"subscriptions", :action=>"new"}, :html=>{:name=>"feedbackfrm", :onsubmit=>"return(validate());"} do |f| %>
   <p>Rating : <span class="stars s-1" data-default='1'> 0 stars</span></p>
   <p><%= f.text_area :comment, :rows => 4, :cols => 38, :placeholder =>"Your Comment here...", :style=>"width:445px" %>
-    <%= f.hidden_field :rate, :value=>"1" %><br/>
+    <%= f.hidden_field :rate, :value=>"1" %><%= f.hidden_field :id, :value=>params[:id] %><br/>
     <div class="form-error" id="error_msg11"></div>
   </p>
   <p><%= submit_tag 'Submit',:class=>"btn btn-info" %></p>
