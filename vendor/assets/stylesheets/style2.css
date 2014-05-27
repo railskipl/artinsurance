@@ -150,6 +150,7 @@
             }
             .step-success{
                 background:#72e487 !important;
+                border: 1px solid #EEEEEE;
                 color:#FFF !important;
                 -moz-box-shadow:1px 1px 1px 4px #C6C4C4
                     -webkit-box-shadow:1px 1px 1px 4px #C6C4C4

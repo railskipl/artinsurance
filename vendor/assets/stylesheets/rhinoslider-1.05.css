@@ -123,13 +123,14 @@ ul, ol {
     display: block;
    
     height: auto;
-    cursor: pointer;
+    /*cursor: pointer;
     background: none repeat scroll 0 0 #F8FDFF;
-    border: 1px solid #EEEEEE;
+    border: 1px solid #EEEEEE; */
     font-size: 10px;
     text-align: center;
     padding: 10px 90px;
-    color: #000;
+    /*color: #000; */
+    color:#F4F4F4;
     text-decoration:none;
     -webkit-user-select:none;
     -moz-user-select:none;
@@ -139,14 +140,15 @@ ul, ol {
 }
 
 .rhino-bullets li a.rhino-bullet:hover, .rhino-bullets li a.rhino-bullet:focus {
-    color:#999;
-    background:#eee;
-}
+    /*color:#999;
+    background:#eee; */
+} 
 /*changed*/
 .rhino-bullets li a.rhino-bullet.rhino-active-bullet {
     color:#000;
     background:#fff;
     border-bottom: none;
+    border: 1px solid #EEEEEE;
 }
 
 
