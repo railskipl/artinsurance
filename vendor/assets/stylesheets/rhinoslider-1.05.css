@@ -92,6 +92,12 @@
     z-index: 10;
 }
 
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+.rhino-bullets {
+     top: -444px;
+}
+}
+
 /*changed*/
 .rhino-bullets:before, .rhino-bullets:after {
     position:absolute;
@@ -150,9 +156,6 @@ ul, ol {
     border-bottom: none;
     border: 1px solid #EEEEEE;
 }
-
-
-
 
 
  .sbt-btn {
