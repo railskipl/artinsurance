@@ -1,4 +1,4 @@
-<p><%= params[:notice] %></p></br>
+
 
 
 <style type='text/css'>
@@ -52,7 +52,18 @@
 html{
     font:1em/1.5 Georgia, serif;
 }
-  </style>
+
+
+.wrapper {
+    background: none repeat scroll 0 0 #F4F4F4;
+    border: 1px solid #DCDADA;
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px #E1E1E1;
+    height: auto;
+    overflow: hidden;
+    width: auto;
+}
+</style>
   
 
 
@@ -108,17 +119,21 @@ function validate()
 </script>
 
 
-<h4>Feedback</h4>
+<h1>Feedback</h1>
+<div class="wrapper">
   
+ <p><%= params[:notice] %></p></br>
+ 
 <%= form_for :feedback, :url=>{:controller=>"subscriptions", :action=>"feedback"}, :html=>{:name=>"feedbackfrm", :onsubmit=>"return(validate());"} do |f| %>
-  <p>Rating : <span class="stars s-1" data-default='1'> 0 stars</span></p>
-  <p><%= f.text_area :comment, :rows => 4, :cols => 38, :placeholder =>"Your Comment here...", :style=>"width:445px" %>
+  <p><strong>Rating : </strong> <span class="stars s-1" data-default='1'> 0 stars</span></p>
+  <p><strong>Comment : </strong> <br/><%= f.text_area :comment, :rows => 4, :cols => 38, :placeholder =>"Your Comment here...", :style=>"width:445px" %>
     <%= f.hidden_field :rate, :value=>"1" %><%= f.hidden_field :id, :value=>params[:id] %><br/>
     <div class="form-error" id="error_msg11"></div>
   </p>
   <p><%= submit_tag 'Submit',:class=>"btn btn-info" %></p>
 
 <% end %>
+</div>
 
 
-<%= link_to 'Back to Home',  root_path,:class =>"btn btn-info btn-large" %>
+

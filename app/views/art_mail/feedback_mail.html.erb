@@ -52,9 +52,12 @@ html{
   </style>
   
 
-<p>Rating : <span class="stars s-<%= feedbk.rating %>" data-default='<%= @feedbk.rating %>'> 0 stars</span></p>
+<p>Rating : <span class="stars s-<%= @feedbk["rating"] %>" data-default='<%= @feedbk["rating"] %>'> 0 stars</span></p>
   
- <p>Comment : <%= @feedbk.comments %></p>
+ <p>Comment : <br/> <%= @feedbk["comments"] %></p>
 
 
- 
+ <br/><p>Thanks & Regards</p>
+ <%= @feedbk["from_email_address"] %>
+
+

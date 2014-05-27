@@ -18,7 +18,7 @@ def create
       end
 
     if @subscription.save_with_payment
-      session[:email] = nil
+      
       session[:anualpremium] = nil
       redirect_to @subscription, :notice => "Thank you for subscribing!"
     else
@@ -29,11 +29,12 @@ end
 def feedback
 
   @user_feedback = { "rating" => params[:feedback][:rate],
-              "comments" => params[:feedback][:comment] }
+              "comments" => params[:feedback][:comment], "from_email_address" => session[:email] }
 
   ArtMail.feedback_mail(@user_feedback).deliver
 
-  redirect_to :controller=>"subscriptions", :action=>"show", :id=>params[:feedback][:id], :notice => "Thank you for sending a feedback."
+  session[:email] = nil
+  redirect_to root_path
 
 end
 
