@@ -178,7 +178,7 @@ form {
             @media only screen and (min-width: 320px) and (max-width: 768px) {
 
             .form-step {
-                min-height: 1050px;
+                min-height: 1550px;
                 padding: 0 !important;
                 top: 220px !important;
                 margin-left: 20px!important
@@ -198,7 +198,7 @@ form {
 
                  .form-submit{
                 
-                bottom: -885px;
+                bottom: -1380px;
                 width: 73px; }
 
 
