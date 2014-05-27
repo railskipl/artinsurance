@@ -59,7 +59,7 @@
                 display: block;
                 position: absolute;
                 right: 0;
-                bottom: -160px;
+                bottom: -200px;
                 right: 12px;
                 -moz-user-select: none;
                 background: none repeat scroll 0 0 #6F95DC;
@@ -164,7 +164,7 @@
 
             .row2 {
              float: left;
-             margin: 0 0;
+             margin: 5px 0;
              width: 100%;
             }
 

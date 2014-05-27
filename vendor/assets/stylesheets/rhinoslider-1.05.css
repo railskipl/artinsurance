@@ -35,7 +35,7 @@
     font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
 }
 /*changed*/
-.rhino-prev, .rhino-next { bottom:-160px; }
+.rhino-prev, .rhino-next { bottom:-200px; }
 /*changed*/
 .rhino-prev {
     left:0px;
