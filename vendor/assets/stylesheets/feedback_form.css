@@ -1,4 +1,3 @@
-<style type='text/css'>
     /**
      CSS & HTML From @CSSWizardry's JSFiddle: 
         http://jsfiddle.net/csswizardry/KL5Vs/
@@ -49,15 +48,14 @@
 html{
     font:1em/1.5 Georgia, serif;
 }
-  </style>
-  
-
-<p> <strong>Rating : </strong> <span class="stars s-<%= @feedbk["rating"] %>" data-default='<%= @feedbk["rating"] %>'> 0 stars</span></p>
-  
- <p><strong>Comment : </strong> <br/> <%= @feedbk["comments"] %></p>
 
 
- <br/><p>Thanks & Regards</p>
- <%= @feedbk["from_email_address"] %>
-
-
+.wrapper {
+    background: none repeat scroll 0 0 #F4F4F4;
+    border: 1px solid #DCDADA;
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px #E1E1E1;
+    height: auto;
+    overflow: hidden;
+    width: auto;
+}

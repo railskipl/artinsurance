@@ -31,7 +31,7 @@ end
 def feedback_mail(feedbk)
 
     @feedbk = feedbk
-    mail(:to => "amol@kunalinfotech.net", :subject => "Feedback")
+    mail(:to => "sagar.kale@kunalinfotech.net", :subject => "Feedback")
 end
 
 
