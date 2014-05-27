@@ -33,7 +33,7 @@ def feedback
 
   ArtMail.feedback_mail(@user_feedback).deliver
 
-  redirect_to :controller=>"subscriptions", :action=>"show", :id=>params[:feedback]params[:id], :notice => "Thank you for sending a feedback."
+  redirect_to :controller=>"subscriptions", :action=>"show", :id=>params[:feedback][:id], :notice => "Thank you for sending a feedback."
 
 end
 
