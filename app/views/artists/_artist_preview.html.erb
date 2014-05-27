@@ -94,6 +94,11 @@
 </p>
 
 <p>
+  <strong>Year Built? :</strong>
+  <%= raw params["pre1950"]%> <%= raw params["after1950"]%>
+</p>
+
+<p>
   <strong>Studio & storage of art are in a basement? :
   </strong>
   <%= params["Studio & storage of art are in a basement"]%>
@@ -135,12 +140,33 @@
   </strong>
   <%= params["single_item"]%>
 </p>
+
+<p>
+  <strong>Do you keep a detailed and itemized inventory? :
+  </strong>
+  <%= params["Do you keep a detailed and itemized?"]%>
+</p>
+
+<p>
+  <strong>Do you keep a record of sales? :
+  </strong>
+  <%= params["Do you keep a record of sales?"]%>
+</p>
+
+
 <p>
   <strong>When was the last date of inventory? :
   
   </strong>
   <%= params["card_signup"]["dob(2i)"]%> - <%= params["card_signup"]["dob(1i)"]  %>
 </p>
+
+
+<p>
+  <strong>Do you maintain a duplicate inventory off-site? :</strong>
+  <%= params["Do you maintain a duplicate inventory off-site?"]  %>
+</p>
+
 <p>
   <strong>Number of exhibits a year? :</strong>
 
@@ -174,6 +200,10 @@
   <strong>Amount Of Loss :
   </strong>
   <%= params["Amount Of Loss"]%>
+</p>
+<p>
+  <strong>Date : </strong>
+  <%= params["card_signup"]["lost_date(3i)"]%> - <%= params["card_signup"]["lost_date(2i)"]%> - <%= params["card_signup"]["lost_date(1i)"]  %>
 </p>
 
 

@@ -377,10 +377,10 @@
                                 <div class="form-left">Year Built?<a class="more" title="" rel="tooltip" href="#" data-original-title="Best estimate" style="float:none"> <strong> ?</strong></a></div>
                                  <div class="form-left">Pre 1950
 
-                                 <input type="checkbox" name="checkbox" id="checkbox_id" value="Pre 1950">
+                                 <input type="checkbox" name="pre1950" id="checkbox_id" value="Pre 1950">
 
                                  After 1950 
-                                 <input type="checkbox" name=" checkbox" id="checkbox_id" value="After 1950">
+                                 <input type="checkbox" name="after1950" id="checkbox_id" value="After 1950">
                                      
 
                                  </div>
@@ -680,7 +680,7 @@
                                 <div class="form-left">Date </div>
 
 
-                                <div class="form-right" style="width: 195px!important">  <%= date_select("card_signup", "dob", { :end_year => DateTime.now.year + 10, :start_year => DateTime.now.year - 200
+                                <div class="form-right" style="width: 195px!important">  <%= date_select("card_signup", "lost_date", { :end_year => DateTime.now.year + 10, :start_year => DateTime.now.year - 200
 
                                          },
                                          :style => "width: 62px;")%>

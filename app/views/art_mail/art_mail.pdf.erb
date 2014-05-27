@@ -181,6 +181,11 @@
     <td><%= raw @grades["studio"]%></td>
   </tr>
 
+ <tr>
+    <td><strong>Year Built? :</strong></td>
+    <td><%= raw @grades["pre1950"]%> <%= raw @grades["after1950"]%></td>
+ </tr>
+
 <tr>
   <td><strong>Studio & storage of art are in a basement? :</strong></td>
   <td><%= raw @grades["Studio & storage of art are in a basement"]%></td>
@@ -219,12 +224,27 @@
 </tr>
 
 <tr>
+  <td><strong>Do you keep a detailed and itemized inventory? :</strong></td>
+  <td><%= raw @grades["detailed_and_itemized"]%></td>
+</tr>
+
+<tr>
+  <td><strong>Do you keep a record of sales? :</strong></td>
+  <td><%= raw @grades["keep_record_of_sales"]%></td>
+</tr>
+
+<tr>
   <td><strong>When was the last date of inventory? :</strong></td>
   <td><%= raw @grades["card_signup_date"]%>-<%= raw @grades["card_signup_year"]  %></td>
 </tr>
 <tr>
   <td><strong>Number of exhibits a year? :</strong></td>
   <td><% if @grades["exhibits_year"] == "0" %> 5 or less <% else %> <%= raw @grades["exhibits_year"] %> <% end %></td>
+</tr>
+
+<tr>
+  <td><strong>Do you maintain a duplicate inventory off-site? :</strong></td>
+  <td><%= raw @grades["duplicate_inventory_off_site"]  %></td>
 </tr>
 
 <tr>
@@ -248,6 +268,11 @@
 <tr>
   <td><strong>Amount Of Loss :</strong></td>
   <td><%= raw @grades["Amount Of Loss"]%></td>
+</tr>
+
+<tr>
+  <td><strong>Date : </strong></td>
+  <td><%= params["card_signup"]["lost_date(3i)"]%> - <%= params["card_signup"]["lost_date(2i)"]%> - <%= params["card_signup"]["lost_date(1i)"]  %></td>
 </tr>
 
   

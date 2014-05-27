@@ -99,9 +99,14 @@ class ArtistsController < ApplicationController
            "non_Fragile" => params[:non_Fragile],
            "breakable" => params[:breakable],
            "other" => params[:other],
+           "pre1950" => params[:pre1950],
+           "after1950" => params[:after1950],
            "Is_there_history_of_back_up_drain" => params[:"Is there a history of a back-up drain and/or sewer?"],
            "stored_on_skits_or_shelf" => params[:"If yes works stored on skits or shelf?"],
            "automatic_sprinkler_system" => params[:"Is there an automatic sprinkler system on premises?"],
+           "detailed_and_itemized" => params[:"Do you keep a detailed and itemized?"],
+           "keep_record_of_sales" => params[:"Do you keep a record of sales?"],
+           "duplicate_inventory_off_site" => params[:"Do you maintain a duplicate inventory off-site?"],
            "deadbolts" => params[:deadbolts],
            "alarm" => params[:alarm],
            "local_alaram" => params[:local_alaram],
@@ -109,6 +114,7 @@ class ArtistsController < ApplicationController
            "gates" => params[:gates],
            "watchmen" => params[:watchmen],
            "no_security" => params[:no_security],
+           "lost_date" => params["card_signup"]["lost_date(3i)"] - params["card_signup"]["lost_date(2i)"] - params["card_signup"]["lost_date(1i)"],
            "annual_premium" => @anualpremium
            
          }
