@@ -53,6 +53,12 @@
                             </div>
 
 
+
+
+                            <div class="row1">
+                            <h4 style="margin: 0px;">Mailing Address</h4>
+                            </div>
+
                             <div class="row1">
                                 <div class="form-left">Address 1<span style="color:red;">*</span></div>
                                 <div class="form-right"> <%=text_field_tag 'Address1'%></div>
@@ -74,7 +80,14 @@
 
                             <div class="row1">
                                 <div class="form-left">State<span style="color:red;">*</span></div>
-                                <div class="form-right"> <%=text_field_tag 'State'%></div>
+                                <div class="form-right"> 
+
+                                    <select id ="State" name="State">
+                                      <% us_states.each do |us_states|%>
+                                       <option value="<%=us_states%>"><%= us_states%></option>
+                                     <%end%>
+                                    </select>
+                                </div>
                                 <div class="form-error"></div>
                             </div>
 
@@ -84,13 +97,11 @@
                                 <div class="form-error"></div>
                             </div> 
 
-                            
 
-                            <div class="row1">
-                                <div class="form-left">Studio Address <span style="color:red;">* <a class="more" title="" rel="tooltip" href="#" data-original-title="This is  where your studio is located,complete address,city,state,zip." style="float:none"> <strong> ?</strong></a></span></div>
-                                <div class="form-right">  <%=text_field_tag 'Studio_Address'%></div>
-                                <div class="form-error"></div>
-                            </div> 
+                             <div class="row1" style="margin-top:20px">
+                                <input type="checkbox" onclick="FillBilling(this.form)" name="billingtoo" style="margin-top:-4px;">
+                                <em>Check this box if Billing Address and Mailing Address are the same.</em>
+                            </div>
 
                             
 
@@ -100,8 +111,28 @@
 
                           <div class="span5">
 
+
+
+                            <div class="row1">
+                            <h4 style="margin: 0px;">Studio Address</h4>
+                            </div>
+
+                           
+
+                            <div class="row1">
+                                <div class="form-left">Studio Address <span style="color:red;">* <a class="more" title="" rel="tooltip" href="#" data-original-title="This is  where your studio is located,complete address,city,state,zip." style="float:none"> <strong> ?</strong></a></span></div>
+                                <div class="form-right">  <%=text_field_tag 'Studio_Address'%></div>
+                                <div class="form-error"></div>
+                            </div> 
+
+                            <div class="row1">
+                                <div class="form-left">Studio Address 2 </div>
+                                <div class="form-right">  <%=text_field_tag 'Studio_Address2'%></div>
+                                <div class="form-error"></div>
+                            </div> 
+
                            <div class="row1">
-                                <div class="form-left">Studio City<span style="color:red;">*</span></div>
+                                <div class="form-left">City<span style="color:red;">*</span></div>
                                 <div class="form-right"> <%=text_field_tag 'Studio_City'%></div>
                                 <div class="form-error"></div>
                             </div> 
@@ -664,7 +695,7 @@
 
 
 
-                            <div style="position: absolute; left: 176px; top: 414px; display:none;" class="row1" id="sbtn">
+                            <div style="position: absolute; left: 176px; top: 458px; display:none;" class="row1" id="sbtn">
                                 <div class="form-left">
                                     <%= link_to "Preview", "javascript:void(0);", :id=>"previes123", :class=>"sbt-btn", :style=>"position: relative; padding: 10px; left:50px; 10px; top: 1px;"%>                                    
                                 </div>
@@ -740,6 +771,23 @@ function limit_of_Insurance(selBox) {
         document.getElementById('limit_of_Insurance_at_Other_Location').value = '$100,000';
         document.getElementById('limit_of_Insurance_While_in_Transit').value = '$100,000';
     }
+}
+
+function FillBilling(f) {
+  if(f.billingtoo.checked == true) {
+    f.Studio_Address.value = f.Address1.value;
+    f.Studio_Address2.value = f.Address2.value;
+    f.Studio_City.value = f.City.value;
+    f.us_states.value = f.State.value;
+    f.Zip_Code.value = f.Zip.value;
+  }
+    if(f.billingtoo.checked == false) {
+    f.Studio_Address.value = '';
+    f.Studio_Address2.value = '';
+    f.Studio_City.value = '';
+    f.us_states.value = '';
+    f.Zip_Code.value = '';
+  }
 }
 
 </script>

@@ -26,6 +26,17 @@ def create
     end
 end
 
+def feedback
+
+  @user_feedback = { "rating" => params[:feedback][:rate],
+              "comments" => params[:feedback][:comment] }
+
+  ArtMail.feedback_mail(@user_feedback).deliver
+
+  redirect_to :controller=>"subscriptions", :action=>"show", :id=>params[:feedback]params[:id], :notice => "Thank you for sending a feedback."
+
+end
+
 
 
 

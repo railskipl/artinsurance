@@ -6,11 +6,10 @@ Artinsurence::Application.routes.draw do
   root :to => 'artists#home'
   match "artists/create" => "artists#create", via: :post
   
-  resources :subscriptions
+  resources :subscriptions do
+    post :feedback, :on=> :collection
+  end
 
-
-  
-  
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
