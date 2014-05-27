@@ -20,7 +20,7 @@ def art_mail(grades)
         mail(:subject => 'Insurance', :to => recipients.join(','))  do |format|
         format.html
         format.pdf do
-        attachments["Bernard_Fleischer_&_Sons_Inc. .pdf"] = WickedPdf.new.pdf_from_string(
+        attachments["Bernard_Fleischer_&_Sons_Inc.pdf"] = WickedPdf.new.pdf_from_string(
         render_to_string(:pdf => "receipt", :template => 'art_mail/art_mail.pdf.erb')
         )
     end
@@ -31,7 +31,7 @@ end
 def feedback_mail(feedbk)
 
     @feedbk = feedbk
-    mail(:to => "sagar.kale@kunalinfotech.net", :subject => "Feedback")
+    mail(:to => "amol@kunalinfotech.net", :subject => "Feedback")
 end
 
 
