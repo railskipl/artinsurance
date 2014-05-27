@@ -132,7 +132,8 @@
  
   <tr>
     <td><strong>State :</strong></td>
-    <td><%=raw @grades["us_states"]%></td>
+    <td><% if @grades["us_states"] %> <%= raw @grades["us_states"]%> <% else %> <%= raw @grades["State"]%> <% end %></td>
+    
   </tr>
 
   <tr>

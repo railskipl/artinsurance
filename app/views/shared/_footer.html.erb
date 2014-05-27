@@ -42,7 +42,10 @@
       });
                        
     });
-    window.onload = function () { document.getElementById('sbtn').style.display = "block"; }
+
+    var myElem = document.getElementById('sbtn');
+    if(myElem != null)
+        window.onload = function () { myElem.style.display = "block"; }
   </script>
 		
 

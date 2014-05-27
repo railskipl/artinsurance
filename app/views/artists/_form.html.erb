@@ -738,12 +738,19 @@
 
     <script>
 
-    var dropdown = document.getElementById("us_states");
-    dropdown.onchange = function(event){
-    if(dropdown.value=="Alabama" || dropdown.value=="Connecticut" || dropdown.value=="Delaware" || dropdown.value=="Florida" || dropdown.value=="Georgia" || dropdown.value=="Louisiana" || dropdown.value=="Maine"  || dropdown.value=="Mississippi"  || dropdown.value=="New Jersey" || dropdown.value=="New York" || dropdown.value=="North Carolina"  || dropdown.value=="California"  || dropdown.value=="Pennsylvania" || dropdown.value=="South Carolina"  || dropdown.value=="Texas"  ||dropdown.value=="Virginia" ){
+    var dropdown1 = document.getElementById("State");
+    dropdown1.onchange = function(event){
+        if(dropdown1.value=="Alabama" || dropdown1.value=="Connecticut" || dropdown1.value=="Delaware" || dropdown1.value=="Florida" || dropdown1.value=="Georgia" || dropdown1.value=="Louisiana" || dropdown1.value=="Maine"  || dropdown1.value=="Mississippi"  || dropdown1.value=="New Jersey" || dropdown1.value=="New York" || dropdown1.value=="North Carolina"  || dropdown1.value=="California"  || dropdown1.value=="Pennsylvania" || dropdown1.value=="South Carolina"  || dropdown1.value=="Texas"  || dropdown1.value=="Virginia" ){
         confirm("This program exclude flood and windstorms in your area.would you like to continue?")
+        }
     }
-}
+
+    var dropdown2 = document.getElementById("us_states");
+    dropdown2.onchange = function(event){
+        if(dropdown2.value=="Alabama" || dropdown2.value=="Connecticut" || dropdown2.value=="Delaware" || dropdown2.value=="Florida" || dropdown2.value=="Georgia" || dropdown2.value=="Louisiana" || dropdown2.value=="Maine"  || dropdown2.value=="Mississippi"  || dropdown2.value=="New Jersey" || dropdown2.value=="New York" || dropdown2.value=="North Carolina"  || dropdown2.value=="California"  || dropdown2.value=="Pennsylvania" || dropdown2.value=="South Carolina"  || dropdown2.value=="Texas"  || dropdown2.value=="Virginia" ){
+        confirm("This program exclude flood and windstorms in your area.would you like to continue?")
+        }
+    }
 </script>   
 
 
@@ -776,17 +783,27 @@ function limit_of_Insurance(selBox) {
 function FillBilling(f) {
   if(f.billingtoo.checked == true) {
     f.Studio_Address.value = f.Address1.value;
+    f.Studio_Address.readOnly = true;
     f.Studio_Address2.value = f.Address2.value;
+    f.Studio_Address2.readOnly = true;
     f.Studio_City.value = f.City.value;
+    f.Studio_City.readOnly = true;
     f.us_states.value = f.State.value;
+    f.us_states.disabled = true;
     f.Zip_Code.value = f.Zip.value;
+    f.Zip_Code.readOnly = true;
   }
     if(f.billingtoo.checked == false) {
     f.Studio_Address.value = '';
+    f.Studio_Address.readOnly = false;
     f.Studio_Address2.value = '';
+    f.Studio_Address2.readOnly = false;
     f.Studio_City.value = '';
+    f.Studio_City.readOnly = false;
     f.us_states.value = '';
+    f.us_states.disabled = false;
     f.Zip_Code.value = '';
+    f.Zip_Code.readOnly = false;
   }
 }
 

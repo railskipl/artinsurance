@@ -41,7 +41,7 @@
 </p>
 <p>
   <strong>States :</strong>
-  <%= params["us_states"]%>
+  <% if params["us_states"] %> <%= params["us_states"]%> <% else %> <%= params["State"]%> <% end %>
 </p>
 <p>
   <strong>Zip Code :</strong>
