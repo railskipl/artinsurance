@@ -114,7 +114,7 @@ class ArtistsController < ApplicationController
            "gates" => params[:gates],
            "watchmen" => params[:watchmen],
            "no_security" => params[:no_security],
-           "lost_date" => params["card_signup"]["lost_date(3i)"] - params["card_signup"]["lost_date(2i)"] - params["card_signup"]["lost_date(1i)"],
+           "lost_date" => params[:card_signup][:"lost_date(3i)"] - params[:card_signup][:"lost_date(2i)"] - params[:card_signup][:"lost_date(1i)"],
            "annual_premium" => @anualpremium
            
          }
