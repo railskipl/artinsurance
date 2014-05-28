@@ -168,6 +168,16 @@
              width: 100%;
             }
 
+            .row1_new {
+                float: left;
+                margin: 5px 0;
+                width: 100%;
+             display: block;
+                left: 176px;
+                position: absolute;
+                top: 532px;
+             }
+
 
 form {
     margin: 0 !important;
@@ -183,6 +193,16 @@ form {
                 top: 220px !important;
                 margin-left: 20px!important
             }
+
+             .row1_new {
+                float: left;
+                margin: 5px 0;
+                width: 100%;
+             display: block;
+                left: 176px;
+                position: absolute;
+                top: 532px;
+             }
 
             #wrapper{
                 border: 1px solid #DCDADA;
@@ -233,6 +253,16 @@ form {
                     width: 133px;
                     float: none;
                 }
+
+                 .row1_new {
+                float: left;
+                margin: 5px 0;
+                width: 100%;
+             display: block;
+                left: 176px;
+                position: absolute;
+                top: 532px;
+             }
 
 
 
