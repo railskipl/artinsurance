@@ -4,7 +4,7 @@
       
        <% report_pdf_content = "http://artinsurance.herokuapp.com/assets/Earthquake%20Exclusion%20MIM1305.pdf" %>
        
-      <% attachments['report.pdf'] = { mime_type: 'application/pdf', content: report_pdf_content.read } %>
+      <% attachments['report.pdf'] = { mime_type: 'application/pdf', content: File.read(report_pdf_content) } %>
     </p>
     <p><a href="http://artinsurance.herokuapp.com/assets/Mold%20Exclusion%20MIM11510.pdf
              ">Download Mold Exclusion PDF</a> </p>
