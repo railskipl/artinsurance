@@ -9,7 +9,7 @@
                 height:auto;
                 background:#f4f4f4;
                 overflow: hidden;
-                min-height: 670px;
+                min-height: 700px;
 
             }
             #wrapper h3{
@@ -59,7 +59,7 @@
                 display: block;
                 position: absolute;
                 right: 0;
-                bottom: -200px;
+                bottom: -233px;
                 right: 12px;
                 -moz-user-select: none;
                 background: none repeat scroll 0 0 #6F95DC;

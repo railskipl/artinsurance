@@ -11,6 +11,33 @@
   <strong>Last Name : </strong>
   <%= params["last_name"] %>
 </p>
+ 
+<p><strong>Studio Address</strong></p>
+
+<p>
+  <strong>Studio Address :</strong>
+  <%= params["Studio_Address"]%>
+</p> 
+
+<p>
+  <strong>Studio Address 2 </strong>
+  <%= params["Studio_Address2"]%>
+</p> 
+
+<p>
+  <strong>City :</strong>
+  <%= params["Studio_City"]%>
+</p>
+<p>
+  <strong>States :</strong>
+  <% if params["us_states"] %> <%= params["us_states"]%> <% else %> <%= params["State"]%> <% end %>
+</p>
+<p>
+  <strong>Zip Code :</strong>
+  <%= params["Zip_Code"]%>
+</p>
+
+<p><strong>Mailing Address</strong></p>
 <p>
   <strong>Address 1 :</strong>
   <%= params["Address1"]%>
@@ -30,23 +57,8 @@
 <p>
   <strong>Zip Code :</strong>
   <%= params["Zip"]%>
-</p> 
-<p>
-  <strong>Studio Address :</strong>
-  <%= params["Studio_Address"]%>
-</p> 
-<p>
-  <strong>City :</strong>
-  <%= params["Studio_City"]%>
 </p>
-<p>
-  <strong>States :</strong>
-  <% if params["us_states"] %> <%= params["us_states"]%> <% else %> <%= params["State"]%> <% end %>
-</p>
-<p>
-  <strong>Zip Code :</strong>
-  <%= params["Zip_Code"]%>
-</p>
+
 <p>
   <strong>Phone Number :</strong>
   <%= params["Phone_Number"]%>

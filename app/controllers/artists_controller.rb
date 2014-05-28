@@ -64,6 +64,7 @@ class ArtistsController < ApplicationController
            "state" => params[:state],
            "Zip" => params[:Zip],
            "Studio Address" => params[:Studio_Address],
+           "Studio_Address2" => params[:Studio_Address2],
            "Studio City" => params[:Studio_City],
            "us_states" => params[:us_states],
            "Zip Code" => params[:Zip_Code],

@@ -54,6 +54,63 @@
 
 
 
+                            <div class="row1">
+                            <h4 style="margin: 0px;">Studio Address</h4>
+                            </div>
+
+                           
+
+                            <div class="row1">
+                                <div class="form-left">Studio Address <span style="color:red;">* <a class="more" title="" rel="tooltip" href="#" data-original-title="This is  where your studio is located,complete address,city,state,zip." style="float:none"> <strong> ?</strong></a></span></div>
+                                <div class="form-right">  <%=text_field_tag 'Studio_Address'%></div>
+                                <div class="form-error"></div>
+                            </div> 
+
+                            <div class="row1">
+                                <div class="form-left">Studio Address 2 </div>
+                                <div class="form-right">  <%=text_field_tag 'Studio_Address2'%></div>
+                                <div class="form-error"></div>
+                            </div> 
+
+                           <div class="row1">
+                                <div class="form-left">City<span style="color:red;">*</span></div>
+                                <div class="form-right"> <%=text_field_tag 'Studio_City'%></div>
+                                <div class="form-error"></div>
+                            </div> 
+
+                            <div class="row1">
+                                <div class="form-left">State <span style="color:red;">*</span></div>
+                                <div class="form-right">
+                                    <select id ="us_states" name="us_states">
+                                      <% us_states.each do |us_states|%>
+                                       <option value="<%=us_states%>" <% if us_states == "Alaska" %>selected<% end %>><%= us_states%></option>
+                                     <%end%>
+                                    </select>
+                                </div>
+                                <div class="form-error"></div>
+                                
+                            </div>
+
+
+                           <div class="row1">
+                                <div class="form-left">Zip Code<span style="color:red;">*</span></div>
+                                <div class="form-right"> <%=text_field_tag 'Zip_Code', nil, placeholder:"xxxxx" %></div>
+                                <div class="form-error"></div>
+                            </div>
+
+
+                             <div class="row1" style="margin-top:20px">
+                                <input type="checkbox" onclick="FillBilling(this.form)" name="billingtoo" style="margin-top:-4px;">
+                                <em>Check this box if Mailing Address and Studio Address are the same.</em>
+                            </div>
+
+                            
+
+
+                        </div>
+
+
+                          <div class="span5">
 
                             <div class="row1">
                             <h4 style="margin: 0px;">Mailing Address</h4>
@@ -84,7 +141,7 @@
 
                                     <select id ="State" name="State">
                                       <% us_states.each do |us_states|%>
-                                       <option value="<%=us_states%>"><%= us_states%></option>
+                                       <option value="<%=us_states%>" <% if us_states == "Alaska" %>selected<% end %>><%= us_states%></option>
                                      <%end%>
                                     </select>
                                 </div>
@@ -95,68 +152,7 @@
                                 <div class="form-left"> Zip Code<span style="color:red;">*</span></div>
                                 <div class="form-right"> <%=text_field_tag 'Zip', nil, placeholder:"xxxxx" %></div>
                                 <div class="form-error"></div>
-                            </div> 
-
-
-                             <div class="row1" style="margin-top:20px">
-                                <input type="checkbox" onclick="FillBilling(this.form)" name="billingtoo" style="margin-top:-4px;">
-                                <em>Check this box if Mailing Address and Studio Address are the same.</em>
                             </div>
-
-                            
-
-
-                        </div>
-
-
-                          <div class="span5">
-
-
-
-                            <div class="row1">
-                            <h4 style="margin: 0px;">Studio Address</h4>
-                            </div>
-
-                           
-
-                            <div class="row1">
-                                <div class="form-left">Studio Address <span style="color:red;">* <a class="more" title="" rel="tooltip" href="#" data-original-title="This is  where your studio is located,complete address,city,state,zip." style="float:none"> <strong> ?</strong></a></span></div>
-                                <div class="form-right">  <%=text_field_tag 'Studio_Address'%></div>
-                                <div class="form-error"></div>
-                            </div> 
-
-                            <div class="row1">
-                                <div class="form-left">Studio Address 2 </div>
-                                <div class="form-right">  <%=text_field_tag 'Studio_Address2'%></div>
-                                <div class="form-error"></div>
-                            </div> 
-
-                           <div class="row1">
-                                <div class="form-left">City<span style="color:red;">*</span></div>
-                                <div class="form-right"> <%=text_field_tag 'Studio_City'%></div>
-                                <div class="form-error"></div>
-                            </div> 
-
-                            <div class="row1">
-                                <div class="form-left">State <span style="color:red;">*</span></div>
-                                <div class="form-right">
-                                    <select id ="us_states" name="us_states">
-                                      <% us_states.each do |us_states|%>
-                                       <option value="<%=us_states%>"><%= us_states%></option>
-                                     <%end%>
-                                    </select>
-                                </div>
-                                <div class="form-error"></div>
-                                
-                            </div>
-
-
-                           <div class="row1">
-                                <div class="form-left">Zip Code<span style="color:red;">*</span></div>
-                                <div class="form-right"> <%=text_field_tag 'Zip_Code', nil, placeholder:"xxxxx" %></div>
-                                <div class="form-error"></div>
-                            </div>
-
 
                             <div class="row1">
                                 <div class="form-left">Phone Number<span style="color:red;">*<a class="more" title="" rel="tooltip" href="#" data-original-title="Best number to call you" style="float:none"> <strong> ?</strong></a></span></div>
@@ -695,7 +691,7 @@
 
 
 
-                            <div style="position: absolute; left: 176px; top: 500px; display:none;" class="row1" id="sbtn">
+                            <div style="position: absolute; left: 176px; top: 532px; display:none;" class="row1" id="sbtn">
                                 <div class="form-left">
                                     <%= link_to "Preview", "javascript:void(0);", :id=>"previes123", :class=>"sbt-btn", :style=>"position: relative; padding: 10px; left:50px; 10px; top: 1px;"%>                                    
                                 </div>
@@ -740,15 +736,21 @@
 
     var dropdown1 = document.getElementById("State");
     dropdown1.onchange = function(event){
-        if(dropdown1.value=="Alabama" || dropdown1.value=="Connecticut" || dropdown1.value=="Delaware" || dropdown1.value=="Florida" || dropdown1.value=="Georgia" || dropdown1.value=="Louisiana" || dropdown1.value=="Maine"  || dropdown1.value=="Mississippi"  || dropdown1.value=="New Jersey" || dropdown1.value=="New York" || dropdown1.value=="North Carolina"  || dropdown1.value=="California"  || dropdown1.value=="Pennsylvania" || dropdown1.value=="South Carolina"  || dropdown1.value=="Texas"  || dropdown1.value=="Virginia" ){
-        confirm("This program exclude flood and windstorms in your area.would you like to continue?")
+        if(dropdown1.value=="Alabama" || dropdown1.value=="Connecticut" || dropdown1.value=="Delaware" || dropdown1.value=="Florida" || dropdown1.value=="Georgia" || dropdown1.value=="Louisiana" || dropdown1.value=="Maine"  || dropdown1.value=="Mississippi"  || dropdown1.value=="New Jersey" || dropdown1.value=="New York" || dropdown1.value=="North Carolina"  || dropdown1.value=="California"  || dropdown1.value=="Pennsylvania" || dropdown1.value=="South Carolina"  || dropdown1.value=="Texas"  || dropdown1.value=="Virginia" || dropdown1.value=="" ){
+            confirm("This program exclude flood and windstorms in your area. Do you need more information contact our office.");
+             var myindex  = dropdown1.selectedIndex;
+                dropdown1.options[myindex].value = '';
         }
     }
 
     var dropdown2 = document.getElementById("us_states");
     dropdown2.onchange = function(event){
-        if(dropdown2.value=="Alabama" || dropdown2.value=="Connecticut" || dropdown2.value=="Delaware" || dropdown2.value=="Florida" || dropdown2.value=="Georgia" || dropdown2.value=="Louisiana" || dropdown2.value=="Maine"  || dropdown2.value=="Mississippi"  || dropdown2.value=="New Jersey" || dropdown2.value=="New York" || dropdown2.value=="North Carolina"  || dropdown2.value=="California"  || dropdown2.value=="Pennsylvania" || dropdown2.value=="South Carolina"  || dropdown2.value=="Texas"  || dropdown2.value=="Virginia" ){
-        confirm("This program exclude flood and windstorms in your area.would you like to continue?")
+        if(dropdown2.value=="Alabama" || dropdown2.value=="Connecticut" || dropdown2.value=="Delaware" || dropdown2.value=="Florida" || dropdown2.value=="Georgia" || dropdown2.value=="Louisiana" || dropdown2.value=="Maine"  || dropdown2.value=="Mississippi"  || dropdown2.value=="New Jersey" || dropdown2.value=="New York" || dropdown2.value=="North Carolina"  || dropdown2.value=="California"  || dropdown2.value=="Pennsylvania" || dropdown2.value=="South Carolina"  || dropdown2.value=="Texas"  || dropdown2.value=="Virginia" || dropdown2.value==""){
+            confirm("This program exclude flood and windstorms in your area. Do you need more information contact our office.")
+                var myindex  = dropdown2.selectedIndex;
+                dropdown2.options[myindex].value = '';
+                
+            
         }
     }
 </script>   
@@ -782,28 +784,28 @@ function limit_of_Insurance(selBox) {
 
 function FillBilling(f) {
   if(f.billingtoo.checked == true) {
-    f.Studio_Address.value = f.Address1.value;
-    f.Studio_Address.readOnly = true;
-    f.Studio_Address2.value = f.Address2.value;
-    f.Studio_Address2.readOnly = true;
-    f.Studio_City.value = f.City.value;
-    f.Studio_City.readOnly = true;
-    f.us_states.value = f.State.value;
-    f.us_states.disabled = true;
-    f.Zip_Code.value = f.Zip.value;
-    f.Zip_Code.readOnly = true;
+    f.Address1.value = f.Studio_Address.value;
+    f.Address1.readOnly = true;
+    f.Address2.value = f.Studio_Address2.value;
+    f.Address2.readOnly = true;
+    f.City.value = f.Studio_City.value;
+    f.City.readOnly = true;
+    f.State.value = f.us_states.value;
+    f.State.disabled = true;
+    f.Zip.value = f.Zip_Code.value;
+    f.Zip.readOnly = true;
   }
-    if(f.billingtoo.checked == false) {
-    f.Studio_Address.value = '';
-    f.Studio_Address.readOnly = false;
-    f.Studio_Address2.value = '';
-    f.Studio_Address2.readOnly = false;
-    f.Studio_City.value = '';
-    f.Studio_City.readOnly = false;
-    f.us_states.value = '';
-    f.us_states.disabled = false;
-    f.Zip_Code.value = '';
-    f.Zip_Code.readOnly = false;
+  if(f.billingtoo.checked == false) {
+    f.Address1.value = '';
+    f.Address1.readOnly = false;
+    f.Address2.value = '';
+    f.Address2.readOnly = false;
+    f.City.value = '';
+    f.City.readOnly = false;
+    f.State.value = '';
+    f.State.disabled = false;
+    f.Zip.value = '';
+    f.Zip.readOnly = false;
   }
 }
 

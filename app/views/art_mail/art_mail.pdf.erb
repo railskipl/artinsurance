@@ -80,10 +80,6 @@
     <td>$<%= raw @grades["annual_premium"] %></td>
   </tr>
 
-  
-
- 
-
   <tr>
     <td><strong>First Name :</strong></td>
     <td> <%=raw @grades["First Name"]%></td>
@@ -92,6 +88,42 @@
   <tr>
     <td><strong>Last Name :</strong></td>
     <td> <%=raw @grades["last Name"]%></td>
+  </tr>
+
+  <tr>
+      <td colspan="2"><strong>Studio Address </strong></td>
+  </tr>
+
+  <tr>
+    <td><strong>Studio Address :</strong></td>
+    <td> <%=raw @grades["Studio Address"]%></td>
+  </tr>
+
+  <tr>
+    <td><strong>Studio Address 2 :</strong></td>
+    <td> <%=raw @grades["Studio_Address2"]%></td>
+  </tr>
+
+
+  <tr>
+    <td><strong> City :</strong></td>
+    <td><%=raw @grades["Studio City"]%></td>
+  </tr>
+
+ 
+  <tr>
+    <td><strong>State :</strong></td>
+    <td><% if @grades["us_states"] %> <%= raw @grades["us_states"]%> <% else %> <%= raw @grades["State"]%> <% end %></td>
+    
+  </tr>
+
+  <tr>
+    <td><strong>Zip Code :</strong></td>
+    <td><%=raw @grades["Zip Code"]%></td>
+  </tr>
+
+  <tr>
+      <td colspan="2"><strong>Mailing Address </strong></td>
   </tr>
 
   <tr>
@@ -118,27 +150,6 @@
   <tr>
     <td><strong>Zip Code :</strong></td>
     <td><%=raw @grades["Zip"]%></td>
-  </tr>
-
-  <tr>
-    <td><strong>Studio Address :</strong></td>
-    <td> <%=raw @grades["Studio Address"]%></td>
-  </tr>
-  <tr>
-    <td><strong> City :</strong></td>
-    <td><%=raw @grades["Studio City"]%></td>
-  </tr>
-
- 
-  <tr>
-    <td><strong>State :</strong></td>
-    <td><% if @grades["us_states"] %> <%= raw @grades["us_states"]%> <% else %> <%= raw @grades["State"]%> <% end %></td>
-    
-  </tr>
-
-  <tr>
-    <td><strong>Zip Code :</strong></td>
-    <td><%=raw @grades["Zip Code"]%></td>
   </tr>
   
   <tr>

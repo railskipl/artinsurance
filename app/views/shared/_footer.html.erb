@@ -150,7 +150,11 @@
                       $('#City').parent().parent().find('.form-error').html("Please enter city.");
                       err++;
                 }
-                    
+                
+                if($('#State').val() == ''){
+                    $('#State').parent().parent().find('.form-error').html("This program exclude flood and windstorms in your area.");
+                    err++;
+                } 
                 
                 if(!zip_reg.test(zip_code1))
                 {
@@ -164,9 +168,14 @@
                     $('#Studio_Address').parent().parent().find('.form-error').html("Please enter studio address.");
                     err++;
                 }
+
+                if($('#Studio_City').val() == ''){
+                    $('#Studio_City').parent().parent().find('.form-error').html("Please enter city.");
+                    err++;
+                }
                
-                if($('#us_states').val() == '0'){
-                    $('#us_states').parent().parent().find('.form-error').html("Please enter us state.");
+                if($('#us_states').val() == ''){
+                    $('#us_states').parent().parent().find('.form-error').html("This program exclude flood and windstorms in your area.");
                     err++;
                 } 
 
