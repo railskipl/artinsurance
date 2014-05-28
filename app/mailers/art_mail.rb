@@ -20,7 +20,7 @@ def art_mail(grades)
    
     recipients = email1, email2, email3, email4, email5
     subject = "Insurence"
-
+   
         mail(:subject => 'Insurance', :to => recipients.join(','))  do |format|
         format.html
         format.pdf do
