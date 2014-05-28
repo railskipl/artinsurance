@@ -170,6 +170,8 @@
 
            .row1_new { float: left; margin: 5px 0; width: 100%; display: block; left: 176px; position: absolute; top: 532px; }
 
+           .previewbtn {position: relative; padding: 10px; left:50px; 10px; top: 1px;}
+
 
 form {
     margin: 0 !important;
@@ -186,7 +188,9 @@ form {
                 margin-left: 20px!important
             }
 
-            .row1_new { float: left; margin: 5px 0; width: 100%; display: block; left: 176px; position: absolute; top: 532px; }
+            .row1_new { float: left; margin: 5px 0; width: 100%; display: block; left: 0px; position: absolute; top: 1392px; }
+
+             .previewbtn {position: relative; padding: 10px; left:0px; 10px; top: 1px;}
 
             #wrapper{
                 border: 1px solid #DCDADA;
