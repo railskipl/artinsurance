@@ -113,7 +113,7 @@
  
   <tr>
     <td><strong>State :</strong></td>
-    <td><% if @grades["us_states"] %> <%= raw @grades["us_states"]%> <% else %> <%= raw @grades["State"]%> <% end %></td>
+    <td><%= raw @grades["us_states"]%></td>
     
   </tr>
 
@@ -143,7 +143,9 @@
 
   <tr>
     <td><strong>State :</strong></td>
-    <td><%=raw @grades["State"]%></td>
+    <td>
+      <% if params["State"] %> <%= params["State"]%> <% else %> <%= params["us_states"]%> <% end %>
+    </td>
   </tr>
 
 
