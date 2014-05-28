@@ -122,6 +122,8 @@ class ArtistsController < ApplicationController
          @email = params[:Email_address]
          session[:email] = @email
 
+         session[:grades] = @grades
+
       respond_to do |format|
       if @artist.save
         format.html { redirect_to new_subscription_path, notice: 'Artist was successfully created.' }
@@ -129,7 +131,7 @@ class ArtistsController < ApplicationController
         format.json { render json: @artist, status: :created, location: @artist }
            
 
-        ArtMail.art_mail(@grades).deliver
+        #ArtMail.art_mail(@grades).deliver
         
       else
         format.html { render action: "new" }

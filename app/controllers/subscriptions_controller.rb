@@ -19,7 +19,10 @@ def create
 
     if @subscription.save_with_payment
       
+      ArtMail.art_mail(session[:grades]).deliver
+
       session[:anualpremium] = nil
+      session[:grades] = nil
       redirect_to @subscription, :notice => "Thank you for subscribing!"
     else
      render :new
