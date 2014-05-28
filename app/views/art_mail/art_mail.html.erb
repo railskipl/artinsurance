@@ -1,8 +1,11 @@
 <% if @grades["us_states"] == "Arizona" || @grades["us_states"] == "Alaska" || @grades["us_states"] == "Arkansas" || @grades["us_states"] == "California" || @grades["us_states"] == "Colorado" || @grades["us_states"] == "Hawaii" || @grades["us_states"] == "Idaho" || @grades["us_states"] == "Illinois" || @grades["us_states"] == "Indiana" || @grades["us_states"] == "Iowa" || @grades["us_states"] == "Kansas" || @grades["us_states"] == "Kentucky" || @grades["us_states"] == "Michigan" || @grades["us_states"] == "Minnesota" || @grades["us_states"] == "Nebraska" || @grades["us_states"] == "Nevada" || @grades["us_states"] == "New Hampshire" || @grades["us_states"] == "New Mexico" || @grades["us_states"] == "North Dakota" ||@grades["us_states"] == "Ohio" || @grades["us_states"] == "Oregon" || @grades["us_states"] == "South Dakota" || @grades["us_states"] == "Tennessee" || @grades["us_states"] == "Utah" || @grades["us_states"] == "Vermont" || @grades["us_states"] == "Virginia" || @grades["us_states"] == "Washington" || @grades["us_states"] == "West Virginia" || @grades["us_states"] == "Wisconsin" || @grades["us_states"] == "Wyoming" %>
-    <p><a href="http://artinsurance.herokuapp.com/assets/Earthquake%20Exclusion%20MIM1305.pdf
-           ">Download Earthquake Exclusion PDF</a>  ||||||  
-         <% attachments['free_book.pdf'] = File.read('/assets/Earthquake%20Exclusion%20MIM1305.pdf') %>
+    <p><% report = "http://artinsurance.herokuapp.com/assets/Earthquake%20Exclusion%20MIM1305.pdf" %>
+       <% report_pdf_content = report.render %>
+      <% attachments['report.pdf'] = { mime_type: 'application/pdf', content: report_pdf_content } %>
+      
     </p>
+      
+
     <p><a href="http://artinsurance.herokuapp.com/assets/Mold%20Exclusion%20MIM11510.pdf
              ">Download Mold Exclusion PDF</a> </p>
 
