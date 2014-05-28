@@ -30,7 +30,7 @@
 </p>
 <p>
   <strong>States :</strong>
-  <% if params["us_states"] %> <%= params["us_states"]%> <% else %> <%= params["State"]%> <% end %>
+   <%= params["us_states"]%> 
 </p>
 <p>
   <strong>Zip Code :</strong>
@@ -52,7 +52,7 @@
 </p>
 <p>
   <strong>State :</strong>
-  <%= params["State"]%>
+  <% if params["State"] %> <%= params["State"]%> <% else %> <%= params["us_states"]%> <% end %>
 </p>    
 <p>
   <strong>Zip Code :</strong>

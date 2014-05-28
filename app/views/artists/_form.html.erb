@@ -734,23 +734,13 @@
 
     <script>
 
-    var dropdown1 = document.getElementById("State");
-    dropdown1.onchange = function(event){
-        if(dropdown1.value=="Alabama" || dropdown1.value=="Missouri"  || dropdown1.value=="Montana" || dropdown1.value=="Oklahoma"  ||dropdown1.value=="" ){
-            confirm("This program exclude flood and windstorms in your area. Do you need more information contact our office.");
-             var myindex  = dropdown1.selectedIndex;
-                dropdown1.options[myindex].value = '';
-        }
-    }
-
+  
     var dropdown2 = document.getElementById("us_states");
     dropdown2.onchange = function(event){
         if(dropdown2.value=="Alabama" || dropdown2.value=="Missouri"  || dropdown2.value=="Montana" || dropdown2.value=="Oklahoma"  || dropdown2.value==""){
             confirm("This program exclude flood and windstorms in your area. Do you need more information contact our office.")
                 var myindex  = dropdown2.selectedIndex;
-                dropdown2.options[myindex].value = '';
-                
-            
+                dropdown2.options[myindex].value = '';    
         }
     }
 </script>   
