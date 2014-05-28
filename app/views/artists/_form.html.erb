@@ -736,7 +736,7 @@
 
     var dropdown1 = document.getElementById("State");
     dropdown1.onchange = function(event){
-        if(dropdown1.value=="Alabama" || dropdown1.value=="Connecticut" || dropdown1.value=="Delaware" || dropdown1.value=="Florida" || dropdown1.value=="Georgia" || dropdown1.value=="Louisiana" || dropdown1.value=="Maine"  || dropdown1.value=="Mississippi"  || dropdown1.value=="New Jersey" || dropdown1.value=="New York" || dropdown1.value=="North Carolina"  || dropdown1.value=="California"  || dropdown1.value=="Pennsylvania" || dropdown1.value=="South Carolina"  || dropdown1.value=="Texas"  || dropdown1.value=="Virginia" || dropdown1.value=="" ){
+        if(dropdown1.value=="Alabama" || dropdown1.value=="Missouri"  || dropdown1.value=="Montana" || dropdown1.value=="Oklahoma"  ||dropdown1.value=="" ){
             confirm("This program exclude flood and windstorms in your area. Do you need more information contact our office.");
              var myindex  = dropdown1.selectedIndex;
                 dropdown1.options[myindex].value = '';
@@ -745,7 +745,7 @@
 
     var dropdown2 = document.getElementById("us_states");
     dropdown2.onchange = function(event){
-        if(dropdown2.value=="Alabama" || dropdown2.value=="Connecticut" || dropdown2.value=="Delaware" || dropdown2.value=="Florida" || dropdown2.value=="Georgia" || dropdown2.value=="Louisiana" || dropdown2.value=="Maine"  || dropdown2.value=="Mississippi"  || dropdown2.value=="New Jersey" || dropdown2.value=="New York" || dropdown2.value=="North Carolina"  || dropdown2.value=="California"  || dropdown2.value=="Pennsylvania" || dropdown2.value=="South Carolina"  || dropdown2.value=="Texas"  || dropdown2.value=="Virginia" || dropdown2.value==""){
+        if(dropdown2.value=="Alabama" || dropdown2.value=="Missouri"  || dropdown2.value=="Montana" || dropdown2.value=="Oklahoma"  || dropdown2.value==""){
             confirm("This program exclude flood and windstorms in your area. Do you need more information contact our office.")
                 var myindex  = dropdown2.selectedIndex;
                 dropdown2.options[myindex].value = '';
