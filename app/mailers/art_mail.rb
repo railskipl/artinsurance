@@ -12,7 +12,7 @@ def art_mail(grades)
 	   email3 = "andrew@veraxon.com"
 	   email4 = "andrew@yougame.com"
    
-    recipients = email1, email2, email3, email4, email5
+    recipients = email1, email2, email3, email4
     subject = "Insurence"
    
         mail(:subject => 'Insurance', :to => recipients.join(','))  do |format|
