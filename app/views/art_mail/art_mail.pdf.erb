@@ -54,7 +54,7 @@
     <td style="float:right">
       <div class="phone"><img alt="" src="http://artinsurance.herokuapp.com/assets/phone_icon.png"></div>
       <div class="number">
-          <span>CALL US NOW</span> <br>
+          <span style="font-size: 15px;">CALL US NOW</span> <br>
             (800) 921 1008  
           </div>
     </td>
@@ -251,7 +251,7 @@
 </tr>
 <tr>
   <td><strong>Number of exhibits a year? :</strong></td>
-  <td><% if @grades["exhibits_year"] == "0" %> 5 or less <% else %> <%= raw @grades["exhibits_year"] %> <% end %></td>
+  <td><% if @grades["exhibits_year"] == "0" %> 5 or less <% else %> $ <%= raw @grades["exhibits_year"] %> <% end %></td>
 </tr>
 
 <tr>
