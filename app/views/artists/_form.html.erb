@@ -212,12 +212,12 @@
 
 
                             <div class="row1">
-                                <div class="form-left">Limit of Insurance at Other Location <span style="color:red;">*<a class="more" title="" rel="tooltip" href="javascript:void(0);" data-original-title="Such as storage unit,warehouse,other studios,galleries or venues" style="float:none"> <strong> ?</strong></a></span></div>
+                                <div class="form-left">Limit of Insurance at Other Location <span style="color:red;">*<a class="more" title="" rel="tooltip" href="javascript:void(0);" data-original-title="Such as storage unit, warehouse, other studios, galleries or venues" style="float:none"> <strong> ?</strong></a></span></div>
                                 <div class="form-right">
                                     <div class="form-right"> 
                                         
 
-                                        <%=text_field_tag 'limit_of_Insurance_at_Other_Location',nil,value:'$100,000', :onkeypress=>"limit_of_Insurance(this);"%></div>
+                                        <%=text_field_tag 'limit_of_Insurance_at_Other_Location',nil,value:'$100,000', :onkeypress=>"limit_of_Insurance(this);", :readonly => true %></div>
                                    </br>
                                 </div>
                                 <div class="form-error"></div>
@@ -228,7 +228,7 @@
                                 <div class="form-left">Limit of Insurance While in Transit <span style="color:red;">*<a class="more" title="" rel="tooltip" href="javascript:void(0);" data-original-title="Shipments by mail unless by registered first class mail or parcel post provided however, such shipments by parcel post shall not exceed the sum of $1,000 in value nor the sum of @25,000 in value by register first class mail." style="float:none"> <strong> ?</strong></a></span></div>
                                 <div class="form-right">
 
-                                    <div class="form-right"> <%=text_field_tag 'limit_of_Insurance_While_in_Transit',nil,value:'$100,000', :onkeypress=>"limit_of_Insurance(this);" %></div>
+                                    <div class="form-right"> <%=text_field_tag 'limit_of_Insurance_While_in_Transit',nil,value:'$100,000', :onkeypress=>"limit_of_Insurance(this);", :readonly => true %></div>
                                    </br>
                                 </div>
                                 
@@ -240,8 +240,8 @@
                             <div class="row1">
 
                                 <div class="form-left">Policy Deductable<span style="color:red;">*<a class="more" title="" rel="tooltip" href="javascript:void(0);" data-original-title="This is a fixed policy deductable" style="float:none"> <strong> ?</strong></a></span></div>
-                                <div class="form-right"><%=text_field_tag 'Policy_Deductable',nil,value: '$1,000', :disabled=> true %>
-                                    <%= hidden_field_tag 'Policy_Deductable',nil,value: '$1,000' %>
+                                <div class="form-right"><%=text_field_tag 'Policy_Deductable',nil,value: '$1,000', :readonly=> true %>
+                                    
                                 </div>
 
                                 <div class="form-error"></div>
@@ -570,10 +570,7 @@
 
                                 <div class="form-left">When was the last date of inventory? <a class="more" title="" rel="tooltip" href="javascript:void(0);" data-original-title="When was the last date of inventory? " style="float:none"> <strong> ?</strong></a></div>
 
-                                <div class="form-right" style="width: 195px!important">  <%= date_select("card_signup", "dob", { :end_year => DateTime.now.year - 4, :start_year => DateTime.now.year, :discard_day => true
-
-                                         },
-                                         :style => "width: 62px;")%>
+                                <div class="form-right" style="width: 195px!important">  <%= date_select("card_signup", "dob", { :end_year => DateTime.now.year - 4, :start_year => DateTime.now.year, :discard_day => true}, :default=> DateTime.now.year - 4, :style => "width: 62px;")%>
                                          
                                      </div>
 
