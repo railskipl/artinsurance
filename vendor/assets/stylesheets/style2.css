@@ -50,7 +50,7 @@
             .form-step{
 
                 padding:0 !important; top: 30px!important;
-                min-height: 1100px;
+                min-height: 1100px;  overflow: visible !important; 
 
             }
 

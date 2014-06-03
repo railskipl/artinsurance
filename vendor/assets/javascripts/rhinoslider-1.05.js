@@ -360,7 +360,7 @@
 
 				vars.active = $slider.find('.' + vars.prefix + 'active');
 				vars.active.css({
-					zIndex: 1,
+					zIndex: 10,
 					opacity: 1
 				});
 
@@ -595,7 +595,7 @@
 					.addClass(vars.prefix + 'active')
 					//and put  it above the others
 					.css({
-						zIndex: 1,
+						zIndex: 10,
 						top: 0,
 						left: 0,
 						width: '100%',

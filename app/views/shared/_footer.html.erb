@@ -102,22 +102,27 @@
                 switch(current_tab){
                     case 'rhino-item0':
                         step1_validation();
+                        event.preventDefault();
                         break;
                     case 'rhino-item1':
                         step2_validation();
+                        event.preventDefault();
                         break;
                     case 'rhino-item2':
                         step3_validation();
+                        event.preventDefault();
                         break;
                     case 'rhino-item3':
                         step4_validation();
+                        event.preventDefault();
                         break; 
                     case 'rhino-item4':
                         step5_validation();
+                        
                         break;           
                 }
 
-                event.preventDefault();
+                
 
             });
 
