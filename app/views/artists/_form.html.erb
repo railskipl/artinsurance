@@ -204,7 +204,7 @@
                             <div class="row1">
                                 <div class="form-left">Limit of Studio Insurance <span style="color:red;">* <a class="more" title="" rel="tooltip" href="javascript:void(0);" data-original-title="Covered Property: Works of art by you being held for sale or sold but not delivered or removed, your property of other in your care, custondy or control, and for which you may be liable or assume liability prior to losss or damage." style="float:none"> <strong> ?</strong></a></span></div>
                                 <div class="form-right">
-                                   <%= select_tag(:higher_limits, options_for_select([ ['$100,000',1000], ['$125,000',1062], ['$150,000',1203], ['$175,000',1344], ['$200,000',1484], ['$225,000',1025], ['$250,000',1765],['$275,000',1907],['$300,000',2047]],selected: :higher_limits )) %>
+                                   <%= select_tag(:higher_limits, options_for_select([ ['$100,000 - (Premium:$1,000)',1000], ['$125,000 - (Premium:$1,062)',1062], ['$150,000 - (Premium:$1,203)',1203], ['$175,000 - (Premium:$1,344)',1344], ['$200,000 - (Premium:$1,484)',1484], ['$225,000 - (Premium:$1,025)',1025], ['$250,000 - Premium : $1,765',1765],['$275,000 - Premium : $1,907',1907],['$300,000 - (Premium:$2,047)',2047]],selected: :higher_limits )) %>
                                 </div>
                                 <div class="form-error"></div>
                             </div>
@@ -406,7 +406,7 @@
 
 
                             <div class="row2">
-                                <div class="form-left">Is there a history of a back-up drain and/or sewer?<span style="color:red;">*</span> <a class="more" title="" rel="tooltip" href="javascript:void(0);" data-original-title="imporant for us to know, if any work is stroed in the basement" style="float:none"> <strong> ?</strong></a></div>
+                                <div class="form-left">Is there a history of a back-up drain and/or sewer?<span style="color:red;">*</span> <a class="more" title="" rel="tooltip" href="javascript:void(0);" data-original-title="Typo- Stored" style="float:none"> <strong> ?</strong></a></div>
                                 <div class="form-right">
                                      <input type="radio" id="rsales" name="Is there a history of a back-up drain and/or sewer?" value="Yes">&nbsp;&nbsp;Yes
                                      <input type="radio" id="rsales" name="Is there a history of a back-up drain and/or sewer?" value="No">&nbsp;&nbsp;No

@@ -92,6 +92,37 @@
             });
 
             
+            $("form").submit(function( event ) {
+            
+               
+                $('.form-error').html("");
+
+                var current_tab = $('#slider').find('.rhino-active').attr("id");
+
+                switch(current_tab){
+                    case 'rhino-item0':
+                        step1_validation();
+                        break;
+                    case 'rhino-item1':
+                        step2_validation();
+                        break;
+                    case 'rhino-item2':
+                        step3_validation();
+                        break;
+                    case 'rhino-item3':
+                        step4_validation();
+                        break; 
+                    case 'rhino-item4':
+                        step5_validation();
+                        break;           
+                }
+
+                event.preventDefault();
+
+            });
+
+            
+
             $(document).on('click', '.form-submit', function(){
                
                 $('.form-error').html("");
