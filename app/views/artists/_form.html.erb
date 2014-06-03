@@ -570,7 +570,7 @@
 
                                 <div class="form-left">When was the last date of inventory? <a class="more" title="" rel="tooltip" href="javascript:void(0);" data-original-title="When was the last date of inventory? " style="float:none"> <strong> ?</strong></a></div>
 
-                                <div class="form-right" style="width: 195px!important">  <%= date_select("card_signup", "dob", { :start_year => DateTime.now.year, :end_year => 2010, :discard_day => true, :selected=> { month: 1, year: 2010 }}, :style => "width: 88px;")%>
+                                <div class="form-right" style="width: 195px!important">  <%= date_select("card_signup", "dob", { :start_year => DateTime.now.year, :end_year => 2010, :discard_day => true, default: { month: 1 }}, :style => "width: 88px;")%>
                                          
                                      </div>
 
@@ -685,7 +685,7 @@
 
 
 
-                            <div class="row1_new" id="sbtn">
+                            <div class="row1_new" id="sbtn" style="display: none;">
                                 <div class="form-left">
                                     <%= link_to "Preview", "javascript:void(0);", :id=>"previes123", :class=>"sbt-btn previewbtn" %>                                    
                                 </div>
