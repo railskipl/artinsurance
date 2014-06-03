@@ -77,7 +77,7 @@
 </p>
 <p>
   <strong>Limit of Studio Insurance :</strong>
-  $<%= params["higher_limits"]%>
+  <%= number_to_currency(params["higher_limits"]) %>
 </p>
 
 
@@ -170,7 +170,7 @@
   <strong>When was the last date of inventory? :
   
   </strong>
-  <%= params["card_signup"]["dob(2i)"]%> - <%= params["card_signup"]["dob(1i)"]  %>
+  <%= params["card_signup"]["dob(2i)"] %> - <%= params["card_signup"]["dob(1i)"]  %>
 </p>
 
 
