@@ -253,6 +253,13 @@ form {
 
          @media only screen and (min-width: 800px) and (max-width: 1280px) {
 
+                 .form-step{
+
+                padding:0 !important; top: 70px!important;
+                min-height: 1100px;  overflow: visible !important; 
+
+                }
+
 
                 .row1_new { float: left; margin: 5px 0; width: 100%; display: block; left: 50px; position: absolute; top: 799px; }
 
@@ -279,6 +286,12 @@ form {
 
             @media only screen and (min-width: 980px) and (max-width: 1280px) {
 
+                .form-step{
+
+                padding:0 !important; top: 70px!important;
+                min-height: 1100px;  overflow: visible !important; 
+
+                }
 
                 .form-left {
                     color: #717171;
