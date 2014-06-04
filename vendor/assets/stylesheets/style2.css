@@ -260,7 +260,12 @@ form {
                     font-size: 13px;
                     font-weight: bold;
                     padding: 5px 0;
-                    width: 200px;
+                   
+                    float: left;
+                }
+
+                .form-right {
+                    
                     float: left;
                 }
 
@@ -296,7 +301,11 @@ form {
                     font-size: 13px;
                     font-weight: bold;
                     padding: 5px 0;
-                    width: 200px;
+                 
+                    float: left;
+                }
+                .form-right {
+                    
                     float: left;
                 }
 
