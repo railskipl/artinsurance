@@ -248,3 +248,24 @@ form {
 
 
          }
+
+
+
+
+            @media only screen and (min-width: 800px) and (max-width: 1280px) {
+
+
+
+                #wrapper{
+                border: 1px solid #DCDADA;
+                border-radius: 5px 5px 5px 5px;
+                box-shadow: 2px 2px 2px #E1E1E1;
+                background: #fff;
+                width:auto;
+                height:auto;
+                background:#f4f4f4;
+                overflow: hidden;
+                min-height: 810px;}
+
+                
+            }
