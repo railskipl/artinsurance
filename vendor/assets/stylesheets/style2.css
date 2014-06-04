@@ -251,8 +251,43 @@ form {
 
 
 
+         @media only screen and (min-width: 800px) and (max-width: 1280px) {
 
-            @media only screen and (min-width: 800px) and (max-width: 1280px) {
+
+                .form-left {
+                    color: #717171;
+                    
+                    font-size: 13px;
+                    font-weight: bold;
+                    padding: 5px 0;
+                    width: 200px;
+                    float: left;
+                }
+
+                .row1_new { float: left; margin: 5px 0; width: 100%; display: block; left: 50px; position: absolute; top: 799px; }
+
+                .form-submit{ bottom: -500px; width: 73px; }
+
+                .rhino-prev, .rhino-next {
+                    bottom: -500px;
+                    width: 56px;
+                }
+
+                #wrapper{
+                border: 1px solid #DCDADA;
+                border-radius: 5px 5px 5px 5px;
+                box-shadow: 2px 2px 2px #E1E1E1;
+                background: #fff;
+                width:auto;
+                height:auto;
+                background:#f4f4f4;
+                overflow: hidden;
+                min-height: 980px;}
+
+                }
+
+
+            @media only screen and (min-width: 980px) and (max-width: 1280px) {
 
 
                 .form-left {
