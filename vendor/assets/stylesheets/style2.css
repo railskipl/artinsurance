@@ -228,19 +228,18 @@ form {
 
 
             .form-left {
-                color: #717171;
-                
+                color: #717171;      
                 font-size: 13px;
                 font-weight: bold;
                 padding: 5px 0;
                 width: 200px;
+                float: left;
+            }
+            
+            .form-right {    
+                width: 133px;
                 float: none;
             }
-                .form-right {
-                    
-                    width: 133px;
-                    float: none;
-                }
 
                 .row1_new { float: left; margin: 5px 0; width: 100%; display: block; left: 176px; position: absolute; top: 532px; }
 
@@ -261,7 +260,7 @@ form {
                 }
 
 
-                .row1_new { float: left; margin: 5px 0; width: 100%; display: block; left: 50px; position: absolute; top: 799px; }
+                .row1_new { float: left; margin: 5px 0; width: 100%; display: block; left: 50px; position: absolute; top: 760px; }
 
                 .form-submit{ bottom: -500px; width: 73px; }
 
@@ -307,7 +306,7 @@ form {
                     float: left;
                 }
 
-                .row1_new { float: left; margin: 5px 0; width: 100%; display: block; left: 50px; position: absolute; top: 799px; }
+                .row1_new { float: left; margin: 5px 0; width: 100%; display: block; left: 50px; position: absolute; top: 760px; }
 
                 .form-submit{ bottom: -500px; width: 73px; }
 
