@@ -19,8 +19,7 @@
   .right{ margin:0 20px 20px 20px; width:auto; float:right; text-align:center; font-family:"Times New Roman", Times, serif; font-size:18px; color:#000000}
   </style>
 
-<div class="titleBar dragonControl"><span class="title">Preview</span></div>
-<div class="dialog-content">
+
 
   <div>
     
@@ -67,11 +66,11 @@
   </tr>
    <tr>
     <td width="20%"><strong>Named Insured</strong></td>
-    <td align="left"><%= @grades["first_name"] %> <%= @grades["last_name"] %></td>
+    <td align="left"><%= @grades["First Name"] %> <%= @grades["last Name"] %></td>
   </tr>
    <tr>
     <td width="20%"><strong>Mailing Address</strong></td>
-    <td align="left"><%= @grades["Address1"]%> <%= @grades["Address2"]%> <%= @grades["City"]%> <% if @grades["State"] %> <%= @grades["State"]%> <% else %> <%= @grades["us_states"]%> <% end %> <%= @grades["Zip"]%></td>
+    <td align="left"><%= @grades["Address1"]%> <%= @grades["Address2"]%>, <%= @grades["City"]%>, <% if @grades["State"] %> <%= @grades["State"]%> <% else %> <%= @grades["us_states"]%> <% end %> <%= @grades["Zip"]%></td>
   </tr>
    <tr>
     <td width="20%"><strong>Period</strong></td>
@@ -89,7 +88,7 @@
 
   <tr>
     <td width="20%"><strong>Covered Locations</strong></td>
-    <td align="left"><%= @grades["Studio_Address"]%> <%= @grades["Studio_Address2"]%> <%= @grades["Studio_City"]%>  <%= @grades["us_states"]%> <%= @grades["Zip_Code"]%></td>
+    <td align="left"><%= @grades["Studio Address"]%> <%= @grades["Studio_Address2"]%>, <%= @grades["Studio City"]%>,  <%= @grades["us_states"]%> <%= @grades["Zip Code"]%></td>
   </tr>
 
   <tr>
@@ -143,7 +142,7 @@
 
   <tr>
     <td width="20%"><strong>Deductible</strong></td>
-    <td align="left"><%= @grades["Policy_Deductable"]%>.00 per occurrence</td>
+    <td align="left"><%= @grades["Policy Deductable"]%>.00 per occurrence</td>
   </tr>
 
   <tr>
@@ -171,7 +170,6 @@
 
 
 
-</div>
     
 </body>
 </html>
