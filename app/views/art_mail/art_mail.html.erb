@@ -1,13 +1,91 @@
-<% if @grades["us_states"] == "Arizona" || @grades["us_states"] == "Alaska" || @grades["us_states"] == "Arkansas" || @grades["us_states"] == "California" || @grades["us_states"] == "Colorado" || @grades["us_states"] == "Hawaii" || @grades["us_states"] == "Idaho" || @grades["us_states"] == "Illinois" || @grades["us_states"] == "Indiana" || @grades["us_states"] == "Iowa" || @grades["us_states"] == "Kansas" || @grades["us_states"] == "Kentucky" || @grades["us_states"] == "Michigan" || @grades["us_states"] == "Minnesota" || @grades["us_states"] == "Nebraska" || @grades["us_states"] == "Nevada" || @grades["us_states"] == "New Hampshire" || @grades["us_states"] == "New Mexico" || @grades["us_states"] == "North Dakota" ||@grades["us_states"] == "Ohio" || @grades["us_states"] == "Oregon" || @grades["us_states"] == "South Dakota" || @grades["us_states"] == "Tennessee" || @grades["us_states"] == "Utah" || @grades["us_states"] == "Vermont" || @grades["us_states"] == "Virginia" || @grades["us_states"] == "Washington" || @grades["us_states"] == "West Virginia" || @grades["us_states"] == "Wisconsin" || @grades["us_states"] == "Wyoming" %>
-    <p><a href="http://artinsurance.herokuapp.com/assets/Earthquake%20Exclusion%20MIM1305.pdf">Download Earthquake Exclusion PDF</a> 
-    </p>
-    <p><a href="http://artinsurance.herokuapp.com/assets/Mold%20Exclusion%20MIM11510.pdf">Download Mold Exclusion PDF</a> </p>
 
-<% elsif @grades["us_states"] == "Connecticut" || @grades["us_states"] == "Delaware" || @grades["us_states"] =="District of Columbia" || @grades["us_states"] =="Florida" || @grades["us_states"] =="Georgia" || @grades["us_states"] =="Louisiana" || @grades["us_states"] =="Maine" || @grades["us_states"] =="Maryland" || @grades["us_states"] =="Massachusetts" || @grades["us_states"] =="Mississippi" || @grades["us_states"] =="New Jersey" || @grades["us_states"] =="New York" || @grades["us_states"] == "North Carolina" || @grades["us_states"] =="Pennsylvania" || @grades["us_states"] =="Rhode Island" || @grades["us_states"] == "South Carolina" || @grades["us_states"] == "Texas"%>
-	<p><a href="http://artinsurance.herokuapp.com/assets/Earthquake%20Exclusion%20MIM1305.pdf">Download Earthquake Exclusion PDF</a> </p>
-	<p><a href="http://artinsurance.herokuapp.com/assets/Mold%20Exclusion%20MIM11510.pdf">Download Mold Exclusion PDF</a> </p>
-	<p><a href="http://artinsurance.herokuapp.com/assets/Water%20Exclusion%20MIM12310.pdf">Download Water Exclusion PDF</a> </p>
-	<p><a href="http://artinsurance.herokuapp.com/assets/Wind%20Exclusion%20MIM1307.pdf">Download Wind Exclusion PDF</a> </p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Bernard Fleischer & Sons, Inc. est. 1949</title>
+
+<%= stylesheet_link_tag "application","bootstrap.css","bootstrap-responsive.css","style.css"%>
+
+    
+</head>
+
+<body>
+
+
+<style type="text/css">
+  body{ font-family: Tahoma; font-size:12px; margin:0; line-height:20px }
+  .left{ margin:50px 20px 0 20px;}
+  .right{ margin:0 20px 20px 20px; width:auto; float:right; text-align:center; font-family:"Times New Roman", Times, serif; font-size:18px; color:#000000}
+  </style>
+
+
+
+  <div>
+    
+  <div class="left"><h1 style="color: #16559D;font-family: Arial; font-size: 24px; font-weight: bold;">Bernard Fleischer & Sons</h1></div>
+  <div class="right">29 Broadway, Suite 1511, New York NY 10006
+        <br>
+    212 566-1881 www.bfbond.com</div>
+  
+  </div>
+  <p><%= Date.today.strftime("%m-%d-%y") %></p>
+
+
+  <p>Dear <%= @grades["First Name"] %> <%= @grades["last Name"] %></p>   
+        
+       <p >&nbsp;&nbsp;&nbsp;&nbsp;Thank you for doing business with William Fleischer & Bernard Fleischer & Sons, Inc; we appreciate the opportunity to insure your Art through our Artist studio program. Your binder is attached and the policy will be mailed to you within the next 2/4 weeks</p>
+
+      <p>&nbsp;&nbsp;&nbsp;&nbsp; If you have any questions or comments, please feel free to contact myself. ext 111 or by email at wfleischer@bfbond.com.</p>
+
+      <p>&nbsp;&nbsp;&nbsp;&nbsp; Welcome to our Family your business is our passion. We hope you found our site convenient and useful. If you enjoyed your experience feel free to recommend us to your friends, family, or Art organizations.</p>
+
+
+      <% if @grades["us_states"] == "Arizona" || @grades["us_states"] == "Alaska" || @grades["us_states"] == "Arkansas" || @grades["us_states"] == "California" || @grades["us_states"] == "Colorado" || @grades["us_states"] == "Hawaii" || @grades["us_states"] == "Idaho" || @grades["us_states"] == "Illinois" || @grades["us_states"] == "Indiana" || @grades["us_states"] == "Iowa" || @grades["us_states"] == "Kansas" || @grades["us_states"] == "Kentucky" || @grades["us_states"] == "Michigan" || @grades["us_states"] == "Minnesota" || @grades["us_states"] == "Nebraska" || @grades["us_states"] == "Nevada" || @grades["us_states"] == "New Hampshire" || @grades["us_states"] == "New Mexico" || @grades["us_states"] == "North Dakota" ||@grades["us_states"] == "Ohio" || @grades["us_states"] == "Oregon" || @grades["us_states"] == "South Dakota" || @grades["us_states"] == "Tennessee" || @grades["us_states"] == "Utah" || @grades["us_states"] == "Vermont" || @grades["us_states"] == "Virginia" || @grades["us_states"] == "Washington" || @grades["us_states"] == "West Virginia" || @grades["us_states"] == "Wisconsin" || @grades["us_states"] == "Wyoming" %>
+    	<p><a href="http://artinsurance.herokuapp.com/assets/Earthquake%20Exclusion%20MIM1305.pdf">Download Earthquake Exclusion PDF</a> </p>
+    	<p><a href="http://artinsurance.herokuapp.com/assets/Mold%20Exclusion%20MIM11510.pdf">Download Mold Exclusion PDF</a> </p>
+
+	<% elsif @grades["us_states"] == "Connecticut" || @grades["us_states"] == "Delaware" || @grades["us_states"] =="District of Columbia" || @grades["us_states"] =="Florida" || @grades["us_states"] =="Georgia" || @grades["us_states"] =="Louisiana" || @grades["us_states"] =="Maine" || @grades["us_states"] =="Maryland" || @grades["us_states"] =="Massachusetts" || @grades["us_states"] =="Mississippi" || @grades["us_states"] =="New Jersey" || @grades["us_states"] =="New York" || @grades["us_states"] == "North Carolina" || @grades["us_states"] =="Pennsylvania" || @grades["us_states"] =="Rhode Island" || @grades["us_states"] == "South Carolina" || @grades["us_states"] == "Texas"%>
+		<p><a href="http://artinsurance.herokuapp.com/assets/Earthquake%20Exclusion%20MIM1305.pdf">Download Earthquake Exclusion PDF</a> </p>
+		<p><a href="http://artinsurance.herokuapp.com/assets/Mold%20Exclusion%20MIM11510.pdf">Download Mold Exclusion PDF</a> </p>
+		<p><a href="http://artinsurance.herokuapp.com/assets/Water%20Exclusion%20MIM12310.pdf">Download Water Exclusion PDF</a> </p>
+		<p><a href="http://artinsurance.herokuapp.com/assets/Wind%20Exclusion%20MIM1307.pdf">Download Wind Exclusion PDF</a> </p>
 
 	
-<% end %>
+	<% end %>
+
+
+			
+			<p>&nbsp;</p>
+      <p>&nbsp;</p>
+
+
+      <p>William G. Fleischer, CIC</p>
+      <p>President</p>
+      <p>29 Broadway, Suite 1511</p>
+      <p>New York NY 10006</p>
+      <p>212 566-1881 ext 111</p>
+      <p><a mailto="wfleischer@bfbond.com">wfleischer@bfbond.com</a></p>
+      <p>www.ArtInsuranceNow.com</p>
+
+      <p><img src="http://localhost:3000/assets/artinsurancenow.png"></p>
+
+      <p>IMPORTANT NOTICE:</p>
+      <p>The information in this email (and any attachments) is confidential. If you are not the intended recipient, you must not use or disseminate the information. If you have received this email in error, please immediately notify me by "Reply" command and permanently delete the original and any copies or printouts thereof. Although this email and any attachments are believed to be free of any virus or other defect that might affect any computer system into which it is received and opened, it is the responsibility of the recipient to ensure that it is virus free and no responsibility is accepted by Bernard Fleischer & Sons, Inc for any loss or damage arising in any way from its use.</p>
+
+	
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+
+      
+
+
+
+
+
+	<p style="text-align:center"><h2 style="font-family: Arial; font-size: 16px; font-weight: bold;">An Insurance and Bonding Agency Worth Recommending</h2></p>
+
+
+    
+</body>
+</html>
