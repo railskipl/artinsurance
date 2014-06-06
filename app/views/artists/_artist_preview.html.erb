@@ -1,222 +1,160 @@
 
+<style type="text/css">
+  
+  
+  .right{ margin:0 15px 20px 20px; width:auto; float:right; text-align:center; font-family:"Times New Roman", Times, serif; font-size:15px; color:#000000}
+  </style>
+
 <div class="titleBar dragonControl"><span class="title">Preview</span></div>
 <div class="dialog-content">
+
+  <div>
     
+  <div class="left"><h1 style="color: #16559D;font-family: Arial; font-size: 30px; font-weight: bold;">Bernard Fleischer & Sons</h1></div>
+  <div class="right">29 Broadway, Suite 1511, New York NY 10006
+        <br>
+    212 566-1881 www.bfbond.com</div>
+  
+  </div>
 
-<p>
-  <strong>First Name : </strong>
-  <%= params["first_name"] %>
-</p>
-<p>
-  <strong>Last Name : </strong>
-  <%= params["last_name"] %>
-</p>
+    <div style="clear:both; margin:0 auto">
+      <div>
+        <span style="font-style:italic">
+        <p> QUOTE / INDICATION</p>
+
+        Based on the information you have provided us, we are pleased to offer the following terms. This quote is open for 60days from the (dated quoted <%= Date.today.strftime("%m-%d-%y") %>).    
+        This        
+        quote is subject to no losses prior to commencement and/or no material change in coverage.  
+        </span> 
+        <p>&nbsp;</p>
+      </div>
+    </div> 
+
+ <table width="100%">
+  <tr>
+    <td width="20%" valign="top"><strong>Company</strong></td>
+    <td align="left">Markel Insurance Company  21600 Oxnard Street, Woodland Hills, CA 
+      Best Rated A (Excellent); Financial Size Category: XIII</td>
+  </tr>
+  <tr>
+    <td width="20%"><strong>Producer</strong></td>
+    <td align="left">
+      <% if params["us_states"] == "Alaska" || params["us_states"] == "Arizona" || params["us_states"] == "Arkansas" || params["us_states"] == "Colorado" || params["us_states"] == "Delaware" || params["us_states"] =="District of Columbia" || params["us_states"] =="Florida" || params["us_states"] == "Hawaii" || params["us_states"] == "Idaho" || params["us_states"] == "Illinois" || params["us_states"] == "Indiana" || params["us_states"] == "Kansas" || params["us_states"] == "Kentucky" || params["us_states"] =="Louisiana" || params["us_states"] =="Maine" || params["us_states"] =="Maryland" || params["us_states"] =="Massachusetts" || params["us_states"] =="Mississippi" || params["us_states"] == "Michigan" || params["us_states"] == "Minnesota" || params["us_states"] == "Nebraska" || params["us_states"] == "Nevada" || params["us_states"] == "New Hampshire" || params["us_states"] =="New Jersey" || params["us_states"] =="New York" || params["us_states"] == "North Carolina" || params["us_states"] == "Ohio" || params["us_states"] == "Oregon" || params["us_states"] =="Rhode Island" || params["us_states"] == "South Carolina" || params["us_states"] == "South Dakota" || params["us_states"] == "Tennessee" || params["us_states"] == "Utah" || params["us_states"] == "Vermont" || params["us_states"] == "Virginia" || params["us_states"] == "Washington" || params["us_states"] == "West Virginia" || params["us_states"] == "Wisconsin" || params["us_states"] == "Wyoming" %>
+      
+      William Fleischer
+    <% elsif params["us_states"] == "Connecticut" || params["us_states"] == "California" || params["us_states"] =="Georgia" || params["us_states"] == "Iowa" ||   params["us_states"] == "North Dakota" || params["us_states"] == "New Mexico" || params["us_states"] =="Pennsylvania" %>
+      
+      William Fleischer/ Bernard Fleischer & Sons
+
+    <% elsif params["us_states"] == "Texas" %>
+      Bernard Fleischer & Sons
+  <% end %>
+    </td>
+  </tr>
+   <tr>
+    <td width="20%"><strong>Named Insured</strong></td>
+    <td align="left"><%= params["first_name"] %> <%= params["last_name"] %></td>
+  </tr>
+   <tr>
+    <td width="20%"><strong>Mailing Address</strong></td>
+    <td align="left"><%= params["Address1"]%> <%= params["Address2"]%> <%= params["City"]%> <% if params["State"] %> <%= params["State"]%> <% else %> <%= params["us_states"]%> <% end %> <%= params["Zip"]%></td>
+  </tr>
+   <tr>
+    <td width="20%"><strong>Period</strong></td>
+    <td align="left">12 Months from date to be agreed upon</td>
+  </tr>
+  <tr>
+    <td width="20%"><strong>Type of Insurance</strong></td>
+    <td align="left">Markel Commercial Artist Form</td>
+  </tr>
  
-<p><strong>Studio Address</strong></p>
+  <tr>
+    <td width="20%" valign="top"><strong>Covered Property</strong></td>
+    <td align="left">Works of art by you being held for sale or sold but not delivered or  removed, your property or the property of others in your care, custody or   control and for which you may be liable or assume liability prior to loss or  damage.</td>
+  </tr>
 
-<p>
-  <strong>Studio Address :</strong>
-  <%= params["Studio_Address"]%>
-</p> 
+  <tr>
+    <td width="20%"><strong>Covered Locations</strong></td>
+    <td align="left"><%= params["Studio_Address"]%> <%= params["Studio_Address2"]%> <%= params["Studio_City"]%>  <%= params["us_states"]%> <%= params["Zip_Code"]%></td>
+  </tr>
 
-<p>
-  <strong>Studio Address 2 </strong>
-  <%= params["Studio_Address2"]%>
-</p> 
+  <tr>
+    <td width="20%" valign="top"><strong>Limits of Liability</strong></td>
+    <td align="left">$ <% if params["higher_limits"] == '1000' %>100,000
+      <% elsif params["higher_limits"] == '1062' %>125,000
+      <% elsif params["higher_limits"] == '1203' %>150,000
+      <% elsif params["higher_limits"] == '1344' %>175,000
+      <% elsif params["higher_limits"] == '1484' %>200,000
+      <% elsif params["higher_limits"] == '1025' %>225,000
+      <% elsif params["higher_limits"] == '1765' %>250,000
+      <% elsif params["higher_limits"] == '1907' %>275,000
+      <% elsif params["higher_limits"] == '2047' %>300,000
+      <% end %> Blanket over Covered Locations $100,000.00 At any unnamed location $100,000.00 While in transit $100,000.00 Exhibition</td>
+  </tr>
 
-<p>
-  <strong>City :</strong>
-  <%= params["Studio_City"]%>
-</p>
-<p>
-  <strong>States :</strong>
-   <%= params["us_states"]%> 
-</p>
-<p>
-  <strong>Zip Code :</strong>
-  <%= params["Zip_Code"]%>
-</p>
+  <tr>
+    <td width="20%"><strong>Co-insurance</strong></td>
+    <td align="left">None</td>
+  </tr>
 
-<p><strong>Mailing Address</strong></p>
-<p>
-  <strong>Address 1 :</strong>
-  <%= params["Address1"]%>
-</p>
-<p>
-  <strong>Address 2 :</strong>
-  <%= params["Address2"]%>
-</p>
-<p>
-  <strong>City :</strong>
-  <%= params["City"]%>
-</p>
-<p>
-  <strong>State :</strong>
-  <% if params["State"] %> <%= params["State"]%> <% else %> <%= params["us_states"]%> <% end %>
-</p>    
-<p>
-  <strong>Zip Code :</strong>
-  <%= params["Zip"]%>
-</p>
+  <tr>
+    <td width="20%" valign="top"><strong>Coverage</strong></td>
+    <td align="left">
+      <% if params["us_states"] == "Arizona" || params["us_states"] == "Alaska" || params["us_states"] == "Arkansas" || params["us_states"] == "California" || params["us_states"] == "Colorado" || params["us_states"] == "Hawaii" || params["us_states"] == "Idaho" || params["us_states"] == "Illinois" || params["us_states"] == "Indiana" || params["us_states"] == "Iowa" || params["us_states"] == "Kansas" || params["us_states"] == "Kentucky" || params["us_states"] == "Michigan" || params["us_states"] == "Minnesota" || params["us_states"] == "Nebraska" || params["us_states"] == "Nevada" || params["us_states"] == "New Hampshire" || params["us_states"] == "New Mexico" || params["us_states"] == "North Dakota" ||params["us_states"] == "Ohio" || params["us_states"] == "Oregon" || params["us_states"] == "South Dakota" || params["us_states"] == "Tennessee" || params["us_states"] == "Utah" || params["us_states"] == "Vermont" || params["us_states"] == "Virginia" || params["us_states"] == "Washington" || params["us_states"] == "West Virginia" || params["us_states"] == "Wisconsin" || params["us_states"] == "Wyoming" %>
+      
+      Earthquake Exclusion, Mold Exclusion
 
-<p>
-  <strong>Phone Number :</strong>
-  <%= params["Phone_Number"]%>
-</p>
-<p>
-  <strong>Fax:</strong>
-  <%= params["Fax"]%>
-</p>
-<p>
-  <strong>Email :</strong>
-  <%= params["Email_address"]%>
-</p>
-<p>
-  <strong>Re-type Email :</strong>
-  <%= params["Retype_EMail"]%>
-</p>
-<p>
-  <strong>Limit of Studio Insurance :</strong>
-  <%= number_to_currency(params["higher_limits"]) %>
-</p>
+    <% elsif params["us_states"] == "Connecticut" || params["us_states"] == "Delaware" || params["us_states"] =="District of Columbia" || params["us_states"] =="Florida" || params["us_states"] =="Georgia" || params["us_states"] =="Louisiana" || params["us_states"] =="Maine" || params["us_states"] =="Maryland" || params["us_states"] =="Massachusetts" || params["us_states"] =="Mississippi" || params["us_states"] =="New Jersey" || params["us_states"] =="New York" || params["us_states"] == "North Carolina" || params["us_states"] =="Pennsylvania" || params["us_states"] =="Rhode Island" || params["us_states"] == "South Carolina" || params["us_states"] == "Texas"%>
+    Earthquake Exclusion, Mold Exclusion, Download Water, Wind Exclusion
 
+  <% end %>
+</td>
+  </tr>
 
+  <tr>
+    <td width="20%" valign="top"><strong>Valuation</strong></td>
+    <td align="left">Completed Work, If sold valued at your selling price.
+  Completed Work, if not sold, at selling price less 30% Property not marked for sale, your cost</td>
+  </tr>
 
-<p>
-  <strong>Limit of Insurance at Other Location :</strong>
-  <%= params["limit_of_Insurance_at_Other_Location"]%>
-</p>
-<p>
-  <strong>Limit of Insurance While in Transit :</strong>
-  <%= params["limit_of_Insurance_While_in_Transit"]%>
-</p>
-<p>
-  <strong>Policy Deductable :</strong>
-  <%= params["Policy_Deductable"]%>
-</p>
+  <tr>
+    <td width="20%"><strong>Territory</strong></td>
+    <td align="left">Worldwide</td>
+  </tr>
 
-<p>
-  <strong>Genre You Work :</strong>
-  <% if params["paintings"].present? %> <%= params["paintings"]%>, <% end %> <% if params["purniture"].present? %> <%= params["purniture"]%>,<% end %> <% if params["drawings"].present? %> <%= params["drawings"]%>,<% end %> <% if params["fabrics"].present? %> <%= params["fabrics"]%> ,<% end %> <% if params["photographs"].present? %> <%= params["photographs"]%>,<% end %> <% if params["jewelry"].present? %> <%= params["jewelry"]%>,<% end %> <% if params["sculptures"].present? %> <%= params["sculptures"]%>, <% end %> <% if params["silver"].present? %> <%= params["silver"]%>,<% end %> <% if params["non_Fragile"].present? %> <%= params["non_Fragile"]%>,<% end %> <% if params["breakable"].present? %> <%= params["breakable"]%>,<% end %> <% if params["other"].present? %><%= params["other"]%> <% end %>
-</p>
+  <tr>
+    <td width="20%"><strong>TRIA Coverage</strong></td>
+    <td align="left">Optional</td>
+  </tr>
 
-<p>
-  <strong>Studio is located in a :</strong>
-  <%= params["studio"]%>
-</p>
+  <tr>
+    <td width="20%"><strong>Deductible</strong></td>
+    <td align="left"><%= params["Policy_Deductable"]%>.00 per occurrence</td>
+  </tr>
 
-<p>
-  <strong>Year Built? :</strong>
-  <%= raw params["pre1950"]%> <%= raw params["after1950"]%>
-</p>
+  <tr>
+    <td width="20%"><strong>Premium</strong></td>
+    <td align="left"><%= number_to_currency(params["higher_limits"]) %> annually</td>
+  </tr>
+  <tr>
+    <td width="20%"><strong>Payment</strong></td>
+    <td align="left">Full pay </td>
+  </tr>
 
-<p>
-  <strong>Studio & storage of art are in a basement? :
-  </strong>
-  <%= params["Studio & storage of art are in a basement"]%>
-</p>
+ </table>
 
-<p>
-  <strong>Is there a history of a back-up drain and/or sewer? :
-  </strong>
-  <%= params["Is there a history of a back-up drain and/or sewer?"]%>
-</p>
+    <div style="clear:both; margin:0 auto">
+      <div>
+        <p>&nbsp;</p>
+        <span style="font-style:italic">
+        <p> This proposal may differ from coverage requested in applications or other communications sent to us during the underwriting process.  Any amendments, coverage additions or deletions or any other changes to the coverages  outlined in this proposal can affect final premiums.  All taxes and fees included in premium charges are estimated and may vary at issuance.</p>
 
-<p>
-  <strong>If yes works stored on skids or shelf? :
-  </strong>
-    <%= params["If yes works stored on skits or shelf?"]%>
-</p>
+        <p>It is your duty to disclose all material facts to Markel underwriters prior to inception of the policy, and to keep them advised of any such facts or changes to such facts throughout the currency of the policy, and upon renewal of the policy.  All material information concerning the risk including any loss or claim statistics should be accurate and kept up to date at all times.  A material fact is a fact which may influence an underwriter’s judgment in their assessment of a risk.  If you are in doubt as to whether a fact is material, we recommend that it be disclosed.  Failure to disclose material fact may entitle underwriters to avoid the policy from inception.</p>
+        </span> 
+        <p>&nbsp;</p>
+      </div>
+    </div> 
 
-<p>
-  <strong>Is there an automatic sprinkler system on premises? :
-  </strong>
-    <%= params["Is there an automatic sprinkler system on premises?"]%>
-</p>
-
-<p>
-  <strong>Security :</strong>
-  <% if params["deadbolts"].present? %> <%= params["deadbolts"]%>, <% end %> <% if params["alarm"].present? %> <%= params["alarm"]%> , <% end %> <% if params["local_alaram"].present? %> <%= params["local_alaram"]%> ,<% end %> <% if params["cameras"].present? %> <%= params["cameras"]%> ,<% end %> <% if params["gates"].present? %> <%= params["gates"]%> ,<% end %> <% if params["watchmen"].present? %> <%= params["watchmen"]%> ,<% end %> <% if params["no_security"].present? %> <%= params["no_security"]%> <% end %>
-</p>
-
-
-
-
-<p>
-  <strong>What is the average value of finished art work? :
-  </strong>
-  <%= params["finished_art_work"]%>
-</p>
-<p>
-  <strong>What is the maximum value of single item? :
-  </strong>
-  <%= params["single_item"]%>
-</p>
-
-<p>
-  <strong>Do you keep a detailed and itemized inventory? :
-  </strong>
-  <%= params["Do you keep a detailed and itemized?"]%>
-</p>
-
-<p>
-  <strong>Do you keep a record of sales? :
-  </strong>
-  <%= params["Do you keep a record of sales?"]%>
-</p>
-
-
-<p>
-  <strong>When was the last date of inventory? :
-  
-  </strong>
-  <%= params["card_signup"]["dob(2i)"] %> - <%= params["card_signup"]["dob(1i)"]  %>
-</p>
-
-
-<p>
-  <strong>Do you maintain a duplicate inventory off-site? :</strong>
-  <%= params["Do you maintain a duplicate inventory off-site?"]  %>
-</p>
-
-<p>
-  <strong>Number of exhibits a year? :</strong>
-
-  <% if params["exhibits_year"] == "0" %> 5 or less <% else %> <%= params["exhibits_year"] %> <% end %>
-</p>
-<p>
-  <strong>Current year :
-  
-  </strong>
-  <%= params["current_year"]%>
-</p>
-<p>
-  <strong>Prior year :
-  
-  </strong>
-  <%= params["prior_year"]%>
-</p>
-<p>
-  <strong>Name of current insurance carrier : 
-  
-  </strong>
-  <%= params["Name of current insurance carrier"]%>
-</p>
-<p>
-  <strong>Description Of Loss :
-  
-  </strong>
-  <%= params["Description Of Loss"]%>
-</p>
-<p>
-  <strong>Amount Of Loss :
-  </strong>
-  <%= params["Amount Of Loss"]%>
-</p>
-<p>
-  <strong>Date : </strong>
-  <%= params["card_signup"]["lost_date(3i)"]%> - <%= params["card_signup"]["lost_date(2i)"]%> - <%= params["card_signup"]["lost_date(1i)"]  %>
-</p>
 
 
 </div>

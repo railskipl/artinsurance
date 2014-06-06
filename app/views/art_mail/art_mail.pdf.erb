@@ -7,344 +7,172 @@
 
 <%= stylesheet_link_tag "application","bootstrap.css","bootstrap-responsive.css","style.css"%>
 
-		
+    
 </head>
 
 <body>
 
-<style>
-.logo {
-    font-family: Arial,Helvetica,sans-serif;
-    font-size: 20px;
-    font-weight: bold;
-    line-height: normal;
-    margin: 20px 0;
-}
-.logo span {
-    font-size: 15px;
-    font-style: italic;
-}
-.form_bg {
-    background: linear-gradient(to bottom, #E8E8E8 0%, #F9F9F9 7%, #F9F9F9 50%, #F9F9F9 93%, #E8E8E8 100%) repeat scroll 0 0 rgba(0, 0, 0, 0);
-}
 
-</style>
+<style type="text/css">
+  body{ font-family: Tahoma; font-size:14px; margin:0; line-height:20px }
+  .left{ margin:50px 20px 0 20px;}
+  .right{ margin:0 20px 20px 20px; width:auto; float:right; text-align:center; font-family:"Times New Roman", Times, serif; font-size:18px; color:#000000}
+  </style>
 
-<header>
-	<div class="container">
-		
-		
-		<div class="container">
-		
-		
-		
-		<div class="row">
-		
-		
-		
-			<div class="span12">
-			
-			
-			
-			
-				
-				<table class="table" width="100%">
+<div class="titleBar dragonControl"><span class="title">Preview</span></div>
+<div class="dialog-content">
+
+  <div>
+    
+  <div class="left"><h1 style="color: #16559D;font-family: Arial; font-size: 30px; font-weight: bold;">Bernard Fleischer & Sons</h1></div>
+  <div class="right">29 Broadway, Suite 1511, New York NY 10006
+        <br>
+    212 566-1881 www.bfbond.com</div>
+  
+  </div>
+
+    <div style="clear:both; margin:0 auto">
+      <div>
+        <span style="font-style:italic">
+        <p> QUOTE / INDICATION</p>
+
+        Based on the information you have provided us, we are pleased to offer the following terms. This quote is open for 60days from the (dated quoted <%= Date.today.strftime("%m-%d-%y") %>).    
+        This        
+        quote is subject to no losses prior to commencement and/or no material change in coverage.  
+        </span> 
+        <p>&nbsp;</p>
+      </div>
+    </div> 
+
+ <table width="100%">
   <tr>
-    <td width="60%"><div class="logo">Bernard Fleischer &amp; Sons, Inc. <span>est. 1949</span></div></td>
-    <td style="float:right">
-      <div class="phone"><img alt="" src="http://artinsurance.herokuapp.com/assets/phone_icon.png"></div>
-      <div class="number">
-          <span style="font-size: 15px;">CALL US NOW</span> <br>
-            (800) 921 1008  
-          </div>
+    <td width="20%" valign="top"><strong>Company</strong></td>
+    <td align="left">Markel Insurance Company  21600 Oxnard Street, Woodland Hills, CA 
+      Best Rated A (Excellent); Financial Size Category: XIII</td>
+  </tr>
+  <tr>
+    <td width="20%"><strong>Producer</strong></td>
+    <td align="left">
+      <% if @grades["us_states"] == "Alaska" || @grades["us_states"] == "Arizona" || @grades["us_states"] == "Arkansas" || @grades["us_states"] == "Colorado" || @grades["us_states"] == "Delaware" || @grades["us_states"] =="District of Columbia" || @grades["us_states"] =="Florida" || @grades["us_states"] == "Hawaii" || @grades["us_states"] == "Idaho" || @grades["us_states"] == "Illinois" || @grades["us_states"] == "Indiana" || @grades["us_states"] == "Kansas" || @grades["us_states"] == "Kentucky" || @grades["us_states"] =="Louisiana" || @grades["us_states"] =="Maine" || @grades["us_states"] =="Maryland" || @grades["us_states"] =="Massachusetts" || @grades["us_states"] =="Mississippi" || @grades["us_states"] == "Michigan" || @grades["us_states"] == "Minnesota" || @grades["us_states"] == "Nebraska" || @grades["us_states"] == "Nevada" || @grades["us_states"] == "New Hampshire" || @grades["us_states"] =="New Jersey" || @grades["us_states"] =="New York" || @grades["us_states"] == "North Carolina" || @grades["us_states"] == "Ohio" || @grades["us_states"] == "Oregon" || @grades["us_states"] =="Rhode Island" || @grades["us_states"] == "South Carolina" || @grades["us_states"] == "South Dakota" || @grades["us_states"] == "Tennessee" || @grades["us_states"] == "Utah" || @grades["us_states"] == "Vermont" || @grades["us_states"] == "Virginia" || @grades["us_states"] == "Washington" || @grades["us_states"] == "West Virginia" || @grades["us_states"] == "Wisconsin" || @grades["us_states"] == "Wyoming" %>
+      
+      William Fleischer
+    <% elsif @grades["us_states"] == "Connecticut" || @grades["us_states"] == "California" || @grades["us_states"] =="Georgia" || @grades["us_states"] == "Iowa" ||   @grades["us_states"] == "North Dakota" || @grades["us_states"] == "New Mexico" || @grades["us_states"] =="Pennsylvania" %>
+      
+      William Fleischer/ Bernard Fleischer & Sons
+
+    <% elsif @grades["us_states"] == "Texas" %>
+      Bernard Fleischer & Sons
+  <% end %>
     </td>
   </tr>
-  <tr>
-    <td><strong>Policy no :</strong></td>
-    <td>TBA draw from pre determine  list</td>
+   <tr>
+    <td width="20%"><strong>Named Insured</strong></td>
+    <td align="left"><%= @grades["first_name"] %> <%= @grades["last_name"] %></td>
+  </tr>
+   <tr>
+    <td width="20%"><strong>Mailing Address</strong></td>
+    <td align="left"><%= @grades["Address1"]%> <%= @grades["Address2"]%> <%= @grades["City"]%> <% if @grades["State"] %> <%= @grades["State"]%> <% else %> <%= @grades["us_states"]%> <% end %> <%= @grades["Zip"]%></td>
+  </tr>
+   <tr>
+    <td width="20%"><strong>Period</strong></td>
+    <td align="left">12 Months from date to be agreed upon</td>
   </tr>
   <tr>
-    <td><strong>Binding Effective :</strong></td>
-    <td><%= Date.today %>&ndash; <%= Date.today + 1.year - 1%> (  pre-fill from date credit card goes through)</td>
+    <td width="20%"><strong>Type of Insurance</strong></td>
+    <td align="left">Markel Commercial Artist Form</td>
   </tr>
-  <tr>
-    <td><strong>Company :</strong></td>
-    <td>Markel American Insurance  Company Best Rated A (Excellent);  Financial Size Category: XIII</td>
-  </tr>
-  <tr>
-    <td><strong>Producer :</strong></td>
-    <td>Bernard Fleischer &amp; Sons (see page 3 on  excel sheet to determine)</td>
-  </tr>
-  <tr>
-  <td><strong>Annual Premium :</strong></td>
-    <td>$<%= raw @grades["annual_premium"] %></td>
-  </tr>
-
-  <tr>
-    <td><strong>First Name :</strong></td>
-    <td> <%=raw @grades["First Name"]%></td>
-  </tr>
-
-  <tr>
-    <td><strong>Last Name :</strong></td>
-    <td> <%=raw @grades["last Name"]%></td>
-  </tr>
-
-  <tr>
-      <td colspan="2"><strong>Studio Address </strong></td>
-  </tr>
-
-  <tr>
-    <td><strong>Studio Address :</strong></td>
-    <td> <%=raw @grades["Studio Address"]%></td>
-  </tr>
-
-  <tr>
-    <td><strong>Studio Address 2 :</strong></td>
-    <td> <%=raw @grades["Studio_Address2"]%></td>
-  </tr>
-
-
-  <tr>
-    <td><strong> City :</strong></td>
-    <td><%=raw @grades["Studio City"]%></td>
-  </tr>
-
  
   <tr>
-    <td><strong>State :</strong></td>
-    <td><%= raw @grades["us_states"]%></td>
+    <td width="20%" valign="top"><strong>Covered Property</strong></td>
+    <td align="left">Works of art by you being held for sale or sold but not delivered or  removed, your property or the property of others in your care, custody or   control and for which you may be liable or assume liability prior to loss or  damage.</td>
+  </tr>
+
+  <tr>
+    <td width="20%"><strong>Covered Locations</strong></td>
+    <td align="left"><%= @grades["Studio_Address"]%> <%= @grades["Studio_Address2"]%> <%= @grades["Studio_City"]%>  <%= @grades["us_states"]%> <%= @grades["Zip_Code"]%></td>
+  </tr>
+
+  <tr>
+    <td width="20%" valign="top"><strong>Limits of Liability</strong></td>
+    <td align="left">$ <% if @grades["higher_limits"] == '1000' %>100,000
+      <% elsif @grades["higher_limits"] == '1062' %>125,000
+      <% elsif @grades["higher_limits"] == '1203' %>150,000
+      <% elsif @grades["higher_limits"] == '1344' %>175,000
+      <% elsif @grades["higher_limits"] == '1484' %>200,000
+      <% elsif @grades["higher_limits"] == '1025' %>225,000
+      <% elsif @grades["higher_limits"] == '1765' %>250,000
+      <% elsif @grades["higher_limits"] == '1907' %>275,000
+      <% elsif @grades["higher_limits"] == '2047' %>300,000
+      <% end %> Blanket over Covered Locations $100,000.00 At any unnamed location $100,000.00 While in transit $100,000.00 Exhibition</td>
+  </tr>
+
+  <tr>
+    <td width="20%"><strong>Co-insurance</strong></td>
+    <td align="left">None</td>
+  </tr>
+
+  <tr>
+    <td width="20%" valign="top"><strong>Coverage</strong></td>
+    <td align="left">
+      <% if @grades["us_states"] == "Arizona" || @grades["us_states"] == "Alaska" || @grades["us_states"] == "Arkansas" || @grades["us_states"] == "California" || @grades["us_states"] == "Colorado" || @grades["us_states"] == "Hawaii" || @grades["us_states"] == "Idaho" || @grades["us_states"] == "Illinois" || @grades["us_states"] == "Indiana" || @grades["us_states"] == "Iowa" || @grades["us_states"] == "Kansas" || @grades["us_states"] == "Kentucky" || @grades["us_states"] == "Michigan" || @grades["us_states"] == "Minnesota" || @grades["us_states"] == "Nebraska" || @grades["us_states"] == "Nevada" || @grades["us_states"] == "New Hampshire" || @grades["us_states"] == "New Mexico" || @grades["us_states"] == "North Dakota" ||@grades["us_states"] == "Ohio" || @grades["us_states"] == "Oregon" || @grades["us_states"] == "South Dakota" || @grades["us_states"] == "Tennessee" || @grades["us_states"] == "Utah" || @grades["us_states"] == "Vermont" || @grades["us_states"] == "Virginia" || @grades["us_states"] == "Washington" || @grades["us_states"] == "West Virginia" || @grades["us_states"] == "Wisconsin" || @grades["us_states"] == "Wyoming" %>
+      
+      Earthquake Exclusion, Mold Exclusion
+
+    <% elsif @grades["us_states"] == "Connecticut" || @grades["us_states"] == "Delaware" || @grades["us_states"] =="District of Columbia" || @grades["us_states"] =="Florida" || @grades["us_states"] =="Georgia" || @grades["us_states"] =="Louisiana" || @grades["us_states"] =="Maine" || @grades["us_states"] =="Maryland" || @grades["us_states"] =="Massachusetts" || @grades["us_states"] =="Mississippi" || @grades["us_states"] =="New Jersey" || @grades["us_states"] =="New York" || @grades["us_states"] == "North Carolina" || @grades["us_states"] =="Pennsylvania" || @grades["us_states"] =="Rhode Island" || @grades["us_states"] == "South Carolina" || @grades["us_states"] == "Texas"%>
+    Earthquake Exclusion, Mold Exclusion, Download Water, Wind Exclusion
+
+  <% end %>
+</td>
+  </tr>
+
+  <tr>
+    <td width="20%" valign="top"><strong>Valuation</strong></td>
+    <td align="left">Completed Work, If sold valued at your selling price.
+  Completed Work, if not sold, at selling price less 30% Property not marked for sale, your cost</td>
+  </tr>
+
+  <tr>
+    <td width="20%"><strong>Territory</strong></td>
+    <td align="left">Worldwide</td>
+  </tr>
+
+  <tr>
+    <td width="20%"><strong>TRIA Coverage</strong></td>
+    <td align="left">Optional</td>
+  </tr>
+
+  <tr>
+    <td width="20%"><strong>Deductible</strong></td>
+    <td align="left"><%= @grades["Policy_Deductable"]%>.00 per occurrence</td>
+  </tr>
+
+  <tr>
+    <td width="20%"><strong>Premium</strong></td>
+    <td align="left"><%= number_to_currency(@grades["higher_limits"]) %> annually</td>
+  </tr>
+  <tr>
+    <td width="20%"><strong>Payment</strong></td>
+    <td align="left">Full pay </td>
+  </tr>
+
+ </table>
+
+    <div style="clear:both; margin:0 auto">
+      <div>
+        <p>&nbsp;</p>
+        <span style="font-style:italic">
+        <p> This proposal may differ from coverage requested in applications or other communications sent to us during the underwriting process.  Any amendments, coverage additions or deletions or any other changes to the coverages  outlined in this proposal can affect final premiums.  All taxes and fees included in premium charges are estimated and may vary at issuance.</p>
+
+        <p>It is your duty to disclose all material facts to Markel underwriters prior to inception of the policy, and to keep them advised of any such facts or changes to such facts throughout the currency of the policy, and upon renewal of the policy.  All material information concerning the risk including any loss or claim statistics should be accurate and kept up to date at all times.  A material fact is a fact which may influence an underwriter’s judgment in their assessment of a risk.  If you are in doubt as to whether a fact is material, we recommend that it be disclosed.  Failure to disclose material fact may entitle underwriters to avoid the policy from inception.</p>
+        </span> 
+        <p>&nbsp;</p>
+      </div>
+    </div> 
+
+
+
+</div>
     
-  </tr>
-
-  <tr>
-    <td><strong>Zip Code :</strong></td>
-    <td><%=raw @grades["Zip Code"]%></td>
-  </tr>
-
-  <tr>
-      <td colspan="2"><strong>Mailing Address </strong></td>
-  </tr>
-
-  <tr>
-    <td><strong>Address 1 :</strong></td>
-    <td> <%=raw @grades["Address 1"]%></td>
-  </tr>
-
-  <tr>
-    <td><strong>Address 2 :</strong></td>
-    <td> <%=raw @grades["Address 2"]%></td>
-  </tr>
-
-   <tr>
-    <td><strong>City :</strong></td>
-    <td><%=raw @grades["City"]%></td>
-  </tr>
-
-  <tr>
-    <td><strong>State :</strong></td>
-    <td>
-      <% if @grades["State"] %> <%= raw @grades["State"]%> <% else %> <%= raw @grades["us_states"]%> <% end %>
-    </td>
-  </tr>
-
-
-  <tr>
-    <td><strong>Zip Code :</strong></td>
-    <td><%=raw @grades["Zip"]%></td>
-  </tr>
-  
-  <tr>
-    <td><strong>Phone Number :</strong></td>
-    <td><%=raw @grades["Phone Number"]%></td>
-  </tr>
-  <tr>
-    <td><strong>Fax :</strong></td>
-    <td><%=raw @grades["Fax"]%></td>
-  </tr>
-  <tr>
-    <td><strong>E-mail address :</strong></td>
-    <td><%=raw @grades["E-mail address"]%></td>
-  </tr>
-  <tr>
-    <td><strong>Limit of Studio Insurance :</strong></td>
-    <td><%=raw @grades["higher_limits"]%></td>
-  </tr>
-  <tr>
-    <td><strong>Limit of Insurance at Other Location :</strong></td>
-    <td> <%=raw @grades["limit_of_Insurance_at_Other_Location"]%></td>
-  </tr>
-  <tr>
-    <td><strong>Limit of Insurance While in Transit :</strong></td>
-    <td><%=raw @grades["limit_of_Insurance_While_in_Transit"]%></td>
-  </tr>
-  <tr>
-    <td><strong>Policy Deductable :</strong></td>
-    <td><%=raw @grades["Policy Deductable"]%></td>
-  </tr>
-
-  <tr>
-    <td><strong>Genre You Work :</strong></td>
-    <td><% if @grades["paintings"].present? %> <%= raw @grades["paintings"]%>, <% end %> <% if @grades["purniture"].present? %> <%= raw @grades["purniture"]%> ,<% end %> <% if @grades["drawings"].present? %> <%= raw @grades["drawings"]%>, <% end %> <% if @grades["fabrics"].present? %> <%= raw @grades["fabrics"]%> ,<% end %> <% if @grades["photographs"].present? %> <%= raw @grades["photographs"]%> ,<% end %> <% if @grades["jewelry"].present? %> <%= raw @grades["jewelry"]%> ,<% end %> <% if @grades["sculptures"].present? %> <%= raw @grades["sculptures"]%> ,<% end %> <% if @grades["silver"].present? %> <%= raw @grades["silver"]%> ,<% end %> <% if @grades["non_Fragile"].present? %> <%= raw @grades["non_Fragile"]%> ,<% end %><% if @grades["breakable"].present? %> <%= raw @grades["breakable"]%> ,<% end %><% if @grades["other"].present? %><%= raw @grades["other"]%> <% end %>
-    </td>
-  </tr>
-  
-
-  <tr>
-    <td><strong>Studio is located in a :</strong></td>
-    <td><%= raw @grades["studio"]%></td>
-  </tr>
-
- <tr>
-    <td><strong>Year Built? :</strong></td>
-    <td><%= raw @grades["pre1950"]%> <%= raw @grades["after1950"]%></td>
- </tr>
-
-<tr>
-  <td><strong>Studio & storage of art are in a basement? :</strong></td>
-  <td><%= raw @grades["Studio & storage of art are in a basement"]%></td>
-</tr>
-
-<tr>
-  <td><strong>Is there a history of a back-up drain and/or sewer? :</strong></td>
-  <td><%= raw @grades["Is_there_history_of_back_up_drain"]%></td>
-</tr>
-
-<tr>
-  <td><strong>If yes works stored on skids or shelf? :</strong></td>
-  <td><%= raw @grades["stored_on_skits_or_shelf"]%></td>
-</tr>
-
-<tr>
-  <td><strong>Is there an automatic sprinkler system on premises? :</strong></td>
-  <td><%= raw @grades["automatic_sprinkler_system"]%></td>
-</tr>
-
-<tr>
-  <td><strong>Security :</strong></td>
-  <td><% if @grades["deadbolts"].present? %> <%= raw @grades["deadbolts"]%>, <% end %> <% if @grades["alarm"].present? %> <%= raw @grades["alarm"]%> , <% end %> <% if @grades["local_alaram"].present? %> <%= raw @grades["local_alaram"]%> ,<% end %> <% if @grades["cameras"].present? %> <%= raw @grades["cameras"]%> ,<% end %> <% if @grades["gates"].present? %> <%= raw @grades["gates"]%> ,<% end %> <% if @grades["watchmen"].present? %> <%= raw @grades["watchmen"]%> ,<% end %> <% if @grades["no_security"].present? %> <%= raw @grades["no_security"]%> <% end %> </td>
-</tr>
-
-
-
-<tr>
-    <td><strong>What is the average value of finished art work? :</strong></td>
-    <td> <%= raw @grades["Finished_art_work"]%></td>
-</tr>
-
-<tr>
-  <td><strong>What is the maximum value of single item? :</strong></td>
-  <td><%= raw @grades["single_item"]%></td>
-</tr>
-
-<tr>
-  <td><strong>Do you keep a detailed and itemized inventory? :</strong></td>
-  <td><%= raw @grades["detailed_and_itemized"]%></td>
-</tr>
-
-<tr>
-  <td><strong>Do you keep a record of sales? :</strong></td>
-  <td><%= raw @grades["keep_record_of_sales"]%></td>
-</tr>
-
-<tr>
-  <td><strong>When was the last date of inventory? :</strong></td>
-  <td><%= raw @grades["card_signup_date"]%>-<%= raw @grades["card_signup_year"]  %></td>
-</tr>
-<tr>
-  <td><strong>Number of exhibits a year? :</strong></td>
-  <td><% if @grades["exhibits_year"] == "0" %> 5 or less <% else %> $ <%= raw @grades["exhibits_year"] %> <% end %></td>
-</tr>
-
-<tr>
-  <td><strong>Do you maintain a duplicate inventory off-site? :</strong></td>
-  <td><%= raw @grades["duplicate_inventory_off_site"]  %></td>
-</tr>
-
-<tr>
-  <td><strong>Current year :</strong></td>
-  <td><%= raw @grades["current_year"]%></td>
-</tr>
-
-<tr>
-  <td><strong>Prior year :</strong></td>
-  <td><%= raw @grades["prior_year"]%></td>
-</tr>
-
-<tr>
-  <td><strong>Name of current insurance carrier :</strong></td>
-  <td><%= raw @grades["Name of current insurance carrier"]%></td>
-</tr>
-<tr>
-  <td><strong>Description Of Loss :</strong></td>
-  <td><%= raw @grades["Description Of Loss"]%></td>
-</tr>
-<tr>
-  <td><strong>Amount Of Loss :</strong></td>
-  <td><%= raw @grades["Amount Of Loss"]%></td>
-</tr>
-
-<tr>
-  <td><strong>Date : </strong></td>
-  <td><%= raw @grades["lost_date"]  %></td>
-</tr>
-
-  
-</table>
-
-			
-			</div>
-		
-		</div>
-		
-		</div>
-		<div class="container form_bg" style="margin:10px 0">
-		</div>
-		
-		
-	  <div class="container form_bg" style="margin-top:10px">
-			<div class="row">
-			
-			
-				<div class="span12 footer">
-				 &copy; 2014 Bernard Fleischer & Sons, Inc.
-				</div>
-			
-			</div>
-	  </div>
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-	</div>
-
-</header>
-
-	<div class="container">
-		<div class="row">
-			<div class="span3">
-				
-			</div>
-			
-			<div class="span9">
-				
-			
-			</div>
-		</div>
-	</div>
-	
-	
-
- 	 
-		
-
-	
-		
 </body>
 </html>
+

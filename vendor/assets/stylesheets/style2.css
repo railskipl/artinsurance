@@ -226,7 +226,6 @@ form {
          @media only screen and (min-width: 768px) and (max-width: 1024px) {
 
 
-
             .form-left {
                 color: #717171;      
                 font-size: 13px;
@@ -241,7 +240,7 @@ form {
                 float: none;
             }
 
-                .row1_new { float: left; margin: 5px 0; width: 100%; display: block; left: 176px; position: absolute; top: 532px; }
+            .row1_new { float: left; margin: 5px 0; width: 100%; display: block; left: 176px; position: absolute; top: 532px; }
 
 
 
