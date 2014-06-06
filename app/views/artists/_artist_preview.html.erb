@@ -57,7 +57,7 @@
   </tr>
    <tr>
     <td width="20%"><strong>Mailing Address</strong></td>
-    <td align="left"><%= params["Address1"]%> <%= params["Address2"]%> <%= params["City"]%> <% if params["State"] %> <%= params["State"]%> <% else %> <%= params["us_states"]%> <% end %> <%= params["Zip"]%></td>
+    <td align="left"><%= params["Address1"]%> <%= params["Address2"]%>, <%= params["City"]%>, <% if params["State"] %> <%= params["State"]%> <% else %> <%= params["us_states"]%> <% end %> <%= params["Zip"]%></td>
   </tr>
    <tr>
     <td width="20%"><strong>Period</strong></td>
@@ -75,7 +75,7 @@
 
   <tr>
     <td width="20%"><strong>Covered Locations</strong></td>
-    <td align="left"><%= params["Studio_Address"]%> <%= params["Studio_Address2"]%> <%= params["Studio_City"]%>  <%= params["us_states"]%> <%= params["Zip_Code"]%></td>
+    <td align="left"><%= params["Studio_Address"]%> <%= params["Studio_Address2"]%>, <%= params["Studio_City"]%>,  <%= params["us_states"]%> <%= params["Zip_Code"]%></td>
   </tr>
 
   <tr>
@@ -85,7 +85,7 @@
       <% elsif params["higher_limits"] == '1203' %>150,000
       <% elsif params["higher_limits"] == '1344' %>175,000
       <% elsif params["higher_limits"] == '1484' %>200,000
-      <% elsif params["higher_limits"] == '1025' %>225,000
+      <% elsif params["higher_limits"] == '1625' %>225,000
       <% elsif params["higher_limits"] == '1765' %>250,000
       <% elsif params["higher_limits"] == '1907' %>275,000
       <% elsif params["higher_limits"] == '2047' %>300,000
