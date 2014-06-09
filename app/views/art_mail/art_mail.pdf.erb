@@ -35,7 +35,7 @@
         <span style="font-style:italic">
         <p> QUOTE / INDICATION</p>
 
-        Based on the information you have provided us, we are pleased to offer the following terms. This quote is open for 60days from the (dated quoted <%= Date.today.strftime("%m-%d-%y") %>).    
+        Based on the information you have provided us, we are pleased to offer the following terms. This quote is open for 60days from the dated quoted <% dated = Date.today+1 %><%= dated.strftime("%m-%d-%y") %>.    
         This        
         quote is subject to no losses prior to commencement and/or no material change in coverage.  
         </span> 
@@ -46,8 +46,7 @@
  <table width="100%">
   <tr>
     <td width="20%" valign="top"><strong>Company</strong></td>
-    <td align="left">Markel Insurance Company  21600 Oxnard Street, Woodland Hills, CA 
-      Best Rated A (Excellent); Financial Size Category: XIII</td>
+    <td align="left">Markel Insurance Company  Ten Parkway North, Deerfield, Illinois 60015</td>
   </tr>
   <tr>
     <td width="20%"><strong>Producer</strong></td>
