@@ -202,7 +202,7 @@
 
 
                             <div class="row1">
-                                <div class="form-left">Limit of Studio Insurance <span style="color:red;">* <a class="more" title="" rel="tooltip" href="javascript:void(0);" data-original-title="Covered Property: Works of art by you being held for sale or sold but not delivered or removed, your property of other in your care, custondy or control, and for which you may be liable or assume liability prior to losss or damage." style="float:none"> <strong> ?</strong></a></span></div>
+                                <div class="form-left">Limit of Studio Insurance <span style="color:red;">* <a class="more" title="" rel="tooltip" href="javascript:void(0);" data-original-title="Covered Property: Works of art by you being held for sale or sold but not delivered or removed, your property of other in your care, custody or control, and for which you may be liable or assume liability prior to losss or damage." style="float:none"> <strong> ?</strong></a></span></div>
                                 <div class="form-right">
                                    <%= select_tag(:higher_limits, options_for_select([ ['$100,000 - (Premium:$1,000)',1000], ['$125,000 - (Premium:$1,062)',1062], ['$150,000 - (Premium:$1,203)',1203], ['$175,000 - (Premium:$1,344)',1344], ['$200,000 - (Premium:$1,484)',1484], ['$225,000 - (Premium:$1,625)',1625], ['$250,000 - Premium : $1,765',1765],['$275,000 - Premium : $1,907',1907],['$300,000 - (Premium:$2,047)',2047]],selected: :higher_limits )) %>
                                 </div>
@@ -225,7 +225,7 @@
 
 
                             <div class="row1">
-                                <div class="form-left">Limit of Insurance While in Transit <span style="color:red;">*<a class="more" title="" rel="tooltip" href="javascript:void(0);" data-original-title="Shipments by mail unless by registered first class mail or parcel post provided however, such shipments by parcel post shall not exceed the sum of $1,000 in value nor the sum of @25,000 in value by register first class mail." style="float:none"> <strong> ?</strong></a></span></div>
+                                <div class="form-left">Limit of Insurance While in Transit <span style="color:red;">*<a class="more" title="" rel="tooltip" href="javascript:void(0);" data-original-title="Shipments by mail unless by registered first class mail or parcel post provided however, such shipments by parcel post shall not exceed the sum of $1,000 in value nor the sum of $25,000 in value by register first class mail." style="float:none"> <strong> ?</strong></a></span></div>
                                 <div class="form-right">
 
                                     <div class="form-right"> <%=text_field_tag 'limit_of_Insurance_While_in_Transit',nil,value:'$100,000', :onkeypress=>"limit_of_Insurance(this);", :readonly => true %></div>
@@ -333,7 +333,10 @@
                             <div class="row2">
                                 <div class="form-left">Other</div>
                                 <div class="form-right"><input type="checkbox" name="other" id="other" value="Other"></div>
-                                <div class="form-error"></div>                      
+                                <div class="form-error"></div>  
+                                <div id="txtAge" style="display:none" class="form-left">
+                                    <%= text_field_tag 'other_value' %>
+                                </div>                    
                             </div>
 
 
@@ -371,13 +374,11 @@
 
                              <div class="row2">
                                 <div class="form-left">Year Built?<a class="more" title="" rel="tooltip" href="javascript:void(0);" data-original-title="Best estimate" style="float:none"> <strong> ?</strong></a></div>
-                                 <div class="form-left">Pre 1950
-
-                                 <input type="checkbox" name="pre1950" id="checkbox_id" value="Pre 1950">
-
-                                 After 1950 
-                                 <input type="checkbox" name="after1950" id="checkbox_id" value="After 1950">
+                                 <div class="form-left">
                                      
+                                  Pre 1950<input type="radio" id="year_built" name="year_built" value="Pre 1950">&nbsp;&nbsp;
+                                
+                                  After 1950 <input type="radio" id="year_built" name="year_built" value="After 1950">
 
                                  </div>
 

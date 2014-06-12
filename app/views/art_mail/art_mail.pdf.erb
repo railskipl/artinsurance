@@ -46,7 +46,9 @@
  <table width="100%">
   <tr>
     <td width="20%" valign="top"><strong>Company</strong></td>
-    <td align="left">Markel Insurance Company  Ten Parkway North, Deerfield, Illinois 60015</td>
+    <td align="left">Markel Insurance Company  Ten Parkway North, Deerfield, Illinois 60015 <br/>
+      Best Rated A (Excellent); Financial Size Category: XIV
+    </td>
   </tr>
   <tr>
     <td width="20%"><strong>Producer</strong></td>
@@ -146,7 +148,10 @@
 
   <tr>
     <td width="20%"><strong>Premium</strong></td>
-    <td align="left"><%= number_to_currency(@grades["higher_limits"]) %> annually</td>
+    <td align="left">
+  
+      <%= number_to_currency(@grades["annual_premium"]) %> annually
+    </td>
   </tr>
   <tr>
     <td width="20%"><strong>Payment</strong></td>
