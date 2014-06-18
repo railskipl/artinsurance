@@ -126,7 +126,7 @@ class ArtistsController < ApplicationController
 
       respond_to do |format|
       if @artist.save
-        format.html { redirect_to new_subscription_path, notice: 'Artist was successfully created.' }
+        format.html { redirect_to new_subscription_path }
         
         format.json { render json: @artist, status: :created, location: @artist }
            
