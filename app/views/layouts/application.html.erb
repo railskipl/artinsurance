@@ -17,6 +17,7 @@
 <body>
 
 <%= render 'shared/header' %>
+<%= content_tag 'div', h(flash[:notice]), :class => 'succMsg', :id => 'notice' if flash[:notice] %>
 <%= yield %>
 <%= render 'shared/footer' %>
 

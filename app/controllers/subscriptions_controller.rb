@@ -19,8 +19,13 @@ def create
 
     if @subscription.save_with_payment
       subscriber = params[:subscription][:email]
-
-      ArtMail.art_mail(session[:grades], subscriber).deliver
+      addition_email = params[:addition_email]
+      
+      if addition_email.present?
+        ArtMail.art_mail_2(session[:grades], subscriber, addition_email).deliver
+      else
+        ArtMail.art_mail(session[:grades], subscriber).deliver
+      end
       session[:anualpremium] = nil
       session[:grades] = nil
       redirect_to @subscription, :notice => "Thank you for subscribing!"
@@ -37,6 +42,7 @@ def feedback
   ArtMail.feedback_mail(@user_feedback).deliver
 
   session[:email] = nil
+  flash[:notice] = "Thank you."
   redirect_to root_path
 
 end
