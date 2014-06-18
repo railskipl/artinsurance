@@ -7,15 +7,14 @@ class ArtMail < ActionMailer::Base
 def art_mail(grades, subscriber)
 	
 	@grades = grades
-      email1 = "amol@kunalinfotech.net"
-      email2 = "sagar.kale@kunalinfotech.net"
-	   # email1 = "andrewxodo@gmail.com"
-	   # email2 = "andrew@madloch.com"
-	   # email3 = "andrew@veraxon.com"
-	   # email4 = "andrew@yougame.com"
-       email5 = subscriber
+      
+	   email1 = "andrewxodo@gmail.com"
+	   email2 = "andrew@madloch.com"
+	   email3 = "andrew@veraxon.com"
+	   email4 = "andrew@yougame.com"
+     email5 = subscriber
    
-    recipients = email1, email2, email5
+    recipients = email1, email2, email3, email4, email5
     subject = "Insurence"
    
         mail(:subject => 'Insurance', :to => recipients.join(','))  do |format|
@@ -31,16 +30,15 @@ end
 
 def art_mail_2(grades, subscriber, addemail)
   @grades = grades
-      email1 = "amol@kunalinfotech.net"
-      email2 = "sagar.kale@kunalinfotech.net"
-     # email1 = "andrewxodo@gmail.com"
-     # email2 = "andrew@madloch.com"
-     # email3 = "andrew@veraxon.com"
-     # email4 = "andrew@yougame.com"
-       email5 = subscriber
-       email6 = addemail
+      
+     email1 = "andrewxodo@gmail.com"
+     email2 = "andrew@madloch.com"
+     email3 = "andrew@veraxon.com"
+     email4 = "andrew@yougame.com"
+     email5 = subscriber
+     email6 = addemail
    
-    recipients = email1, email2, email5, email6
+    recipients = email1, email2, email3, email4, email5, email6
     subject = "Insurence"
    
         mail(:subject => 'Insurance', :to => recipients.join(','))  do |format|
