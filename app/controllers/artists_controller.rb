@@ -91,7 +91,7 @@ class ArtistsController < ApplicationController
            "Name of current insurance carrier" => params[:Name_of_current_insurance_carrier],
            "Description Of Loss" => params[:"Description Of Loss"],
            "Amount Of Loss" => params[:"Amount Of Loss"],
-           "Date" => params[:"card_lost"] ,
+           "Date" => "#{params[:card_lost][:"lost_date(1i)"]} - #{params[:card_lost][:"lost_date(2i)"]} - #{params[:card_lost][:"lost_date(3i)"]}" ,
            "Description Of Loss1" => params[:"DescriptionOfLoss_1"],
            "Amount Of Loss1" => params[:"AmountOfLoss_1"],
            "Date1" => "#{params[:card_lost][:"lost_date(11)"]} - #{params[:card_lost][:"lost_date(21)"]} - #{params[:card_lost][:"lost_date(31)"]}" ,
@@ -132,7 +132,7 @@ class ArtistsController < ApplicationController
          @email = params[:Email_address]
          session[:email] = @email
          session[:grades] = @grades 
-         #raise (@grades["Description Of Loss"] != nil && @grades["Description Of Loss1"] != nil && @grades["Description Of Loss2"] != nil).inspect
+
       respond_to do |format|
 
         
