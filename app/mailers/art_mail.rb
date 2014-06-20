@@ -34,7 +34,37 @@ class ArtMail < ActionMailer::Base
        recipients = email1, email2
        subject = "Waiting For Approval"
 
-       mail(:subject => subject , :to => recipients.join(','))  
+       mail(:subject => subject , :to => recipients.join(',')) 
+
+    end
+  end
+
+  def checkmail(grades)
+     @grades = grades
+
+    if @grades["Description Of Loss"] != nil && @grades["Description Of Loss1"] != nil && @grades["Description Of Loss2"] != nil
+       email1 = "wfleischer@bfbond.com"
+       email2 = "plouis@markelcorp.com"
+       recipients = email1, email2
+       subject = "Waiting For Approval"
+
+       mail(:subject => subject , :to => recipients.join(',')) 
+        
+    end
+  end
+
+  def checkmail_all(grades)
+     @grades = grades
+
+    if @grades["Studio_&_storage_of_art_are_in_a_basement"] == "Yes" && @grades["Is_there_history_of_back_up_drain"] == "Yes"  && @grades["Description Of Loss"] != nil && @grades["Description Of Loss1"] != nil && @grades["Description Of Loss2"] != nil
+       email1 = "wfleischer@bfbond.com"
+       email2 = "plouis@markelcorp.com"
+       
+       recipients = email1, email2
+       subject = "Waiting For Approval"
+
+       mail(:subject => subject , :to => recipients.join(',')) 
+
     end
   end
 

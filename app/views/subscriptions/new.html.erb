@@ -1,4 +1,10 @@
-
+<SCRIPT type="text/javascript">
+      window.history.forward();
+      function noBack() { window.history.forward(); }
+    </SCRIPT>
+   </HEAD>
+    <BODY onload="noBack();"
+    onpageshow="if (event.persisted) noBack();" onunload="">
 
 <style type="text/css">
 .wrapper {
@@ -28,7 +34,7 @@
   
   <div class="field">
     <%= f.label :email %>
-    <%= f.text_field :email, :value=> session[:email] %>
+    <%= f.text_field :email, :value=> session[:email],:autocomplete => :off %>
   </div>  
 
   <div class="field">

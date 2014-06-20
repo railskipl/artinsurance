@@ -92,6 +92,12 @@ class ArtistsController < ApplicationController
            "Description Of Loss" => params[:"Description Of Loss"],
            "Amount Of Loss" => params[:"Amount Of Loss"],
            "Date" => params[:"card_lost"] ,
+           "Description Of Loss1" => params[:"DescriptionOfLoss_1"],
+           "Amount Of Loss1" => params[:"AmountOfLoss_1"],
+           "Date1" => "#{params[:card_lost][:"lost_date(11)"]} - #{params[:card_lost][:"lost_date(21)"]} - #{params[:card_lost][:"lost_date(31)"]}" ,
+           "Description Of Loss2" => params[:"Description Of Loss"],
+           "Amount Of Loss2" => params[:"Amount Of Loss"],
+           "Date2" => "#{params[:card_lost][:"lost_date(12)"]} - #{params[:card_lost][:"lost_date(22)"]} - #{params[:card_lost][:"lost_date(32)"]}" ,
            "paintings" => params[:paintings],
            "purniture" => params[:purniture],
            "drawings" => params[:drawings],
@@ -125,17 +131,26 @@ class ArtistsController < ApplicationController
          }
          @email = params[:Email_address]
          session[:email] = @email
-
          session[:grades] = @grades 
-
+         #raise (@grades["Description Of Loss"] != nil && @grades["Description Of Loss1"] != nil && @grades["Description Of Loss2"] != nil).inspect
       respond_to do |format|
 
         
-        if params[:"Studio & storage of art are in a basement"] == "Yes" && params[:"Is there a history of a back-up drain and/or sewer?"] == "Yes" 
+        if params[:"Studio & storage of art are in a basement"] == "Yes" && params[:"Is there a history of a back-up drain and/or sewer?"] == "Yes" && (@grades["Description Of Loss"] != nil && @grades["Description Of Loss1"] != nil && @grades["Description Of Loss2"] != nil)
+        
+        ArtMail.checkmail_all(session[:grades]).deliver
+        format.html { redirect_to root_path, notice: 'Application is submitted to company for approval, will contact you via email, to follow up call 800 921-1008' } 
+        
+        elsif  (@grades["Description Of Loss"] != nil && @grades["Description Of Loss1"] != nil && @grades["Description Of Loss2"] != nil) 
+        
+        ArtMail.checkmail(session[:grades]).deliver
+        format.html { redirect_to root_path, notice: 'Application is submitted to company for approval, will contact you via email, to follow up call 800 921-1008' } 
+        
+        elsif params[:"Studio & storage of art are in a basement"] == "Yes" && params[:"Is there a history of a back-up drain and/or sewer?"] == "Yes"
         
         ArtMail.check_mail(session[:grades]).deliver
-        format.html { redirect_to root_path, notice: 'Application is submitted to company for approval, will contact you via email, to follow up call 800 921-1008' }    
-
+        format.html { redirect_to root_path, notice: 'Application is submitted to company for approval, will contact you via email, to follow up call 800 921-1008' } 
+        
         elsif
           @artist.save
           format.html { redirect_to new_subscription_path, notice: 'Artist was successfully created.' }
