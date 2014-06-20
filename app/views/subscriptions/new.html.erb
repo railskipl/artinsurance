@@ -1,4 +1,5 @@
 
+
 <style type="text/css">
 .wrapper {
     background: none repeat scroll 0 0 #F4F4F4;
@@ -43,7 +44,7 @@
   </div>
   <div class="field">
       <%= label_tag :card_code, "Security Code on Card (CVV)" %>
-      <%= text_field_tag :card_code, nil, name: nil %>
+      <%= text_field_tag :card_code, nil, name: nil, :autocomplete => :off %>
   </div>
   <div class="field">
     <%= label_tag :card_month, "Card Expiration" %>
@@ -57,4 +58,7 @@
 
 <% end %>
 </div>
+
+
+
 

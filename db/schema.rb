@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140509085142) do
+ActiveRecord::Schema.define(:version => 20140618063130) do
 
   create_table "artists", :force => true do |t|
     t.datetime "created_at",          :null => false
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(:version => 20140509085142) do
     t.float    "amount_of_loss"
   end
 
+ 
   create_table "subscriptions", :force => true do |t|
     t.string   "email"
     t.string   "stripe_card_token"

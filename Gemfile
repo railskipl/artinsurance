@@ -9,7 +9,8 @@ gem 'rails', '3.2.16'
 
 gem 'mysql2'
 #gem 'sqlite3'
-
+gem 'jquery-rails'
+gem 'jquery-ui-rails'
 gem 'execjs'
 gem 'therubyracer'
 gem 'country_select'

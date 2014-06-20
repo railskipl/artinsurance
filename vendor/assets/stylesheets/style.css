@@ -40,8 +40,15 @@ select, textarea, input[type="text"], input[type="password"], input[type="dateti
 
 .footer{ text-align:center; padding:20px 0}
 
-.right_img{ border:1px solid #dddddd; margin:20px 0}
-.left_img2{ border:1px solid #dddddd;}
+.right_img {
+    border: 1px solid #dddddd;
+    height: 320px;
+    margin: 20px 0;
+}
+.left_img2 {
+    border: 1px solid #dddddd;
+   
+}
 
 
 .list {
@@ -61,7 +68,19 @@ select, textarea, input[type="text"], input[type="password"], input[type="dateti
 	border-bottom:1px dotted #8c8c8c
 }
 
+.list1 li {
+    background-image: url("/assets/tick.jpg");
+    background-position: left 10px;
+    background-repeat: no-repeat;
+    color: #333;
+    display: block;
+    font-size: 14px;
+    padding: 7px 0 7px 20px;
+    width: auto;
+    border-bottom:1px dotted #8c8c8c
+}
+
 
 .ldiv{ margin:10px}
-.rdiv{ margin:10px}
+.rdiv{ margin:10px; font-size:15px;}
 #stripe_error { color: #DD0000; }

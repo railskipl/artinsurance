@@ -1,5 +1,5 @@
 class ArtistsController < ApplicationController
-   respond_to :html, :js
+   respond_to :html, :js, :json
   # GET /artists
   # GET /artists.json
   def index
@@ -55,8 +55,10 @@ class ArtistsController < ApplicationController
          @exhibits_year = params[:exhibits_year]
          @anualpremium = ((@limits_of_studio_insurance).to_i + (@exhibits_year).to_i).to_i
          session[:anualpremium] = @anualpremium
-         
-     @grades = { "First Name" => params[:first_name],
+  
+     @grades = { 
+           "Date" => params[:start_date],
+           "First Name" => params[:first_name],
            "last Name" => params[:last_name],
            "Address 1" => params[:Address1],
            "Address 2" => params[:Address2],
@@ -89,6 +91,7 @@ class ArtistsController < ApplicationController
            "Name of current insurance carrier" => params[:Name_of_current_insurance_carrier],
            "Description Of Loss" => params[:"Description Of Loss"],
            "Amount Of Loss" => params[:"Amount Of Loss"],
+           "Date" => params[:"card_lost"] ,
            "paintings" => params[:paintings],
            "purniture" => params[:purniture],
            "drawings" => params[:drawings],
@@ -102,6 +105,7 @@ class ArtistsController < ApplicationController
            "other" => params[:other],
            "pre1950" => params[:pre1950],
            "after1950" => params[:after1950],
+           "Studio_&_storage_of_art_are_in_a_basement" => params[:"Studio & storage of art are in a basement"],
            "Is_there_history_of_back_up_drain" => params[:"Is there a history of a back-up drain and/or sewer?"],
            "stored_on_skits_or_shelf" => params[:"If yes works stored on skits or shelf?"],
            "automatic_sprinkler_system" => params[:"Is there an automatic sprinkler system on premises?"],
@@ -122,22 +126,29 @@ class ArtistsController < ApplicationController
          @email = params[:Email_address]
          session[:email] = @email
 
-         session[:grades] = @grades
+         session[:grades] = @grades 
 
       respond_to do |format|
-      if @artist.save
-        format.html { redirect_to new_subscription_path, notice: 'Artist was successfully created.' }
         
-        format.json { render json: @artist, status: :created, location: @artist }
-           
+        if params[:"Studio & storage of art are in a basement"] == "Yes" && params[:"Is there a history of a back-up drain and/or sewer?"] == "Yes" 
+        
+        ArtMail.check_mail(session[:grades]).deliver
+        format.html { redirect_to root_path, notice: 'application is submitted to company for approval, will contact you via email, to follow up call 800 921-1008' }    
 
-        #ArtMail.art_mail(@grades).deliver
-        
-      else
-        format.html { render action: "new" }
-        format.json { render json: @artist.errors, status: :unprocessable_entity }
+        elsif
+          @artist.save
+          format.html { redirect_to new_subscription_path, notice: 'Artist was successfully created.' }
+          
+          format.json { render json: @artist, status: :created, location: @artist }
+             
+
+          #ArtMail.art_mail(@grades).deliver
+          
+        else
+          format.html { render action: "new" }
+          format.json { render json: @artist.errors, status: :unprocessable_entity }
+        end
       end
-     end
     
   end
 
