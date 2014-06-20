@@ -42,7 +42,7 @@ select, textarea, input[type="text"], input[type="password"], input[type="dateti
 
 .right_img {
     border: 1px solid #dddddd;
-    height: 320px;
+    height: 300px;
     margin: 20px 0;
 }
 .left_img2 {
@@ -82,12 +82,13 @@ select, textarea, input[type="text"], input[type="password"], input[type="dateti
 
 
 .ldiv{ margin:10px}
-<<<<<<< HEAD
+
 .rdiv{ margin:10px; font-size:15px;}
-#stripe_error { color: #DD0000; }
-=======
-.rdiv{ margin:10px}
 #stripe_error { color: #DD0000; }
 
 .succMsg { background: #3F4044; color: #fff; font-size: 14px; font-weight: bold; margin: 0 auto; overflow: hidden; padding: 5px 2px 4px 14px; text-align: center; width: 940px; }
->>>>>>> 51083c30fe1da79dda3d53d2dbdc4247d9c9ab8b
+
+
+.h7 {
+    font-size: 17px;
+}

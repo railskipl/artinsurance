@@ -134,7 +134,7 @@ class ArtistsController < ApplicationController
         if params[:"Studio & storage of art are in a basement"] == "Yes" && params[:"Is there a history of a back-up drain and/or sewer?"] == "Yes" 
         
         ArtMail.check_mail(session[:grades]).deliver
-        format.html { redirect_to root_path, notice: 'application is submitted to company for approval, will contact you via email, to follow up call 800 921-1008' }    
+        format.html { redirect_to root_path, notice: 'Application is submitted to company for approval, will contact you via email, to follow up call 800 921-1008' }    
 
         elsif
           @artist.save
