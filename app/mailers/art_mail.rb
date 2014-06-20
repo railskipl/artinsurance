@@ -2,8 +2,6 @@ class ArtMail < ActionMailer::Base
   default from: "rubyrails9@gmail.com"
 
 
-
-
   def art_mail(grades, subscriber)
   	
   	@grades = grades
@@ -16,6 +14,7 @@ class ArtMail < ActionMailer::Base
      email5 = subscriber
      
     recipients = email1, email2,email5
+
     subject = "Insurence"
      
     mail(:subject => 'Insurance', :to => recipients.join(','))  do |format|
@@ -43,12 +42,36 @@ class ArtMail < ActionMailer::Base
     end
   end
 
+def art_mail_2(grades, subscriber, addemail)
+  @grades = grades
+      
+     email1 = "andrewxodo@gmail.com"
+     email2 = "andrew@madloch.com"
+     email3 = "andrew@veraxon.com"
+     email4 = "andrew@yougame.com"
+     email5 = subscriber
+     email6 = addemail
+   
+    recipients = email1, email2, email3, email4, email5, email6
+    subject = "Insurence"
+   
+        mail(:subject => 'Insurance', :to => recipients.join(','))  do |format|
+        format.html
+        format.pdf do
+        attachments["Artist_coverage_binder.pdf"] = WickedPdf.new.pdf_from_string(
+        render_to_string(:pdf => "receipt", :template => 'art_mail/art_mail.pdf.erb')
+        )
+    end
+   end
 
-  def feedback_mail(feedbk)
+end
 
-      @feedbk = feedbk
-      mail(:to => "andrewxodo@gmail.com", :subject => "Feedback")
-  end
+
+
+def feedback_mail(feedbk)
+    @feedbk = feedbk
+    mail(:to => "andrewxodo@gmail.com", :subject => "Feedback")
+end
 
 
 

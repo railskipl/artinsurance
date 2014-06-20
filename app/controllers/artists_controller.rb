@@ -129,6 +129,7 @@ class ArtistsController < ApplicationController
          session[:grades] = @grades 
 
       respond_to do |format|
+
         
         if params[:"Studio & storage of art are in a basement"] == "Yes" && params[:"Is there a history of a back-up drain and/or sewer?"] == "Yes" 
         
