@@ -42,8 +42,8 @@ def feedback
   ArtMail.feedback_mail(@user_feedback).deliver
 
   session[:email] = nil
-  flash[:notice] = "Thank you."
-  redirect_to root_path
+  flash[:notice] = "We really appreciate your time to write us a comment. Thank you very much"
+  redirect_to "http://www.artinsurancenow.com/"
 
 end
 
