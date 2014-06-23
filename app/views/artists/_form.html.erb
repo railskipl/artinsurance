@@ -40,7 +40,7 @@
                         <div class="span6">
 
                             <div class="row1">
-                                <div class="form-left">Applicable Date<span style="color:red;">* <a class="more" title="" rel="tooltip" href="javascript:void(0);" data-original-title="Provide the applicable date." style="float:none"> <strong> ?</strong></a></span></div>
+                                <div class="form-left">Proposed Effective<span style="color:red;">* <a class="more" title="" rel="tooltip" href="javascript:void(0);" data-original-title="When would you like the policy to begin?" style="float:none"> <strong> ?</strong></a></span></div>
                                 <div class="form-right" ><%=text_field_tag 'start_date',nil,:autocomplete => :off%> </div>
                                 <div class="form-error"></div>
                                 
@@ -209,7 +209,7 @@
 
                         <div class="span6">
 
-                            <h2 style="font-size:23.5px!important;"> Limits of Insurance<a class="more" title="" rel="tooltip" href="javascript:void(0);" data-original-title="Valuation:Finished work, Selling price less 30%,full selling price if sold or under contract, worked in progresse value on a pro data of completed work, property(canvas,paint,supplies)  not marked for sale, at your cost" style="float:none"> <strong> ?</strong></a></h2>
+                            <h2 style="font-size:23.5px!important;"> Limits of Insurance<a class="more" title="" rel="tooltip" href="javascript:void(0);" data-original-title="Valuation:Finished work, Selling price less 30%,full selling price if sold or under contract, work in progress value on a pro data of completed work, property(canvas,paint,supplies)  not marked for sale, at your cost" style="float:none"> <strong> ?</strong></a></h2>
 
 
                             <div class="row1">
@@ -250,7 +250,7 @@
 
                             <div class="row1">
 
-                                <div class="form-left">Policy Deductible<span style="color:red;">*<a class="more" title="" rel="tooltip" href="javascript:void(0);" data-original-title="This is a fixed policy deductable" style="float:none"> <strong> ?</strong></a></span></div>
+                                <div class="form-left">Policy Deductible<span style="color:red;">*<a class="more" title="" rel="tooltip" href="javascript:void(0);" data-original-title="This is a fixed policy deductible" style="float:none"> <strong> ?</strong></a></span></div>
                                 <div class="form-right"><%=text_field_tag 'Policy_Deductable',nil,value: '$1,000', :readonly=> true %>
                                     
                                 </div>
@@ -314,19 +314,19 @@
 
                             <div class="row2">
 
-                                <div class="form-left">Sculptures – Fragile<a class="more" title="" rel="tooltip" href="javascript:void(0);" data-original-title="Policy Excludes: Breakage of glass or article of a brittle nature, unless caused of fire,windstrome,flood,explosion,malicious damage or accident to the conveying vehicle " style="float:none"> <strong> ?</strong></a></div>
+                                <div class="form-left">Sculptures – Fragile<a class="more" title="" rel="tooltip" href="javascript:void(0);" data-original-title="Policy Excludes: Breakage of glass or article of a brittle nature, unless caused of fire, windstrome, flood, explosion, riot, malicious damage or accident to the conveying vehicle " style="float:none"> <strong> ?</strong></a></div>
                                 <div class="form-right"><input type="checkbox" name="sculptures" id="sculptures" value="Sculptures – Fragile"></div>
 
                                 
                             </div>
 
 
-                             <div class="row2">
+                            <!--  <div class="row2">
                                 <div class="form-left">Silver</div>
                                 <div class="form-right"><input type="checkbox" name="silver" id="silver" value="Silver"></div>
                                                              
                             </div>
-
+ -->
                             
 
                             <div class="row2">
@@ -384,12 +384,12 @@
                                       
 
                              <div class="row2">
-                                <div class="form-left">Year Built<a class="more" title="" rel="tooltip" href="javascript:void(0);" data-original-title="Best estimate" style="float:none"> <strong> ?</strong></a></div>
-                                 <div class="form-left">
+                                <div class="form-left">Year Built Pre 1950<a class="more" title="" rel="tooltip" href="javascript:void(0);" data-original-title="Best estimate" style="float:none"> <strong> ?</strong></a></div>
+                                 <div class="form-right">
                                      
-                                  Pre 1950<input type="radio" id="year_built" name="year_built" value="Pre 1950">&nbsp;&nbsp;
+                                  <input type="radio" id="year_built" name="year_built" value="Yes">&nbsp;&nbsp;Yes
                                 
-                                  After 1950 <input type="radio" id="year_built" name="year_built" value="After 1950">
+                                  <input type="radio" id="year_built" name="year_built" value="No">&nbsp;&nbsp;No
 
                                  </div>
 
@@ -548,7 +548,7 @@
 
 
                             <div class="row1">
-                                <div class="form-left">Do you keep a detailed and itemized inventory<span style="color:red;">*</span> <a class="more" title="" rel="tooltip" href="javascript:void(0);" data-original-title="spreadsheets,including,Size,Medium,year,title and pictures if you are really thorough." style="float:none"> <strong> ?</strong></a></div>
+                                <div class="form-left">Do you keep a detailed and itemized inventory<span style="color:red;">*</span> <a class="more" title="" rel="tooltip" href="javascript:void(0);" data-original-title="Spreadsheets, Including Size, Medium, year, title and pictures if you are really thorough." style="float:none"> <strong> ?</strong></a></div>
                                 <div class="form-right">
                                      <input type="radio" id="detailed_itemized" name="Do you keep a detailed and itemized?" value="Yes">&nbsp;&nbsp;Yes
                                     <input type="radio" id="detailed_itemized" name="Do you keep a detailed and itemized?" value="No">&nbsp;&nbsp;No
@@ -585,7 +585,7 @@
                                 <div class="form-right" style="width: 195px!important">  
 
 
-                                    <%= date_select("card_signup", "dob", { :start_year => DateTime.now.year, :end_year => 2010, :discard_day => true, default: { month: 1, year:2010 }}, :style => "width: 95px")%>
+                                    <%= date_select("card_signup", "dob", { :start_year => DateTime.now.year, :end_year => 2010, :discard_day => true, default: { month: 1, year:2010 }}    )%>
                                          
                                      </div>
 
@@ -670,13 +670,13 @@
 
                             <div id="loss">
                                 <div class="row1">
-                                    <div class="form-left">Description Of Loss</div>
+                                    <div class="form-left">Description of loss</div>
                                     <div class="form-right"><%=text_field_tag 'Description Of Loss'%></div>
                                     <div class="form-error"></div>
                                 </div>
 
                                 <div class="row1">
-                                    <div class="form-left">Amount Of Loss</div>
+                                    <div class="form-left">Amount of loss</div>
                                     <div class="form-right"> <%=text_field_tag 'Amount Of Loss'%></div>
                                     <div class="form-error"></div>
                                 </div> 
@@ -754,16 +754,22 @@
 
     <script>
 
-  
-    var dropdown2 = document.getElementById("us_states");
-    dropdown2.onchange = function(event){
-        if(dropdown2.value=="Alabama" || dropdown2.value=="Missouri"  || dropdown2.value=="Montana" || dropdown2.value=="Oklahoma"  || dropdown2.value==""){
-            confirm("This program exclude flood and windstorms in your area. Do you need more information contact our office.")
-                var myindex  = dropdown2.selectedIndex;
-                dropdown2.options[myindex].value = '';    
+      
+        var dropdown2 = document.getElementById("us_states");
+
+        dropdown2.onchange = function(event){
+            if(dropdown2.value=="Alabama" || dropdown2.value=="Connecticut"  || dropdown2.value=="Delaware" || dropdown2.value=="District of Columbia"  || dropdown2.value=="Florida" || dropdown2.value=="Georgia" || dropdown2.value=="Louisiana" || dropdown2.value=="Maine" || dropdown2.value=="Maryland" || dropdown2.value=="Massachusetts" || dropdown2.value=="Mississippi" || dropdown2.value=="New Jersey"|| dropdown2.value=="New York"|| dropdown2.value=="North Carolina"|| dropdown2.value=="Pennsylvania"|| dropdown2.value=="Rhode Island"|| dropdown2.value=="South Carolina"|| dropdown2.value=="Texas"|| dropdown2.value==""){
+                confirm("The Insurance program does not cover Earthquake, Mold, Water, Windstorms. Do you need more information contact our office.")
+                    var myindex  = dropdown2.selectedIndex;
+                    dropdown2.options[myindex].value = '';    
+            }
+
+            else
+            {
+                confirm("The Insurance program does not cover Earthquake, Mold. Do you need more information contact our office.");
+            }
         }
-    }
-</script>   
+    </script>   
 
 
 <script type="text/javascript">

@@ -87,3 +87,6 @@ select, textarea, input[type="text"], input[type="password"], input[type="dateti
 #stripe_error { color: #DD0000; }
 
 .succMsg { background: #3F4044; color: #fff; font-size: 14px; font-weight: bold; margin: 0 auto; overflow: hidden; padding: 5px 2px 4px 14px; text-align: center; width: 940px; }
+
+#card_signup_dob_1i { width: 80px !important;}
+#card_signup_dob_2i { width: 108px !important;}
