@@ -1,7 +1,7 @@
 class SubscriptionsController < ApplicationController
   
   def new
-    @subscription = Subscription.new(:token => params[:token], :price => params[:price],)
+    @subscription = Subscription.new(:token => params[:token], :price => params[:price])
     if params[:PayerID]
       @subscription.price = params[:price]
       @subscription.paypal_customer_token = params[:PayerID]
@@ -21,9 +21,10 @@ def create
       addition_email = params[:addition_email]
       
       if addition_email.present?
-        ArtMail.art_mail_2(session[:grades], subscriber, addition_email).deliver
+
+        ArtMail.art_mail_2(session[:grades], subscriber, addition_email, @subscription.stripe_customer_token).deliver
       else
-        ArtMail.art_mail(session[:grades], subscriber).deliver
+        ArtMail.art_mail(session[:grades], subscriber, @subscription.stripe_customer_token).deliver
       end
       session[:anualpremium] = nil
       session[:grades] = nil

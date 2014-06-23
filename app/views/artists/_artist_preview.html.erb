@@ -7,10 +7,10 @@
 
 <div class="titleBar dragonControl"><span class="title">Preview</span></div>
 <div class="dialog-content">
-<a href="javascript:void(0);" onclick="window.print();return false;">print me</a> 
+<!-- <a href="javascript:void(0);" onclick="window.print();return false;">print me</a>  -->
   <div>
     
-  <div class="left"><h1 style="color: #16559D;font-family: Arial; font-size: 30px; font-weight: bold;">Bernard Fleischer & Sons</h1></div>
+  <div class="left"><h2 style="color: #16559D;font-family: Arial; font-size: 30px; font-weight: bold;">Bernard Fleischer & Sons, Inc</h2></div>
   <div class="right">29 Broadway, Suite 1511, New York NY 10006
         <br>
     212 566-1881 www.bfbond.com</div>
@@ -20,17 +20,20 @@
     <div style="clear:both; margin:0 auto">
       <div>
         <span style="font-style:italic">
-        <p> QUOTE / INDICATION</p>
-
-        Based on the information you have provided us, we are pleased to offer the following terms. This quote is open for 60days from the dated quoted <% dated = Date.today+1 %><%= dated.strftime("%m-%d-%y") %>.    
-        This        
-        quote is subject to no losses prior to commencement and/or no material change in coverage.  
+        <p> QUOTE</p>
         </span> 
         <p>&nbsp;</p>
       </div>
     </div> 
 
  <table width="100%">
+
+  <tr>
+    <td width="20%" valign="top"><strong>Binding Effective</strong></td>
+    <td align="left"><%= params["start_date"]%></td>
+    </td>
+  </tr>
+
   <tr>
     <td width="20%" valign="top"><strong>Company</strong></td>
     <td align="left">Markel Insurance Company Ten Parkway North, Deerfield, Illinois 60015 <br/>
@@ -42,10 +45,10 @@
     <td align="left">
       <% if params["us_states"] == "Alaska" || params["us_states"] == "Arizona" || params["us_states"] == "Arkansas" || params["us_states"] == "Colorado" || params["us_states"] == "Delaware" || params["us_states"] =="District of Columbia" || params["us_states"] =="Florida" || params["us_states"] == "Hawaii" || params["us_states"] == "Idaho" || params["us_states"] == "Illinois" || params["us_states"] == "Indiana" || params["us_states"] == "Kansas" || params["us_states"] == "Kentucky" || params["us_states"] =="Louisiana" || params["us_states"] =="Maine" || params["us_states"] =="Maryland" || params["us_states"] =="Massachusetts" || params["us_states"] =="Mississippi" || params["us_states"] == "Michigan" || params["us_states"] == "Minnesota" || params["us_states"] == "Nebraska" || params["us_states"] == "Nevada" || params["us_states"] == "New Hampshire" || params["us_states"] =="New Jersey" || params["us_states"] =="New York" || params["us_states"] == "North Carolina" || params["us_states"] == "Ohio" || params["us_states"] == "Oregon" || params["us_states"] =="Rhode Island" || params["us_states"] == "South Carolina" || params["us_states"] == "South Dakota" || params["us_states"] == "Tennessee" || params["us_states"] == "Utah" || params["us_states"] == "Vermont" || params["us_states"] == "Virginia" || params["us_states"] == "Washington" || params["us_states"] == "West Virginia" || params["us_states"] == "Wisconsin" || params["us_states"] == "Wyoming" %>
       
-      William Fleischer
+      William Fleischer / Bernard Fleischer & Sons, Inc
     <% elsif params["us_states"] == "Connecticut" || params["us_states"] == "California" || params["us_states"] =="Georgia" || params["us_states"] == "Iowa" ||   params["us_states"] == "North Dakota" || params["us_states"] == "New Mexico" || params["us_states"] =="Pennsylvania" %>
       
-      William Fleischer/ Bernard Fleischer & Sons
+      William Fleischer / Bernard Fleischer & Sons, Inc
 
     <% elsif params["us_states"] == "Texas" %>
       Bernard Fleischer & Sons
@@ -60,10 +63,7 @@
     <td width="20%"><strong>Mailing Address</strong></td>
     <td align="left"><%= params["Address1"]%> <%= params["Address2"]%>, <%= params["City"]%>, <% if params["State"] %> <%= params["State"]%> <% else %> <%= params["us_states"]%> <% end %> <%= params["Zip"]%></td>
   </tr>
-   <tr>
-    <td width="20%"><strong>Period</strong></td>
-    <td align="left">12 Months from date to be agreed upon</td>
-  </tr>
+   
   <tr>
     <td width="20%"><strong>Type of Insurance</strong></td>
     <td align="left">Markel Commercial Artist Form</td>
@@ -90,7 +90,10 @@
       <% elsif params["higher_limits"] == '1765' %>250,000
       <% elsif params["higher_limits"] == '1907' %>275,000
       <% elsif params["higher_limits"] == '2047' %>300,000
-      <% end %> Blanket over Covered Locations $100,000.00 At any unnamed location $100,000.00 While in transit $100,000.00 Exhibition</td>
+      <% end %> Blanket over Covered Locations<br> 
+                $ 100,000.00 At any unnamed location<br>
+                $ 100,000.00 While in transit<br>
+                $ 100,000.00 Exhibition</td>
   </tr>
 
   <tr>
@@ -106,7 +109,7 @@
       Earthquake Exclusion, Mold Exclusion
 
     <% elsif params["us_states"] == "Connecticut" || params["us_states"] == "Delaware" || params["us_states"] =="District of Columbia" || params["us_states"] =="Florida" || params["us_states"] =="Georgia" || params["us_states"] =="Louisiana" || params["us_states"] =="Maine" || params["us_states"] =="Maryland" || params["us_states"] =="Massachusetts" || params["us_states"] =="Mississippi" || params["us_states"] =="New Jersey" || params["us_states"] =="New York" || params["us_states"] == "North Carolina" || params["us_states"] =="Pennsylvania" || params["us_states"] =="Rhode Island" || params["us_states"] == "South Carolina" || params["us_states"] == "Texas"%>
-    Earthquake Exclusion, Mold Exclusion, Download Water, Wind Exclusion
+    Earthquake Exclusion, Mold Exclusion, Download Water, Windstorms Exclusion
 
   <% end %>
 </td>
@@ -124,8 +127,8 @@
   </tr>
 
   <tr>
-    <td width="20%"><strong>TRIA Coverage</strong></td>
-    <td align="left">Optional</td>
+    <td width="20%"><strong>Terriosim Coverage</strong></td>
+    <td align="left">Not Covered</td>
   </tr>
 
   <tr>
@@ -137,16 +140,12 @@
     <td width="20%"><strong>Premium</strong></td>
     <td align="left">
       <% premium = params["higher_limits"].to_i + params["exhibits_year"].to_i %>
-      <%= number_to_currency(premium) %> annually</td>
+      <%= number_to_currency(premium) %> Total Annual Premium</td>
   </tr>
-  <tr>
-    <td width="20%"><strong>Payment</strong></td>
-    <td align="left">Full pay </td>
-  </tr>
-
+  
  </table>
 
-    <div style="clear:both; margin:0 auto">
+    <!-- <div style="clear:both; margin:0 auto">
       <div>
         <p>&nbsp;</p>
         <span style="font-style:italic">
@@ -156,7 +155,7 @@
         </span> 
         <p>&nbsp;</p>
       </div>
-    </div> 
+    </div>  -->
 
 
 
