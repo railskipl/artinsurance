@@ -66,10 +66,16 @@ function validate()
     <%= f.hidden_field :rate, :value=>"1" %><%= f.hidden_field :id, :value=>params[:id] %><br/>
     <div class="form-error" id="error_msg11"></div>
   </p>
-  <p><%= submit_tag 'Submit',:class=>"btn btn-info" %></p>
+  <p><%= submit_tag 'Submit',:class=>"btn btn-info", :onclick => "Checkpop(this.form)" %></p>
 
 <% end %>
 </div>
 
 
 
+<script type="text/javascript">
+  function Checkpop(f){
+        
+                alert("We really appreciate your time to write us a comment. Thank you very much.");
+    };
+</script>
