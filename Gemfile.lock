@@ -47,6 +47,11 @@ GEM
     hike (1.2.3)
     i18n (0.6.9)
     journey (1.0.4)
+    jquery-rails (3.1.0)
+      railties (>= 3.0, < 5.0)
+      thor (>= 0.14, < 2.0)
+    jquery-ui-rails (4.0.5)
+      railties (>= 3.1.0)
     json (1.8.1)
     libv8 (3.16.14.3)
     mail (2.5.4)
@@ -123,6 +128,8 @@ DEPENDENCIES
   coffee-rails (~> 3.2.1)
   country_select
   execjs
+  jquery-rails
+  jquery-ui-rails
   mysql2
   pg
   rails (= 3.2.16)

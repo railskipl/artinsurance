@@ -1,0 +1,873 @@
+        <%= stylesheet_link_tag "style2.css" %>
+
+        <div class="container">
+
+            <div id="wrapper">
+
+                <h3>Artist Studio, Transport & Exhibition Coverage</h3>
+               
+                <%= form_tag url_for(:controller => 'artists', :action => 'create'), :method => 'post',:id => 'feedbackform' do |f| %>
+
+                <%= javascript_include_tag "facebox.js" %>
+                <%= stylesheet_link_tag "facebox.css" %>
+
+                 
+                <script type="text/javascript">
+                    jQuery(function($){
+                       $("#start_date").datepicker({dateFormat: 'dd-mm-yy',changeMonth: false,changeYear: false, minDate: 1, maxDate: '+2M +1D'})
+                        });
+                </script>
+
+                <script>    
+                    jQuery.noConflict();                     
+                    jQuery(document).ready(function() {
+                    var valuesToSubmit = jQuery('#feedbackform').serialize();
+                    jQuery('#previes123').click(function() {
+                          jQuery.ajax({
+                          type: "POST",
+                          url: "<%= artist_preview_artists_path %>",
+                          data: valuesToSubmit,
+                          });
+                        });
+                     });
+                </script>
+                   
+                   
+                    <div id="slider">
+                        <div class="form-step" >
+
+                        <div class="span6">
+
+                            <div class="row1">
+                                <div class="form-left">Applicable Date<span style="color:red;">* <a class="more" title="" rel="tooltip" href="javascript:void(0);" data-original-title="Your  legal first name as it will appear on the policy" style="float:none"> <strong> ?</strong></a></span></div>
+                                <div class="form-right"><%=text_field_tag 'start_date'%> </div>
+                                <div class="form-error"></div>
+                                
+                            </div>
+
+                            <div class="row1">
+                                <div class="form-left">First Name<span style="color:red;">* <a class="more" title="" rel="tooltip" href="javascript:void(0);" data-original-title="Your  legal first name as it will appear on the policy" style="float:none"> <strong> ?</strong></a></span></div>
+                                <div class="form-right"><%=text_field_tag 'first_name'%> </div>
+                               
+                                <div class="form-error"></div>
+                                
+                            </div>
+
+
+                            <div class="row1">
+                                <div class="form-left">Last Name<span style="color:red;">* <a class="more" title="" rel="tooltip" href="javascript:void(0);" data-original-title="Your  legal last name as it will appear on the policy" style="float:none"> <strong> ?</strong></a></span></div>
+                                <div class="form-right"><%=text_field_tag 'last_name'%> </div>
+                               
+                                <div class="form-error"></div>
+                                
+                            </div>
+
+
+
+                            <div class="row1">
+                            <h4 style="margin: 0px;">Studio Address <a class="more" title="" rel="tooltip" href="javascript:void(0);" data-original-title="This is  where your studio is located,complete address,city,state,zip." style="float:none"> <strong> ?</strong></a></h4>
+                            </div>
+
+                           
+
+                            <div class="row1">
+                                <div class="form-left">Studio Address <span style="color:red;">* </span></div>
+                                <div class="form-right">  <%=text_field_tag 'Studio_Address'%></div>
+                                <div class="form-error"></div>
+                            </div> 
+
+                            <div class="row1">
+                                <div class="form-left">Studio Address 2 </div>
+                                <div class="form-right">  <%=text_field_tag 'Studio_Address2'%></div>
+                                <div class="form-error"></div>
+                            </div> 
+
+                           <div class="row1">
+                                <div class="form-left">City<span style="color:red;">*</span></div>
+                                <div class="form-right"> <%=text_field_tag 'Studio_City'%></div>
+                                <div class="form-error"></div>
+                            </div> 
+
+                            <div class="row1">
+                                <div class="form-left">State <span style="color:red;">*</span></div>
+                                <div class="form-right">
+                                    <select id ="us_states" name="us_states">
+                                      <% us_states.each do |us_states|%>
+                                       <option value="<%=us_states%>" <% if us_states == "Alaska" %>selected<% end %>><%= us_states%></option>
+                                     <%end%>
+                                    </select>
+                                </div>
+                                <div class="form-error"></div>
+                                
+                            </div>
+
+
+                           <div class="row1">
+                                <div class="form-left">Zip Code<span style="color:red;">*</span></div>
+                                <div class="form-right"> <%=text_field_tag 'Zip_Code', nil, placeholder:"xxxxx" %></div>
+                                <div class="form-error"></div>
+                            </div>
+
+
+                             <div class="row1" style="margin-top:20px">
+                                <input type="checkbox" onclick="FillBilling(this.form)" name="billingtoo" style="margin-top:-4px;">
+                                <em>Check this box if Mailing Address and Studio Address are the same.</em>
+                            </div>
+
+                            
+
+
+                        </div>
+
+
+                          <div class="span5">
+
+                            <div class="row1">
+                            <h4 style="margin: 0px;">Mailing Address <a class="more" title="" rel="tooltip" href="javascript:void(0);" data-original-title="This is where all your bills and policies will go to." style="float:none"> <strong> ?</strong></a></h4>
+                            </div>
+
+                            <div class="row1">
+                                <div class="form-left">Address 1<span style="color:red;">*</span></div>
+                                <div class="form-right"> <%=text_field_tag 'Address1'%></div>
+                                <div class="form-error"></div>
+                            </div> 
+
+                            <div class="row1">
+                                <div class="form-left">Address 2</div>
+                                <div class="form-right"> <%=text_field_tag 'Address2'%></div>
+                                <div class="form-error"></div>
+                            </div> 
+
+                            <div class="row1">
+                                <div class="form-left">City<span style="color:red;">*</span></div>
+                                <div class="form-right"> <%=text_field_tag 'City'%></div>
+                                <div class="form-error"></div>
+                            </div> 
+
+
+                            <div class="row1">
+                                <div class="form-left">State<span style="color:red;">*</span></div>
+                                <div class="form-right"> 
+
+                                    <select id ="State" name="State">
+                                      <% us_states.each do |us_states|%>
+                                       <option value="<%=us_states%>" <% if us_states == "Alaska" %>selected<% end %>><%= us_states%></option>
+                                     <%end%>
+                                    </select>
+                                </div>
+                                <div class="form-error"></div>
+                            </div>
+
+                            <div class="row1">
+                                <div class="form-left"> Zip Code<span style="color:red;">*</span></div>
+                                <div class="form-right"> <%=text_field_tag 'Zip', nil, placeholder:"xxxxx" %></div>
+                                <div class="form-error"></div>
+                            </div>
+
+                            <div class="row1">
+                                <div class="form-left">Phone Number<span style="color:red;">*<a class="more" title="" rel="tooltip" href="javascript:void(0);" data-original-title="Best number to call you" style="float:none"> <strong> ?</strong></a></span></div>
+                                <div class="form-right">  <%=text_field_tag 'Phone_Number',nil,placeholder:"xxx xxx-xxxx" %></div>
+                                
+                                <div class="form-error"></div>
+                            </div>
+
+
+                            <div class="row1">
+                                <div class="form-left">Fax<a class="more" title="" rel="tooltip" href="javascript:void(0);" data-original-title="If you have a fax number?" style="float:none"> <strong> ?</strong></a></div>
+                                <div class="form-right"> <%=text_field_tag 'Fax',nil,placeholder:"xxx xxx-xxxx"%></div>
+                                <div class="form-error"></div>
+                            </div>
+
+
+                             <div class="row1">
+                                <div class="form-left">Email Address<span style="color:red;">*<a class="more" title="" rel="tooltip" href="javascript:void(0);" data-original-title="Best email address" style="float:none"> <strong> ?</strong></a></span></div>
+                                <div class="form-right"> <%=text_field_tag 'Email_address'%></div>
+                                <div class="form-error"></div>
+                            </div>
+
+
+                             <div class="row1">
+                                <div class="form-left">Re-type Email<span style="color:red;">*</span></div>
+                                <div class="form-right"> <%=text_field_tag 'Retype_EMail'%></div>
+                                <div class="form-error"></div>
+
+                            </div>
+
+
+
+
+                          </div>
+
+                        </div>
+
+
+
+
+
+                        <div class="form-step" >
+
+                        <div class="span6">
+
+                            <h2 style="font-size:23.5px!important;"> Limits of Insurance<a class="more" title="" rel="tooltip" href="javascript:void(0);" data-original-title="Valuation:Finished work, Selling price less 30%,full selling price if sold or under contract, worked in progresse value on a pro data of completed work, property(canvas,paint,supplies)  not marked for sale, at your cost" style="float:none"> <strong> ?</strong></a></h2>
+
+
+                            <div class="row1">
+                                <div class="form-left">Limit of Studio Insurance <span style="color:red;">* <a class="more" title="" rel="tooltip" href="javascript:void(0);" data-original-title="Covered Property: Works of art by you being held for sale or sold but not delivered or removed, your property of other in your care, custody or control, and for which you may be liable or assume liability prior to losss or damage." style="float:none"> <strong> ?</strong></a></span></div>
+                                <div class="form-right">
+                                   <%= select_tag(:higher_limits, options_for_select([ ['$100,000 - (Premium:$1,000)',1000], ['$125,000 - (Premium:$1,062)',1062], ['$150,000 - (Premium:$1,203)',1203], ['$175,000 - (Premium:$1,344)',1344], ['$200,000 - (Premium:$1,484)',1484], ['$225,000 - (Premium:$1,625)',1625], ['$250,000 - Premium : $1,765',1765],['$275,000 - Premium : $1,907',1907],['$300,000 - (Premium:$2,047)',2047]],selected: :higher_limits )) %>
+                                </div>
+                                <div class="form-error"></div>
+                            </div>
+
+
+
+                            <div class="row1">
+                                <div class="form-left">Limit of Insurance at Other Location <span style="color:red;">*<a class="more" title="" rel="tooltip" href="javascript:void(0);" data-original-title="Such as storage unit, warehouse, other studios, galleries or venues" style="float:none"> <strong> ?</strong></a></span></div>
+                                <div class="form-right">
+                                    <div class="form-right"> 
+                                        
+
+                                        <%=text_field_tag 'limit_of_Insurance_at_Other_Location',nil,value:'$100,000', :onkeypress=>"limit_of_Insurance(this);", :readonly => true %></div>
+                                   </br>
+                                </div>
+                                <div class="form-error"></div>
+                            </div>
+
+
+                            <div class="row1">
+                                <div class="form-left">Limit of Insurance While in Transit <span style="color:red;">*<a class="more" title="" rel="tooltip" href="javascript:void(0);" data-original-title="Shipments by mail unless by registered first class mail or parcel post provided however, such shipments by parcel post shall not exceed the sum of $1,000 in value nor the sum of $25,000 in value by register first class mail." style="float:none"> <strong> ?</strong></a></span></div>
+                                <div class="form-right">
+
+                                    <div class="form-right"> <%=text_field_tag 'limit_of_Insurance_While_in_Transit',nil,value:'$100,000', :onkeypress=>"limit_of_Insurance(this);", :readonly => true %></div>
+                                   </br>
+                                </div>
+                                
+                                <div class="form-error"></div>
+                            </div> 
+
+
+
+                            <div class="row1">
+
+                                <div class="form-left">Policy Deductible<span style="color:red;">*<a class="more" title="" rel="tooltip" href="javascript:void(0);" data-original-title="This is a fixed policy deductable" style="float:none"> <strong> ?</strong></a></span></div>
+                                <div class="form-right"><%=text_field_tag 'Policy_Deductable',nil,value: '$1,000', :readonly=> true %>
+                                    
+                                </div>
+
+                                <div class="form-error"></div>
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="span5">
+                         
+
+
+                        <h2 style="font-size:23.5px!important;">Genre You Work <span style="font-size:11px">(Check all that apply)</span><span style="color:red;">*</span> <a class="more" title="" rel="tooltip" href="javascript:void(0);" data-original-title="Which Geners's do you work in-click all that apply"><strong> ?</strong></a></h2>
+
+                             
+                            <div class="row2">
+                                <div class="form-left">Paintings</div>
+                                <div class="form-right"><input type="checkbox" name="paintings" id="paintings" value="Paintings"></div>
+                                 
+                             </div> 
+
+                             <div class="row2">
+                                <div class="form-left">Furniture</div>
+                                <div class="form-right"><input type="checkbox" name="purniture" id="purniture" value="Furniture"></div>
+                                
+                            </div>
+                        
+                          
+                            <div class="row2">
+                                <div class="form-left">Drawings</div>
+                                <div class="form-right"><input type="checkbox" name="drawings" id="drawings" value="Drawings"></div>
+                                 
+                             </div>
+
+                             <div class="row2">
+                                <div class="form-left">Tapestries, Rugs, Fabrics</div>
+                                <div class="form-right"><input type="checkbox" name="fabrics" id="fabrics" value="Tapestries, Rugs, Fabrics"></div>
+                                
+                            </div>
+
+
+                            
+
+                             <div class="row2">
+                                <div class="form-left">Photographs</div>
+                                <div class="form-right"><input type="checkbox" name="photographs" id="photographs" value="Photographs"></div>
+                                
+                              </div>
+
+
+                              <div class="row2">
+                                <div class="form-left">Mix Media</div>
+                                <div class="form-right"><input type="checkbox" name="jewelry" id="jewelry" value="Mix Media"></div>
+                                                              
+                            </div>
+
+                             
+
+                            <div class="row2">
+
+                                <div class="form-left">Sculptures – Fragile<a class="more" title="" rel="tooltip" href="javascript:void(0);" data-original-title="Policy Excludes: Breakage of glass or article of a brittle nature, unless caused of fire,windstrome,flood,explosion,malicious damage or accident to the conveying vehicle " style="float:none"> <strong> ?</strong></a></div>
+                                <div class="form-right"><input type="checkbox" name="sculptures" id="sculptures" value="Sculptures – Fragile"></div>
+
+                                
+                            </div>
+
+
+                             <div class="row2">
+                                <div class="form-left">Silver</div>
+                                <div class="form-right"><input type="checkbox" name="silver" id="silver" value="Silver"></div>
+                                                             
+                            </div>
+
+                            
+
+                            <div class="row2">
+                                <div class="form-left">Sculptures – Non Fragile</div>
+                                <div class="form-right"><input type="checkbox" name="non_Fragile" id="non_Fragile" value="Sculptures – Non Fragile"></div>
+                                
+                             </div>
+
+                            <div class="row2">
+                                <div class="form-left">Breakable (glass, ceramics, etc.)</div>
+                                <div class="form-right"><input type="checkbox" name="breakable" id="breakable" value="Breakable (glass, ceramics, etc.)"></div>
+                                                       
+                            </div>
+
+                            <div class="row2">
+                                <div class="form-left">Other</div>
+                                <div class="form-right"><input type="checkbox" name="other" id="other" value="Other"></div>
+                                <div class="form-error"></div>  
+                                <div id="txtAge" style="display:none" class="form-left">
+                                    <%= text_field_tag 'other_value' %>
+                                </div>                    
+                            </div>
+
+
+                        </div>
+
+                            
+    
+
+                        </div>
+
+
+
+                        <div class="form-step">
+
+
+                          <div class="span6">
+
+                         
+                             <div class="row2">
+                             <div class="form-left">
+                            Studio is located in a <a class="more" title="" rel="tooltip" href="javascript:void(0);" data-original-title="What is the construction of the building your studio is in?" style="float:none"> <strong> ?</strong></a>
+
+                            </div>
+                            <div class="form-right">
+                                <select id="prior_year" name="studio">
+
+                                           <% studio.each do |studio|%>
+                                             <option value="<%=studio%>"><%= studio%></option>
+                                           <%end%>
+                                </select>
+                                </div>
+                                </div>
+                                                            
+                                      
+
+                             <div class="row2">
+                                <div class="form-left">Year Built<a class="more" title="" rel="tooltip" href="javascript:void(0);" data-original-title="Best estimate" style="float:none"> <strong> ?</strong></a></div>
+                                 <div class="form-left">
+                                     
+                                  Pre 1950<input type="radio" id="year_built" name="year_built" value="Pre 1950">&nbsp;&nbsp;
+                                
+                                  After 1950 <input type="radio" id="year_built" name="year_built" value="After 1950">
+
+                                 </div>
+
+                               
+                                    
+                                       
+                                        <div class="form-error"></div> 
+                                    </div>
+
+
+
+
+
+                             <div class="row2">
+                                <div class="form-left">Studio & storage of art are in a basement<span style="color:red;">*</span>  <a class="more" title="" rel="tooltip" href="javascript:void(0);" data-original-title="Stored or have a working area below ground" style="float:none"> <strong> ?</strong></a></div>
+                                <div class="form-right">
+                                     <input type="radio" id="Studio" onclick="Checkpop(this.form)" name="Studio & storage of art are in a basement" value="Yes">&nbsp;&nbsp;Yes
+                                     <input type="radio" id="Studio" name="Studio & storage of art are in a basement" value="No">&nbsp;&nbsp;No
+                                     
+                                </div>                               
+ 
+                                <div class="form-error"></div>                              
+
+                              </div>   
+
+
+
+                            <div class="row2">
+                                <div class="form-left">Is there a history of a back-up drain and/or sewer?<span style="color:red;">*</span></div>
+                                <div class="form-right">
+                                     <input type="radio" id="rsales" onclick="Checkpop(this.form)" name="Is there a history of a back-up drain and/or sewer?" value="Yes">&nbsp;&nbsp;Yes
+                                     <input type="radio" id="rsales" name="Is there a history of a back-up drain and/or sewer?" value="No">&nbsp;&nbsp;No
+                                     
+                                </div>
+                                <div class="form-error"></div>
+                            </div>   
+
+
+
+                            <div class="row2">
+                                <div class="form-left">If yes works stored on skids or shelf?<span style="color:red;">*</span></div>
+                                <div class="form-right">
+                                     <input type="radio" id="stored_on_skits" name="If yes works stored on skits or shelf?" value="Yes">&nbsp;&nbsp;Yes
+                                     <input type="radio" id="stored_on_skits" name="If yes works stored on skits or shelf?" value="No">&nbsp;&nbsp;No
+                                     
+                                </div>
+                                <div class="form-error"></div>
+                            </div> 
+
+                            <h2 style="font-size:23.5px!important;">Fire Protection <a class="more" title="" rel="tooltip" href="javascript:void(0);" data-original-title="in the studio or in the hall ways?" style="float:none"> <strong> ?</strong></a></h2>
+                            <div class="row1">
+
+
+                                <div class="form-left" style="margin-botom:10px">Is there an automatic sprinkler system on premises?<span style="color:red;">*</span></div>
+                                <div class="form-right">
+                                    <input type="radio" id="automatic_sprinkler" name="Is there an automatic sprinkler system on premises?" value="Yes">&nbsp;&nbsp;Yes
+                                    <input type="radio" id="automatic_sprinkler" name="Is there an automatic sprinkler system on premises?" value="No">&nbsp;&nbsp;No
+                                    
+                                </div>
+                                <div class="form-error"></div>
+                            </div>
+
+                          </div>
+
+
+
+
+                           <div class="span5">
+
+                            <h2 style="font-size:23.5px!important;"> Security <span style="color:red;">*</span> <a class="more" title="" rel="tooltip" href="javascript:void(0);" data-original-title="How secure is your studio? must check at least one." style="float:none"> <strong> ?</strong></a> </h2>
+                            <div class="row1">
+                                <div class="form-left">Deadbolts</div>
+                                <div class="form-right"><input type="checkbox" name="deadbolts" id="deadbolts" value="Deadbolts"></div>
+                                
+                            </div>
+                            <div class="row1">
+                                <div class="form-left">Alarm system – rings to central base</div>
+                                <div class="form-right"><input type="checkbox" name="alarm" id="alarm" value="Alarm system – rings to central base"></div>
+                                
+                               
+                            </div>
+                        
+                          
+                            <div class="row1">
+                                <div class="form-left">Only local alarm system </div>
+                                <div class="form-right"><input type="checkbox" name="local_alaram" id="local_alaram" value="Only local alarm system"></div>
+                                <div class="form-error"></div>
+                            </div>
+                            <div class="row1">
+                                <div class="form-left">Cameras </div>
+                                <div class="form-right"><input type="checkbox" name="cameras" id="cameras" value="Cameras"></div>
+                                
+                               
+                            </div>
+                             <div class="row1">
+                                <div class="form-left">Gates</div>
+                                <div class="form-right"><input type="checkbox" name="gates" id="gates" value="Gates"></div>
+                                
+                               
+                            </div>
+                             <div class="row1">
+                                <div class="form-left">Watchmen/guards/ doorman</div>
+                                <div class="form-right"><input type="checkbox" name="watchmen" id="watchmen" value="Watchmen/guards/ doorman"></div>
+                                
+                            </div>
+
+                            <div class="row1">
+                                <div class="form-left">No security </div>
+                                <div class="form-right"><input type="checkbox" name="no_security" id="no_security" value="No security"></div>
+                                <div class="form-error"></div>
+                            </div>
+
+                           </div>
+
+                         </div>
+
+
+
+
+
+
+
+                          <div class="form-step">
+
+                          <div class="span6">
+
+
+
+                          <h2 style="font-size:23.5px!important;"> Exposure</h2>
+                             <div class="row1">
+                                <div class="form-left">What is the average value of finished art work<span style="color:red;">*<a class="more" title="" rel="tooltip" href="javascript:void(0);" data-original-title="What it would sell for at a Gallery?" style="float:none"> <strong> ?</strong></a></span></div>
+                                <div class="form-right">
+                                      <select id="finished_art_work" name="finished_art_work">
+                                     <% finished_art_work.each do |work|%>
+                                       <option value="<%=work%>"><%= work%></option>
+                                     <%end%>
+                                      </select>
+                                     
+                                </div>
+                               <div class="form-error"></div>
+                            </div>
+
+
+                            <div class="row1">
+                                <div class="form-left">What is the maximum value of single item<span style="color:red;">*</span> <a class="more" title="" rel="tooltip" href="javascript:void(0);" data-original-title="your most expensive work at gallery price" style="float:none"> <strong> ?</strong></a></div>
+                                <div class="form-right">
+                                      <select id="single_item" name="single_item">
+                                        <% single_item.each do |single_item|%>
+                                        <option value="<%=single_item%>"><%= single_item%></option>
+                                        <%end%>
+                                       </select>
+                                             
+                                </div>
+                                <div class="form-error"></div>                               
+                            </div>
+
+
+                            <div class="row1">
+                                <div class="form-left">Do you keep a detailed and itemized inventory<span style="color:red;">*</span> <a class="more" title="" rel="tooltip" href="javascript:void(0);" data-original-title="spreadsheets,including,Size,Medium,year,title and pictures if you are really thorough." style="float:none"> <strong> ?</strong></a></div>
+                                <div class="form-right">
+                                     <input type="radio" id="detailed_itemized" name="Do you keep a detailed and itemized?" value="Yes">&nbsp;&nbsp;Yes
+                                    <input type="radio" id="detailed_itemized" name="Do you keep a detailed and itemized?" value="No">&nbsp;&nbsp;No
+                                    
+                                </div>
+                                <div class="form-error"></div> 
+                            </div>
+                                
+                               
+
+
+                             
+
+
+                             <div class="row1">
+                                <div class="form-left">Do you keep a record of sales<span style="color:red;">*</span> <a class="more" title="" rel="tooltip" href="javascript:void(0);" data-original-title="important in case of loss of a similar work to help prove the valuation of the claim" style="float:none"> <strong> ?</strong></a> </div>
+                                <div class="form-right">
+                                     <input type="radio" id="record_sales" name="Do you keep a record of sales?" value="Yes">&nbsp;&nbsp;Yes
+                                     <input type="radio" id="record_sales" name="Do you keep a record of sales?" value="No">&nbsp;&nbsp;No
+                                     
+                                </div>
+                                <div class="form-error"></div> 
+                            </div>
+                           
+                           </div>
+
+
+                           <div class="span5">
+
+                           <div class="row1">
+
+                                <div class="form-left">When was the last date of inventory<a class="more" title="" rel="tooltip" href="javascript:void(0);" data-original-title="When was the last date of inventory? " style="float:none"> <strong> ?</strong></a></div>
+
+                                <div class="form-right" style="width: 195px!important">  
+
+
+                                    <%= date_select("card_signup", "dob", { :start_year => DateTime.now.year, :end_year => 2010, :discard_day => true, default: { month: 1, year:2010 }}, :style => "width: 95px")%>
+                                         
+                                     </div>
+
+
+                                <div class="form-error"></div>
+                            </div>
+
+
+                            <div class="row1">
+                                <div class="form-left">Do you maintain a duplicate inventory off-site<span style="color:red;">*</span> <a class="more" title="" rel="tooltip" href="javascript:void(0);" data-original-title="Just in case,its always nice to have a back up.this is put here as a good practice reminder" style="float:none"> <strong> ?</strong></a></div>
+                                <div class="form-right">
+                                    <input type="radio" id="inventory_off" name="Do you maintain a duplicate inventory off-site?" value="Yes">&nbsp;&nbsp;Yes
+                                    <input type="radio" id="inventory_off" name="Do you maintain a duplicate inventory off-site?" value="No">&nbsp;&nbsp;No
+                                    
+                                </div> 
+                                <div class="form-error"></div>                              
+                            </div>
+
+
+                              <div class="row1">
+                                <div class="form-left">Number of exhibits a year<span style="color:red;">*<a class="more" title="" rel="tooltip" href="javascript:void(0);" data-original-title="After 5 there is $25 charge for each additional" style="float:none"> <strong> ?</strong></a></span></div>
+                                <div class="form-right">
+                                <%= select_tag(:exhibits_year, options_for_select([['5 or less', 0], ['6 - $25', 25], ['7 - $50', 50], ['8 - $75', 75], ['9 - $100', 100], ['10 - $125', 125], ['11 - $150', 150], ['12 - $175', 175],['13 - $200', 200],['14 - $225', 225],['15 - $250', 250]],selected: :exhibits_year )) %>
+                                 
+                                </div>
+                                <div class="form-error"></div>
+                              </div>
+                          </div>
+
+                          </div>
+
+
+                          
+
+                          <div class="form-step">
+
+                          <div class="span6">
+
+                          <div class="row1">
+                                <span style="font-size:19px!important;">Annual Sales</span> <br/>
+                                <div class="form-left">Current year <span style="color:red;">* <a class="more" title="" rel="tooltip" href="javascript:void(0);" data-original-title="What is your estimate net sales for this calender year?" style="float:none"> <strong> ?</strong></a></span></div>
+                                <div class="form-right">
+                                   <select id="current_year" name="current_year">
+                                     <% current_year.each do |current_year|%>
+                                       <option value="<%=current_year%>"><%= current_year%></option>
+                                     <%end%>
+                                    </select>
+                                </div>
+                                <div class="form-error"></div>
+                            </div>
+
+
+                            <div class="row1">
+                               <div class="form-left">Prior year <span style="color:red;">* <a class="more" title="" rel="tooltip" href="javascript:void(0);" data-original-title="Your Net sales last calendar year" style="float:none"> <strong> ?</strong></a></span></div>
+                                <div class="form-right">
+                                   <select id="prior_year" name="prior_year">
+                                   <% prior_year.each do |prior_year|%>
+                                     <option value="<%=prior_year%>"><%= prior_year%></option>
+                                   <%end%>
+                                     </select>
+                                </div>
+                                <div class="form-error"></div>
+                            </div>
+
+
+                            <div class="row1">
+
+                                <div class="form-left">Name of current insurance</br> carrier  <a class="more" title="" rel="tooltip" href="javascript:void(0);" data-original-title="If you have one." style="float:none"> <strong> ?</strong></a></div>
+
+                                <div class="form-right">
+                                   <%=text_field_tag 'Name of current insurance carrier',nil,placeholder:"Name of current insurance carrier", :style=>"width:215px"%>
+                                     </select>
+                                </div>
+                                <div class="form-error"></div>
+                            </div>
+                            
+                            <div class="row1">
+                                <span style="font-size:19px!important;">Lost history (For last 5 years)</span> <a class="more" title="" rel="tooltip" href="javascript:void(0);" data-original-title="explain what happened and what changed so it would not occur again" style="float:none"> <strong> ?</strong></a> &nbsp;&nbsp;&nbsp;&nbsp;
+                                 <a href="javascript:void(0);" onclick="hideStuff('loss', 'show', this); return false;" id="hide">None</a>
+                                 <a href="javascript:void(0);" onclick="showStuff('loss', 'hide', this); return false;" style="display: none;" id="show">show</a>
+                            </div>
+
+                            <div id="loss">
+                                <div class="row1">
+                                    <div class="form-left">Description Of Loss</div>
+                                    <div class="form-right"><%=text_field_tag 'Description Of Loss'%></div>
+                                    <div class="form-error"></div>
+                                </div>
+
+                                <div class="row1">
+                                    <div class="form-left">Amount Of Loss</div>
+                                    <div class="form-right"> <%=text_field_tag 'Amount Of Loss'%></div>
+                                    <div class="form-error"></div>
+                                </div> 
+
+                                 
+
+
+                                <div class="row1">
+                                    <div class="form-left">Date </div>
+
+
+                                    <div class="form-right" style="width: 244px !important">  <%= date_select("card_lost", "lost_date", { :end_year => DateTime.now.year + 10, :start_year => DateTime.now.year - 200},:style => "width: 78px;")%>
+                                             
+                                         </div>
+
+
+                                    <div class="form-error"></div>
+                                </div>
+                                <h5><a href="javascript:void(0);" id="addScnt">Add Another Lost History</a></h>
+
+                                <div id="p_scents">
+                                    <p>
+                                        <label for="p_scnts"></label>
+                                    </p>
+                                </div>
+                            </div>
+
+
+
+                            <div class="row1_new" id="sbtn" style="display: none;">
+                                <div class="form-left">
+                                    <%= link_to "Preview", "javascript:void(0);", :id=>"previes123", :class=>"sbt-btn previewbtn" %>                                    
+                                </div>
+
+                                <div class="form-right">
+                                    
+                                    <div class="actions" >
+
+                                    <%= submit_tag 'Submit',:class => "sbt-btn", :style=>"width: 125px; margin: 0px; bottom: -10px; border:none; position: relative; top: 6px;}" %>
+                                
+                                     </div>
+                                </div>
+
+
+                                
+                               
+                            </div>
+                                
+                            </div>
+
+
+                          
+                         </div>
+                       </div>
+                            
+
+           
+
+
+                            
+            </div>
+             <% end %>
+        </div>
+      
+    </div>
+
+
+
+
+
+    <script>
+
+  
+    var dropdown2 = document.getElementById("us_states");
+    dropdown2.onchange = function(event){
+        if(dropdown2.value=="Alabama" || dropdown2.value=="Missouri"  || dropdown2.value=="Montana" || dropdown2.value=="Oklahoma"  || dropdown2.value==""){
+            confirm("This program exclude flood and windstorms in your area. Do you need more information contact our office.")
+                var myindex  = dropdown2.selectedIndex;
+                dropdown2.options[myindex].value = '';    
+        }
+    }
+</script>   
+
+
+<script type="text/javascript">
+function hideStuff(id,div1, btn) {
+    document.getElementById(id).style.display = 'none';
+    // hide the link
+    btn.style.display = 'none';
+    document.getElementById(div1).style.display = 'block';
+}
+
+function showStuff(id,div2, btn) {
+    document.getElementById(id).style.display = 'block';
+    // hide the link
+    btn.style.display = 'none';
+    document.getElementById(div2).style.display = 'block';
+}
+
+
+function limit_of_Insurance(selBox) {
+    
+    if(selBox.value != '$100,000')
+    {
+        alert("More coverage options contact our office.");
+        document.getElementById('limit_of_Insurance_at_Other_Location').value = '$100,000';
+        document.getElementById('limit_of_Insurance_While_in_Transit').value = '$100,000';
+    }
+}
+
+function FillBilling(f) {
+  if(f.billingtoo.checked == true) {
+    f.Address1.value = f.Studio_Address.value;
+    f.Address1.readOnly = true;
+    f.Address2.value = f.Studio_Address2.value;
+    f.Address2.readOnly = true;
+    f.City.value = f.Studio_City.value;
+    f.City.readOnly = true;
+    f.State.value = f.us_states.value;
+    f.State.disabled = true;
+    f.Zip.value = f.Zip_Code.value;
+    f.Zip.readOnly = true;
+  }
+  if(f.billingtoo.checked == false) {
+    f.Address1.value = '';
+    f.Address1.readOnly = false;
+    f.Address2.value = '';
+    f.Address2.readOnly = false;
+    f.City.value = '';
+    f.City.readOnly = false;
+    f.State.value = '';
+    f.State.disabled = false;
+    f.Zip.value = '';
+    f.Zip.readOnly = false;
+  }
+}
+
+</script>
+
+
+
+<script type="text/javascript">
+   
+    
+    function Checkpop(f){
+        var a = document.getElementById('Studio').checked
+        var b = document.getElementById('rsales').checked
+
+
+        if(a == true && b == true)
+            {
+                alert("You will not be able to bind coverage, application will be sent to company for approval.");
+            }
+    };
+    
+</script>
+
+
+<script type='text/javascript'>//<![CDATA[ 
+jQuery(function() {
+        var scntDiv = $('#p_scents');
+        var i = $('#p_scents p').size();
+        
+            $('#addScnt').on('click', function() {
+                alert(i);
+                if(i > 2)
+
+            {
+
+                alert("You will not be able to bind coverage, application will be sent to company for approval.");
+            } 
+            
+            else 
+            {
+                $('<p><label for="p_scnts">Description Of Loss&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" id="p_scnt_' + i +'" size="20" name="DescriptionOfLoss_' + i +'" value="" placeholder="Input Value" /></label><label for="p_scnts">Amount Of Loss&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" id="p_scnt_' + i +'" size="20" name="AmountOfLoss_' + i +'" value="" placeholder="Input Value" /></label><label for="p_scnts">Date&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" id="p_scnt_' + i +'" size="20" name="Date_' + i +'" value="" placeholder="Input Value" /></label> <label for="p_scnts"><input type="hidden" id="p_scnt_' + i +'" size="20" name="limit" value='+ i +'  placeholder="Input Value" /></label><a href="javascript:void(0);" id="remScnt" onclick="removeMe('+ i +')">Remove</a></p>').appendTo(scntDiv);
+                i++;
+                return false;
+            }
+        });
+        
+        removeMe = function(id){
+         
+        if( i > 1 ) {
+           $('#p_scnt_'+id).parents('p').remove();
+           
+            i--;
+        }
+        return false;
+    }
+});
+
+ 
+
+</script>
+

@@ -156,7 +156,7 @@
             var step1_validation = function(){
 
                 var err = 0;
-               
+                
                 var userinput1 = $('#Email_address').val();
                 var userinput2 = $('#Retype_EMail').val();
                 var userinput3 = $('#Phone_Number').val();
@@ -168,6 +168,13 @@
                 var pattern1 = /^[(]{0,1}[0-9]{3}[)\.\- ]{0,1}[0-9]{3}[\.\- ]{0,1}[0-9]{4}$/;
                 var zip_reg = /^[0-9]{5}?$/;
                 
+                
+
+                if($('#start_date').val() == ''){
+                    $('#start_date').parent().parent().find('.form-error').html("Please enter applicable date.");
+                    err++;
+                } 
+
                 if($('#first_name').val() == ''){
                     $('#first_name').parent().parent().find('.form-error').html("Please enter first name.");
                     err++;

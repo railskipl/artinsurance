@@ -1,6 +1,6 @@
 class SubscriptionsController < ApplicationController
-
-	def new
+  
+  def new
     @subscription = Subscription.new(:token => params[:token], :price => params[:price],)
     if params[:PayerID]
       @subscription.price = params[:price]
@@ -10,7 +10,6 @@ class SubscriptionsController < ApplicationController
   end
 
 def create
-
       if params[:subscription][:paypal_payment_token].present?
        @subscription = Subscription.new(params[:subscription])
       else
