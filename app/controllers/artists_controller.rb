@@ -99,18 +99,16 @@ class ArtistsController < ApplicationController
            "Amount Of Loss2" => params[:"Amount Of Loss"],
            "Date2" => "#{params[:card_lost][:"lost_date(12)"]} - #{params[:card_lost][:"lost_date(22)"]} - #{params[:card_lost][:"lost_date(32)"]}" ,
            "paintings" => params[:paintings],
-           "purniture" => params[:purniture],
+           "furniture" => params[:furniture],
            "drawings" => params[:drawings],
            "fabrics" => params[:fabrics],
            "photographs" => params[:photographs],
            "jewelry" => params[:jewelry],
            "sculptures" => params[:sculptures],
-           "silver" => params[:silver],
            "non_Fragile" => params[:non_Fragile],
            "breakable" => params[:breakable],
            "other" => params[:other],
-           "pre1950" => params[:pre1950],
-           "after1950" => params[:after1950],
+           "pre1950" => params[:year_built],
            "Studio_&_storage_of_art_are_in_a_basement" => params[:"Studio & storage of art are in a basement"],
            "Is_there_history_of_back_up_drain" => params[:"Is there a history of a back-up drain and/or sewer?"],
            "stored_on_skits_or_shelf" => params[:"If yes works stored on skits or shelf?"],
@@ -132,7 +130,7 @@ class ArtistsController < ApplicationController
          @email = params[:Email_address]
          session[:email] = @email
          session[:grades] = @grades 
-
+  
       respond_to do |format|
 
         
@@ -172,10 +170,6 @@ class ArtistsController < ApplicationController
 
   def artist_preview
     @grades = params
-  end
-
-  def print_page
-    raise params.inspect
   end
 
   # PUT /artists/1

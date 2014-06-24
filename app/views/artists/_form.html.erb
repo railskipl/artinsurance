@@ -94,7 +94,10 @@
                                 <div class="form-right">
                                     <select id ="us_states" name="us_states">
                                       <% us_states.each do |us_states|%>
-                                       <option value="<%=us_states%>" <% if us_states == "Alaska" %>selected<% end %>><%= us_states%></option>
+                                       <option value="<%=us_states%>">
+                                            <% if us_states == "Alaska" %>selected<% end %>
+                                            <%= us_states%>
+                                       </option>
                                      <%end%>
                                     </select>
                                 </div>
@@ -151,8 +154,11 @@
                                 <div class="form-right"> 
 
                                     <select id ="State" name="State">
-                                      <% us_states.each do |us_states|%>
-                                       <option value="<%=us_states%>" <% if us_states == "Alaska" %>selected<% end %>><%= us_states%></option>
+                                      <% us_states1.each do |us_states1|%>
+                                        <option value="<%=us_states%>" >
+                                            <% if us_states1 == "Alaska" %>selected<% end %>
+                                            <%= us_states1 %>
+                                        </option>
                                      <%end%>
                                     </select>
                                 </div>
@@ -277,7 +283,7 @@
 
                              <div class="row2">
                                 <div class="form-left">Furniture</div>
-                                <div class="form-right"><input type="checkbox" name="purniture" id="purniture" value="Furniture"></div>
+                                <div class="form-right"><input type="checkbox" name="furniture" id="furniture" value="Furniture"></div>
                                 
                             </div>
                         
