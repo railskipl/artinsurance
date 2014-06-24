@@ -1,17 +1,24 @@
+<div id="nav">
+	<p>
+	    <a href="#" onclick="print_preview(); return false;">Print this page</a>
+    </p>
+</div>
+
+
 <link href="/assets/standard-style.css" rel="stylesheet" type="text/css" />
 <link rel="alternate stylesheet" type="text/css" href="/assets/print-preview.css" media="screen" title="Print Preview" />
-<link rel="stylesheet" type="text/css" href="assets/print.css" media="print" />
+<link rel="stylesheet" type="text/css" href="/assets/print.css" media="print" />
 <script type="text/javascript" src="/assets/print.js"></script>
 
 <style type="text/css">
   
   .left { background: none; border: medium none; min-height: 0; padding: 0; }
-  .right{ margin:0 15px 20px 20px; width:auto; float:right; text-align:center; font-family:"Times New Roman", Times, serif; font-size:15px; color:#000000}
+  .right{ margin:0 15px 4px 20px; width:auto; float:right; text-align:center; font-family:"Times New Roman", Times, serif; font-size:15px; color:#000000}
   </style>
 
-<div class="titleBar dragonControl"><span class="title">Preview</span></div>
-<div class="dialog-content">
-<%= link_to "Print this page",page_prints_pageprint_path(params), :target => "_blank" %>
+
+<div class="dialog-content1">
+
   <div id="header">
     <div>
       
@@ -28,10 +35,10 @@
         <span style="font-style:italic">
         <p> QUOTE</p>
         </span> 
-        <p>&nbsp;</p>
       </div>
     </div> 
  <div id="contentt">
+ 
  <table width="100%">
 
   <tr>
@@ -151,18 +158,6 @@
   
  </table>
   </div>
-    <!-- <div style="clear:both; margin:0 auto">
-      <div>
-        <p>&nbsp;</p>
-        <span style="font-style:italic">
-        <p> This proposal may differ from coverage requested in applications or other communications sent to us during the underwriting process.  Any amendments, coverage additions or deletions or any other changes to the coverages  outlined in this proposal can affect final premiums.  All taxes and fees included in premium charges are estimated and may vary at issuance.</p>
-
-        <p>It is your duty to disclose all material facts to Markel underwriters prior to inception of the policy, and to keep them advised of any such facts or changes to such facts throughout the currency of the policy, and upon renewal of the policy.  All material information concerning the risk including any loss or claim statistics should be accurate and kept up to date at all times.  A material fact is a fact which may influence an underwriter’s judgment in their assessment of a risk.  If you are in doubt as to whether a fact is material, we recommend that it be disclosed.  Failure to disclose material fact may entitle underwriters to avoid the policy from inception.</p>
-        </span> 
-        <p>&nbsp;</p>
-      </div>
-    </div>  -->
-
-
+    
 
 </div>

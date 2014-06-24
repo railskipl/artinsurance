@@ -90,3 +90,29 @@ select, textarea, input[type="text"], input[type="password"], input[type="dateti
 
 #card_signup_dob_1i { width: 80px !important;}
 #card_signup_dob_2i { width: 108px !important;}
+
+.dialog-content1 {
+    /*float: left;*/
+    height: auto;
+    padding: 0px 160px;
+    width: 800px;
+}
+
+#contentt a:link, 
+#contentt a:visited { 
+    color: #520; 
+    background: transparent; 
+    font-weight: bold; 
+    text-decoration: underline; 
+}
+    
+#contentt a:link:after, 
+#contentt a:visited:after { 
+    content: " (" attr(href) ") "; 
+    font-size: 90%; 
+
+}
+
+#contentt a[href^="/"]:after { 
+    content: " (" attr(href) ") "; 
+}

@@ -174,6 +174,9 @@ class ArtistsController < ApplicationController
     @grades = params
   end
 
+  def print_page
+    raise params.inspect
+  end
 
   # PUT /artists/1
   # PUT /artists/1.json
@@ -194,7 +197,6 @@ class ArtistsController < ApplicationController
   
 def preview
   @artist = Artist.find(params[:id])
-  
 end
 
   # DELETE /artists/1
