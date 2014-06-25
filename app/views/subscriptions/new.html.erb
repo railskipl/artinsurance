@@ -38,7 +38,7 @@
   </div>  
 
   <div class="field">
-    <%= f.label :email, "Addition Email" %>
+    <%= f.label :email, "Additional Email" %>
     <%= text_field_tag :addition_email %>
   </div> 
 
@@ -50,7 +50,7 @@
 
   <div class="field">
       <%= label_tag :card_number, "Credit Card Number " %>
-      <%= text_field_tag :card_number, nil, name: nil %>
+      <%= text_field_tag :card_number, nil,:autocomplete => "off", name: nil %>
   </div>
   <div class="field">
       <%= label_tag :card_code, "Security Code on Card (CVV)" %>

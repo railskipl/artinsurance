@@ -55,7 +55,12 @@ class ArtistsController < ApplicationController
          @exhibits_year = params[:exhibits_year]
          @anualpremium = ((@limits_of_studio_insurance).to_i + (@exhibits_year).to_i).to_i
          session[:anualpremium] = @anualpremium
-  
+      if params[:State] 
+        params[:State] = params[:State] 
+      else 
+        params[:State] = params[:us_states]
+      end
+     
      @grades = { 
            "Date" => params[:start_date],
            "First Name" => params[:first_name],
@@ -99,18 +104,16 @@ class ArtistsController < ApplicationController
            "Amount Of Loss2" => params[:"Amount Of Loss"],
            "Date2" => "#{params[:card_lost][:"lost_date(12)"]} - #{params[:card_lost][:"lost_date(22)"]} - #{params[:card_lost][:"lost_date(32)"]}" ,
            "paintings" => params[:paintings],
-           "purniture" => params[:purniture],
+           "furniture" => params[:furniture],
            "drawings" => params[:drawings],
            "fabrics" => params[:fabrics],
            "photographs" => params[:photographs],
            "jewelry" => params[:jewelry],
            "sculptures" => params[:sculptures],
-           "silver" => params[:silver],
            "non_Fragile" => params[:non_Fragile],
            "breakable" => params[:breakable],
            "other" => params[:other],
-           "pre1950" => params[:pre1950],
-           "after1950" => params[:after1950],
+           "pre1950" => params[:year_built],
            "Studio_&_storage_of_art_are_in_a_basement" => params[:"Studio & storage of art are in a basement"],
            "Is_there_history_of_back_up_drain" => params[:"Is there a history of a back-up drain and/or sewer?"],
            "stored_on_skits_or_shelf" => params[:"If yes works stored on skits or shelf?"],
@@ -132,7 +135,6 @@ class ArtistsController < ApplicationController
          @email = params[:Email_address]
          session[:email] = @email
          session[:grades] = @grades 
-
       respond_to do |format|
 
         
@@ -174,7 +176,6 @@ class ArtistsController < ApplicationController
     @grades = params
   end
 
-
   # PUT /artists/1
   # PUT /artists/1.json
   def update
@@ -194,7 +195,7 @@ class ArtistsController < ApplicationController
   
 def preview
   @artist = Artist.find(params[:id])
-  
+  raise @artist.inspect
 end
 
   # DELETE /artists/1
