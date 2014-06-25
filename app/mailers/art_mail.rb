@@ -3,13 +3,15 @@ class ArtMail < ActionMailer::Base
 
 
   def art_mail(grades, subscriber, cus_token)
+
   	@grades = grades
-    @cus = cus_token
-	   # email1 = "andrewxodo@gmail.com"
-	   # email2 = "andrew@madloch.com"
-	   # email3 = "andrew@veraxon.com"
-	   # email4 = "andrew@yougame.com"
-     # email5 = subscriber
+	  #  email1 = "andrewxodo@gmail.com"
+	  #  email2 = "andrew@madloch.com"
+	  #  email3 = "andrew@veraxon.com"
+	  #  email4 = "andrew@yougame.com"
+   #   email5 = subscriber
+
+
     #recipients = email1, email2, email3, email4, email5
    
     email1 = "atishkumarlewate41@gmail.com"
@@ -21,14 +23,13 @@ class ArtMail < ActionMailer::Base
 
 
     subject = "Insurence"
-     
-    mail(:subject => 'Insurance', :to => recipients.join(','))  do |format|
+
+    
+    attachments["Artist_coverage_binder.pdf"] = WickedPdf.new.pdf_from_string(render_to_string(:pdf => "receipt", :template => 'art_mail/art_mail.pdf.erb'))
+    
+
+    mail(:subject => 'Insurance', :to => recipients.join(',')) do |format|
       format.html
-      format.pdf do
-        attachments["Artist_coverage_binder.pdf"] = WickedPdf.new.pdf_from_string(
-        render_to_string(:pdf => "receipt", :template => 'art_mail/art_mail.pdf.erb')
-        )
-      end
     end
   end
 
@@ -98,14 +99,11 @@ class ArtMail < ActionMailer::Base
       #recipients = email1, email2, email3, email4, email5, email6
       subject = "Insurence"
      
-          mail(:subject => 'Insurance', :to => recipients.join(','))  do |format|
-          format.html
-          format.pdf do
-          attachments["Artist_coverage_binder.pdf"] = WickedPdf.new.pdf_from_string(
-          render_to_string(:pdf => "receipt", :template => 'art_mail/art_mail.pdf.erb')
-          )
+      attachments["Artist_coverage_binder.pdf"] = WickedPdf.new.pdf_from_string(render_to_string(:pdf => "receipt", :template => 'art_mail/art_mail.pdf.erb'))
+      
+      mail(:subject => 'Insurance', :to => recipients.join(',')) do |format|
+        format.html
       end
-     end
 
   end
 
