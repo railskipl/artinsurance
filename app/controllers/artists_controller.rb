@@ -55,7 +55,12 @@ class ArtistsController < ApplicationController
          @exhibits_year = params[:exhibits_year]
          @anualpremium = ((@limits_of_studio_insurance).to_i + (@exhibits_year).to_i).to_i
          session[:anualpremium] = @anualpremium
-  
+      if params[:State] 
+        params[:State] = params[:State] 
+      else 
+        params[:State] = params[:us_states]
+      end
+     
      @grades = { 
            "Date" => params[:start_date],
            "First Name" => params[:first_name],
@@ -130,7 +135,7 @@ class ArtistsController < ApplicationController
          @email = params[:Email_address]
          session[:email] = @email
          session[:grades] = @grades 
-  
+        raise @grades.inspect
       respond_to do |format|
 
         

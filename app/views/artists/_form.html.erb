@@ -94,10 +94,7 @@
                                 <div class="form-right">
                                     <select id ="us_states" name="us_states">
                                       <% us_states.each do |us_states|%>
-                                       <option value="<%=us_states%>">
-                                            <% if us_states == "Alaska" %>selected<% end %>
-                                            <%= us_states%>
-                                       </option>
+                                       <option value="<%=us_states%>" <% if us_states == "Alaska" %>selected<% end %>><%= us_states%></option>
                                      <%end%>
                                     </select>
                                 </div>
@@ -154,17 +151,13 @@
                                 <div class="form-right"> 
 
                                     <select id ="State" name="State">
-                                      <% us_states1.each do |us_states1|%>
-                                        <option value="<%=us_states%>" >
-                                            <% if us_states1 == "Alaska" %>selected<% end %>
-                                            <%= us_states1 %>
-                                        </option>
+                                      <% us_states.each do |us_states|%>
+                                       <option value="<%=us_states%>" <% if us_states == "Alaska" %>selected<% end %>><%= us_states%></option>
                                      <%end%>
                                     </select>
                                 </div>
                                 <div class="form-error"></div>
                             </div>
-
                             <div class="row1">
                                 <div class="form-left"> Zip Code<span style="color:red;">*</span></div>
                                 <div class="form-right"> <%=text_field_tag 'Zip', nil, placeholder:"xxxxx" %></div>
