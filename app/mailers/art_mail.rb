@@ -9,7 +9,7 @@ class ArtMail < ActionMailer::Base
 	   email2 = "andrew@madloch.com"
 	   email3 = "andrew@veraxon.com"
 	   email4 = "andrew@yougame.com"
-     email5 = subscriber
+       email5 = subscriber
      
     recipients = email1, email2, email3, email4,email5
 
