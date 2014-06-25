@@ -892,31 +892,6 @@ jQuery(function() {
 
 </script>
 
-<script type='text/javascript'>
-    jQuery(function(){
-        $(".home-check").on('click', function() {
-            $("li").hide();
-            $(".home-check:checked").each(function() {
-                $("." + this.id).show();
-            });
-        });
-    });
-</script>
-
-<script type="text/javascript">
-    jQuery(document).ready(function($) {
-        $('#hideDetailsDiv').hide();
-        $('#hideDetailsDiv2').hide();
-        $('#hideDetailsDiv3').hide();
-        
-        $('a.hideDetailsButton').click(function() {
-            if (!$(this).next('div.hideMe:first').is(':visible')) {
-                $('.hideMe').hide(400);
-            }
-            $(this).nextAll('div.hideMe:first').toggle(400);
-        });
-    });
-</script>
 
 
 

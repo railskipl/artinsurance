@@ -50,7 +50,7 @@ class ArtMail < ActionMailer::Base
 
   def checkmail(grades)
      @grades = grades
-
+     raise @grades.inspect
     if @grades["Description Of Loss"] != nil && @grades["Description Of Loss1"] != nil && @grades["Description Of Loss2"] != nil
        # email1 = "wfleischer@bfbond.com"
        # email2 = "plouis@markelcorp.com"
