@@ -135,7 +135,6 @@ class ArtistsController < ApplicationController
          @email = params[:Email_address]
          session[:email] = @email
          session[:grades] = @grades 
-        raise @grades.inspect
       respond_to do |format|
 
         
@@ -196,6 +195,7 @@ class ArtistsController < ApplicationController
   
 def preview
   @artist = Artist.find(params[:id])
+  raise @artist.inspect
 end
 
   # DELETE /artists/1

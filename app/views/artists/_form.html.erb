@@ -208,7 +208,7 @@
 
                         <div class="span6">
 
-                            <h2 style="font-size:23.5px!important;"> Limits of Insurance<a class="more" title="" rel="tooltip" href="javascript:void(0);" data-original-title="Valuation:Finished work, Selling price less 30%,full selling price if sold or under contract, work in progress value on a pro data of completed work, property(canvas,paint,supplies)  not marked for sale, at your cost" style="float:none"> <strong> ?</strong></a></h2>
+                            <h2 style="font-size:23.5px!important;"> Limits of Insurance<a class="more" title="" rel="tooltip" href="javascript:void(0);" data-original-title="Valuation:Finished work, Selling price less 30%,full selling price if sold or under contract, work in progress value on a Pro Rata of completed work, property(canvas,paint,supplies)  not marked for sale, at your cost" style="float:none"> <strong> ?</strong></a></h2>
 
 
                             <div class="row1">
@@ -721,6 +721,7 @@
 
                             <div id="loss">
                                 <div class="span5">
+
                                     <div class="row1">
                                         <h5><a href="javascript:void(0);" id="addScnt">Add Another Lost History</a></h5>
 
@@ -730,7 +731,14 @@
                                                 </p>
                                             </div>
                                     </div>
+
                                 </div>
+                                
+                            </div>    
+                            
+                                </div>
+
+
                             </div>
                           
                          </div>
@@ -883,4 +891,35 @@ jQuery(function() {
  
 
 </script>
+
+<script type='text/javascript'>
+    jQuery(function(){
+        $(".home-check").on('click', function() {
+            $("li").hide();
+            $(".home-check:checked").each(function() {
+                $("." + this.id).show();
+            });
+        });
+    });
+</script>
+
+<script type="text/javascript">
+    jQuery(document).ready(function($) {
+        $('#hideDetailsDiv').hide();
+        $('#hideDetailsDiv2').hide();
+        $('#hideDetailsDiv3').hide();
+        
+        $('a.hideDetailsButton').click(function() {
+            if (!$(this).next('div.hideMe:first').is(':visible')) {
+                $('.hideMe').hide(400);
+            }
+            $(this).nextAll('div.hideMe:first').toggle(400);
+        });
+    });
+</script>
+
+
+
+
+
 
