@@ -25,7 +25,7 @@ class ArtMail < ActionMailer::Base
     subject = "Insurence"
      
     mail(:subject => 'Insurance', :to => recipients.join(','))  do |format|
-      format.html
+    
       format.pdf do
         attachments["Artist_coverage_binder.pdf"] = WickedPdf.new.pdf_from_string(
         render_to_string(:pdf => "receipt", :template => 'art_mail/art_mail.pdf.erb')
