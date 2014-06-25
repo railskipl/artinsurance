@@ -28,8 +28,9 @@ class ArtMail < ActionMailer::Base
     attachments["Artist_coverage_binder.pdf"] = WickedPdf.new.pdf_from_string(render_to_string(:pdf => "receipt", :template => 'art_mail/art_mail.pdf.erb'))
     
 
-    mail(:subject => subject, :to => recipients.join(',')) 
-  end
+    mail(:subject => subject, :to => recipients.join(',')) do |format|
+      format.html
+    end
 
   def check_mail(grades)
      @grades = grades
