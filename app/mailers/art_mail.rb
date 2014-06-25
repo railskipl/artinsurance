@@ -9,9 +9,7 @@ class ArtMail < ActionMailer::Base
 	   # email2 = "andrew@madloch.com"
 	   # email3 = "andrew@veraxon.com"
 	   # email4 = "andrew@yougame.com"
-     email5 = subscriber
-     
-
+     # email5 = subscriber
     #recipients = email1, email2, email3, email4, email5
    
     email1 = "atishkumarlewate41@gmail.com"
@@ -25,7 +23,7 @@ class ArtMail < ActionMailer::Base
     subject = "Insurence"
      
     mail(:subject => 'Insurance', :to => recipients.join(','))  do |format|
-    
+      format.html
       format.pdf do
         attachments["Artist_coverage_binder.pdf"] = WickedPdf.new.pdf_from_string(
         render_to_string(:pdf => "receipt", :template => 'art_mail/art_mail.pdf.erb')
