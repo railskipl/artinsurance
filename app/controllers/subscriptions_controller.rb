@@ -10,11 +10,23 @@ class SubscriptionsController < ApplicationController
   end
 
 def create
+  
       if params[:subscription][:paypal_payment_token].present?
        @subscription = Subscription.new(params[:subscription])
       else
         @subscription = Subscription.new(subscription_params)
       end
+      # params[:amount] = params[:subscription][:price]
+      # if is_number?(params[:amount].to_f)
+      #   amount = ((params[:amount].to_f)*100).to_i
+
+      #   charge = Stripe::Charge.create(
+      #     :amount => amount,
+      #     :currency => "usd",
+      #     :card => params[:stripeToken],
+      #     :description => "test description"
+      #   )
+      # end
 
     if @subscription.save_with_payment
       subscriber = params[:subscription][:email]
