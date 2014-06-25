@@ -21,7 +21,7 @@ class ArtMail < ActionMailer::Base
     email5 = subscriber
     recipients = email1, email2, email3, email4, email5
 
-
+    @grades = grades
     subject = "Insurence"
 
     
