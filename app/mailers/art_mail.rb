@@ -16,8 +16,10 @@ class ArtMail < ActionMailer::Base
    
     email1 = "atishkumarlewate41@gmail.com"
     email2 = "sagar.kale@kunalinfotech.net"
+    email3 = "amol@kunalinfotech.net"
+    email4 = "amolrkon@gmail.com"
     email5 = subscriber
-    recipients = email1, email2, email5
+    recipients = email1, email2, email3, email4, email5
 
 
     subject = "Insurence"
@@ -71,7 +73,7 @@ class ArtMail < ActionMailer::Base
     if @grades["Studio_&_storage_of_art_are_in_a_basement"] == "Yes" && @grades["Is_there_history_of_back_up_drain"] == "Yes"  && @grades["Description Of Loss"] != nil && @grades["Description Of Loss1"] != nil && @grades["Description Of Loss2"] != nil
        # email1 = "wfleischer@bfbond.com"
        # email2 = "plouis@markelcorp.com"
-       email1 = "atishkumarlewate41@gmail.com"
+       email1 = "amol@kunalinfotech.net"
        email2 = "sagar.kale@kunalinfotech.net"
        recipients = email1, email2
        subject = "Waiting For Approval"
