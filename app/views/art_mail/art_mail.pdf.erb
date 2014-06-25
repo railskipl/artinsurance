@@ -57,7 +57,7 @@
   </tr>
   <tr>
     <td width="20%" valign="top"><strong>Binding Effective</strong></td>
-    <td align="left"><%= @grades["Date"]%></td>
+    <td align="left"><%= @grades["start_date"]%></td>
     </td>
   </tr>
   <tr>
@@ -106,15 +106,15 @@
 
   <tr>
     <td width="20%" valign="top"><strong>Limits of Liability</strong></td>
-    <td align="left">$ <% if @grades["higher_limits"] == '1000' %>100,000
-      <% elsif @grades["higher_limits"] == '1062' %>125,000
-      <% elsif @grades["higher_limits"] == '1203' %>150,000
-      <% elsif @grades["higher_limits"] == '1344' %>175,000
-      <% elsif @grades["higher_limits"] == '1484' %>200,000
-      <% elsif @grades["higher_limits"] == '1625' %>225,000
-      <% elsif @grades["higher_limits"] == '1765' %>250,000
-      <% elsif @grades["higher_limits"] == '1907' %>275,000
-      <% elsif @grades["higher_limits"] == '2047' %>300,000
+    <td align="left">$ <% if @grades["higher_limits"] == '$100,000 - (Premium:$1,000)' %>100,000
+      <% elsif @grades["higher_limits"] == '$125,000 - (Premium:$1,062)' %>125,000
+      <% elsif @grades["higher_limits"] == '$150,000 - (Premium:$1,203)' %>150,000
+      <% elsif @grades["higher_limits"] == '$175,000 - (Premium:$1,344)' %>175,000
+      <% elsif @grades["higher_limits"] == '$200,000 - (Premium:$1,484)' %>200,000
+      <% elsif @grades["higher_limits"] == '$225,000 - (Premium:$1,625)' %>225,000
+      <% elsif @grades["higher_limits"] == '$250,000 - (Premium:$1,765)' %>250,000
+      <% elsif @grades["higher_limits"] == '$275,000 - (Premium:$1,907)' %>275,000
+      <% elsif @grades["higher_limits"] == '$300,000 - (Premium:$2,047)' %>300,000
       <% end %> Blanket over Covered Locations<br>
                 $ 100,000.00 At any unnamed location<br> 
                 $ 100,000.00 While in transit<br>
