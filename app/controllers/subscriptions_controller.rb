@@ -30,7 +30,9 @@ class SubscriptionsController < ApplicationController
           :description => 'Rails Stripe customer',
           :currency    => 'usd'
         )
+
       end
+        
      
       if charge[:id] && charge[:captured] == true
         @month = charge[:card][:exp_month]
@@ -43,7 +45,7 @@ class SubscriptionsController < ApplicationController
         else
           ArtMail.art_mail(session[:grades], subscriber, @subscription.stripe_customer_token).deliver
         end
-
+        
         session[:anualpremium] = nil
         session[:grades] = nil
         redirect_to feedback_subscriptions_path, :notice => "Thank you for subscribing!"
@@ -56,6 +58,7 @@ class SubscriptionsController < ApplicationController
       render :new
       flash[:notice] = "Something went wrong,please try again. "
     end
+
   end
 
   def is_number?(i)
