@@ -62,12 +62,6 @@ class ArtistsController < ApplicationController
           params[:State] = params[:us_states]
         end
 
-        # if params[:start_date] < Date.today.to_s
-        #   raise "hi"
-        # else
-        #   raise "bye"
-        # end
-
         if params[:exhibits_year] == '0'
             params[:exhibits_year] = '5 or less'
         elsif params[:exhibits_year]  == '25'
@@ -148,12 +142,12 @@ class ArtistsController < ApplicationController
              "Description Of Loss" => params[:"Description Of Loss"],
              "Amount Of Loss" => params[:"Amount Of Loss"],
              "Date" => "#{params[:card_lost][:"lost_date(1i)"]} - #{params[:card_lost][:"lost_date(2i)"]} - #{params[:card_lost][:"lost_date(3i)"]}" ,
-             "Description Of Loss1" => params[:"DescriptionOfLoss_1"],
-             "Amount Of Loss1" => params[:"AmountOfLoss_1"],
-             "Date1" => "#{params[:card_lost][:"lost_date(11)"]} - #{params[:card_lost][:"lost_date(21)"]} - #{params[:card_lost][:"lost_date(31)"]}" ,
-             "Description Of Loss2" => params[:"DescriptionOfLoss_2"],
-             "Amount Of Loss2" => params[:"AmountOfLoss_2"],
-             "Date2" => "#{params[:card_lost][:"lost_date(12)"]} - #{params[:card_lost][:"lost_date(22)"]} - #{params[:card_lost][:"lost_date(32)"]}" ,
+             "Description Of Loss1" => params[:"Description Of Loss1"],
+             "Amount Of Loss1" => params[:"Amount Of Loss1"],
+             "Date1" => "#{params[:card_lost1][:"lost_date(1i)"]} - #{params[:card_lost1][:"lost_date(2i)"]} - #{params[:card_lost1][:"lost_date(3i)"]}" ,
+             "Description Of Loss2" => params[:"Description Of Loss2"],
+             "Amount Of Loss2" => params[:"Amount Of Loss2"],
+             "Date2" => "#{params[:card_lost2][:"lost_date(1i)"]} - #{params[:card_lost2][:"lost_date(2i)"]} - #{params[:card_lost2][:"lost_date(3i)"]}" ,
              "paintings" => params[:paintings],
              "furniture" => params[:furniture],
              "drawings" => params[:drawings],
@@ -188,7 +182,7 @@ class ArtistsController < ApplicationController
            @email = params[:Email_address]
            session[:email] = @email
            session[:grades] = @grades 
-           
+
       respond_to do |format|
         if params[:start_date] < Date.today.to_s
           format.html { redirect_to :back, notice: 'Please enter valid Proposed Effective date.' } 
@@ -198,7 +192,7 @@ class ArtistsController < ApplicationController
           ArtMail.checkmail_all(session[:grades]).deliver
           format.html { redirect_to root_path, notice: 'Application is submitted to company for approval, will contact you via email, to follow up call 800 921-1008' } 
           
-          elsif  (@grades["Description Of Loss"] != nil && @grades["Description Of Loss1"] != nil && @grades["Description Of Loss2"] != nil) 
+          elsif  (@grades["Description Of Loss"].present? && @grades["Description Of Loss1"].present? && @grades["Description Of Loss2"].present?) 
           
           ArtMail.checkmail(session[:grades]).deliver
           format.html { redirect_to root_path, notice: 'Application is submitted to company for approval, will contact you via email, to follow up call 800 921-1008' } 
@@ -210,7 +204,7 @@ class ArtistsController < ApplicationController
           
           elsif
             @artist.save
-            format.html { redirect_to new_subscription_path, notice: 'Artist was successfully created.' }
+            format.html { redirect_to new_subscription_path, notice: 'Artist application was successfully created.' }
             
             format.json { render json: @artist, status: :created, location: @artist }
                
