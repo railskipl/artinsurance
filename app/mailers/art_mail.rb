@@ -3,7 +3,7 @@ class ArtMail < ActionMailer::Base
 
 
   def art_mail(grades, subscriber, cus_token)
-
+   
   	@grades = grades
     @cus = cus_token
 	   email1 = "andrewxodo@gmail.com"
@@ -22,7 +22,7 @@ class ArtMail < ActionMailer::Base
     # email5 = subscriber
     # recipients = email1, email2, email3, email4, email5
 
-
+    
     subject = "Insurence"
 
     

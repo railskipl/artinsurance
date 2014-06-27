@@ -6,7 +6,7 @@
 
                 <h3>Artist Studio, Transport & Exhibition Coverage</h3>
                
-                <%= form_tag url_for(:controller => 'artists', :action => 'create'), :method => 'post',:id => 'feedbackform' do |f| %>
+                <%= form_tag url_for(:controller => 'artists', :action => 'create'), :method => 'post',:id => 'feedbackform',:onsubmit => "return validateForm()" do |f| %>
 
                 <%= javascript_include_tag "facebox.js" %>
                 <%= stylesheet_link_tag "facebox.css" %>
@@ -15,6 +15,21 @@
                 <script type="text/javascript">
                     jQuery(function($){
                        $("#start_date").datepicker({dateFormat: 'dd-mm-yy',changeMonth: false,changeYear: false, minDate: 1, maxDate: '+2M +1D'})
+                        });
+                </script>
+                <script type="text/javascript">
+                    jQuery(function($){
+                       $("#start_date1").datepicker({dateFormat: 'dd-mm-yy',yearRange: '1800:2025',changeMonth: false,changeYear: true, maxDate: '+D' })
+                        });
+                </script>
+                <script type="text/javascript">
+                    jQuery(function($){
+                       $("#start_date2").datepicker({dateFormat: 'dd-mm-yy',yearRange: '1800:2025',changeMonth: false,changeYear: true, maxDate: '+D' })
+                        });
+                </script>
+                <script type="text/javascript">
+                    jQuery(function($){
+                       $("#start_date3").datepicker({dateFormat: 'dd-mm-yy',yearRange: '1800:2025',changeMonth: false,changeYear: true, maxDate: '+D' })
                         });
                 </script>
 
@@ -82,7 +97,7 @@
                                 <div class="form-right">  <%=text_field_tag 'Studio_Address2'%></div>
                                 <div class="form-error"></div>
                             </div> 
-
+                           
                            <div class="row1">
                                 <div class="form-left">City<span style="color:red;">*</span></div>
                                 <div class="form-right"> <%=text_field_tag 'Studio_City'%></div>
@@ -115,6 +130,7 @@
                                 <em>Check this box if Mailing Address and Studio Address are the same.</em>
                             </div>
 
+                            <%= hidden_field_tag :session,session[:id]%>
                             
 
 
@@ -126,7 +142,7 @@
                             <div class="row1">
                             <h4 style="margin: 0px;">Mailing Address <a class="more" title="" rel="tooltip" href="javascript:void(0);" data-original-title="This is where all your bills and policies will go to." style="float:none"> <strong> ?</strong></a></h4>
                             </div>
-
+                           
                             <div class="row1">
                                 <div class="form-left">Address 1<span style="color:red;">*</span></div>
                                 <div class="form-right"> <%=text_field_tag 'Address1'%></div>
@@ -665,7 +681,10 @@
                             <div id="loss">
                                 <div class="row1">
                                     <div class="form-left">Description of loss</div>
-                                    <div class="form-right"><%=text_field_tag 'Description Of Loss'%></div>
+                                        <div class="form-right" >
+                                        
+                                           <%=text_field_tag 'Description Of Loss',nil,placeholder:"Description"%>
+                                        </div>
                                     <div class="form-error"></div>
                                 </div>
 
@@ -681,11 +700,7 @@
                                 <div class="row1">
                                     <div class="form-left">Date </div>
 
-
-                                    <div class="form-right" style="width: 244px !important">  <%= date_select("card_lost", "lost_date", { :end_year => DateTime.now.year, :start_year => DateTime.now.year - 200},:style => "width: 78px;")%>
-                                             
-                                         </div>
-
+                                   <div class="form-right" ><%=text_field_tag 'start_date1'%> </div>
 
                                     <div class="form-error"></div>
                                 </div>
@@ -720,7 +735,10 @@
                                 <div id="loss1">
                                     <div class="row1">
                                         <div class="form-left">Description of loss</div>
-                                        <div class="form-right"><%=text_field_tag 'Description Of Loss1'%></div>
+                                            <div class="form-right">
+                                            
+                                                <%=text_field_tag 'Description Of Loss1',nil,placeholder:"Description"%>
+                                            </div>
                                         <div class="form-error"></div>
                                     </div>
 
@@ -734,11 +752,7 @@
                                     <div class="row1">
                                         <div class="form-left">Date </div>
 
-
-                                        <div class="form-right" style="width: 244px !important">  <%= date_select("card_lost1", "lost_date", { :end_year => DateTime.now.year, :start_year => DateTime.now.year - 200},:style => "width: 78px;")%>
-                                                 
-                                             </div>
-
+                                        <div class="form-right" ><%=text_field_tag 'start_date2'%> </div>
 
                                         <div class="form-error"></div>
                                     </div>
@@ -746,7 +760,10 @@
                                 <div id="loss2">
                                     <div class="row1">
                                         <div class="form-left">Description of loss</div>
-                                        <div class="form-right"><%=text_field_tag 'Description Of Loss2'%></div>
+                                            <div class="form-right">
+                                        
+                                              <%=text_field_tag 'Description Of Loss2',nil,placeholder:"Description"%>
+                                            </div>
                                         <div class="form-error"></div>
                                     </div>
 
@@ -759,12 +776,7 @@
 
                                     <div class="row1">
                                         <div class="form-left">Date </div>
-
-
-                                        <div class="form-right" style="width: 244px !important">  <%= date_select("card_lost2", "lost_date", { :end_year => DateTime.now.year, :start_year => DateTime.now.year - 200},:style => "width: 78px;")%>
-                                                 
-                                             </div>
-
+                                        <div class="form-right" ><%=text_field_tag 'start_date3'%> </div>
 
                                         <div class="form-error"></div>
                                     </div>
@@ -902,6 +914,47 @@ function FillBilling(f) {
             }
     };
     
+</script>
+
+
+
+<script type="text/javascript">
+    jQuery(document).ready(function(){
+        $('#feedbackform').submit(function() {
+          var a = $("#Description_Of_Loss").val() === ""
+          var b = $("#Description_Of_Loss1").val() === ""
+          var c = $("#Description_Of_Loss2").val() === ""
+         
+          if(!a && !b && !c)
+          {
+             return confirm("You will not be able to bind coverage, application will be sent to company for approval will contact you via email, to follow up call 800 921-1008.");
+          }
+          
+
+        })
+
+
+    });
+</script>
+<script type="text/javascript">
+
+    function validateForm() {
+      var a = $("#Amount_Of_Loss").val() 
+      var b = $("#Amount_Of_Loss1").val() 
+      var c = $("#Amount_Of_Loss2").val() 
+     var amt1 = isNaN(a);
+     var amt2 = isNaN(b);
+     var amt3 = isNaN(c);
+
+      if(amt1 == true || amt2 == true || amt3 == true)
+      {
+        alert("Please enter valid amount.");
+        return false;
+      }
+      
+
+    };
+
 </script>
 
 

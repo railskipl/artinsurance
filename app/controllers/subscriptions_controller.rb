@@ -1,12 +1,17 @@
 class SubscriptionsController < ApplicationController
   
   def new
-    @subscription = Subscription.new(:token => params[:token], :price => params[:price])
-    if params[:PayerID]
-      @subscription.price = params[:price]
-      @subscription.paypal_customer_token = params[:PayerID]
-      @subscription.email = @subscription.paypal.checkout_details.email
-     end
+    if params[:order].to_i == session[:id]
+      @subscription = Subscription.new(:token => params[:token], :price => params[:price])
+      if params[:PayerID]
+        @subscription.price = params[:price]
+        @subscription.paypal_customer_token = params[:PayerID]
+        @subscription.email = @subscription.paypal.checkout_details.email
+       end
+    else
+      flash[:notice] = "Access Denied!"
+      redirect_to root_path
+    end
   end
 
   def create
@@ -18,26 +23,26 @@ class SubscriptionsController < ApplicationController
       
       customer = Stripe::Customer.create(
         :email => params[:subscription][:email],
-        :card  => params[:subscription][:stripe_card_token]
+        :card  => params[:subscription][:stripe_card_token],
+        :description => "Customer #{params[:subscription][:email]}"
       )
-     
+      @grades = session[:grades]
       if is_number?(@amount.to_f)
         @amount = ((@amount.to_f)*100).to_i
 
         charge = Stripe::Charge.create(
           :customer    => customer.id,
           :amount      => @amount,
-          :description => 'Rails Stripe customer',
+          :description => "Charge for #{params[:subscription][:email]}, Subscription of price #{params[:price]}.",
           :currency    => 'usd'
         )
-
-      end
         
-     
+      end
+
       if charge[:id] && charge[:captured] == true
         @month = charge[:card][:exp_month]
         @year = charge[:card][:exp_year]
-        @subscription.stripe_customer_token = charge[:customer] 
+        @subscription.stripe_customer_token = charge[:created]
         subscriber = params[:subscription][:email]
         addition_email = params[:addition_email]
         if addition_email.present?
@@ -58,7 +63,9 @@ class SubscriptionsController < ApplicationController
       render :new
       flash[:notice] = "Something went wrong,please try again. "
     end
-
+   # rescue Stripe::CardError => e
+   # flash[:error] = e.message
+   # redirect_to charges_path
   end
 
   def is_number?(i)

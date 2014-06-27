@@ -28,6 +28,7 @@ class ArtistsController < ApplicationController
   # GET /artists/new.json
   def new
     @artist = Artist.new
+    session[:id] = srand
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @artist }
@@ -49,6 +50,7 @@ class ArtistsController < ApplicationController
   # POST /artists
   # POST /artists.json
   def create
+    
     @artist = Artist.new()
 
          @limits_of_studio_insurance = params[:higher_limits]
@@ -141,13 +143,13 @@ class ArtistsController < ApplicationController
              "Name of current insurance carrier" => params[:Name_of_current_insurance_carrier],
              "Description Of Loss" => params[:"Description Of Loss"],
              "Amount Of Loss" => params[:"Amount Of Loss"],
-             "Date" => "#{params[:card_lost][:"lost_date(1i)"]} - #{params[:card_lost][:"lost_date(2i)"]} - #{params[:card_lost][:"lost_date(3i)"]}" ,
+             "Date" => params[:start_date1] ,
              "Description Of Loss1" => params[:"Description Of Loss1"],
              "Amount Of Loss1" => params[:"Amount Of Loss1"],
-             "Date1" => "#{params[:card_lost1][:"lost_date(1i)"]} - #{params[:card_lost1][:"lost_date(2i)"]} - #{params[:card_lost1][:"lost_date(3i)"]}" ,
+             "Date1" => params[:start_date2] ,
              "Description Of Loss2" => params[:"Description Of Loss2"],
              "Amount Of Loss2" => params[:"Amount Of Loss2"],
-             "Date2" => "#{params[:card_lost2][:"lost_date(1i)"]} - #{params[:card_lost2][:"lost_date(2i)"]} - #{params[:card_lost2][:"lost_date(3i)"]}" ,
+             "Date2" => params[:start_date3] ,
              "paintings" => params[:paintings],
              "furniture" => params[:furniture],
              "drawings" => params[:drawings],
@@ -177,7 +179,7 @@ class ArtistsController < ApplicationController
              "annual_premium" => @anualpremium
              
            }
-          
+        
         
            @email = params[:Email_address]
            session[:email] = @email
@@ -204,7 +206,7 @@ class ArtistsController < ApplicationController
           
           elsif
             @artist.save
-            format.html { redirect_to new_subscription_path, notice: 'Artist application was successfully created.' }
+            format.html { redirect_to new_subscription_path(:order=> params[:session].to_i), notice: 'Artist application was successfully created.' }
             
             format.json { render json: @artist, status: :created, location: @artist }
                

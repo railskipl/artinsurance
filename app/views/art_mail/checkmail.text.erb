@@ -1,143 +1,143 @@
-Subscriber is waiting for approval,subscriber has inputted three losses.
+Subscriber is waiting for approval,  subscriber has inputted three losses.
 
 Details provided by subscriber:
 
-Proposed Effective:<%=raw @grades["start_date"]%>
-First Name:<%=raw @grades["First Name"]%>
-Last Name:<%=raw @grades["last Name"]%>
+Proposed Effective  :<%=raw @grades["start_date"]%>
+First Name          :<%=raw @grades["First Name"]%>
+Last Name           :<%=raw @grades["last Name"]%>
 
 Studio Address =======>
 
-Studio Address:<%=raw @grades["Studio Address"]%>
+Studio Address      :<%=raw @grades["Studio Address"]%>
 <% unless @grades["Studio_Address2"] == nil%>
-  Studio Address 2:<%=raw @grades["Studio_Address2"]%>
+Studio Address 2    :<%=raw @grades["Studio_Address2"]%>
 <%end%>
-City:<%=raw @grades["Studio City"]%>
-State:<%=raw @grades["us_states"]%>
-Zip Code:<%=raw @grades["Zip Code"]%>
+City                :<%=raw @grades["Studio City"]%>
+State               :<%=raw @grades["us_states"]%>
+Zip Code            :<%=raw @grades["Zip Code"]%>
 
 Mailing Address =======>
 
-Address 1:<%=raw @grades["Address 1"]%>
+Address 1           :<%=raw @grades["Address 1"]%>
 <% unless @grades["Address 2"] == nil%>
-  Address 2:<%=raw @grades["Address 2"]%>
+Address 2           :<%=raw @grades["Address 2"]%>
 <%end%>
-City:<%=raw @grades["City"]%>
-State:<%=raw @grades["state"]%>
-Zip Code:<%=raw @grades["Zip"]%>
+City                :<%=raw @grades["City"]%>
+State               :<%=raw @grades["state"]%>
+Zip Code            :<%=raw @grades["Zip"]%>
 <% unless @grades["Phone Number"] == nil%>
-  Phone Number:<%=raw @grades["Phone Number"]%>
+Phone Number        :<%=raw @grades["Phone Number"]%>
 <%end%>
 <% unless @grades["Fax"] == nil%>
-  Fax: <%=raw @grades["Fax"]%>
+Fax                 : <%=raw @grades["Fax"]%>
 <%end%>
-Email Address: <%=raw @grades["E-mail address"]%>
-Re-type Email: <%=raw @grades["Retype E-Mail"]%>
+Email Address       : <%=raw @grades["E-mail address"]%>
+Re-type Email       : <%=raw @grades["Retype E-Mail"]%>
 
 Limits of Insurance =======>
 
-Limit of Studio Insurance:<%=raw @grades["higher_limits"]%> 
-Limit of Insurance at Other Location:<%=raw @grades["limit_of_Insurance_at_Other_Location"]%>
-Limit of Insurance While in Transit:<%=raw @grades["limit_of_Insurance_While_in_Transit"]%>
-Policy Deductible:<%=raw @grades["Policy Deductable"]%>
+Limit of Studio Insurance             :<%=raw @grades["higher_limits"]%> 
+Limit of Insurance at Other Location  :<%=raw @grades["limit_of_Insurance_at_Other_Location"]%>
+Limit of Insurance While in Transit   :<%=raw @grades["limit_of_Insurance_While_in_Transit"]%>
+Policy Deductible                     :<%=raw @grades["Policy Deductable"]%>
 
 Genre You Work =======>
 <% unless @grades["paintings"] == nil%>	
-  <%=raw @grades["paintings"]%>
+<%=raw @grades["paintings"]%>
 <%end%>
 <% unless @grades["furniture"] == nil%>	
-  <%=raw @grades["furniture"]%>
+<%=raw @grades["furniture"]%>
 <%end%>
 <% unless @grades["drawings"] == nil%>	
-  <%=raw @grades["drawings"]%>
+<%=raw @grades["drawings"]%>
 <%end%>
 <% unless @grades["fabrics"] == nil%>	
-  <%=raw @grades["fabrics"]%>
+<%=raw @grades["fabrics"]%>
 <%end%>
 <% unless @grades["photographs"] == nil%>	
-  <%=raw @grades["photographs"]%>
+<%=raw @grades["photographs"]%>
 <%end%>
 <% unless @grades["jewelry"] == nil%>	
-  <%=raw @grades["jewelry"]%>
+<%=raw @grades["jewelry"]%>
 <%end%>
 <% unless @grades["sculptures"] == nil%>	
-  <%=raw @grades["sculptures"]%>
+<%=raw @grades["sculptures"]%>
 <%end%>
 <% unless @grades["non_Fragile"] == nil%>	
-  <%=raw @grades["non_Fragile"]%>
+<%=raw @grades["non_Fragile"]%>
 <%end%>
 <% unless @grades["breakable"] == nil%>	
-  <%=raw @grades["breakable"]%>
+<%=raw @grades["breakable"]%>
 <%end%>
 <% unless @grades["other"] == nil%>	
-  <%=raw @grades["other"]%>
+<%=raw @grades["other"]%>
 <%end%>
 
 
-Studio is located in a:<%=raw @grades["studio"]%>
+Studio is located in a       :<%=raw @grades["studio"]%>
 <% unless @grades["pre1950"] == nil%>	
-  Year Built Pre 1950:<%=raw @grades["pre1950"]%>
+Year Built Pre 1950          :<%=raw @grades["pre1950"]%>
 <%end%>
-Studio & storage of art are in a basement:<%=raw @grades["Studio_&_storage_of_art_are_in_a_basement"]%>
-Is there a history of a back-up drain and/or sewer?:<%=raw @grades["Is_there_history_of_back_up_drain"]%>
-If yes works stored on skids or shelf?:<%=raw @grades["stored_on_skits_or_shelf"]%>
+Studio & storage of art are in a basement             :<%=raw @grades["Studio_&_storage_of_art_are_in_a_basement"]%>
+Is there a history of a back-up drain and/or sewer?   :<%=raw @grades["Is_there_history_of_back_up_drain"]%>
+If yes works stored on skids or shelf?                :<%=raw @grades["stored_on_skits_or_shelf"]%>
 
 Fire Protection =========>
 
-Is there an automatic sprinkler system on premises?:<%=raw @grades["automatic_sprinkler_system"]%>
+Is there an automatic sprinkler system on premises?   :<%=raw @grades["automatic_sprinkler_system"]%>
 
 Security ========>
 <% unless @grades["deadbolts"] == nil%>
-  <%=raw @grades["deadbolts"]%>
+<%=raw @grades["deadbolts"]%>
 <%end%>
 <% unless @grades["alarm"] == nil%>
-  <%=raw @grades["alarm"]%>
+<%=raw @grades["alarm"]%>
 <%end%>
 <% unless @grades["local_alaram"] == nil%>
-  <%=raw @grades["local_alaram"]%>
+<%=raw @grades["local_alaram"]%>
 <%end%>
 <% unless @grades["cameras"] == nil%>
-  <%=raw @grades["cameras"]%>
+<%=raw @grades["cameras"]%>
 <%end%>
 <% unless @grades["gates"] == nil%>
-  <%=raw @grades["gates"]%>
+<%=raw @grades["gates"]%>
 <%end%>
 <% unless @grades["watchmen"] == nil%>
-  <%=raw @grades["watchmen"]%>
+<%=raw @grades["watchmen"]%>
 <%end%>
 <% unless @grades["no_security"] == nil%>
-  <%=raw @grades["no_security"]%>
+<%=raw @grades["no_security"]%>
 <%end%>
 
 Exposure ========>
 
-What is the average value of finished art work:<%=raw @grades["finished_art_work"]%>
-What is the maximum value of single item:<%=raw @grades["single_item"]%>
-Do you keep a detailed and itemized inventory:<%=raw @grades["detailed_and_itemized"]%>
-Do you keep a record of sales:<%=raw @grades["keep_record_of_sales"]%>
-When was the last date of inventory:Month:<%=raw @grades["card_signup_date"]%> & Year :<%=raw @grades["card_signup_year"]%>
-Do you maintain a duplicate inventory list off-site:<%=raw @grades["duplicate_inventory_off_site"]%>
-Number of exhibits a year:<%=raw @grades["exhibits_year"]%>
+What is the average value of finished art work    :<%=raw @grades["finished_art_work"]%>
+What is the maximum value of single item          :<%=raw @grades["single_item"]%>
+Do you keep a detailed and itemized inventory     :<%=raw @grades["detailed_and_itemized"]%>
+Do you keep a record of sales                     :<%=raw @grades["keep_record_of_sales"]%>
+When was the last date of inventory               :Month:<%=raw @grades["card_signup_date"]%> & Year :<%=raw @grades["card_signup_year"]%>
+Do you maintain a duplicate inventory list off-site :<%=raw @grades["duplicate_inventory_off_site"]%>
+Number of exhibits a year                           :<%=raw @grades["exhibits_year"]%>
 
 Annual Sales ========> 
 
-Current year:<%=raw @grades["current_year"]%>
-Prior year:<%=raw @grades["prior_year"]%>
+Current year     :<%=raw @grades["current_year"]%>
+Prior year       :<%=raw @grades["prior_year"]%>
 <% unless @grades["Name of current insurance carrier"] == nil%>
-  Name of current insurance carrier:<%=raw @grades["Name of current insurance carrier"]%>
+Name of current insurance carrier   :<%=raw @grades["Name of current insurance carrier"]%>
 <%end%>
 
 
 Details of losses =========>
 
-a)Description of loss: <%=raw @grades["Description Of Loss"]%>
-  Amount of loss     : <%=raw @grades["Amount Of Loss"]%>
-  Date               : <%=raw @grades["Date"]%>
+a)Description of loss   : <%=raw @grades["Description Of Loss"]%>
+  Amount of loss        : <%=raw @grades["Amount Of Loss"]%>
+  Date                  : <%=raw @grades["Date"]%>
 
-b)Description of loss: <%=raw @grades["Description Of Loss1"]%>
-  Amount of loss     : <%=raw @grades["Amount Of Loss1"]%>
-  Date               : <%=raw @grades["Date1"]%>
+b)Description of loss   : <%=raw @grades["Description Of Loss1"]%>
+  Amount of loss        : <%=raw @grades["Amount Of Loss1"]%>
+  Date                  : <%=raw @grades["Date1"]%>
 
-c)Description of loss: <%=raw @grades["Description Of Loss2"]%>
-  Amount of loss     : <%=raw @grades["Amount Of Loss2"]%>
-  Date               : <%=raw @grades["Date2"]%>
+c)Description of loss   : <%=raw @grades["Description Of Loss2"]%>
+  Amount of loss        : <%=raw @grades["Amount Of Loss2"]%>
+  Date                  : <%=raw @grades["Date2"]%>
