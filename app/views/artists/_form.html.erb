@@ -1,6 +1,5 @@
         <%= stylesheet_link_tag "style2.css","http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/themes/base/jquery-ui.css" %>
-         <%= javascript_include_tag "/assets/bootbox.js" %>
-         <%#= javascript_include_tag "/assets/bootbox.min.js" %>
+      
         <div class="container">
 
             <div id="wrapper">
@@ -48,8 +47,8 @@
                         });
                      });
                 </script>
-                   
-                   
+   <script type="text/javascript" src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+ 
                     <div id="slider">
                         <div class="form-step" >
                        
@@ -60,6 +59,13 @@
                                 <div class="form-right" ><%=text_field_tag 'start_date'%> </div>
                                 <div class="form-error"></div>
                                 
+                            </div>
+                            <div id="WoDialog" title="Warning">
+                                <p>The Insurance program does not cover Earthquake, Mold, Water, Windstorms. Do you need more information contact our office.</p>      
+                            </div>
+
+                            <div id="WoDialog1" title="Warning">
+                                <p>The Insurance program does not cover Earthquake, Mold. Do you need more information contact our office.</p>      
                             </div>
                         
                             <div class="row1">
@@ -216,10 +222,6 @@
                           </div>
 
                         </div>
-
-
-
-
 
                         <div class="form-step" >
 
@@ -423,7 +425,7 @@
                                 <div class="form-left">Studio & storage of art are in a basement<span style="color:red;">*</span>  <a class="more" title="" rel="tooltip" href="javascript:void(0);" data-original-title="Stored or have a working area below ground" style="float:none"> <strong> ?</strong></a></div>
                                 <div class="form-right">
                                      <input type="radio" id="Studio" onclick="Checkpop(this.form)" name="Studio & storage of art are in a basement" value="Yes">&nbsp;&nbsp;Yes
-                                     <input type="radio" id="Studio" name="Studio & storage of art are in a basement" value="No">&nbsp;&nbsp;No
+                                     <input type="radio" id="Studio" onclick="Checkpop(this.form)" name="Studio & storage of art are in a basement" value="No">&nbsp;&nbsp;No
                                      
                                 </div>                               
  
@@ -437,7 +439,7 @@
                                 <div class="form-left">Is there a history of a back-up drain and/or sewer?<span style="color:red;">*</span></div>
                                 <div class="form-right">
                                      <input type="radio" id="rsales" onclick="Checkpop(this.form)" name="Is there a history of a back-up drain and/or sewer?" value="Yes">&nbsp;&nbsp;Yes
-                                     <input type="radio" id="rsales" name="Is there a history of a back-up drain and/or sewer?" value="No">&nbsp;&nbsp;No
+                                     <input type="radio" id="rsales" onclick="Checkpop(this.form)" name="Is there a history of a back-up drain and/or sewer?" value="No">&nbsp;&nbsp;No
                                      
                                 </div>
                                 <div class="form-error"></div>
@@ -811,29 +813,6 @@
     </div>
 
 
-
-
-
-    <script>
-
-      
-        var dropdown2 = document.getElementById("us_states");
-
-        dropdown2.onchange = function(event){
-            if(dropdown2.value=="Alabama" || dropdown2.value=="Connecticut"  || dropdown2.value=="Delaware" || dropdown2.value=="District of Columbia"  || dropdown2.value=="Florida" || dropdown2.value=="Georgia" || dropdown2.value=="Louisiana" || dropdown2.value=="Maine" || dropdown2.value=="Maryland" || dropdown2.value=="Massachusetts" || dropdown2.value=="Mississippi" || dropdown2.value=="New Jersey"|| dropdown2.value=="New York"|| dropdown2.value=="North Carolina"|| dropdown2.value=="Pennsylvania"|| dropdown2.value=="Rhode Island"|| dropdown2.value=="South Carolina"|| dropdown2.value=="Texas"|| dropdown2.value==""){
-                confirm("The Insurance program does not cover Earthquake, Mold, Water, Windstorms. Do you need more information contact our office.")
-                    var myindex  = dropdown2.selectedIndex;
-                    dropdown2.options[myindex].value = '';    
-            }
-
-            else
-            {
-                confirm("The Insurance program does not cover Earthquake, Mold. Do you need more information contact our office.");
-            }
-        }
-    </script>   
-
-
 <script type="text/javascript">
 function hideStuff(id,div1, btn) {
 
@@ -901,6 +880,7 @@ function FillBilling(f) {
 
 
 
+
 <script type="text/javascript">
    
     
@@ -908,13 +888,14 @@ function FillBilling(f) {
         var a = document.getElementById('Studio').checked
         var b = document.getElementById('rsales').checked
 
-
+         
         if(a == true && b == true)
             {
-                alert("You will not be able to bind coverage, application will be sent to company for approval will contact you via email, to follow up call 800 921-1008.");
+
+               alert("You will not be able to bind coverage, application will be sent to company for approval will contact you via email, to follow up call 800 921-1008.");
             }
+         
     };
-    
 </script>
 
 
@@ -925,7 +906,7 @@ function FillBilling(f) {
           var a = $("#Description_Of_Loss").val() === ""
           var b = $("#Description_Of_Loss1").val() === ""
           var c = $("#Description_Of_Loss2").val() === ""
-         
+          
           if(!a && !b && !c)
           {
              return confirm("You will not be able to bind coverage, application will be sent to company for approval will contact you via email, to follow up call 800 921-1008.");
@@ -955,6 +936,60 @@ function FillBilling(f) {
       
 
     };
+
+</script>
+
+<script type='text/javascript'>//<![CDATA[ 
+    jQuery(function($){
+    //Set up the dialog box
+       
+        $("#WoDialog").dialog({
+            autoOpen  : false,
+            modal     : true,
+            buttons   : {
+                      'Cancel' : function() {
+                         $(this).dialog('close'); 
+                      },
+                      'Ok' : function() {
+                          $(this).dialog('close');
+                      }
+            }
+        });
+
+        $("#WoDialog1").dialog({
+            autoOpen  : false,
+            modal     : true,
+            buttons   : {
+                      'Cancel' : function() {
+                         $(this).dialog('close'); 
+                      },
+                      'Ok' : function() {
+                          $(this).dialog('close');
+                      }
+            }
+        });
+
+
+        //Open the Dialog box
+        $('#us_states').change(function(){
+            var dropdown2 = document.getElementById("us_states");
+           
+            if( dropdown2.value == "Alabama" || dropdown2.value=="Connecticut"  || dropdown2.value=="Delaware" || dropdown2.value=="District of Columbia"  || dropdown2.value=="Florida" || dropdown2.value=="Georgia" || dropdown2.value=="Louisiana" || dropdown2.value=="Maine" || dropdown2.value=="Maryland" || dropdown2.value=="Massachusetts" || dropdown2.value=="Mississippi" || dropdown2.value=="New Jersey"|| dropdown2.value=="New York"|| dropdown2.value=="North Carolina"|| dropdown2.value=="Pennsylvania"|| dropdown2.value=="Rhode Island"|| dropdown2.value=="South Carolina"|| dropdown2.value=="Texas"|| dropdown2.value==""){
+                 
+                    $("#WoDialog").dialog("open");
+                   
+                    var myindex  = dropdown2.selectedIndex;
+                    dropdown2.options[myindex].value = '';    
+                }
+
+            else
+            {
+                $("#WoDialog1").dialog("open");
+            }
+      
+            
+        });
+    });//]]>  
 
 </script>
 
