@@ -61,11 +61,11 @@
                                 
                             </div>
                             <div id="WoDialog" title="Warning">
-                                <p>The insurance program does not cover Earthquake, Mold, Water Damage, and Windstorms. If you need more information please contact our office (800) 921-1008 or email WFleischer@bfbond.com</p>      
+                                <p>The Insurance program does not cover Earthquake, Mold, Water Damage, and Windstorms. If you need more information please contact our office (800) 921-1008 or email WFleischer@bfbond.com</p>      
                             </div>
 
                             <div id="WoDialog1" title="Warning">
-                                <p>The Insurance program does not cover Earthquake, Mold. Do you need more information contact our office.</p>      
+                                <p>The Insurance program does not cover Earthquake, Mold. If you need more information please contact our office (800) 921-1008 or email WFleischer@bfbond.com</p>      
                             </div>
                         
                             <div class="row1">
@@ -88,7 +88,7 @@
 
 
                             <div class="row1">
-                            <h4 style="margin: 0px;">Studio Address <a class="more" title="" rel="tooltip" href="javascript:void(0);" data-original-title="This is  where your studio is located,complete address,city,state,zip." style="float:none"> <strong> ?</strong></a></h4>
+                            <h4 style="margin: 0px;">Studio Address <a class="more" title="" rel="tooltip" href="javascript:void(0);" data-original-title="This is where your studio is located. Provide complete address: city, state, and zip code." style="float:none"> <strong> ?</strong></a></h4>
                             </div>
 
                            
@@ -284,7 +284,7 @@
                          
 
 
-                        <h2 style="font-size:23.5px!important;">YOUR WORK GENERE ?  <span style="font-size:11px">(Check all that apply)</span><span style="color:red;">*</span> <a class="more" title="" rel="tooltip" href="javascript:void(0);" data-original-title="Which Genres do you work in. Click all that apply."><strong> ?</strong></a></h2>
+                        <h2 style="font-size:23.5px!important;">YOUR WORK GENRE ?  <span style="font-size:11px">(Check all that apply)</span><span style="color:red;">*</span> <a class="more" title="" rel="tooltip" href="javascript:void(0);" data-original-title="Which Genres do you work in. Click all that apply."><strong> ?</strong></a></h2>
 
                              
                             <div class="row2">
@@ -892,7 +892,7 @@ function FillBilling(f) {
         if(a == true && b == true)
             {
 
-               alert("You will not be able to bind coverage, application will be sent to company for approval will contact you via email, to follow up call 800 921-1008.");
+               alert("Your application will be sent to company for approval, will contact you via email. To follow up call (800) 921-1008 or email WFleischer@bfbond.com . Thank you and please PROCEED with the application.");
             }
          
     };
@@ -909,7 +909,7 @@ function FillBilling(f) {
           
           if(!a && !b && !c)
           {
-             return confirm("You will not be able to bind coverage, application will be sent to company for approval will contact you via email, to follow up call 800 921-1008.");
+             return confirm("Your application will be sent to company for approval, will contact you via email. To follow up call (800) 921-1008 or email WFleischer@bfbond.com . Thank you and please PROCEED with the application.");
           }
           
 
@@ -979,7 +979,7 @@ function FillBilling(f) {
                     $("#WoDialog").dialog("open");
                    
                     var myindex  = dropdown2.selectedIndex;
-                    dropdown2.options[myindex].value = '';    
+                    //dropdown2.options[myindex].value = '';    
                 }
 
             else

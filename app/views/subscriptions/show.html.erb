@@ -58,7 +58,6 @@ function validate()
 <h1>Feedback</h1>
 <div class="wrapper" style="background:#FFFFFF">
   
- <p style="font-weight: bold; margin: 20px 0 0 20px;">Thank you for subscribing!</p></br>
 
 <%= form_for :feedback, :url=>{:controller=>"subscriptions", :action=>"feedback"}, :html=>{:name=>"feedbackfrm", :onsubmit=>"return(validate());"} do |f| %>
   <p><strong>Rating : </strong> <span class="stars s-1" data-default='1'> 0 stars</span></p>

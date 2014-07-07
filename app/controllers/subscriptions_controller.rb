@@ -53,7 +53,7 @@ class SubscriptionsController < ApplicationController
         
         session[:anualpremium] = nil
         session[:grades] = nil
-        redirect_to feedback_subscriptions_path, :notice => "Thank you for subscribing!"
+        redirect_to feedback_subscriptions_path, :notice => "Thank you for choosing Bernard Fleischer & Sons, Inc."
       else
         
         render :new
@@ -73,7 +73,7 @@ class SubscriptionsController < ApplicationController
   end
 
   def feedback
-
+    
     @user_feedback = { "rating" => params[:feedback][:rate],
                 "comments" => params[:feedback][:comment], "from_email_address" => session[:email] }
 
