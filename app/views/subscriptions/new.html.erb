@@ -34,7 +34,7 @@
   
   <div class="field">
     <%= f.label :email %>
-    <%= f.text_field :email, :value=> session[:email],:autocomplete => :off %>
+    <%= f.text_field :email, :value=> session[:email],:autocomplete => :off ,:readonly => true%>
   </div>  
 
   <div class="field">
