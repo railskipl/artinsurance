@@ -909,7 +909,7 @@ function FillBilling(f) {
           
           if(!a && !b && !c)
           {
-             return confirm("Your application will be sent to company for approval, will contact you via email. To follow up call (800) 921-1008 or email WFleischer@bfbond.com . Thank you and please PROCEED with the application.");
+             return confirm("You will not be able to bind coverage, application will be sent to company for approval.  The programmer must not let them proceed to check out just submit for approval.");
           }
           
 
@@ -979,7 +979,7 @@ function FillBilling(f) {
                     $("#WoDialog").dialog("open");
                    
                     var myindex  = dropdown2.selectedIndex;
-                    //dropdown2.options[myindex].value = '';    
+                    dropdown2.options[myindex].value = '';    
                 }
 
             else
