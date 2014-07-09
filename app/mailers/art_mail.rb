@@ -16,7 +16,8 @@ class ArtMail < ActionMailer::Base
 	  
 
 
-    recipients = email1, email2, email3, email4, email5
+    recipients = #email1, email2, email3, email4,
+                 email5
    
     # email1 = "atishkumarlewate41@gmail.com"
     # email2 = "sagar.kale@kunalinfotech.net"
