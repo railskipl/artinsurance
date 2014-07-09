@@ -30,7 +30,7 @@
           <p><% dated = Date.today%><%= dated.strftime("%b %d, %Y") %>
         <p> QUOTE / INDICATION</p>
 
-        Based on the information you have provided us, we are pleased to offer the following terms. This quote is open for 60days from the dated quoted <% dated = Date.today+1 %><%= dated.strftime("%d-%m-%y") %>.    
+        Based on the information you have provided us, we are pleased to offer the following terms. This quote is open for 60days from the <%= params["start_date"].to_date.strftime("%d-%m-%y")%>.    
         This        
         quote is subject to no losses prior to commencement and/or no material change in coverage.  
 
