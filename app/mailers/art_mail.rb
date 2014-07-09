@@ -5,7 +5,6 @@ class ArtMail < ActionMailer::Base
   def art_mail(grades, subscriber, cus_token)
    
   	@grades = grades
-<<<<<<< HEAD
 	   # email1 = "andrewxodo@gmail.com"
 	   # email2 = "andrew@madloch.com"
 	   # email3 = "andrew@veraxon.com"
@@ -13,14 +12,8 @@ class ArtMail < ActionMailer::Base
       email5 = subscriber
      
     recipients = email5
-=======
     @cus = cus_token
-	   email1 = "andrewxodo@gmail.com"
-	   email2 = "andrew@madloch.com"
-	   email3 = "andrew@veraxon.com"
-	   email4 = "andrew@yougame.com"
-     email5 = subscriber
->>>>>>> 43a1126c060499f7c9cee99fa0d8a7dd3f148579
+	  
 
 
     recipients = email1, email2, email3, email4, email5
@@ -34,17 +27,13 @@ class ArtMail < ActionMailer::Base
 
     
     subject = "Insurence"
-<<<<<<< HEAD
-     
-    mail(:subject => 'Insurance', :to => recipients)  do |format|
-=======
+
 
     
     attachments["Artist_coverage_binder.pdf"] = WickedPdf.new.pdf_from_string(render_to_string(:pdf => "receipt", :template => 'art_mail/art_mail.pdf.erb'))
     
 
     mail(:subject => 'Insurance', :to => recipients.join(',')) do |format|
->>>>>>> 43a1126c060499f7c9cee99fa0d8a7dd3f148579
       format.html
     end
   end
@@ -53,15 +42,13 @@ class ArtMail < ActionMailer::Base
      @grades = grades
 
     if @grades["Studio_&_storage_of_art_are_in_a_basement"] == "Yes" && @grades["Is_there_history_of_back_up_drain"] == "Yes"
-<<<<<<< HEAD
+
        # email1 = "wfleischer@bfbond.com"
        # email2 = "plouis@markelcorp.com"
-=======
-       email1 = "wfleischer@bfbond.com"
-       email2 = "plouis@markelcorp.com"
+
        # email1 = "atishkumarlewate41@gmail.com"
        # email2 = "sagar.kale@kunalinfotech.net"
->>>>>>> 43a1126c060499f7c9cee99fa0d8a7dd3f148579
+
        recipients = email1, email2
        subject = "Waiting For Approval"
 
