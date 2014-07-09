@@ -4,7 +4,7 @@ development:
   adapter: mysql2
   database: artinsurance
   username: root
-  password: 
+  password: root
   #socket: /var/run/mysqld/mysqld.sock
 
 
@@ -17,12 +17,12 @@ test:
       adapter: mysql2
       database: artinsurance
       username: root
-      password: 
+      password: root
       #socket: /var/run/mysqld/mysqld.sock
       
 production:
       adapter: mysql2
       database: artinsurance
       username: root
-      password: 
+      password: root
       #socket: /var/run/mysqld/mysqld.sock     

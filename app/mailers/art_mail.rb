@@ -5,17 +5,17 @@ class ArtMail < ActionMailer::Base
   def art_mail(grades, subscriber)
   	
   	@grades = grades
-	   email1 = "andrewxodo@gmail.com"
-	   email2 = "andrew@madloch.com"
-	   email3 = "andrew@veraxon.com"
-	   email4 = "andrew@yougame.com"
-     email5 = subscriber
+	   # email1 = "andrewxodo@gmail.com"
+	   # email2 = "andrew@madloch.com"
+	   # email3 = "andrew@veraxon.com"
+	   # email4 = "andrew@yougame.com"
+      email5 = subscriber
      
-    recipients = email1, email2,email5
+    recipients = email5
 
     subject = "Insurence"
      
-    mail(:subject => 'Insurance', :to => recipients.join(','))  do |format|
+    mail(:subject => 'Insurance', :to => recipients)  do |format|
       format.html
       format.pdf do
         attachments["Artist_coverage_binder.pdf"] = WickedPdf.new.pdf_from_string(
@@ -29,8 +29,8 @@ class ArtMail < ActionMailer::Base
      @grades = grades
 
     if @grades["Studio_&_storage_of_art_are_in_a_basement"] == "Yes" && @grades["Is_there_history_of_back_up_drain"] == "Yes"
-       email1 = "wfleischer@bfbond.com"
-       email2 = "plouis@markelcorp.com"
+       # email1 = "wfleischer@bfbond.com"
+       # email2 = "plouis@markelcorp.com"
        recipients = email1, email2
        subject = "Waiting For Approval"
 
@@ -43,8 +43,8 @@ class ArtMail < ActionMailer::Base
      @grades = grades
 
     if @grades["Description Of Loss"] != nil && @grades["Description Of Loss1"] != nil && @grades["Description Of Loss2"] != nil
-       email1 = "wfleischer@bfbond.com"
-       email2 = "plouis@markelcorp.com"
+       # email1 = "wfleischer@bfbond.com"
+       # email2 = "plouis@markelcorp.com"
        recipients = email1, email2
        subject = "Waiting For Approval"
 
@@ -57,10 +57,10 @@ class ArtMail < ActionMailer::Base
      @grades = grades
 
     if @grades["Studio_&_storage_of_art_are_in_a_basement"] == "Yes" && @grades["Is_there_history_of_back_up_drain"] == "Yes"  && @grades["Description Of Loss"] != nil && @grades["Description Of Loss1"] != nil && @grades["Description Of Loss2"] != nil
-       email1 = "wfleischer@bfbond.com"
-       email2 = "plouis@markelcorp.com"
-       # email1 = "atishkumarlewate41@gmail.com"
-       # email2 = "kumaratish448@gmail.com"
+       # email1 = "wfleischer@bfbond.com"
+       # email2 = "plouis@markelcorp.com"
+        email1 = "atishkumarlewate41@gmail.com"
+        email2 = "kumaratish448@gmail.com"
        recipients = email1, email2
        subject = "Waiting For Approval"
 
@@ -72,12 +72,12 @@ class ArtMail < ActionMailer::Base
   def art_mail_2(grades, subscriber, addemail)
     @grades = grades
         
-       email1 = "andrewxodo@gmail.com"
-       email2 = "andrew@madloch.com"
-       email3 = "andrew@veraxon.com"
-       email4 = "andrew@yougame.com"
-       email5 = subscriber
-       email6 = addemail
+       # email1 = "andrewxodo@gmail.com"
+       # email2 = "andrew@madloch.com"
+       # email3 = "andrew@veraxon.com"
+       # email4 = "andrew@yougame.com"
+       # email5 = subscriber
+       # email6 = addemail
      
       recipients = email1, email2, email3, email4, email5, email6
       subject = "Insurence"

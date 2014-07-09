@@ -30,27 +30,51 @@
 
 
   <div>
-    <div class="left">Bernard Fleischer &amp; Sons</div>
-    <div class="right" style="font-family:Calibri, Helvetica, sans-serif">29 Broadway, Suite 1511, New York NY 10006
-        <br> 212 566-1881 www.bfbond.com</div>
+    <table CELLPADDING=4>
+<tr>
+    <th ROWSPAN=6><img src="http://artinsurance.herokuapp.com/assets/markel.jpg" width="90px;" height="120px;"></img></th>
+    <td>MARKEL</td>
+    </TR>
+<tr>
+    <td>Markel Specialty</td> 
+    </tr>
+<tr>
+    <td>21600 Oxnard Street, Suite 400</td>
+    </tr>
+<tr>
+    <td>Woodland Hills, CA 91367-4976</td>
+    </tr>
+<tr>
+    <td>plouis@markelcorp.com</td>
+    </tr>
+<tr>
+    <td><span style="color:red">www.markelcorp.com / www.markelartworks.com</span></td>
+    </tr>
+
+
+</table>
   </div>
 
 
     <div style="clear:both; margin:0 auto">
       <div>
-        <span style="font-style:italic">
-        <p> QUOTE / INDICATION</p>
-
-        Based on the information you have provided us, we are pleased to offer the following terms. This quote is open for 60days from the dated quoted <% dated = Date.today+1 %><%= dated.strftime("%m-%d-%y") %>.    
-        This        
-        quote is subject to no losses prior to commencement and/or no material change in coverage.  
+        <span style="text-decoration:underline">
+         Binder
+  
         </span> 
-        <p>&nbsp;</p>
+       
       </div>
     </div> 
 
  <table width="100%">
   <tr>
+    <td width="20%" valign="top"><strong>Policy No:</strong></td>
+    <td align="left">
+    </td>
+
+    <td width="20%" valign="top"><strong>Binding Effective:</strong></td>
+    <td align="left"><%= Date.today.strftime("%d-%m-%y")%> <% dated = Date.today+1 %><%= dated.strftime("%d-%m-%y") %>
+    </td>
     <td width="20%" valign="top"><strong>Company</strong></td>
     <td align="left">Markel Insurance Company  Ten Parkway North, Deerfield, Illinois 60015 <br/>
       Best Rated A (Excellent); Financial Size Category: XIV
@@ -100,7 +124,7 @@
 
   <tr>
     <td width="20%" valign="top"><strong>Limits of Liability</strong></td>
-    <td align="left">$ <% if @grades["higher_limits"] == '1000' %>100,000
+    <td align="left">$ <% if @grades["higher_limits"] == '1000' %><p>100,000
       <% elsif @grades["higher_limits"] == '1062' %>125,000
       <% elsif @grades["higher_limits"] == '1203' %>150,000
       <% elsif @grades["higher_limits"] == '1344' %>175,000
@@ -109,7 +133,10 @@
       <% elsif @grades["higher_limits"] == '1765' %>250,000
       <% elsif @grades["higher_limits"] == '1907' %>275,000
       <% elsif @grades["higher_limits"] == '2047' %>300,000
-      <% end %> Blanket over Covered Locations $100,000.00 At any unnamed location $100,000.00 While in transit $100,000.00 Exhibition</td>
+      <% end %> Blanket over Covered Locations</p>
+      <p><%= @grades["limit_of_Insurance_at_Other_Location"]%> At any unnamed location </p>
+      <p>$100,000.00 While in transit </p>
+      <p>$100,000.00 Exhibition</p></td>
   </tr>
 
   <tr>
@@ -125,7 +152,7 @@
       Earthquake Exclusion, Mold Exclusion
 
     <% elsif @grades["us_states"] == "Connecticut" || @grades["us_states"] == "Delaware" || @grades["us_states"] =="District of Columbia" || @grades["us_states"] =="Florida" || @grades["us_states"] =="Georgia" || @grades["us_states"] =="Louisiana" || @grades["us_states"] =="Maine" || @grades["us_states"] =="Maryland" || @grades["us_states"] =="Massachusetts" || @grades["us_states"] =="Mississippi" || @grades["us_states"] =="New Jersey" || @grades["us_states"] =="New York" || @grades["us_states"] == "North Carolina" || @grades["us_states"] =="Pennsylvania" || @grades["us_states"] =="Rhode Island" || @grades["us_states"] == "South Carolina" || @grades["us_states"] == "Texas"%>
-    Earthquake Exclusion, Mold Exclusion, Download Water, Wind Exclusion
+    Earthquake Exclusion, Mold Exclusion,  Water Damage, Windstorm
 
   <% end %>
 </td>
@@ -170,10 +197,13 @@
       <div>
         <p>&nbsp;</p>
         <span style="font-style:italic">
-        <p> This proposal may differ from coverage requested in applications or other communications sent to us during the underwriting process.  Any amendments, coverage additions or deletions or any other changes to the coverages  outlined in this proposal can affect final premiums.  All taxes and fees included in premium charges are estimated and may vary at issuance.</p>
-
+        
         <p>It is your duty to disclose all material facts to Markel underwriters prior to inception of the policy, and to keep them advised of any such facts or changes to such facts throughout the currency of the policy, and upon renewal of the policy.  All material information concerning the risk including any loss or claim statistics should be accurate and kept up to date at all times.  A material fact is a fact which may influence an underwriter’s judgment in their assessment of a risk.  If you are in doubt as to whether a fact is material, we recommend that it be disclosed.  Failure to disclose material fact may entitle underwriters to avoid the policy from inception.</p>
         </span> 
+        <span>
+          <strong>ANY PERSON WHO KNOWINGLY AND WITH INTENT TO DEFRAUD ANY INSURANCE COMPANY OR ANOTHER PERSON FILES AN APPLICATION FOR INSURANCE OR STATEMENT OF CLAIM CONTAINING ANY MATERIALLY FALSE INFORMATION, OR CONCEALS FOR THE PURPOSE OF MISLEADING INFORMATION CONCERNING ANY FACT MATERIAL THERETO, COMMITS A FRAUDULENT INSURANCE ACT, WHICH IS A CRIME AND SUBJECTS THE PERSON TO CRIMINAL AND CIVIL PENALTIES.</strong> 
+
+        </span>  
         <p>&nbsp;</p>
       </div>
     </div> 
