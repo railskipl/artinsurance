@@ -41,7 +41,6 @@ module ArtistsHelper
       'Oklahoma',
       'Oregon', 
       'Pennsylvania',
-      'Puerto Rico',
       'Rhode Island',
       'South Carolina',
       'South Dakota',
@@ -56,6 +55,9 @@ module ArtistsHelper
       'Wyoming',
     ]
 end
+
+
+
 
 
 

@@ -30,6 +30,7 @@
 
 
   <div>
+
     <table CELLPADDING=4>
 <tr>
     <th ROWSPAN=6><img src="http://artinsurance.herokuapp.com/assets/markel.jpg" width="90px;" height="120px;"></img></th>
@@ -53,14 +54,15 @@
 
 
 </table>
-  </div>
 
 
     <div style="clear:both; margin:0 auto">
       <div>
+
         <span style="text-decoration:underline">
          Binder
   
+
         </span> 
        
       </div>
@@ -68,13 +70,17 @@
 
  <table width="100%">
   <tr>
-    <td width="20%" valign="top"><strong>Policy No:</strong></td>
-    <td align="left">
-    </td>
 
-    <td width="20%" valign="top"><strong>Binding Effective:</strong></td>
-    <td align="left"><%= Date.today.strftime("%d-%m-%y")%> <% dated = Date.today+1 %><%= dated.strftime("%d-%m-%y") %>
+    <td width="20%" valign="top"><strong>Policy no</strong></td>
+    <td align="left"><%= @cus %></td>
     </td>
+  </tr>
+  <tr>
+    <td width="20%" valign="top"><strong>Binding Effective</strong></td>
+    <td align="left"><%= @grades["start_date"]%><%= @grades["start_date"] + 1 %></td>
+    </td>
+  </tr>
+  <tr>
     <td width="20%" valign="top"><strong>Company</strong></td>
     <td align="left">Markel Insurance Company  Ten Parkway North, Deerfield, Illinois 60015 <br/>
       Best Rated A (Excellent); Financial Size Category: XIV
@@ -85,10 +91,10 @@
     <td align="left">
       <% if @grades["us_states"] == "Alaska" || @grades["us_states"] == "Arizona" || @grades["us_states"] == "Arkansas" || @grades["us_states"] == "Colorado" || @grades["us_states"] == "Delaware" || @grades["us_states"] =="District of Columbia" || @grades["us_states"] =="Florida" || @grades["us_states"] == "Hawaii" || @grades["us_states"] == "Idaho" || @grades["us_states"] == "Illinois" || @grades["us_states"] == "Indiana" || @grades["us_states"] == "Kansas" || @grades["us_states"] == "Kentucky" || @grades["us_states"] =="Louisiana" || @grades["us_states"] =="Maine" || @grades["us_states"] =="Maryland" || @grades["us_states"] =="Massachusetts" || @grades["us_states"] =="Mississippi" || @grades["us_states"] == "Michigan" || @grades["us_states"] == "Minnesota" || @grades["us_states"] == "Nebraska" || @grades["us_states"] == "Nevada" || @grades["us_states"] == "New Hampshire" || @grades["us_states"] =="New Jersey" || @grades["us_states"] =="New York" || @grades["us_states"] == "North Carolina" || @grades["us_states"] == "Ohio" || @grades["us_states"] == "Oregon" || @grades["us_states"] =="Rhode Island" || @grades["us_states"] == "South Carolina" || @grades["us_states"] == "South Dakota" || @grades["us_states"] == "Tennessee" || @grades["us_states"] == "Utah" || @grades["us_states"] == "Vermont" || @grades["us_states"] == "Virginia" || @grades["us_states"] == "Washington" || @grades["us_states"] == "West Virginia" || @grades["us_states"] == "Wisconsin" || @grades["us_states"] == "Wyoming" %>
       
-      William Fleischer
+      William Fleischer/ Bernard Fleischer & Sons, Inc
     <% elsif @grades["us_states"] == "Connecticut" || @grades["us_states"] == "California" || @grades["us_states"] =="Georgia" || @grades["us_states"] == "Iowa" ||   @grades["us_states"] == "North Dakota" || @grades["us_states"] == "New Mexico" || @grades["us_states"] =="Pennsylvania" %>
       
-      William Fleischer/ Bernard Fleischer & Sons
+      William Fleischer/ Bernard Fleischer & Sons, Inc
 
     <% elsif @grades["us_states"] == "Texas" %>
       Bernard Fleischer & Sons
@@ -102,10 +108,6 @@
    <tr>
     <td width="20%"><strong>Mailing Address</strong></td>
     <td align="left"><%= @grades["Address 1"]%> <%= @grades["Address 2"]%>, <%= @grades["City"]%>, <% if @grades["state"] %> <%= @grades["state"]%> <% else %> <%= @grades["us_states"]%> <% end %> <%= @grades["Zip"]%></td>
-  </tr>
-   <tr>
-    <td width="20%"><strong>Period</strong></td>
-    <td align="left">12 Months from date to be agreed upon</td>
   </tr>
   <tr>
     <td width="20%"><strong>Type of Insurance</strong></td>
@@ -124,6 +126,7 @@
 
   <tr>
     <td width="20%" valign="top"><strong>Limits of Liability</strong></td>
+
     <td align="left">$ <% if @grades["higher_limits"] == '1000' %><p>100,000
       <% elsif @grades["higher_limits"] == '1062' %>125,000
       <% elsif @grades["higher_limits"] == '1203' %>150,000
@@ -137,6 +140,7 @@
       <p><%= @grades["limit_of_Insurance_at_Other_Location"]%> At any unnamed location </p>
       <p>$100,000.00 While in transit </p>
       <p>$100,000.00 Exhibition</p></td>
+
   </tr>
 
   <tr>
@@ -148,11 +152,14 @@
     <td width="20%" valign="top"><strong>Coverage</strong></td>
     <td align="left">
       <% if @grades["us_states"] == "Arizona" || @grades["us_states"] == "Alaska" || @grades["us_states"] == "Arkansas" || @grades["us_states"] == "California" || @grades["us_states"] == "Colorado" || @grades["us_states"] == "Hawaii" || @grades["us_states"] == "Idaho" || @grades["us_states"] == "Illinois" || @grades["us_states"] == "Indiana" || @grades["us_states"] == "Iowa" || @grades["us_states"] == "Kansas" || @grades["us_states"] == "Kentucky" || @grades["us_states"] == "Michigan" || @grades["us_states"] == "Minnesota" || @grades["us_states"] == "Nebraska" || @grades["us_states"] == "Nevada" || @grades["us_states"] == "New Hampshire" || @grades["us_states"] == "New Mexico" || @grades["us_states"] == "North Dakota" ||@grades["us_states"] == "Ohio" || @grades["us_states"] == "Oregon" || @grades["us_states"] == "South Dakota" || @grades["us_states"] == "Tennessee" || @grades["us_states"] == "Utah" || @grades["us_states"] == "Vermont" || @grades["us_states"] == "Virginia" || @grades["us_states"] == "Washington" || @grades["us_states"] == "West Virginia" || @grades["us_states"] == "Wisconsin" || @grades["us_states"] == "Wyoming" %>
-      
-      Earthquake Exclusion, Mold Exclusion
+      As per form attached;
+      Additional exclusions - Earthquake, Mold 
 
     <% elsif @grades["us_states"] == "Connecticut" || @grades["us_states"] == "Delaware" || @grades["us_states"] =="District of Columbia" || @grades["us_states"] =="Florida" || @grades["us_states"] =="Georgia" || @grades["us_states"] =="Louisiana" || @grades["us_states"] =="Maine" || @grades["us_states"] =="Maryland" || @grades["us_states"] =="Massachusetts" || @grades["us_states"] =="Mississippi" || @grades["us_states"] =="New Jersey" || @grades["us_states"] =="New York" || @grades["us_states"] == "North Carolina" || @grades["us_states"] =="Pennsylvania" || @grades["us_states"] =="Rhode Island" || @grades["us_states"] == "South Carolina" || @grades["us_states"] == "Texas"%>
-    Earthquake Exclusion, Mold Exclusion,  Water Damage, Windstorm
+
+    As per form attached;
+    Additional exclusions - Earthquake Exclusion, Mold Exclusion,  Water Damage, Windstorm
+    
 
   <% end %>
 </td>
@@ -170,8 +177,8 @@
   </tr>
 
   <tr>
-    <td width="20%"><strong>TRIA Coverage</strong></td>
-    <td align="left">Optional</td>
+    <td width="20%"><strong>Terriosim Coverage</strong></td>
+    <td align="left">Not Covered</td>
   </tr>
 
   <tr>
@@ -183,17 +190,13 @@
     <td width="20%"><strong>Premium</strong></td>
     <td align="left">
   
-      <%= number_to_currency(@grades["annual_premium"]) %> annually
+      <%= number_to_currency(@grades["annual_premium"]) %> Total Annual Premium
     </td>
-  </tr>
-  <tr>
-    <td width="20%"><strong>Payment</strong></td>
-    <td align="left">Full pay </td>
   </tr>
 
  </table>
 
-    <div style="clear:both; margin:0 auto">
+    <!-- <div style="clear:both; margin:0 auto">
       <div>
         <p>&nbsp;</p>
         <span style="font-style:italic">
@@ -209,7 +212,7 @@
     </div> 
 
     <p>&nbsp;</p>
-    <div style="text-align:center; font-size:20px; padding:40px 0">An Insurance and Bonding Agency Worth Recommending</div>
+    <div style="text-align:center; font-size:20px; padding:40px 0">An Insurance and Bonding Agency Worth Recommending</div> -->
     
 </body>
 </html>

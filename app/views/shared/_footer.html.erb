@@ -195,7 +195,7 @@
                 }
                 
                 if($('#State').val() == ''){
-                    $('#State').parent().parent().find('.form-error').html("This program exclude flood and windstorms in your area.");
+                    $('#State').parent().parent().find('.form-error').html("This program excludes flood and windstorms in your area.");
                     err++;
                 } 
                 
@@ -218,7 +218,7 @@
                 }
                
                 if($('#us_states').val() == ''){
-                    $('#us_states').parent().parent().find('.form-error').html("This program exclude flood and windstorms in your area.");
+                    $('#us_states').parent().parent().find('.form-error').html("This program excludes flood, earthquake, mold and windstorms in your area.");
                     err++;
                 } 
 
@@ -314,7 +314,7 @@
                     
              
 
-                if((!$("#paintings").is(':checked')) && (!$("#purniture").is(':checked')) && (!$("#drawings").is(':checked')) && (!$("#fabrics").is(':checked')) && (!$("#photographs").is(':checked')) && (!$("#jewelry").is(':checked')) && (!$("#sculptures").is(':checked')) && (!$("#silver").is(':checked')) && (!$("#non_Fragile").is(':checked')) && (!$("#breakable").is(':checked')) && (!$("#other").is(':checked'))){
+                if((!$("#paintings").is(':checked')) && (!$("#furniture").is(':checked')) && (!$("#drawings").is(':checked')) && (!$("#fabrics").is(':checked')) && (!$("#photographs").is(':checked')) && (!$("#jewelry").is(':checked')) && (!$("#sculptures").is(':checked')) && (!$("#silver").is(':checked')) && (!$("#non_Fragile").is(':checked')) && (!$("#breakable").is(':checked')) && (!$("#other").is(':checked'))){
                     
                     $('#other').parent().parent().find('.form-error').html("Please select atleast one checkbox.");
                     err++;
@@ -432,10 +432,10 @@
                     err++;
                 } 
                 
-                if($('#Name_of_current_insurance_carrier').val() == ''){
+                //if($('#Name_of_current_insurance_carrier').val() == ''){
                     
-                    err++;
-                }
+                    //err++;
+                //}
                 
                 if(err == 0){
                     $(".rhino-active-bullet").removeClass("step-error").addClass("step-success");

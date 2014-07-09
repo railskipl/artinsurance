@@ -9,17 +9,11 @@
 <%= javascript_include_tag "application","https://js.stripe.com/v1/" %>
 
   <%= csrf_meta_tags %>
-
-  <%= tag :meta, :name => "stripe-key", :content => "pk_test_utn2AL4PFviXeehaGbIJZ0oY" %>
-  
 </head>
 
 <body>
 
-<%= render 'shared/header' %>
-<%= content_tag 'div', h(flash[:notice]), :class => 'succMsg', :id => 'notice' if flash[:notice] %>
 <%= yield %>
-<%= render 'shared/footer' %>
 
 </body>
 </html>

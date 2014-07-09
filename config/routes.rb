@@ -3,8 +3,11 @@ Artinsurence::Application.routes.draw do
       post :artist_preview, :on=> :collection
   end
   
+  match "page_prints/pageprint" => "page_prints#pageprint", via: :get
+  
   root :to => 'artists#home'
   match "artists/create" => "artists#create", via: :post
+  
   
   resources :subscriptions do
     post :feedback, :on=> :collection

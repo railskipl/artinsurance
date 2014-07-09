@@ -1,17 +1,24 @@
+<div id="nav">
+	<p>
+	    <a href="#" onclick="print_preview(); return false;">Print this page</a>
+    </p>
+</div>
+
+
 <link href="/assets/standard-style.css" rel="stylesheet" type="text/css" />
 <link rel="alternate stylesheet" type="text/css" href="/assets/print-preview.css" media="screen" title="Print Preview" />
-<link rel="stylesheet" type="text/css" href="assets/print.css" media="print" />
+<link rel="stylesheet" type="text/css" href="/assets/print.css" media="print" />
 <script type="text/javascript" src="/assets/print.js"></script>
 
 <style type="text/css">
   
   .left { background: none; border: medium none; min-height: 0; padding: 0; }
-  .right{ margin:0 15px 20px 20px; width:auto; float:right; text-align:center; font-family:"Times New Roman", Times, serif; font-size:15px; color:#000000}
+  .right{ margin:0 15px 4px 20px; width:auto; float:right; text-align:center; font-family:"Times New Roman", Times, serif; font-size:15px; color:#000000}
   </style>
 
-<div class="titleBar dragonControl"><span class="title">Preview</span></div>
-<div class="dialog-content">
-<%= link_to "Print this page",page_prints_pageprint_path(params), :target => "_blank" %>
+
+<div class="dialog-content1">
+
   <div id="header">
     <div>
       
@@ -26,23 +33,16 @@
     <div style="clear:both; margin:0 auto">
       <div>
         <span style="font-style:italic">
-
-          <p><% dated = Date.today%><%= dated.strftime("%b %d, %Y") %>
-        <p> QUOTE / INDICATION</p>
-
-        Based on the information you have provided us, we are pleased to offer the following terms. This quote is open for 60days from the dated quoted <% dated = Date.today+1 %><%= dated.strftime("%d-%m-%y") %>.    
-        This        
-        quote is subject to no losses prior to commencement and/or no material change in coverage.  
-
+        <p> QUOTE</p>
         </span> 
-        <p>&nbsp;</p>
       </div>
     </div> 
  <div id="contentt">
+ 
  <table width="100%">
 
   <tr>
-    <td width="25%" valign="top"><strong>Binding Effective</strong></td>
+    <td width="20%" valign="top"><strong>Binding Effective</strong></td>
     <td align="left"><%= params["start_date"]%></td>
     </td>
   </tr>
@@ -94,7 +94,7 @@
 
   <tr>
     <td width="20%" valign="top"><strong>Limits of Liability</strong></td>
-    <td align="left">$ <% if params["higher_limits"] == '1000' %><p>100,000
+    <td align="left">$ <% if params["higher_limits"] == '1000' %>100,000
       <% elsif params["higher_limits"] == '1062' %>125,000
       <% elsif params["higher_limits"] == '1203' %>150,000
       <% elsif params["higher_limits"] == '1344' %>175,000
@@ -103,12 +103,10 @@
       <% elsif params["higher_limits"] == '1765' %>250,000
       <% elsif params["higher_limits"] == '1907' %>275,000
       <% elsif params["higher_limits"] == '2047' %>300,000
-
-      <% end %> Blanket over Covered Locations</p>
-      <p><%= params["limit_of_Insurance_at_Other_Location"]%> At any unnamed location </p>
-      <p>$100,000.00 While in transit </p>
-      <p>$100,000.00 Exhibition</p></td>
-
+      <% end %> Blanket over Covered Locations<br> 
+                $ 100,000.00 At any unnamed location<br>
+                $ 100,000.00 While in transit<br>
+                $ 100,000.00 Exhibition</td>
   </tr>
 
   <tr>
@@ -124,8 +122,7 @@
       Earthquake Exclusion, Mold Exclusion
 
     <% elsif params["us_states"] == "Connecticut" || params["us_states"] == "Delaware" || params["us_states"] =="District of Columbia" || params["us_states"] =="Florida" || params["us_states"] =="Georgia" || params["us_states"] =="Louisiana" || params["us_states"] =="Maine" || params["us_states"] =="Maryland" || params["us_states"] =="Massachusetts" || params["us_states"] =="Mississippi" || params["us_states"] =="New Jersey" || params["us_states"] =="New York" || params["us_states"] == "North Carolina" || params["us_states"] =="Pennsylvania" || params["us_states"] =="Rhode Island" || params["us_states"] == "South Carolina" || params["us_states"] == "Texas"%>
-    Earthquake Exclusion, Mold Exclusion, Water Damage, Windstorm
-
+    Earthquake Exclusion, Mold Exclusion, Download Water, Windstorms Exclusion
 
   <% end %>
 </td>
@@ -157,32 +154,10 @@
     <td align="left">
       <% premium = params["higher_limits"].to_i + params["exhibits_year"].to_i %>
       <%= number_to_currency(premium) %> Total Annual Premium</td>
-
-  </tr>
-  <tr>
-    <td width="20%"><strong>Payment</strong></td>
-    <td align="left">Full pay </td>
-
   </tr>
   
  </table>
   </div>
-    <!-- <div style="clear:both; margin:0 auto">
-      <div>
-        <p>&nbsp;</p>
-        <span style="font-style:italic">
     
-        <p>It is your duty to disclose all material facts to Markel underwriters prior to inception of the policy, and to keep them advised of any such facts or changes to such facts throughout the currency of the policy, and upon renewal of the policy.  All material information concerning the risk including any loss or claim statistics should be accurate and kept up to date at all times.  A material fact is a fact which may influence an underwriter’s judgment in their assessment of a risk.  If you are in doubt as to whether a fact is material, we recommend that it be disclosed.  Failure to disclose material fact may entitle underwriters to avoid the policy from inception.</p>
-        </span> 
-        <span>
-          <strong>ANY PERSON WHO KNOWINGLY AND WITH INTENT TO DEFRAUD ANY INSURANCE COMPANY OR ANOTHER PERSON FILES AN APPLICATION FOR INSURANCE OR STATEMENT OF CLAIM CONTAINING ANY MATERIALLY FALSE INFORMATION, OR CONCEALS FOR THE PURPOSE OF MISLEADING INFORMATION CONCERNING ANY FACT MATERIAL THERETO, COMMITS A FRAUDULENT INSURANCE ACT, WHICH IS A CRIME AND SUBJECTS THE PERSON TO CRIMINAL AND CIVIL PENALTIES.</strong> 
-
-        </span>  
-        <p>&nbsp;</p>
-      </div>
-    </div>  -->
-
-
 
 </div>
-<div style="margin-left:10px;font-size:14px;text-align:center;"> <strong> An Insurance and Bonding Agency Worth Recommending.</strong></div>
