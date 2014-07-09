@@ -77,8 +77,8 @@
   </tr>
   <tr>
     <td width="20%" valign="top"><strong>Binding Effective</strong></td>
-    <td align="left"><%= @grades["start_date"].to_date.strftime("%d-%m-%y")%>-<% next_year = @grades["start_date"].to_date + 1.year %>
-      <%= next_year.strftime("%d-%m-%y") %>
+    <td align="left"><%= @grades["start_date"].to_date.strftime("%d/%m/%y")%>-<% next_year = @grades["start_date"].to_date + 1.year %>
+      <%= next_year.strftime("%d/%m/%y") %>
     </td>
     </td>
   </tr>
