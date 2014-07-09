@@ -77,7 +77,7 @@
   </tr>
   <tr>
     <td width="20%" valign="top"><strong>Binding Effective</strong></td>
-    <td align="left"><%= @grades["start_date"]%><%= @grades["start_date"] + 1 %></td>
+    <td align="left"><%= @grades["start_date"]%>-<%= @grades["start_date"].to_date + 1 %></td>
     </td>
   </tr>
   <tr>
@@ -196,7 +196,7 @@
 
  </table>
 
-    <!-- <div style="clear:both; margin:0 auto">
+     <div style="clear:both; margin:0 auto">
       <div>
         <p>&nbsp;</p>
         <span style="font-style:italic">
@@ -212,7 +212,7 @@
     </div> 
 
     <p>&nbsp;</p>
-    <div style="text-align:center; font-size:20px; padding:40px 0">An Insurance and Bonding Agency Worth Recommending</div> -->
+    <div style="text-align:center; font-size:20px; padding:40px 0">An Insurance and Bonding Agency Worth Recommending</div> 
     
 </body>
 </html>
