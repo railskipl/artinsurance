@@ -128,16 +128,8 @@
 
   <tr>
     <td width="20%" valign="top"><strong>Limits of Liability</strong></td>
-
-    <td align="left">$ <% if @grades["higher_limits"] == '1000' %>100,000 <% end %>
-      <% if @grades["higher_limits"] == '1062' %>125,000 <% end %>
-      <% if @grades["higher_limits"] == '1203' %>150,000 <% end %>
-      <% if @grades["higher_limits"] == '1344' %>175,000 <% end %>
-      <% if @grades["higher_limits"] == '1484' %>200,000 <% end %>
-      <% if @grades["higher_limits"] == '1625' %>225,000 <% end %>
-      <% if @grades["higher_limits"] == '1765' %>250,000 <% end %>
-      <% if @grades["higher_limits"] == '1907' %>275,000 <% end %>
-      <% if @grades["higher_limits"] == '2047' %>300,000 <% end %> 
+   
+    <td align="left"> <%= @grades["higher_limits"] %> 
       Blanket over Covered Locations</p>
       <p><%= @grades["limit_of_Insurance_at_Other_Location"]%> At any unnamed location </p>
       <p>$100,000.00 While in transit </p>

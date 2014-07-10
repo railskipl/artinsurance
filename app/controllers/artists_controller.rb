@@ -179,7 +179,7 @@ class ArtistsController < ApplicationController
              "annual_premium" => @anualpremium
              
            }
-        
+          
         
            @email = params[:Email_address]
            session[:email] = @email
